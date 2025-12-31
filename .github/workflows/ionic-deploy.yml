@@ -29,7 +29,7 @@ jobs:
       - name: Build Ionic App
         # The base-href flag is CRITICAL for GitHub Pages sub-directories
         # Replace 'your-repo-name' with your actual repository name
-        run: npm run build -- --base=/yuenyuen2010.github.io/ionic_demo/
+        run: npm run build -- --base=/ionic_demo/
         # run: npm run build -- --base-href=/your-repo-name/
 
       # If you use Ionic/React or Ionic/Vue, the command above might be:
