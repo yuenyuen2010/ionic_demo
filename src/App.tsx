@@ -39,13 +39,16 @@ setupIonicReact();
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
+      {/* @ts-ignore */}
       <IonRouterOutlet>
         {/* @ts-ignore */}
         <Route exact path="/home">
+          {/* @ts-ignore */}
           <Home />
         </Route>
         {/* @ts-ignore */}
         <Route exact path="/lesson/:id">
+          {/* @ts-ignore */}
           <Lesson />
         </Route>
         {/* @ts-ignore */}
