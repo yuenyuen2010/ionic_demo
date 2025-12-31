@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/yuenyuen2010.github.io/ionic_demo/sw.js', { scope: '/yuenyuen2010.github.io/ionic_demo/' })})}
