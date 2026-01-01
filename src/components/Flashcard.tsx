@@ -109,7 +109,7 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english }) => {
             onClick={(e) => playAudio(e, tagalog, 'tl-PH')}
             disabled={isPlaying}
           >
-             {isPlaying ? <IonSpinner name="dots" color="light" /> : <IonIcon icon={volumeHighOutline} slot="icon-only" color="light" />}
+             {isPlaying ? <IonSpinner name="dots" color="primary" /> : <IonIcon icon={volumeHighOutline} slot="icon-only" color="primary" />}
           </IonButton>
           <h2>{tagalog}</h2>
           <p>Tap to see translation</p>

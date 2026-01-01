@@ -67,7 +67,7 @@ const Home: React.FC = () => {
           <p>Select a category to start learning.</p>
         </div>
 
-        <IonList inset={true}>
+        <IonList inset={false}>
           {lessons.map((category) => (
             <IonItem 
               key={category.id} 
