@@ -66,7 +66,9 @@ const Lesson: React.FC = () => {
         <Flashcard 
           key={currentCard.id} // Key ensures state resets when card changes
           tagalog={currentCard.tagalog} 
-          english={currentCard.english} 
+          english={currentCard.english}
+          zhTW={currentCard.zhTW}
+          zhCN={currentCard.zhCN}
         />
 
         <div className="instruction">
