@@ -3,7 +3,7 @@ name: Deploy Ionic PWA to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change this if your default branch is 'master'
+      - master  # Change this if your default branch is 'master'
 # Trigger manually (THIS IS THE MISSING PART)
   workflow_dispatch:      
 
