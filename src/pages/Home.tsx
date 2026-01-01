@@ -10,7 +10,8 @@ import {
   IonIcon,
   IonButtons,
   IonButton,
-  useIonAlert
+  useIonAlert,
+  IonicSafeString
 } from '@ionic/react';
 import { bookOutline, chevronForwardOutline, informationCircleOutline } from 'ionicons/icons';
 import { lessons } from '../data/lessons';
@@ -23,7 +24,11 @@ const Home: React.FC = () => {
     const buildDate = new Date(__BUILD_INFO__.time).toLocaleString();
     presentAlert({
       header: 'Build Info',
-      message: `Build Time: ${buildDate}\nCommit Hash: ${__BUILD_INFO__.hash}\nMessage: ${__BUILD_INFO__.message}`,
+      message: new IonicSafeString(`
+        <p><strong>Build Time:</strong> ${buildDate}</p>
+        <p><strong>Commit Hash:</strong> ${__BUILD_INFO__.hash}</p>
+        <p><strong>Message:</strong><br/>${__BUILD_INFO__.message}</p>
+      `),
       buttons: ['OK'],
     });
   };
