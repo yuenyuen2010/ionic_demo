@@ -14,11 +14,13 @@ import {
 } from '@ionic/react';
 import { useParams } from 'react-router-dom';
 import { arrowBackOutline, arrowForwardOutline, refreshOutline } from 'ionicons/icons';
+import { useTranslation } from 'react-i18next';
 import { lessons } from '../data/lessons';
 import Flashcard from '../components/Flashcard';
 import './Lesson.css';
 
 const Lesson: React.FC = () => {
+  const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const category = useMemo(() => lessons.find(l => l.id === id), [id]);
   
@@ -28,8 +30,8 @@ const Lesson: React.FC = () => {
     return (
       <IonPage>
         <IonContent className="ion-padding">
-          <IonText color="danger">Category not found</IonText>
-          <IonButton routerLink="/home">Go Back</IonButton>
+          <IonText color="danger">{t('lesson.categoryNotFound')}</IonText>
+          <IonButton routerLink="/home">{t('lesson.goBack')}</IonButton>
         </IonContent>
       </IonPage>
     );
@@ -64,7 +66,7 @@ const Lesson: React.FC = () => {
 
       <IonContent className="ion-padding">
         <div className="progress-indicator">
-          Card {currentIndex + 1} of {category.cards.length}
+          {t('lesson.cardProgress', { current: currentIndex + 1, total: category.cards.length })}
         </div>
 
         <Flashcard 
@@ -74,7 +76,7 @@ const Lesson: React.FC = () => {
         />
 
         <div className="instruction">
-          <p>Flip the card to see the translation</p>
+          <p>{t('lesson.flipInstruction')}</p>
         </div>
       </IonContent>
 
@@ -87,7 +89,7 @@ const Lesson: React.FC = () => {
               disabled={isFirst}
             >
               <IonIcon icon={arrowBackOutline} slot="start" />
-              Prev
+              {t('lesson.prev')}
             </IonButton>
 
             {isLast ? (
@@ -96,14 +98,14 @@ const Lesson: React.FC = () => {
                 onClick={reset}
               >
                 <IonIcon icon={refreshOutline} slot="start" />
-                Restart
+                {t('lesson.restart')}
               </IonButton>
             ) : (
               <IonButton 
                 color="primary" 
                 onClick={nextCard}
               >
-                Next
+                {t('lesson.next')}
                 <IonIcon icon={arrowForwardOutline} slot="end" />
               </IonButton>
             )}
@@ -115,4 +117,3 @@ const Lesson: React.FC = () => {
 };
 
 export default Lesson;
-

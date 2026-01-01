@@ -18,17 +18,25 @@ import {
   IonRadio
 } from '@ionic/react';
 import { bookOutline, chevronForwardOutline, informationCircleOutline, settingsOutline } from 'ionicons/icons';
+import { useTranslation } from 'react-i18next';
 import { lessons } from '../data/lessons';
 import './Home.css';
 
 const themes = [
-  { id: 'theme-teal', name: 'Modern Teal (Default)', color: '#0d9488' },
-  { id: 'theme-navy', name: 'Professional Navy', color: '#0f2c4c' },
-  { id: 'theme-purple', name: 'Energetic Purple', color: '#7e22ce' },
-  { id: 'theme-green', name: 'Calm Green', color: '#15803d' },
+  { id: 'theme-teal', nameKey: 'themes.teal', color: '#0d9488' },
+  { id: 'theme-navy', nameKey: 'themes.navy', color: '#0f2c4c' },
+  { id: 'theme-purple', nameKey: 'themes.purple', color: '#7e22ce' },
+  { id: 'theme-green', nameKey: 'themes.green', color: '#15803d' },
+];
+
+const languages = [
+  { code: 'en', name: 'English' },
+  { code: 'zh-TW', name: '繁體中文' },
+  { code: 'zh-CN', name: '简体中文' },
 ];
 
 const Home: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const [showBuildInfo, setShowBuildInfo] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [currentTheme, setCurrentTheme] = useState('theme-teal');
@@ -45,15 +53,18 @@ const Home: React.FC = () => {
     setCurrentTheme(themeId);
     localStorage.setItem('app-theme', themeId);
     document.body.className = themeId;
-    // Close modal after selection for better UX, or keep open? 
-    // Let's keep open so they can see the change immediately.
+  };
+
+  const handleLanguageChange = (langCode: string) => {
+    i18n.changeLanguage(langCode);
+    localStorage.setItem('i18nextLng', langCode);
   };
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar color="primary">
-          <IonTitle>Tagalog Anywhere</IonTitle>
+          <IonTitle>{t('common.appTitle')}</IonTitle>
           <IonButtons slot="end">
             <IonButton onClick={() => setShowSettings(true)}>
               <IonIcon slot="icon-only" icon={settingsOutline} />
@@ -70,20 +81,32 @@ const Home: React.FC = () => {
           isOpen={showSettings}
           onDidDismiss={() => setShowSettings(false)}
           className="settings-modal"
-          initialBreakpoint={0.5}
-          breakpoints={[0, 0.5, 0.75]}
+          initialBreakpoint={0.75}
+          breakpoints={[0, 0.5, 0.75, 1]}
         >
           <IonHeader>
             <IonToolbar>
-              <IonTitle>Settings</IonTitle>
+              <IonTitle>{t('home.settings')}</IonTitle>
               <IonButtons slot="end">
-                <IonButton onClick={() => setShowSettings(false)}>Close</IonButton>
+                <IonButton onClick={() => setShowSettings(false)}>{t('common.close')}</IonButton>
               </IonButtons>
             </IonToolbar>
           </IonHeader>
           <IonContent className="ion-padding">
             <IonListHeader>
-              <IonLabel>Theme Selection</IonLabel>
+              <IonLabel>{t('home.languageSelection')}</IonLabel>
+            </IonListHeader>
+            <IonRadioGroup value={i18n.language} onIonChange={e => handleLanguageChange(e.detail.value)}>
+              {languages.map(lang => (
+                <IonItem key={lang.code}>
+                  <IonLabel>{lang.name}</IonLabel>
+                  <IonRadio slot="end" value={lang.code} />
+                </IonItem>
+              ))}
+            </IonRadioGroup>
+
+            <IonListHeader>
+              <IonLabel>{t('home.themeSelection')}</IonLabel>
             </IonListHeader>
             <IonRadioGroup value={currentTheme} onIonChange={e => handleThemeChange(e.detail.value)}>
               {themes.map(theme => (
@@ -98,7 +121,7 @@ const Home: React.FC = () => {
                       marginRight: '12px'
                     }}
                   />
-                  <IonLabel>{theme.name}</IonLabel>
+                  <IonLabel>{t(theme.nameKey)}</IonLabel>
                   <IonRadio slot="end" value={theme.id} />
                 </IonItem>
               ))}
@@ -114,30 +137,30 @@ const Home: React.FC = () => {
         >
           <IonHeader>
             <IonToolbar>
-              <IonTitle>Build Info</IonTitle>
+              <IonTitle>{t('common.buildInfo')}</IonTitle>
               <IonButtons slot="end">
-                <IonButton onClick={() => setShowBuildInfo(false)}>Close</IonButton>
+                <IonButton onClick={() => setShowBuildInfo(false)}>{t('common.close')}</IonButton>
               </IonButtons>
             </IonToolbar>
           </IonHeader>
           <div className="ion-padding">
             <IonText>
-              <p><strong>Build Time:</strong> {buildDate}</p>
-              <p><strong>Commit Hash:</strong> {__BUILD_INFO__.hash}</p>
-              <p><strong>Message:</strong><br/>{__BUILD_INFO__.message}</p>
+              <p><strong>{t('common.buildTime')}:</strong> {buildDate}</p>
+              <p><strong>{t('common.commitHash')}:</strong> {__BUILD_INFO__.hash}</p>
+              <p><strong>{t('common.message')}:</strong><br/>{__BUILD_INFO__.message}</p>
             </IonText>
           </div>
         </IonModal>
 
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Tagalog Anywhere</IonTitle>
+            <IonTitle size="large">{t('common.appTitle')}</IonTitle>
           </IonToolbar>
         </IonHeader>
         
         <div className="ion-padding">
-          <h2>Choose a Topic</h2>
-          <p>Select a category to start learning.</p>
+          <h2>{t('home.chooseTopic')}</h2>
+          <p>{t('home.selectCategory')}</p>
         </div>
 
         <IonList inset={false}>
@@ -150,7 +173,7 @@ const Home: React.FC = () => {
               <IonIcon icon={bookOutline} slot="start" color="primary" />
               <IonLabel>
                 <h3>{category.title}</h3>
-                <p>{category.cards.length} cards</p>
+                <p>{t('home.cardsCount', { count: category.cards.length })}</p>
               </IonLabel>
               <IonIcon icon={chevronForwardOutline} slot="end" />
             </IonItem>

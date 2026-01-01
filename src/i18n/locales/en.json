@@ -1,0 +1,37 @@
+{
+  "common": {
+    "appTitle": "Tagalog Anywhere",
+    "close": "Close",
+    "buildInfo": "Build Info",
+    "buildTime": "Build Time",
+    "commitHash": "Commit Hash",
+    "message": "Message"
+  },
+  "home": {
+    "chooseTopic": "Choose a Topic",
+    "selectCategory": "Select a category to start learning.",
+    "cardsCount": "{{count}} cards",
+    "settings": "Settings",
+    "themeSelection": "Theme Selection",
+    "languageSelection": "Language Selection",
+    "themes": {
+      "teal": "Modern Teal (Default)",
+      "navy": "Professional Navy",
+      "purple": "Energetic Purple",
+      "green": "Calm Green"
+    }
+  },
+  "lesson": {
+    "categoryNotFound": "Category not found",
+    "goBack": "Go Back",
+    "cardProgress": "Card {{current}} of {{total}}",
+    "flipInstruction": "Flip the card to see the translation",
+    "prev": "Prev",
+    "next": "Next",
+    "restart": "Restart"
+  },
+  "flashcard": {
+    "tapToSeeTranslation": "Tap to see translation",
+    "tapToSeeTagalog": "Tap to see Tagalog"
+  }
+}

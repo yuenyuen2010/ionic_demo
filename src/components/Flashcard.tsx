@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IonIcon, IonButton, IonSpinner } from '@ionic/react';
 import { volumeHighOutline } from 'ionicons/icons';
+import { useTranslation } from 'react-i18next';
 import './Flashcard.css';
 
 interface FlashcardProps {
@@ -9,6 +10,7 @@ interface FlashcardProps {
 }
 
 const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english }) => {
+  const { t } = useTranslation();
   const [isFlipped, setIsFlipped] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -112,7 +114,7 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english }) => {
              {isPlaying ? <IonSpinner name="dots" color="primary" /> : <IonIcon icon={volumeHighOutline} slot="icon-only" color="primary" />}
           </IonButton>
           <h2>{tagalog}</h2>
-          <p>Tap to see translation</p>
+          <p>{t('flashcard.tapToSeeTranslation')}</p>
         </div>
         <div className="flashcard-back">
           <IonButton 
@@ -124,7 +126,7 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english }) => {
              {isPlaying ? <IonSpinner name="dots" color="light" /> : <IonIcon icon={volumeHighOutline} slot="icon-only" color="light" />}
           </IonButton>
           <h2>{english}</h2>
-          <p>Tap to see Tagalog</p>
+          <p>{t('flashcard.tapToSeeTagalog')}</p>
         </div>
       </div>
     </div>
