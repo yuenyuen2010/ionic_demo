@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { 
   IonContent, 
   IonHeader, 
@@ -10,7 +11,7 @@ import {
   IonIcon,
   IonButtons,
   IonButton,
-  useIonAlert,
+  IonAlert,
   IonicSafeString
 } from '@ionic/react';
 import { bookOutline, chevronForwardOutline, informationCircleOutline } from 'ionicons/icons';
@@ -18,20 +19,8 @@ import { lessons } from '../data/lessons';
 import './Home.css';
 
 const Home: React.FC = () => {
-  const [presentAlert] = useIonAlert();
-
-  const showBuildInfo = () => {
-    const buildDate = new Date(__BUILD_INFO__.time).toLocaleString();
-    presentAlert({
-      header: 'Build Info',
-      message: new IonicSafeString(`
-        <p><strong>Build Time:</strong> ${buildDate}</p>
-        <p><strong>Commit Hash:</strong> ${__BUILD_INFO__.hash}</p>
-        <p><strong>Message:</strong><br/>${__BUILD_INFO__.message}</p>
-      `),
-      buttons: ['OK'],
-    });
-  };
+  const [showAlert, setShowAlert] = useState(false);
+  const buildDate = new Date(__BUILD_INFO__.time).toLocaleString();
 
   return (
     <IonPage>
@@ -39,13 +28,24 @@ const Home: React.FC = () => {
         <IonToolbar color="primary">
           <IonTitle>Tagalog Anywhere</IonTitle>
           <IonButtons slot="end">
-            <IonButton onClick={showBuildInfo}>
+            <IonButton onClick={() => setShowAlert(true)}>
               <IonIcon slot="icon-only" icon={informationCircleOutline} />
             </IonButton>
           </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
+        <IonAlert
+          isOpen={showAlert}
+          onDidDismiss={() => setShowAlert(false)}
+          header="Build Info"
+          message={new IonicSafeString(`
+            <p><strong>Build Time:</strong> ${buildDate}</p>
+            <p><strong>Commit Hash:</strong> ${__BUILD_INFO__.hash}</p>
+            <p><strong>Message:</strong><br/>${__BUILD_INFO__.message}</p>
+          `)}
+          buttons={['OK']}
+        />
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">Tagalog Anywhere</IonTitle>
