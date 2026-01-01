@@ -45,6 +45,39 @@ export const lessons: Category[] = [
       { id: 'c4', tagalog: 'Magkano ito?', english: 'How much is this?' },
       { id: 'c5', tagalog: 'Masarap', english: 'Delicious' },
     ]
+  },
+  {
+    id: 'family',
+    title: 'Family',
+    cards: [
+      { id: 'f1', tagalog: 'Tatay', english: 'Father' },
+      { id: 'f2', tagalog: 'Nanay', english: 'Mother' },
+      { id: 'f3', tagalog: 'Kapatid', english: 'Sibling' },
+      { id: 'f4', tagalog: 'Kuya', english: 'Older Brother' },
+      { id: 'f5', tagalog: 'Ate', english: 'Older Sister' },
+    ]
+  },
+  {
+    id: 'colors',
+    title: 'Colors',
+    cards: [
+      { id: 'col1', tagalog: 'Pula', english: 'Red' },
+      { id: 'col2', tagalog: 'Asul', english: 'Blue' },
+      { id: 'col3', tagalog: 'Dilaw', english: 'Yellow' },
+      { id: 'col4', tagalog: 'Puti', english: 'White' },
+      { id: 'col5', tagalog: 'Itim', english: 'Black' },
+    ]
+  },
+  {
+    id: 'food',
+    title: 'Food',
+    cards: [
+      { id: 'fd1', tagalog: 'Kanin', english: 'Rice' },
+      { id: 'fd2', tagalog: 'Tubig', english: 'Water' },
+      { id: 'fd3', tagalog: 'Tinapay', english: 'Bread' },
+      { id: 'fd4', tagalog: 'Manok', english: 'Chicken' },
+      { id: 'fd5', tagalog: 'Isda', english: 'Fish' },
+    ]
   }
 ];
 
