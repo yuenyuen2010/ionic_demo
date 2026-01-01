@@ -10,6 +10,8 @@
   "home": {
     "chooseTopic": "選擇主題",
     "selectCategory": "選擇一個類別開始學習。",
+    "searchPlaceholder": "搜尋主題或單字...",
+    "noResults": "找不到符合的主題。",
     "cardsCount": "{{count}} 張卡片",
     "settings": "設定",
     "themeSelection": "主題選擇",

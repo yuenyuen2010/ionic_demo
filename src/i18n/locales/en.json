@@ -10,6 +10,8 @@
   "home": {
     "chooseTopic": "Choose a Topic",
     "selectCategory": "Select a category to start learning.",
+    "searchPlaceholder": "Search topics or words...",
+    "noResults": "No matching topics found.",
     "cardsCount": "{{count}} cards",
     "settings": "Settings",
     "themeSelection": "Theme Selection",
