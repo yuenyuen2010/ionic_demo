@@ -54,9 +54,9 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english }) => {
       }
 
       // Try Google Translate TTS API first for better pronunciation
-      // Use 'fil-PH' for Tagalog to match Google Cloud voice code
+      // Use 'tl' for Tagalog as 'fil-PH' might cause loading issues in some contexts (CORS/strict types)
       // Use 'gtx' client which often provides better quality/stability
-      const googleLang = lang === 'tl-PH' ? 'fil-PH' : 'en-US';
+      const googleLang = lang === 'tl-PH' ? 'tl' : 'en-US';
       const audioUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=gtx&tl=${googleLang}&q=${encodeURIComponent(text)}`;
       
       const audio = new Audio(audioUrl);
