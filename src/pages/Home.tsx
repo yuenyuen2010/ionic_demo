@@ -20,13 +20,12 @@ const Home: React.FC = () => {
   const [presentAlert] = useIonAlert();
 
   const showBuildInfo = () => {
+    const buildDate = new Date(__BUILD_INFO__.time).toLocaleString();
     presentAlert({
       header: 'Build Info',
-      message: `
-        <p><strong>Build Time:</strong> ${__BUILD_INFO__.time}</p>
-        <p><strong>Commit Hash:</strong> ${__BUILD_INFO__.hash}</p>
-        <p><strong>Message:</strong> ${__BUILD_INFO__.message}</p>
-      `,
+      message: `Build Time: ${buildDate}
+Commit Hash: ${__BUILD_INFO__.hash}
+Message: ${__BUILD_INFO__.message}`,
       buttons: ['OK'],
     });
   };

@@ -17,7 +17,7 @@ const getGitInfo = () => {
 }
 
 const buildInfo = {
-  time: new Date().toLocaleString(),
+  time: new Date().toISOString(),
   ...getGitInfo()
 }
 
