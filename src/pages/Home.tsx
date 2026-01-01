@@ -7,18 +7,40 @@ import {
   IonList, 
   IonItem, 
   IonLabel, 
-  IonIcon 
+  IonIcon,
+  IonButtons,
+  IonButton,
+  useIonAlert
 } from '@ionic/react';
-import { bookOutline, chevronForwardOutline } from 'ionicons/icons';
+import { bookOutline, chevronForwardOutline, informationCircleOutline } from 'ionicons/icons';
 import { lessons } from '../data/lessons';
 import './Home.css';
 
 const Home: React.FC = () => {
+  const [presentAlert] = useIonAlert();
+
+  const showBuildInfo = () => {
+    presentAlert({
+      header: 'Build Info',
+      message: `
+        <p><strong>Build Time:</strong> ${__BUILD_INFO__.time}</p>
+        <p><strong>Commit Hash:</strong> ${__BUILD_INFO__.hash}</p>
+        <p><strong>Message:</strong> ${__BUILD_INFO__.message}</p>
+      `,
+      buttons: ['OK'],
+    });
+  };
+
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar color="primary">
           <IonTitle>Tagalog Anywhere</IonTitle>
+          <IonButtons slot="end">
+            <IonButton onClick={showBuildInfo}>
+              <IonIcon slot="icon-only" icon={informationCircleOutline} />
+            </IonButton>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>

@@ -4,9 +4,28 @@ import legacy from '@vitejs/plugin-legacy'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
+import { execSync } from 'child_process'
+
+const getGitInfo = () => {
+  try {
+    const hash = execSync('git rev-parse --short HEAD').toString().trim()
+    const message = execSync('git log -1 --pretty=%B').toString().trim()
+    return { hash, message }
+  } catch (e) {
+    return { hash: 'unknown', message: 'unknown' }
+  }
+}
+
+const buildInfo = {
+  time: new Date().toLocaleString(),
+  ...getGitInfo()
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  define: {
+    __BUILD_INFO__: JSON.stringify(buildInfo)
+  },
   plugins: [
     react(),
     legacy(),
