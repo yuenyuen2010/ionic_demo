@@ -4,6 +4,7 @@ import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactHashRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import Lesson from './pages/Lesson';
+import Review from './pages/Review';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -59,6 +60,11 @@ const App: React.FC = () => {
           <Route exact path="/lesson/:id">
             {/* @ts-ignore */}
             <Lesson />
+          </Route>
+          {/* @ts-ignore */}
+          <Route exact path="/review">
+            {/* @ts-ignore */}
+            <Review />
           </Route>
           {/* @ts-ignore */}
           <Route exact path="/">

@@ -16,6 +16,8 @@
     "settings": "设置",
     "themeSelection": "主题选择",
     "languageSelection": "语言选择",
+    "reviewDue": "复习到期卡片",
+    "dueCount": "{{count}} 张卡片待复习",
     "themes": {
       "teal": "现代青色 (默认)",
       "navy": "专业海军蓝",
@@ -31,6 +33,16 @@
     "prev": "上一张",
     "next": "下一张",
     "restart": "重新开始"
+  },
+  "review": {
+    "title": "复习",
+    "allDone": "全部复习完毕！",
+    "comeBackLater": "做得好！晚点再来复习。",
+    "backToHome": "返回首页",
+    "progress": "正在复习第 {{current}} 张，共 {{total}} 张",
+    "instruction": "你记得这个吗？",
+    "wrong": "忘记了",
+    "correct": "记得"
   },
   "flashcard": {
     "tapToSeeTranslation": "点击查看翻译",

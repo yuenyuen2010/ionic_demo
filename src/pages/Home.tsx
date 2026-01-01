@@ -9,17 +9,26 @@ import {
   IonItem, 
   IonLabel, 
   IonIcon,
-  IonSearchbar
+  IonSearchbar,
+  IonButton
 } from '@ionic/react';
-import { bookOutline, chevronForwardOutline } from 'ionicons/icons';
+import { bookOutline, chevronForwardOutline, timeOutline } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
 import { lessons } from '../data/lessons';
+import { getSRSStats } from '../utils/srs';
 import CommonHeader from '../components/CommonHeader';
 import './Home.css';
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
   const [searchText, setSearchText] = useState('');
+  const [dueCount, setDueCount] = useState(0);
+
+  // Update stats on mount/focus
+  React.useEffect(() => {
+    const stats = getSRSStats();
+    setDueCount(stats.dueCount);
+  }, []); // Note: Ideally should useIonViewWillEnter but that requires refactoring to useIonViewWillEnter hook or standard Effect if re-mount happens
 
   const filteredLessons = lessons.filter(category => {
     if (!searchText) return true;
@@ -50,6 +59,12 @@ const Home: React.FC = () => {
         </IonHeader>
         
         <div className="ion-padding-start ion-padding-end ion-padding-top">
+          {/* Review Button */}
+          <IonButton routerLink="/review" expand="block" color="warning" className="ion-margin-bottom">
+            <IonIcon icon={timeOutline} slot="start" />
+            {t('home.reviewDue')} ({t('home.dueCount', { count: dueCount })})
+          </IonButton>
+
           <h2>{t('home.chooseTopic')}</h2>
           <p>{t('home.selectCategory')}</p>
         </div>

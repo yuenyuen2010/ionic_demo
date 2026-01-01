@@ -16,6 +16,8 @@
     "settings": "Settings",
     "themeSelection": "Theme Selection",
     "languageSelection": "Language Selection",
+    "reviewDue": "Review Due Cards",
+    "dueCount": "{{count}} cards due",
     "themes": {
       "teal": "Modern Teal (Default)",
       "navy": "Professional Navy",
@@ -31,6 +33,16 @@
     "prev": "Prev",
     "next": "Next",
     "restart": "Restart"
+  },
+  "review": {
+    "title": "Review",
+    "allDone": "All caught up!",
+    "comeBackLater": "Great job! Come back later for more reviews.",
+    "backToHome": "Back to Home",
+    "progress": "Reviewing {{current}} of {{total}}",
+    "instruction": "Did you know this?",
+    "wrong": "Wrong",
+    "correct": "Correct"
   },
   "flashcard": {
     "tapToSeeTranslation": "Tap to see translation",

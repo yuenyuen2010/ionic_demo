@@ -16,6 +16,8 @@
     "settings": "設定",
     "themeSelection": "主題選擇",
     "languageSelection": "語言選擇",
+    "reviewDue": "複習到期卡片",
+    "dueCount": "{{count}} 張卡片待複習",
     "themes": {
       "teal": "現代青色 (預設)",
       "navy": "專業海軍藍",
@@ -31,6 +33,16 @@
     "prev": "上一張",
     "next": "下一張",
     "restart": "重新開始"
+  },
+  "review": {
+    "title": "複習",
+    "allDone": "全部複習完畢！",
+    "comeBackLater": "做得好！晚點再來複習。",
+    "backToHome": "返回首頁",
+    "progress": "正在複習第 {{current}} 張，共 {{total}} 張",
+    "instruction": "你記得這個嗎？",
+    "wrong": "忘記了",
+    "correct": "記得"
   },
   "flashcard": {
     "tapToSeeTranslation": "點擊查看翻譯",
