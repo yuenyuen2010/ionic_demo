@@ -66,6 +66,27 @@ const Home: React.FC = () => {
         <IonToolbar color="primary">
           <IonTitle>{t('common.appTitle')}</IonTitle>
           <IonButtons slot="end">
+            <IonButton 
+              onClick={() => handleLanguageChange('en')} 
+              fill={i18n.language === 'en' ? 'solid' : 'clear'}
+              color="light"
+            >
+              Eng
+            </IonButton>
+            <IonButton 
+              onClick={() => handleLanguageChange('zh-TW')} 
+              fill={i18n.language === 'zh-TW' ? 'solid' : 'clear'}
+              color="light"
+            >
+              繁
+            </IonButton>
+            <IonButton 
+              onClick={() => handleLanguageChange('zh-CN')} 
+              fill={i18n.language === 'zh-CN' ? 'solid' : 'clear'}
+              color="light"
+            >
+              簡
+            </IonButton>
             <IonButton onClick={() => setShowSettings(true)}>
               <IonIcon slot="icon-only" icon={settingsOutline} />
             </IonButton>
