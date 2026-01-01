@@ -11,15 +11,15 @@ import {
   IonIcon,
   IonButtons,
   IonButton,
-  IonAlert,
-  IonicSafeString
+  IonModal,
+  IonText
 } from '@ionic/react';
 import { bookOutline, chevronForwardOutline, informationCircleOutline } from 'ionicons/icons';
 import { lessons } from '../data/lessons';
 import './Home.css';
 
 const Home: React.FC = () => {
-  const [showAlert, setShowAlert] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const buildDate = new Date(__BUILD_INFO__.time).toLocaleString();
 
   return (
@@ -28,24 +28,35 @@ const Home: React.FC = () => {
         <IonToolbar color="primary">
           <IonTitle>Tagalog Anywhere</IonTitle>
           <IonButtons slot="end">
-            <IonButton onClick={() => setShowAlert(true)}>
+            <IonButton onClick={() => setShowModal(true)}>
               <IonIcon slot="icon-only" icon={informationCircleOutline} />
             </IonButton>
           </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonAlert
-          isOpen={showAlert}
-          onDidDismiss={() => setShowAlert(false)}
-          header="Build Info"
-          message={new IonicSafeString(`
-            <p><strong>Build Time:</strong> ${buildDate}</p>
-            <p><strong>Commit Hash:</strong> ${__BUILD_INFO__.hash}</p>
-            <p><strong>Message:</strong><br/>${__BUILD_INFO__.message}</p>
-          `)}
-          buttons={['OK']}
-        />
+        <IonModal
+          isOpen={showModal}
+          onDidDismiss={() => setShowModal(false)}
+          initialBreakpoint={0.5}
+          breakpoints={[0, 0.5]}
+        >
+          <IonHeader>
+            <IonToolbar>
+              <IonTitle>Build Info</IonTitle>
+              <IonButtons slot="end">
+                <IonButton onClick={() => setShowModal(false)}>Close</IonButton>
+              </IonButtons>
+            </IonToolbar>
+          </IonHeader>
+          <IonContent className="ion-padding">
+            <IonText>
+              <p><strong>Build Time:</strong> {buildDate}</p>
+              <p><strong>Commit Hash:</strong> {__BUILD_INFO__.hash}</p>
+              <p><strong>Message:</strong><br/>{__BUILD_INFO__.message}</p>
+            </IonText>
+          </IonContent>
+        </IonModal>
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">Tagalog Anywhere</IonTitle>
