@@ -54,6 +54,10 @@
     "common-phrases": "Common Phrases",
     "family": "Family",
     "colors": "Colors",
-    "food": "Food"
+    "food": "Food",
+    "pronouns": "Pronouns",
+    "pseudo-verbs": "Pseudo-Verbs",
+    "question-words": "Common Question Words",
+    "connectors": "Connector Particles"
   }
 }

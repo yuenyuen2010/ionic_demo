@@ -477,5 +477,358 @@ export const lessons: Category[] = [
         }
       },
     ]
+  },
+  {
+    id: 'pronouns',
+    title: 'Pronouns',
+    titleKey: 'topics.pronouns',
+    cards: [
+      {
+        id: 'pro1',
+        tagalog: 'Ako',
+        english: 'I',
+        zhTW: '我',
+        zhCN: '我',
+        example: {
+          tagalog: 'Ako ay Pilipino.',
+          english: 'I am Filipino.',
+          zhTW: '我是菲律賓人。',
+          zhCN: '我是菲律宾人。'
+        }
+      },
+      {
+        id: 'pro2',
+        tagalog: 'Ikaw / Ka',
+        english: 'You',
+        zhTW: '你',
+        zhCN: '你',
+        example: {
+          tagalog: 'Ikaw ba yan?',
+          english: 'Is that you?',
+          zhTW: '是你嗎？',
+          zhCN: '是你吗？'
+        }
+      },
+      {
+        id: 'pro3',
+        tagalog: 'Siya',
+        english: 'He / She',
+        zhTW: '他 / 她',
+        zhCN: '他 / 她',
+        example: {
+          tagalog: 'Siya ang kaibigan ko.',
+          english: 'He/She is my friend.',
+          zhTW: '他/她是我的朋友。',
+          zhCN: '他/她是我的朋友。'
+        }
+      },
+      {
+        id: 'pro4',
+        tagalog: 'Ko',
+        english: 'My / by Me',
+        zhTW: '我的',
+        zhCN: '我的',
+        example: {
+          tagalog: 'Gusto ko ito.',
+          english: 'I like this (This is liked by me).',
+          zhTW: '我喜歡這個。',
+          zhCN: '我喜欢这个。'
+        }
+      },
+      {
+        id: 'pro5',
+        tagalog: 'Mo',
+        english: 'Your / by You',
+        zhTW: '你的',
+        zhCN: '你的',
+        example: {
+          tagalog: 'Ano ang pangalan mo?',
+          english: 'What is your name?',
+          zhTW: '你叫什麼名字？',
+          zhCN: '你叫什么名字？'
+        }
+      },
+      {
+        id: 'pro6',
+        tagalog: 'Niya',
+        english: 'His / Her / by Him',
+        zhTW: '他的 / 她的',
+        zhCN: '他的 / 她的',
+        example: {
+          tagalog: 'Kain niya ito.',
+          english: 'This is what he/she ate.',
+          zhTW: '这是他/她吃的。',
+          zhCN: '这是他/她吃的。'
+        }
+      },
+      {
+        id: 'pro7',
+        tagalog: 'Sa akin',
+        english: 'To me',
+        zhTW: '對我來說 / 給我',
+        zhCN: '对我来说 / 给我',
+        example: {
+          tagalog: 'Ibigay mo sa akin.',
+          english: 'Give it to me.',
+          zhTW: '把它給我。',
+          zhCN: '把它给我。'
+        }
+      },
+      {
+        id: 'pro8',
+        tagalog: 'Sa iyo',
+        english: 'To you',
+        zhTW: '對你來說 / 給你',
+        zhCN: '对你来说 / 给你',
+        example: {
+          tagalog: 'Para sa iyo ito.',
+          english: 'This is for you.',
+          zhTW: '這是給你的。',
+          zhCN: '这是给你的。'
+        }
+      }
+    ]
+  },
+  {
+    id: 'pseudo-verbs',
+    title: 'Pseudo-Verbs',
+    titleKey: 'topics.pseudo-verbs',
+    cards: [
+      {
+        id: 'pv1',
+        tagalog: 'Gusto',
+        english: 'Want / Like',
+        zhTW: '想要 / 喜歡',
+        zhCN: '想要 / 喜欢',
+        example: {
+          tagalog: 'Gusto ko ng kape.',
+          english: 'I want coffee.',
+          zhTW: '我想要咖啡。',
+          zhCN: '我想要咖啡。'
+        }
+      },
+      {
+        id: 'pv2',
+        tagalog: 'Ayaw',
+        english: 'Don\'t want',
+        zhTW: '不想要 / 不喜歡',
+        zhCN: '不想要 / 不喜欢',
+        example: {
+          tagalog: 'Ayaw ko nito.',
+          english: 'I don\'t want this.',
+          zhTW: '我不想要這個。',
+          zhCN: '我不想要这个。'
+        }
+      },
+      {
+        id: 'pv3',
+        tagalog: 'Kailangan',
+        english: 'Need',
+        zhTW: '需要',
+        zhCN: '需要',
+        example: {
+          tagalog: 'Kailangan ko ng tulong.',
+          english: 'I need help.',
+          zhTW: '我需要幫助。',
+          zhCN: '我需要帮助。'
+        }
+      },
+      {
+        id: 'pv4',
+        tagalog: 'Pwede',
+        english: 'Can / Allowed',
+        zhTW: '可以',
+        zhCN: '可以',
+        example: {
+          tagalog: 'Pwede ba?',
+          english: 'Is it allowed?',
+          zhTW: '可以嗎？',
+          zhCN: '可以吗？'
+        }
+      }
+    ]
+  },
+  {
+    id: 'question-words',
+    title: 'Common Question Words',
+    titleKey: 'topics.question-words',
+    cards: [
+      {
+        id: 'qw1',
+        tagalog: 'Ano',
+        english: 'What',
+        zhTW: '什麼',
+        zhCN: '什么',
+        example: {
+          tagalog: 'Ano ang gusto mo?',
+          english: 'What do you want?',
+          zhTW: '你想要什麼？',
+          zhCN: '你想要什么？'
+        }
+      },
+      {
+        id: 'qw2',
+        tagalog: 'Sino',
+        english: 'Who',
+        zhTW: '誰',
+        zhCN: '谁',
+        example: {
+          tagalog: 'Sino siya?',
+          english: 'Who is he/she?',
+          zhTW: '他/她是誰？',
+          zhCN: '他/她是谁？'
+        }
+      },
+      {
+        id: 'qw3',
+        tagalog: 'Saan',
+        english: 'Where',
+        zhTW: '哪裡',
+        zhCN: '哪里',
+        example: {
+          tagalog: 'Saan ka pupunta?',
+          english: 'Where are you going?',
+          zhTW: '你要去哪裡？',
+          zhCN: '你要去哪里？'
+        }
+      },
+      {
+        id: 'qw4',
+        tagalog: 'Kailan',
+        english: 'When',
+        zhTW: '什麼時候',
+        zhCN: '什么时候',
+        example: {
+          tagalog: 'Kailan ang kaarawan mo?',
+          english: 'When is your birthday?',
+          zhTW: '你的生日是什麼時候？',
+          zhCN: '你的生日是什么时候？'
+        }
+      },
+      {
+        id: 'qw5',
+        tagalog: 'Paano',
+        english: 'How',
+        zhTW: '怎麼',
+        zhCN: '怎么',
+        example: {
+          tagalog: 'Paano pumunta doon?',
+          english: 'How to go there?',
+          zhTW: '怎麼去那裡？',
+          zhCN: '怎么去那里？'
+        }
+      },
+      {
+        id: 'qw6',
+        tagalog: 'Bakit',
+        english: 'Why',
+        zhTW: '為什麼',
+        zhCN: '为什么',
+        example: {
+          tagalog: 'Bakit ka malungkot?',
+          english: 'Why are you sad?',
+          zhTW: '你為什麼難過？',
+          zhCN: '你为什么难过？'
+        }
+      },
+      {
+        id: 'qw7',
+        tagalog: 'Nasaan',
+        english: 'Where is (object/person)?',
+        zhTW: '...在哪裡？',
+        zhCN: '...在哪里？',
+        example: {
+          tagalog: 'Nasaan ang susi?',
+          english: 'Where is the key?',
+          zhTW: '鑰匙在哪裡？',
+          zhCN: '钥匙在哪里？'
+        }
+      }
+    ]
+  },
+  {
+    id: 'connectors',
+    title: 'Connector Particles',
+    titleKey: 'topics.connectors',
+    cards: [
+      {
+        id: 'con1',
+        tagalog: 'Pero',
+        english: 'But',
+        zhTW: '但是',
+        zhCN: '但是',
+        example: {
+          tagalog: 'Gusto ko, pero wala akong pera.',
+          english: 'I want to, but I have no money.',
+          zhTW: '我想，但是我沒錢。',
+          zhCN: '我想，但是我没钱。'
+        }
+      },
+      {
+        id: 'con2',
+        tagalog: 'Kasi',
+        english: 'Because',
+        zhTW: '因為',
+        zhCN: '因为',
+        example: {
+          tagalog: 'Kumain ako kasi gutom ako.',
+          english: 'I ate because I was hungry.',
+          zhTW: '我吃了，因為我餓了。',
+          zhCN: '我吃了，因为我饿了。'
+        }
+      },
+      {
+        id: 'con3',
+        tagalog: 'Dahil',
+        english: 'Because of',
+        zhTW: '由於',
+        zhCN: '由于',
+        example: {
+          tagalog: 'Masaya ako dahil sa iyo.',
+          english: 'I am happy because of you.',
+          zhTW: '因為你，我很快樂。',
+          zhCN: '因为你，我很快乐。'
+        }
+      },
+      {
+        id: 'con4',
+        tagalog: 'Kung',
+        english: 'If',
+        zhTW: '如果',
+        zhCN: '如果',
+        example: {
+          tagalog: 'Kung aalis ka, sasama ako.',
+          english: 'If you leave, I will come with you.',
+          zhTW: '如果你要走，我會跟你一起。',
+          zhCN: '如果你要走，我会跟你一起。'
+        }
+      },
+      {
+        id: 'con5',
+        tagalog: 'Kaya',
+        english: 'That\'s why / So',
+        zhTW: '所以',
+        zhCN: '所以',
+        example: {
+          tagalog: 'Umuulan, kaya hindi ako lumabas.',
+          english: 'It was raining, so I didn\'t go out.',
+          zhTW: '下雨了，所以我沒出門。',
+          zhCN: '下雨了，所以我没出门。'
+        }
+      },
+      {
+        id: 'con6',
+        tagalog: 'Pala',
+        english: 'Oh, actually / realization',
+        zhTW: '原來',
+        zhCN: '原来',
+        example: {
+          tagalog: 'Ikaw pala!',
+          english: 'Oh, it\'s you!',
+          zhTW: '原來是你！',
+          zhCN: '原来是你！'
+        }
+      }
+    ]
   }
 ];
