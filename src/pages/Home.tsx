@@ -48,13 +48,13 @@ const Home: React.FC = () => {
               </IonButtons>
             </IonToolbar>
           </IonHeader>
-          <IonContent className="ion-padding">
+          <div className="ion-padding">
             <IonText>
               <p><strong>Build Time:</strong> {buildDate}</p>
               <p><strong>Commit Hash:</strong> {__BUILD_INFO__.hash}</p>
               <p><strong>Message:</strong><br/>{__BUILD_INFO__.message}</p>
             </IonText>
-          </IonContent>
+          </div>
         </IonModal>
         <IonHeader collapse="condense">
           <IonToolbar>
