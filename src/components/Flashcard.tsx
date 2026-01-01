@@ -19,10 +19,44 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english }) => {
     setIsPlaying(true);
 
     try {
+      // Check for Google Cloud API Key
+      const apiKey = import.meta.env.VITE_GOOGLE_CLOUD_API_KEY;
+      
+      if (apiKey && lang === 'tl-PH') {
+        try {
+          const response = await fetch(`https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              input: { text },
+              voice: { languageCode: 'fil-PH', name: 'fil-PH-Standard-A' },
+              audioConfig: { audioEncoding: 'MP3' },
+            }),
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            if (data.audioContent) {
+              const audio = new Audio(`data:audio/mp3;base64,${data.audioContent}`);
+              await new Promise<void>((resolve, reject) => {
+                audio.onended = () => resolve();
+                audio.onerror = () => reject('Audio playback failed');
+                audio.play().catch(reject);
+              });
+              return;
+            }
+          }
+        } catch (e) {
+          console.warn('Google Cloud TTS failed, falling back', e);
+        }
+      }
+
       // Try Google Translate TTS API first for better pronunciation
-      // Use 'tl-PH' for Tagalog to explicitly request Philippines accent if supported
+      // Use 'fil-PH' for Tagalog to match Google Cloud voice code
       // Use 'gtx' client which often provides better quality/stability
-      const googleLang = lang === 'tl-PH' ? 'tl-PH' : 'en-US';
+      const googleLang = lang === 'tl-PH' ? 'fil-PH' : 'en-US';
       const audioUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=gtx&tl=${googleLang}&q=${encodeURIComponent(text)}`;
       
       const audio = new Audio(audioUrl);
