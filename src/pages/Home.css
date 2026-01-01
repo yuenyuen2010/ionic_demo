@@ -39,14 +39,15 @@ ion-item p {
   color: var(--ion-color-medium);
 }
 
-h2 {
+/* Scoped generic headers to not break other components */
+.ion-page h2 {
   font-weight: 700;
   color: var(--ion-color-dark);
   letter-spacing: -0.025em;
   margin-bottom: 0.5rem;
 }
 
-p {
+.ion-page p {
   color: var(--ion-color-medium);
   line-height: 1.5;
 }
