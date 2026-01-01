@@ -33,5 +33,13 @@
   "flashcard": {
     "tapToSeeTranslation": "Tap to see translation",
     "tapToSeeTagalog": "Tap to see Tagalog"
+  },
+  "topics": {
+    "greetings": "Greetings",
+    "numbers": "Numbers",
+    "common-phrases": "Common Phrases",
+    "family": "Family",
+    "colors": "Colors",
+    "food": "Food"
   }
 }

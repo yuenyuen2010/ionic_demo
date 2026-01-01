@@ -193,7 +193,7 @@ const Home: React.FC = () => {
             >
               <IonIcon icon={bookOutline} slot="start" color="primary" />
               <IonLabel>
-                <h3>{category.title}</h3>
+                <h3>{t(category.titleKey)}</h3>
                 <p>{t('home.cardsCount', { count: category.cards.length })}</p>
               </IonLabel>
               <IonIcon icon={chevronForwardOutline} slot="end" />

@@ -7,6 +7,7 @@ export interface Flashcard {
 export interface Category {
   id: string;
   title: string;
+  titleKey: string; // Add titleKey
   cards: Flashcard[];
 }
 
@@ -14,6 +15,7 @@ export const lessons: Category[] = [
   {
     id: 'greetings',
     title: 'Greetings',
+    titleKey: 'topics.greetings',
     cards: [
       { id: '1', tagalog: 'Kumusta?', english: 'How are you?' },
       { id: '2', tagalog: 'Mabuti', english: 'Fine / Good' },
@@ -27,6 +29,7 @@ export const lessons: Category[] = [
   {
     id: 'numbers',
     title: 'Numbers',
+    titleKey: 'topics.numbers',
     cards: [
       { id: 'n1', tagalog: 'Isa', english: 'One' },
       { id: 'n2', tagalog: 'Dalawa', english: 'Two' },
@@ -38,6 +41,7 @@ export const lessons: Category[] = [
   {
     id: 'common-phrases',
     title: 'Common Phrases',
+    titleKey: 'topics.common-phrases',
     cards: [
       { id: 'c1', tagalog: 'Opo / Oo', english: 'Yes' },
       { id: 'c2', tagalog: 'Hindi', english: 'No' },
@@ -49,6 +53,7 @@ export const lessons: Category[] = [
   {
     id: 'family',
     title: 'Family',
+    titleKey: 'topics.family',
     cards: [
       { id: 'f1', tagalog: 'Tatay', english: 'Father' },
       { id: 'f2', tagalog: 'Nanay', english: 'Mother' },
@@ -60,6 +65,7 @@ export const lessons: Category[] = [
   {
     id: 'colors',
     title: 'Colors',
+    titleKey: 'topics.colors',
     cards: [
       { id: 'col1', tagalog: 'Pula', english: 'Red' },
       { id: 'col2', tagalog: 'Asul', english: 'Blue' },
@@ -71,6 +77,7 @@ export const lessons: Category[] = [
   {
     id: 'food',
     title: 'Food',
+    titleKey: 'topics.food',
     cards: [
       { id: 'fd1', tagalog: 'Kanin', english: 'Rice' },
       { id: 'fd2', tagalog: 'Tubig', english: 'Water' },
@@ -80,4 +87,3 @@ export const lessons: Category[] = [
     ]
   }
 ];
-

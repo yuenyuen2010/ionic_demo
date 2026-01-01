@@ -60,7 +60,7 @@ const Lesson: React.FC = () => {
           <IonButtons slot="start">
             <IonBackButton defaultHref="/home" />
           </IonButtons>
-          <IonTitle>{category.title}</IonTitle>
+          <IonTitle>{t(category.titleKey)}</IonTitle>
         </IonToolbar>
       </IonHeader>
 

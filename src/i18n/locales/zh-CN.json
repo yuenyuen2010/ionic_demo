@@ -33,5 +33,13 @@
   "flashcard": {
     "tapToSeeTranslation": "点击查看翻译",
     "tapToSeeTagalog": "点击查看他加禄语"
+  },
+  "topics": {
+    "greetings": "问候",
+    "numbers": "数字",
+    "common-phrases": "常用短语",
+    "family": "家庭",
+    "colors": "颜色",
+    "food": "食物"
   }
 }

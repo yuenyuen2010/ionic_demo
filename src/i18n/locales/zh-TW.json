@@ -33,5 +33,13 @@
   "flashcard": {
     "tapToSeeTranslation": "點擊查看翻譯",
     "tapToSeeTagalog": "點擊查看他加祿語"
+  },
+  "topics": {
+    "greetings": "問候",
+    "numbers": "數字",
+    "common-phrases": "常用短語",
+    "family": "家庭",
+    "colors": "顏色",
+    "food": "食物"
   }
 }
