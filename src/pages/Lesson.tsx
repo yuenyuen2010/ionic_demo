@@ -1,13 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import { 
   IonContent, 
-  IonHeader, 
   IonPage, 
-  IonTitle, 
-  IonToolbar, 
-  IonButtons, 
-  IonBackButton, 
   IonFooter, 
+  IonToolbar, 
   IonButton, 
   IonIcon,
   IonText
@@ -17,6 +13,7 @@ import { arrowBackOutline, arrowForwardOutline, refreshOutline } from 'ionicons/
 import { useTranslation } from 'react-i18next';
 import { lessons } from '../data/lessons';
 import Flashcard from '../components/Flashcard';
+import CommonHeader from '../components/CommonHeader';
 import './Lesson.css';
 
 const Lesson: React.FC = () => {
@@ -55,14 +52,11 @@ const Lesson: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar color="primary">
-          <IonButtons slot="start">
-            <IonBackButton defaultHref="/home" />
-          </IonButtons>
-          <IonTitle>{t(category.titleKey)}</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <CommonHeader 
+        title={t(category.titleKey)} 
+        showBackButton={true} 
+        defaultHref="/home" 
+      />
 
       <IonContent className="ion-padding">
         <div className="progress-indicator">
