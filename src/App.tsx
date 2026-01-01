@@ -1,6 +1,6 @@
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
+import { IonReactHashRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import Lesson from './pages/Lesson';
 
@@ -38,7 +38,8 @@ setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-    <IonReactRouter>
+    {/* @ts-ignore */}
+    <IonReactHashRouter>
       {/* @ts-ignore */}
       <IonRouterOutlet>
         {/* @ts-ignore */}
@@ -57,7 +58,7 @@ const App: React.FC = () => (
           <Redirect to="/home" />
         </Route>
       </IonRouterOutlet>
-    </IonReactRouter>
+    </IonReactHashRouter>
   </IonApp>
 );
 
