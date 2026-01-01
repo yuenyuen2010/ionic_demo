@@ -23,9 +23,7 @@ const Home: React.FC = () => {
     const buildDate = new Date(__BUILD_INFO__.time).toLocaleString();
     presentAlert({
       header: 'Build Info',
-      message: `Build Time: ${buildDate}
-Commit Hash: ${__BUILD_INFO__.hash}
-Message: ${__BUILD_INFO__.message}`,
+      message: `Build Time: ${buildDate}\nCommit Hash: ${__BUILD_INFO__.hash}\nMessage: ${__BUILD_INFO__.message}`,
       buttons: ['OK'],
     });
   };
