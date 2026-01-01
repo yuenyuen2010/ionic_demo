@@ -1,24 +1,42 @@
 .progress-indicator {
   text-align: center;
-  margin-bottom: 10px;
-  font-weight: bold;
+  margin-bottom: 24px;
+  font-weight: 600;
   color: var(--ion-color-medium);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
 }
 
 .instruction {
   text-align: center;
   color: var(--ion-color-medium);
   font-style: italic;
-  margin-top: 20px;
+  margin-top: 32px;
+  opacity: 0.8;
+  font-size: 0.9rem;
 }
 
 .navigation-buttons {
   display: flex;
-  justify-content: space-around;
-  padding: 10px;
+  justify-content: space-between;
+  padding: 16px 24px;
+  gap: 16px;
+  background: #ffffff;
+  border-top: 1px solid rgba(0,0,0,0.05);
 }
 
 .navigation-buttons ion-button {
-  width: 45%;
+  flex: 1;
+  margin: 0;
+  --border-radius: 8px;
+  font-weight: 600;
+  --box-shadow: none;
+  height: 44px;
 }
 
+/* Ensure footer blends seamlessly */
+ion-footer ion-toolbar {
+  --background: #ffffff;
+  --border-width: 0;
+}

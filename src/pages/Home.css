@@ -11,4 +11,42 @@ ion-modal.build-info-modal::part(content) {
   position: relative;
   display: block;
   contain: content;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Enterprise List Styling */
+ion-list {
+  background: transparent !important;
+  padding-top: 10px;
+}
+
+ion-item {
+  --background: #ffffff;
+  --border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --border-width: 0;
+  --inner-padding-end: 16px;
+}
+
+ion-item h3 {
+  font-weight: 600;
+  color: var(--ion-color-dark);
+  font-size: 1.1rem;
+}
+
+ion-item p {
+  color: var(--ion-color-medium);
+}
+
+h2 {
+  font-weight: 700;
+  color: var(--ion-color-dark);
+  letter-spacing: -0.025em;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: var(--ion-color-medium);
+  line-height: 1.5;
 }
