@@ -38,8 +38,7 @@ const Home: React.FC = () => {
         <IonModal
           isOpen={showModal}
           onDidDismiss={() => setShowModal(false)}
-          initialBreakpoint={0.5}
-          breakpoints={[0, 0.5]}
+          className="build-info-modal"
         >
           <IonHeader>
             <IonToolbar>

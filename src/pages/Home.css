@@ -1,0 +1,14 @@
+ion-modal.build-info-modal {
+  --height: auto;
+  --width: 90%;
+  --max-width: 500px;
+  --border-radius: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-modal.build-info-modal::part(content) {
+  position: relative;
+  display: block;
+  contain: content;
+}
