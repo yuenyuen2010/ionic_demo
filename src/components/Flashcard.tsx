@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { IonIcon, IonButton } from '@ionic/react';
+import React, { useState } from 'react';
+import { IonIcon, IonButton, IonSpinner } from '@ionic/react';
 import { volumeHighOutline } from 'ionicons/icons';
 import './Flashcard.css';
 
@@ -10,61 +10,45 @@ interface FlashcardProps {
 
 const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english }) => {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  useEffect(() => {
-    const loadVoices = () => {
-      const availableVoices = window.speechSynthesis.getVoices();
-      setVoices(availableVoices);
-    };
-
-    loadVoices();
-    
-    if (window.speechSynthesis.onvoiceschanged !== undefined) {
-      window.speechSynthesis.onvoiceschanged = loadVoices;
-    }
-  }, []);
-
-  const playAudio = (event: React.MouseEvent, text: string, lang: string) => {
+  const playAudio = async (event: React.MouseEvent, text: string, lang: string) => {
     event.stopPropagation();
-    if ('speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(text);
+    
+    if (isPlaying) return;
+    setIsPlaying(true);
+
+    try {
+      // Try Google Translate TTS API first for better pronunciation
+      const googleLang = lang === 'tl-PH' ? 'tl' : 'en';
+      const audioUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${googleLang}&q=${encodeURIComponent(text)}`;
       
-      // Improved voice selection logic
-      let voice: SpeechSynthesisVoice | undefined;
+      const audio = new Audio(audioUrl);
+      
+      await new Promise<void>((resolve, reject) => {
+        audio.onended = () => resolve();
+        audio.onerror = () => reject('Audio playback failed');
+        audio.play().catch(reject);
+      });
 
-      if (lang === 'tl-PH') {
-        // Priority search for Tagalog/Filipino voices
-        // 1. Exact match for 'tl-PH' or 'fil-PH'
-        voice = voices.find(v => v.lang === 'tl-PH' || v.lang === 'fil-PH');
+    } catch (error) {
+      console.warn('Google TTS failed, falling back to Web Speech API', error);
+      
+      // Fallback to Web Speech API
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang;
+        utterance.rate = 0.9;
         
-        // 2. Loose match for 'tl' or 'fil' language codes
-        if (!voice) {
-          voice = voices.find(v => v.lang.startsWith('tl') || v.lang.startsWith('fil'));
-        }
-        
-        // 3. Match by name (e.g., "Google Tagalog", "Microsoft Filipino")
-        if (!voice) {
-          voice = voices.find(v => 
-            v.name.toLowerCase().includes('tagalog') || 
-            v.name.toLowerCase().includes('filipino')
-          );
-        }
-      } else {
-        // Standard selection for English
-        voice = voices.find(v => v.lang === lang);
+        await new Promise<void>((resolve) => {
+          utterance.onend = () => resolve();
+          utterance.onerror = () => resolve(); // Resolve even on error to reset state
+          window.speechSynthesis.speak(utterance);
+        });
       }
-
-      if (voice) {
-        utterance.voice = voice;
-        utterance.lang = voice.lang; // Ensure lang matches voice
-      } else {
-        utterance.lang = lang; // Fallback to requested lang
-      }
-
-      utterance.rate = 0.9; // Slightly slower for clarity
-      window.speechSynthesis.speak(utterance);
+    } finally {
+      setIsPlaying(false);
     }
   };
 
@@ -79,8 +63,9 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english }) => {
             fill="clear" 
             className="audio-btn" 
             onClick={(e) => playAudio(e, tagalog, 'tl-PH')}
+            disabled={isPlaying}
           >
-            <IonIcon icon={volumeHighOutline} slot="icon-only" color="light" />
+             {isPlaying ? <IonSpinner name="dots" color="light" /> : <IonIcon icon={volumeHighOutline} slot="icon-only" color="light" />}
           </IonButton>
           <h2>{tagalog}</h2>
           <p>Tap to see translation</p>
@@ -90,8 +75,9 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english }) => {
             fill="clear" 
             className="audio-btn" 
             onClick={(e) => playAudio(e, english, 'en-US')}
+            disabled={isPlaying}
           >
-            <IonIcon icon={volumeHighOutline} slot="icon-only" color="light" />
+             {isPlaying ? <IonSpinner name="dots" color="light" /> : <IonIcon icon={volumeHighOutline} slot="icon-only" color="light" />}
           </IonButton>
           <h2>{english}</h2>
           <p>Tap to see Tagalog</p>
