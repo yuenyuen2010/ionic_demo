@@ -20,8 +20,10 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english }) => {
 
     try {
       // Try Google Translate TTS API first for better pronunciation
-      const googleLang = lang === 'tl-PH' ? 'tl' : 'en';
-      const audioUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${googleLang}&q=${encodeURIComponent(text)}`;
+      // Use 'tl-PH' for Tagalog to explicitly request Philippines accent if supported
+      // Use 'gtx' client which often provides better quality/stability
+      const googleLang = lang === 'tl-PH' ? 'tl-PH' : 'en-US';
+      const audioUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=gtx&tl=${googleLang}&q=${encodeURIComponent(text)}`;
       
       const audio = new Audio(audioUrl);
       
@@ -38,6 +40,14 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english }) => {
       if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(text);
+        
+        // Try to find a specific native voice for fallback
+        if (lang === 'tl-PH') {
+           const voices = window.speechSynthesis.getVoices();
+           const nativeVoice = voices.find(v => v.lang === 'tl-PH' || v.lang === 'fil-PH' || v.name.includes('Tagalog') || v.name.includes('Filipino'));
+           if (nativeVoice) utterance.voice = nativeVoice;
+        }
+
         utterance.lang = lang;
         utterance.rate = 0.9;
         
