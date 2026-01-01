@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactHashRouter } from '@ionic/react-router';
@@ -36,30 +37,38 @@ import './theme/variables.css';
 
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
-    {/* @ts-ignore */}
-    <IonReactHashRouter>
+const App: React.FC = () => {
+  useEffect(() => {
+    // Initialize theme from local storage
+    const savedTheme = localStorage.getItem('app-theme') || 'theme-teal';
+    document.body.className = savedTheme;
+  }, []);
+
+  return (
+    <IonApp>
       {/* @ts-ignore */}
-      <IonRouterOutlet>
+      <IonReactHashRouter>
         {/* @ts-ignore */}
-        <Route exact path="/home">
+        <IonRouterOutlet>
           {/* @ts-ignore */}
-          <Home />
-        </Route>
-        {/* @ts-ignore */}
-        <Route exact path="/lesson/:id">
+          <Route exact path="/home">
+            {/* @ts-ignore */}
+            <Home />
+          </Route>
           {/* @ts-ignore */}
-          <Lesson />
-        </Route>
-        {/* @ts-ignore */}
-        <Route exact path="/">
+          <Route exact path="/lesson/:id">
+            {/* @ts-ignore */}
+            <Lesson />
+          </Route>
           {/* @ts-ignore */}
-          <Redirect to="/home" />
-        </Route>
-      </IonRouterOutlet>
-    </IonReactHashRouter>
-  </IonApp>
-);
+          <Route exact path="/">
+            {/* @ts-ignore */}
+            <Redirect to="/home" />
+          </Route>
+        </IonRouterOutlet>
+      </IonReactHashRouter>
+    </IonApp>
+  );
+};
 
 export default App;
