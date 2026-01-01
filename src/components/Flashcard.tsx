@@ -4,14 +4,22 @@ import { volumeHighOutline } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
 import './Flashcard.css';
 
+interface Example {
+  tagalog: string;
+  english: string;
+  zhTW: string;
+  zhCN: string;
+}
+
 interface FlashcardProps {
   tagalog: string;
   english: string;
   zhTW?: string;
   zhCN?: string;
+  example?: Example;
 }
 
-const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english, zhTW, zhCN }) => {
+const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english, zhTW, zhCN, example }) => {
   const { t, i18n } = useTranslation();
   const [isFlipped, setIsFlipped] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -19,11 +27,11 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english, zhTW, zhCN }) =
   const getTranslation = () => {
     switch (i18n.language) {
       case 'zh-TW':
-        return { text: zhTW || english, lang: 'zh-TW' };
+        return { text: zhTW || english, lang: 'zh-TW', example: example?.zhTW || example?.english };
       case 'zh-CN':
-        return { text: zhCN || english, lang: 'zh-CN' };
+        return { text: zhCN || english, lang: 'zh-CN', example: example?.zhCN || example?.english };
       default:
-        return { text: english, lang: 'en-US' };
+        return { text: english, lang: 'en-US', example: example?.english };
     }
   };
 
@@ -72,11 +80,8 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english, zhTW, zhCN }) =
       }
 
       // Try Google Translate TTS API first for better pronunciation
-      // Mapping for Google Translate TTS
       let googleLang = lang;
       if (lang === 'tl-PH') googleLang = 'tl';
-      // zh-TW and zh-CN are usually supported as is or mapped. 
-      // 'zh-TW' -> 'zh-TW', 'zh-CN' -> 'zh-CN' usually works with google translate tts client=gtx
 
       const audioUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=gtx&tl=${googleLang}&q=${encodeURIComponent(text)}`;
       
@@ -108,7 +113,7 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english, zhTW, zhCN }) =
         
         await new Promise<void>((resolve) => {
           utterance.onend = () => resolve();
-          utterance.onerror = () => resolve(); // Resolve even on error to reset state
+          utterance.onerror = () => resolve(); 
           window.speechSynthesis.speak(utterance);
         });
       }
@@ -145,7 +150,19 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english, zhTW, zhCN }) =
              {isPlaying ? <IonSpinner name="dots" color="light" /> : <IonIcon icon={volumeHighOutline} slot="icon-only" color="light" />}
           </IonButton>
           <h2>{translation.text}</h2>
-          <p>{t('flashcard.tapToSeeTagalog')}</p>
+          
+          {example && (
+            <div className="example-sentence" style={{ marginTop: '20px', borderTop: '1px solid rgba(255,255,255,0.3)', paddingTop: '10px' }}>
+              <p style={{ fontSize: '0.9rem', marginBottom: '4px', fontStyle: 'italic', opacity: 0.9 }}>
+                {example.tagalog}
+              </p>
+              <p style={{ fontSize: '0.85rem', opacity: 0.8 }}>
+                {translation.example}
+              </p>
+            </div>
+          )}
+          
+          {!example && <p>{t('flashcard.tapToSeeTagalog')}</p>}
         </div>
       </div>
     </div>

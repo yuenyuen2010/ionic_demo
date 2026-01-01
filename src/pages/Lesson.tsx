@@ -69,6 +69,7 @@ const Lesson: React.FC = () => {
           english={currentCard.english}
           zhTW={currentCard.zhTW}
           zhCN={currentCard.zhCN}
+          example={currentCard.example}
         />
 
         <div className="instruction">
