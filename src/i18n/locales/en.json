@@ -25,6 +25,10 @@
       "green": "Calm Green"
     }
   },
+  "bookmarks": {
+    "title": "Saved Words",
+    "empty": "No saved words yet."
+  },
   "lesson": {
     "categoryNotFound": "Category not found",
     "goBack": "Go Back",

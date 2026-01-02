@@ -25,6 +25,10 @@
       "green": "平静绿色"
     }
   },
+  "bookmarks": {
+    "title": "已保存单词",
+    "empty": "暂无保存的单词。"
+  },
   "lesson": {
     "categoryNotFound": "找不到类别",
     "goBack": "返回",

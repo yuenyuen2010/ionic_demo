@@ -23,7 +23,8 @@ import {
   createOutline,
   homeOutline,
   peopleOutline,
-  chatbubblesOutline
+  chatbubblesOutline,
+  bookmarkOutline
 } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
 import { lessons } from '../data/lessons';
@@ -128,6 +129,12 @@ const Home: React.FC = () => {
           <IonButton routerLink="/review" expand="block" color="warning" className="ion-margin-bottom">
             <IonIcon icon={timeOutline} slot="start" />
             {t('home.reviewDue')} ({t('home.dueCount', { count: dueCount })})
+          </IonButton>
+
+          {/* Bookmarks Button */}
+          <IonButton routerLink="/lesson/bookmarks" expand="block" color="tertiary" className="ion-margin-bottom">
+            <IonIcon icon={bookmarkOutline} slot="start" />
+            {t('bookmarks.title')}
           </IonButton>
 
           <h2>{t('home.chooseTopic')}</h2>

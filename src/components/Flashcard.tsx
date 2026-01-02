@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { IonIcon, IonButton, IonSpinner } from '@ionic/react';
-import { volumeHighOutline } from 'ionicons/icons';
+import { volumeHighOutline, bookmarkOutline, bookmark } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
+import { isBookmarked, toggleBookmark } from '../utils/bookmarks';
 import './Flashcard.css';
 
 interface Example {
@@ -12,6 +13,7 @@ interface Example {
 }
 
 interface FlashcardProps {
+  id: string;
   tagalog: string;
   english: string;
   zhTW?: string;
@@ -24,7 +26,7 @@ interface FlashcardProps {
  * Displays a card with a front (Tagalog) and back (Translation + Example).
  * Supports flipping animation and text-to-speech audio playback.
  */
-const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english, zhTW, zhCN, example }) => {
+const Flashcard: React.FC<FlashcardProps> = ({ id, tagalog, english, zhTW, zhCN, example }) => {
   const { t, i18n } = useTranslation();
 
   // State to track if the card is currently flipped
@@ -32,6 +34,19 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english, zhTW, zhCN, exa
 
   // State to track if audio is currently playing
   const [isPlaying, setIsPlaying] = useState(false);
+
+  // State to track if the card is bookmarked
+  const [isBookmarkedState, setIsBookmarkedState] = useState(false);
+
+  useEffect(() => {
+    setIsBookmarkedState(isBookmarked(id));
+  }, [id]);
+
+  const handleBookmark = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const newState = toggleBookmark(id);
+    setIsBookmarkedState(newState);
+  };
 
   /**
    * Determines the appropriate translation and language code based on the current app language.
@@ -162,6 +177,14 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english, zhTW, zhCN, exa
           >
              {isPlaying ? <IonSpinner name="dots" color="primary" /> : <IonIcon icon={volumeHighOutline} slot="icon-only" color="primary" />}
           </IonButton>
+          <IonButton
+            fill="clear"
+            className="bookmark-btn"
+            onClick={handleBookmark}
+            style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 10 }}
+          >
+            <IonIcon icon={isBookmarkedState ? bookmark : bookmarkOutline} slot="icon-only" color="primary" />
+          </IonButton>
           <h2>{tagalog}</h2>
           <p>{t('flashcard.tapToSeeTranslation')}</p>
         </div>
@@ -175,6 +198,14 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english, zhTW, zhCN, exa
             disabled={isPlaying}
           >
              {isPlaying ? <IonSpinner name="dots" color="light" /> : <IonIcon icon={volumeHighOutline} slot="icon-only" color="light" />}
+          </IonButton>
+          <IonButton
+            fill="clear"
+            className="bookmark-btn"
+            onClick={handleBookmark}
+            style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 10 }}
+          >
+            <IonIcon icon={isBookmarkedState ? bookmark : bookmarkOutline} slot="icon-only" color="light" />
           </IonButton>
           <h2>{translation.text}</h2>
           
