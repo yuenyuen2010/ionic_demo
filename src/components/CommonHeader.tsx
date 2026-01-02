@@ -16,7 +16,7 @@ import {
   IonRadio,
   IonText
 } from '@ionic/react';
-import { settingsOutline, informationCircleOutline } from 'ionicons/icons';
+import { settingsOutline, informationCircleOutline, chatbubblesOutline } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
 
 interface CommonHeaderProps {
@@ -71,7 +71,12 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
               <IonBackButton defaultHref={defaultHref} />
             </IonButtons>
           )}
-          <IonTitle>{title}</IonTitle>
+          <IonTitle>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <IonIcon icon={chatbubblesOutline} />
+              {title}
+            </div>
+          </IonTitle>
           <IonButtons slot="end">
             <IonButton 
               onClick={() => handleLanguageChange('en')} 
