@@ -3126,5 +3126,293 @@ export const lessons: Category[] = [
         }
       }
     ]
+  },
+  {
+    id: 'love-dating',
+    title: 'Love & Dating (The "Kilig" Pack)',
+    titleKey: 'topics.love-dating',
+    cards: [
+      {
+        id: 'luv1',
+        tagalog: 'Crush kita',
+        english: 'I have a crush on you',
+        zhTW: '我暗戀你',
+        zhCN: '我暗恋你',
+        example: {
+          tagalog: 'Alam mo ba, crush kita?',
+          english: 'Do you know, I have a crush on you?',
+          zhTW: '你知道嗎，我暗戀你？',
+          zhCN: '你知道吗，我暗恋你？'
+        }
+      },
+      {
+        id: 'luv2',
+        tagalog: 'Kilig',
+        english: 'Romantic excitement / butterflies',
+        zhTW: '心動 / 小鹿亂撞',
+        zhCN: '心动 / 小鹿乱撞',
+        example: {
+          tagalog: 'Kinikilig ako sa iyo.',
+          english: 'I\'m feeling giddy because of you.',
+          zhTW: '因為你，我感到心動。',
+          zhCN: '因为你，我感到心动。'
+        }
+      },
+      {
+        id: 'luv3',
+        tagalog: 'Miss na kita',
+        english: 'I miss you already',
+        zhTW: '我想你了',
+        zhCN: '我想你了',
+        example: {
+          tagalog: 'Umuwi ka na, miss na kita.',
+          english: 'Come home now, I miss you.',
+          zhTW: '快回家吧，我想你了。',
+          zhCN: '快回家吧，我想你了。'
+        }
+      },
+      {
+        id: 'luv4',
+        tagalog: 'Single ka ba?',
+        english: 'Are you single?',
+        zhTW: '你單身嗎？',
+        zhCN: '你单身吗？',
+        example: {
+          tagalog: 'Single ka ba o may boyfriend na?',
+          english: 'Are you single or do you have a boyfriend?',
+          zhTW: '你單身還是有男朋友了？',
+          zhCN: '你单身还是有男朋友了？'
+        }
+      },
+      {
+        id: 'luv5',
+        tagalog: 'Date tayo?',
+        english: 'Let\'s go on a date?',
+        zhTW: '我們去約會吧？',
+        zhCN: '我们去约会吧？',
+        example: {
+          tagalog: 'Pwede ba, date tayo bukas?',
+          english: 'Is it okay, let\'s go on a date tomorrow?',
+          zhTW: '可以嗎，我們明天去約會？',
+          zhCN: '可以吗，我们明天去约会？'
+        }
+      }
+    ]
+  },
+  {
+    id: 'conflict-reconciliation',
+    title: 'Conflict & Reconciliation (The "Tampo" Pack)',
+    titleKey: 'topics.conflict-reconciliation',
+    cards: [
+      {
+        id: 'confl1',
+        tagalog: 'Nagtatampo ka ba?',
+        english: 'Are you sulking/upset with me?',
+        zhTW: '你在生悶氣嗎？',
+        zhCN: '你在生闷气吗？',
+        example: {
+          tagalog: 'Bakit tahimik ka? Nagtatampo ka ba?',
+          english: 'Why are you quiet? Are you sulking?',
+          zhTW: '為什麼你這麼安靜？你在生悶氣嗎？',
+          zhCN: '为什么你这么安静？你在生闷气吗？'
+        }
+      },
+      {
+        id: 'confl2',
+        tagalog: 'Galit ka ba?',
+        english: 'Are you angry?',
+        zhTW: '你生氣了嗎？',
+        zhCN: '你生气了吗？',
+        example: {
+          tagalog: 'Galit ka ba sa akin?',
+          english: 'Are you angry with me?',
+          zhTW: '你在生我的氣嗎？',
+          zhCN: '你在生我的气吗？'
+        }
+      },
+      {
+        id: 'confl3',
+        tagalog: 'Bati na tayo',
+        english: 'Let\'s make up / Let\'s be friends again',
+        zhTW: '我們和好吧',
+        zhCN: '我们和好吧',
+        example: {
+          tagalog: 'Sige na, bati na tayo.',
+          english: 'Come on, let\'s make up.',
+          zhTW: '好了啦，我們和好吧。',
+          zhCN: '好了啦，我们和好吧。'
+        }
+      },
+      {
+        id: 'confl4',
+        tagalog: 'Sorry na',
+        english: 'I\'m sorry / Come on, forgive me',
+        zhTW: '對不起啦',
+        zhCN: '对不起啦',
+        example: {
+          tagalog: 'Sorry na, hindi ko sinasadya.',
+          english: 'I\'m sorry, I didn\'t mean it.',
+          zhTW: '對不起啦，我不是故意的。',
+          zhCN: '对不起啦，我不是故意的。'
+        }
+      },
+      {
+        id: 'confl5',
+        tagalog: 'Lambing',
+        english: 'Affection / Coaxing',
+        zhTW: '撒嬌 / 哄',
+        zhCN: '撒娇 / 哄',
+        example: {
+          tagalog: 'Kunting lambing lang, okay na siya.',
+          english: 'Just a little coaxing, he/she will be okay.',
+          zhTW: '只要稍微哄一下，他/她就會好了。',
+          zhCN: '只要稍微哄一下，他/她就会好了。'
+        }
+      }
+    ]
+  },
+  {
+    id: 'drinking-celebrations',
+    title: 'Drinking & Celebrations (The "Tagay" Pack)',
+    titleKey: 'topics.drinking-celebrations',
+    cards: [
+      {
+        id: 'drink1',
+        tagalog: 'Tagay!',
+        english: 'Cheers! / Your turn to drink',
+        zhTW: '乾杯！/ 換你喝了',
+        zhCN: '干杯！/ 换你喝了',
+        example: {
+          tagalog: 'Tagay na! Ikaw na ang iinom.',
+          english: 'Cheers! It\'s your turn to drink.',
+          zhTW: '乾杯！換你喝了。',
+          zhCN: '干杯！换你喝了。'
+        }
+      },
+      {
+        id: 'drink2',
+        tagalog: 'Pulutan',
+        english: 'Food eaten while drinking',
+        zhTW: '下酒菜',
+        zhCN: '下酒菜',
+        example: {
+          tagalog: 'Masarap ang sisig bilang pulutan.',
+          english: 'Sisig is delicious as food for drinking.',
+          zhTW: 'Sisig 很好吃，適合當下酒菜。',
+          zhCN: 'Sisig 很好吃，适合当下酒菜。'
+        }
+      },
+      {
+        id: 'drink3',
+        tagalog: 'Lasing na ako',
+        english: 'I\'m drunk already',
+        zhTW: '我醉了',
+        zhCN: '我醉了',
+        example: {
+          tagalog: 'Tama na, lasing na ako.',
+          english: 'Enough, I\'m drunk already.',
+          zhTW: '夠了，我已經醉了。',
+          zhCN: '够了，我已经醉了。'
+        }
+      },
+      {
+        id: 'drink4',
+        tagalog: 'Konti lang',
+        english: 'Just a little bit',
+        zhTW: '一點點就好',
+        zhCN: '一点点就好',
+        example: {
+          tagalog: 'Pahingi ng beer, konti lang.',
+          english: 'Give me beer, just a little bit.',
+          zhTW: '給我一點啤酒，一點點就好。',
+          zhCN: '给我一点啤酒，一点点就好。'
+        }
+      },
+      {
+        id: 'drink5',
+        tagalog: 'Maligayang Bati!',
+        english: 'Happy Birthday / Greetings!',
+        zhTW: '生日快樂！/ 祝賀！',
+        zhCN: '生日快乐！/ 祝贺！',
+        example: {
+          tagalog: 'Maligayang bati sa iyong kaarawan!',
+          english: 'Happy greetings on your birthday!',
+          zhTW: '祝你生日快樂！',
+          zhCN: '祝你生日快乐！'
+        }
+      }
+    ]
+  },
+  {
+    id: 'storytelling-connectors',
+    title: 'Storytelling Connectors (The "Kwento" Pack)',
+    titleKey: 'topics.storytelling-connectors',
+    cards: [
+      {
+        id: 'story1',
+        tagalog: 'Alam mo ba...',
+        english: 'Do you know... / Guess what...',
+        zhTW: '你知道嗎...',
+        zhCN: '你知道吗...',
+        example: {
+          tagalog: 'Alam mo ba ang nangyari kahapon?',
+          english: 'Do you know what happened yesterday?',
+          zhTW: '你知道昨天發生了什麼事嗎？',
+          zhCN: '你知道昨天发生了什么事吗？'
+        }
+      },
+      {
+        id: 'story2',
+        tagalog: 'Tapos...',
+        english: 'And then...',
+        zhTW: '然後...',
+        zhCN: '然后...',
+        example: {
+          tagalog: 'Kumain kami, tapos nanood ng sine.',
+          english: 'We ate, and then watched a movie.',
+          zhTW: '我們吃了飯，然後看了電影。',
+          zhCN: '我们吃了饭，然后看了电影。'
+        }
+      },
+      {
+        id: 'story3',
+        tagalog: 'Bigla...',
+        english: 'Suddenly...',
+        zhTW: '突然...',
+        zhCN: '突然...',
+        example: {
+          tagalog: 'Bigla siyang umalis.',
+          english: 'He/She suddenly left.',
+          zhTW: '他/她突然離開了。',
+          zhCN: '他/她突然离开了。'
+        }
+      },
+      {
+        id: 'story4',
+        tagalog: 'Punyeta',
+        english: 'Damn it! (Vulgar)',
+        zhTW: '該死！(粗俗)',
+        zhCN: '该死！(粗俗)',
+        example: {
+          tagalog: 'Punyeta! Nakalimutan ko ang susi.',
+          english: 'Damn it! I forgot the key.',
+          zhTW: '該死！我忘了鑰匙。',
+          zhCN: '该死！我忘了钥匙。'
+        }
+      },
+      {
+        id: 'story5',
+        tagalog: 'Di nga?',
+        english: 'For real? / No way?',
+        zhTW: '真的嗎？ / 不會吧？',
+        zhCN: '真的吗？ / 不会吧？',
+        example: {
+          tagalog: 'Nanalo siya? Di nga?',
+          english: 'He/She won? For real?',
+          zhTW: '他/她贏了？真的嗎？',
+          zhCN: '他/她赢了？真的吗？'
+        }
+      }
+    ]
   }
 ];
