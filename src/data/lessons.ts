@@ -2537,5 +2537,162 @@ export const lessons: Category[] = [
         }
       }
     ]
+  },
+  {
+    id: 'emotions-feelings',
+    title: 'Emotions & Feelings',
+    titleKey: 'topics.emotions-feelings',
+    cards: [
+      {
+        id: 'emo1',
+        tagalog: 'Masaya',
+        english: 'Happy',
+        zhTW: '快樂',
+        zhCN: '快乐',
+        example: {
+          tagalog: 'Masaya ako ngayon.',
+          english: 'I am happy today.',
+          zhTW: '我今天很快樂。',
+          zhCN: '我今天很快乐。'
+        }
+      },
+      {
+        id: 'emo2',
+        tagalog: 'Malungkot',
+        english: 'Sad',
+        zhTW: '難過',
+        zhCN: '难过',
+        example: {
+          tagalog: 'Bakit ka malungkot?',
+          english: 'Why are you sad?',
+          zhTW: '你為什麼難過？',
+          zhCN: '你为什么难过？'
+        }
+      },
+      {
+        id: 'emo3',
+        tagalog: 'Galit',
+        english: 'Angry',
+        zhTW: '生氣',
+        zhCN: '生气',
+        example: {
+          tagalog: 'Huwag kang galit.',
+          english: 'Don\'t be angry.',
+          zhTW: '不要生氣。',
+          zhCN: '不要生气。'
+        }
+      },
+      {
+        id: 'emo4',
+        tagalog: 'Nagugutom',
+        english: 'Hungry',
+        zhTW: '餓',
+        zhCN: '饿',
+        example: {
+          tagalog: 'Nagugutom na ako.',
+          english: 'I am getting hungry.',
+          zhTW: '我餓了。',
+          zhCN: '我饿了。'
+        }
+      },
+      {
+        id: 'emo5',
+        tagalog: 'Inaantok',
+        english: 'Sleepy',
+        zhTW: '想睡',
+        zhCN: '想睡',
+        example: {
+          tagalog: 'Inaantok ako sa klase.',
+          english: 'I am sleepy in class.',
+          zhTW: '我上課想睡覺。',
+          zhCN: '我上课想睡觉。'
+        }
+      },
+      {
+        id: 'emo6',
+        tagalog: 'Kilig',
+        english: 'Romantic excitement',
+        zhTW: '心動',
+        zhCN: '心动',
+        example: {
+          tagalog: 'Kinikilig ako sa kanila.',
+          english: 'I feel romantic excitement for them.',
+          zhTW: '我對他們感到心動。',
+          zhCN: '我对他们感到心动。'
+        }
+      }
+    ]
+  },
+  {
+    id: 'taglish-fillers',
+    title: 'Taglish Fillers (Conyo Starter Pack)',
+    titleKey: 'topics.taglish-fillers',
+    cards: [
+      {
+        id: 'tag1',
+        tagalog: 'Talaga?',
+        english: 'Really?',
+        zhTW: '真的嗎？',
+        zhCN: '真的吗？',
+        example: {
+          tagalog: 'Talaga? Hindi nga?',
+          english: 'Really? Is that so?',
+          zhTW: '真的嗎？不是吧？',
+          zhCN: '真的吗？不是吧？'
+        }
+      },
+      {
+        id: 'tag2',
+        tagalog: 'Grabe',
+        english: 'Wow / Extreme',
+        zhTW: '哇 / 太誇張',
+        zhCN: '哇 / 太夸张',
+        example: {
+          tagalog: 'Grabe ang init!',
+          english: 'The heat is extreme!',
+          zhTW: '熱得太誇張了！',
+          zhCN: '热得太夸张了！'
+        }
+      },
+      {
+        id: 'tag3',
+        tagalog: 'Siguro',
+        english: 'Maybe',
+        zhTW: '也許',
+        zhCN: '也许',
+        example: {
+          tagalog: 'Siguro darating siya.',
+          english: 'Maybe he/she will arrive.',
+          zhTW: '也許他/她會來。',
+          zhCN: '也许他/她会来。'
+        }
+      },
+      {
+        id: 'tag4',
+        tagalog: 'Basta',
+        english: 'Just because / As long as',
+        zhTW: '只要 / 反正',
+        zhCN: '只要 / 反正',
+        example: {
+          tagalog: 'Basta ikaw, okay lang.',
+          english: 'As long as it\'s you, it\'s okay.',
+          zhTW: '只要是你，就可以。',
+          zhCN: '只要是你，就可以。'
+        }
+      },
+      {
+        id: 'tag5',
+        tagalog: 'Sayang',
+        english: 'What a waste / pity',
+        zhTW: '可惜 / 浪費',
+        zhCN: '可惜 / 浪费',
+        example: {
+          tagalog: 'Sayang ang pagkain.',
+          english: 'The food is wasted.',
+          zhTW: '食物浪費了。',
+          zhCN: '食物浪费了。'
+        }
+      }
+    ]
   }
 ];
