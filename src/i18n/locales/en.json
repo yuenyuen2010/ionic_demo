@@ -75,6 +75,10 @@
     "ordering-dining": "Ordering & Dining",
     "health-emergencies": "Health & Emergencies",
     "family-social": "Family & Introductions",
-    "housing-utilities": "Housing & Utilities"
+    "housing-utilities": "Housing & Utilities",
+    "hygiene-comfort": "Hygiene & Comfort",
+    "digital-survival": "Digital Survival",
+    "weather": "Weather",
+    "city-navigation": "City Navigation"
   }
 }

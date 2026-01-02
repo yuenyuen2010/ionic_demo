@@ -2223,5 +2223,319 @@ export const lessons: Category[] = [
         }
       }
     ]
+  },
+  {
+    id: 'hygiene-comfort',
+    title: 'Hygiene & Comfort',
+    titleKey: 'topics.hygiene-comfort',
+    cards: [
+      {
+        id: 'hyg1',
+        tagalog: 'Nasaan ang C.R.?',
+        english: 'Where is the bathroom?',
+        zhTW: '廁所在哪裡？',
+        zhCN: '厕所在哪里？',
+        example: {
+          tagalog: 'Excuse me, nasaan ang C.R.?',
+          english: 'Excuse me, where is the bathroom?',
+          zhTW: '不好意思，請問廁所在哪裡？',
+          zhCN: '不好意思，请问厕所在哪里？'
+        }
+      },
+      {
+        id: 'hyg2',
+        tagalog: 'May tissue?',
+        english: 'Is there toilet paper?',
+        zhTW: '有衛生紙嗎？',
+        zhCN: '有卫生纸吗？',
+        example: {
+          tagalog: 'May tissue ba sa loob?',
+          english: 'Is there toilet paper inside?',
+          zhTW: '裡面有衛生紙嗎？',
+          zhCN: '里面有卫生纸吗？'
+        }
+      },
+      {
+        id: 'hyg3',
+        tagalog: 'Mabaho',
+        english: 'Smelly / Stinky',
+        zhTW: '臭',
+        zhCN: '臭',
+        example: {
+          tagalog: 'Mabaho ang basura.',
+          english: 'The trash is smelly.',
+          zhTW: '垃圾很臭。',
+          zhCN: '垃圾很臭。'
+        }
+      },
+      {
+        id: 'hyg4',
+        tagalog: 'Mabango',
+        english: 'Fragrant / Smells good',
+        zhTW: '香',
+        zhCN: '香',
+        example: {
+          tagalog: 'Mabango ang bulaklak.',
+          english: 'The flower smells good.',
+          zhTW: '這朵花很香。',
+          zhCN: '这朵花很香。'
+        }
+      },
+      {
+        id: 'hyg5',
+        tagalog: 'Madumi',
+        english: 'Dirty',
+        zhTW: '髒',
+        zhCN: '脏',
+        example: {
+          tagalog: 'Madumi ang sahig.',
+          english: 'The floor is dirty.',
+          zhTW: '地板很髒。',
+          zhCN: '地板很脏。'
+        }
+      },
+      {
+        id: 'hyg6',
+        tagalog: 'Malinis',
+        english: 'Clean',
+        zhTW: '乾淨',
+        zhCN: '干净',
+        example: {
+          tagalog: 'Malinis na ang kwarto.',
+          english: 'The room is already clean.',
+          zhTW: '房間已經乾淨了。',
+          zhCN: '房间已经干净了。'
+        }
+      }
+    ]
+  },
+  {
+    id: 'digital-survival',
+    title: 'Digital Survival',
+    titleKey: 'topics.digital-survival',
+    cards: [
+      {
+        id: 'dig1',
+        tagalog: 'Pa-load po',
+        english: 'I would like to buy phone credits',
+        zhTW: '我想儲值電話費',
+        zhCN: '我想充值电话费',
+        example: {
+          tagalog: 'Pa-load po ng 50 pesos.',
+          english: 'I would like to buy 50 pesos load.',
+          zhTW: '請幫我儲值 50 披索。',
+          zhCN: '请帮我充值 50 披索。'
+        }
+      },
+      {
+        id: 'dig2',
+        tagalog: 'Walang signal',
+        english: 'No signal',
+        zhTW: '沒有訊號',
+        zhCN: '没有信号',
+        example: {
+          tagalog: 'Walang signal dito sa bundok.',
+          english: 'There is no signal here in the mountain.',
+          zhTW: '山上這裡沒有訊號。',
+          zhCN: '山上这里没有信号。'
+        }
+      },
+      {
+        id: 'dig3',
+        tagalog: 'Lowbat',
+        english: 'Low battery',
+        zhTW: '沒電了',
+        zhCN: '没电了',
+        example: {
+          tagalog: 'Lowbat na ako.',
+          english: 'My battery is low.',
+          zhTW: '我手機快沒電了。',
+          zhCN: '我手机快没电了。'
+        }
+      },
+      {
+        id: 'dig4',
+        tagalog: 'Charger',
+        english: 'Charger',
+        zhTW: '充電器',
+        zhCN: '充电器',
+        example: {
+          tagalog: 'May charger ka bang dala?',
+          english: 'Do you have a charger with you?',
+          zhTW: '你有帶充電器嗎？',
+          zhCN: '你有带充电器吗？'
+        }
+      },
+      {
+        id: 'dig5',
+        tagalog: 'Password',
+        english: 'Password',
+        zhTW: '密碼',
+        zhCN: '密码',
+        example: {
+          tagalog: 'Anong password ng wifi?',
+          english: 'What is the wifi password?',
+          zhTW: 'Wifi 密碼是多少？',
+          zhCN: 'Wifi 密码是多少？'
+        }
+      }
+    ]
+  },
+  {
+    id: 'weather',
+    title: 'Weather',
+    titleKey: 'topics.weather',
+    cards: [
+      {
+        id: 'wth1',
+        tagalog: 'Sobrang init!',
+        english: 'It\'s too hot!',
+        zhTW: '太熱了！',
+        zhCN: '太热了！',
+        example: {
+          tagalog: 'Sobrang init ngayon sa labas.',
+          english: 'It\'s too hot outside today.',
+          zhTW: '今天外面太熱了。',
+          zhCN: '今天外面太热了。'
+        }
+      },
+      {
+        id: 'wth2',
+        tagalog: 'Umuulan',
+        english: 'It is raining',
+        zhTW: '下雨了',
+        zhCN: '下雨了',
+        example: {
+          tagalog: 'Umuulan nang malakas.',
+          english: 'It is raining hard.',
+          zhTW: '雨下得很大。',
+          zhCN: '雨下得很大。'
+        }
+      },
+      {
+        id: 'wth3',
+        tagalog: 'Bagyo',
+        english: 'Typhoon / Storm',
+        zhTW: '颱風 / 風暴',
+        zhCN: '台风 / 风暴',
+        example: {
+          tagalog: 'May bagyo ba bukas?',
+          english: 'Is there a storm tomorrow?',
+          zhTW: '明天有颱風嗎？',
+          zhCN: '明天有台风吗？'
+        }
+      },
+      {
+        id: 'wth4',
+        tagalog: 'Baha',
+        english: 'Flood',
+        zhTW: '淹水',
+        zhCN: '淹水',
+        example: {
+          tagalog: 'Baha sa kalsada.',
+          english: 'The street is flooded.',
+          zhTW: '馬路淹水了。',
+          zhCN: '马路淹水了。'
+        }
+      },
+      {
+        id: 'wth5',
+        tagalog: 'Payong',
+        english: 'Umbrella',
+        zhTW: '雨傘',
+        zhCN: '雨伞',
+        example: {
+          tagalog: 'Dadalhin ko ang payong ko.',
+          english: 'I will bring my umbrella.',
+          zhTW: '我會帶我的雨傘。',
+          zhCN: '我会带我的雨伞。'
+        }
+      }
+    ]
+  },
+  {
+    id: 'city-navigation',
+    title: 'City Navigation',
+    titleKey: 'topics.city-navigation',
+    cards: [
+      {
+        id: 'nav1',
+        tagalog: 'Kanto',
+        english: 'Corner',
+        zhTW: '路口 / 轉角',
+        zhCN: '路口 / 转角',
+        example: {
+          tagalog: 'Sa kanto lang po.',
+          english: 'Just at the corner.',
+          zhTW: '就在路口。',
+          zhCN: '就在路口。'
+        }
+      },
+      {
+        id: 'nav2',
+        tagalog: 'Harap',
+        english: 'Front',
+        zhTW: '前面',
+        zhCN: '前面',
+        example: {
+          tagalog: 'Sa harap ng Jollibee.',
+          english: 'In front of Jollibee.',
+          zhTW: '在 Jollibee 前面。',
+          zhCN: '在 Jollibee 前面。'
+        }
+      },
+      {
+        id: 'nav3',
+        tagalog: 'Likod',
+        english: 'Back / Behind',
+        zhTW: '後面',
+        zhCN: '后面',
+        example: {
+          tagalog: 'Sa likod ng bahay.',
+          english: 'Behind the house.',
+          zhTW: '在房子後面。',
+          zhCN: '在房子后面。'
+        }
+      },
+      {
+        id: 'nav4',
+        tagalog: 'Tulay',
+        english: 'Bridge',
+        zhTW: '橋',
+        zhCN: '桥',
+        example: {
+          tagalog: 'Tatawid tayo sa tulay.',
+          english: 'We will cross the bridge.',
+          zhTW: '我們會過橋。',
+          zhCN: '我们会过桥。'
+        }
+      },
+      {
+        id: 'nav5',
+        tagalog: 'Tawiran',
+        english: 'Crosswalk / Overpass',
+        zhTW: '斑馬線 / 天橋',
+        zhCN: '斑马线 / 天桥',
+        example: {
+          tagalog: 'Gamitin ang tawiran.',
+          english: 'Use the crosswalk/overpass.',
+          zhTW: '使用斑馬線/天橋。',
+          zhCN: '使用斑马线/天桥。'
+        }
+      },
+      {
+        id: 'nav6',
+        tagalog: 'Simbahan',
+        english: 'Church',
+        zhTW: '教堂',
+        zhCN: '教堂',
+        example: {
+          tagalog: 'Malapit sa simbahan.',
+          english: 'Near the church.',
+          zhTW: '靠近教堂。',
+          zhCN: '靠近教堂。'
+        }
+      }
+    ]
   }
 ];

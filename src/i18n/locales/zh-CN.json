@@ -75,6 +75,10 @@
     "ordering-dining": "点餐与用餐",
     "health-emergencies": "健康与急救",
     "family-social": "家庭与介绍",
-    "housing-utilities": "住房与设施"
+    "housing-utilities": "住房与设施",
+    "hygiene-comfort": "卫生与舒适",
+    "digital-survival": "数字生存",
+    "weather": "天气",
+    "city-navigation": "城市导航"
   }
 }
