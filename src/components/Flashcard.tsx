@@ -19,11 +19,24 @@ interface FlashcardProps {
   example?: Example;
 }
 
+/**
+ * Flashcard Component
+ * Displays a card with a front (Tagalog) and back (Translation + Example).
+ * Supports flipping animation and text-to-speech audio playback.
+ */
 const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english, zhTW, zhCN, example }) => {
   const { t, i18n } = useTranslation();
+
+  // State to track if the card is currently flipped
   const [isFlipped, setIsFlipped] = useState(false);
+
+  // State to track if audio is currently playing
   const [isPlaying, setIsPlaying] = useState(false);
 
+  /**
+   * Determines the appropriate translation and language code based on the current app language.
+   * Defaults to English (en-US).
+   */
   const getTranslation = () => {
     switch (i18n.language) {
       case 'zh-TW':
@@ -37,17 +50,28 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english, zhTW, zhCN, exa
 
   const translation = getTranslation();
 
+  /**
+   * Handles Audio Playback.
+   * Attempts to use Google Cloud TTS if an API key is present.
+   * Fallbacks to Google Translate unofficial API.
+   * Final fallback to browser's native Web Speech API.
+   *
+   * @param event - The mouse event to stop propagation (prevent card flip)
+   * @param text - The text to speak
+   * @param lang - The language code
+   */
   const playAudio = async (event: React.MouseEvent, text: string, lang: string) => {
+    // Prevent the card from flipping when clicking the audio button
     event.stopPropagation();
     
     if (isPlaying) return;
     setIsPlaying(true);
 
     try {
-      // Check for Google Cloud API Key
+      // Check for Google Cloud API Key in environment variables
       const apiKey = import.meta.env.VITE_GOOGLE_CLOUD_API_KEY;
       
-      // Google Cloud TTS only for Tagalog in this implementation
+      // 1. Google Cloud TTS (High Quality) - Only for Tagalog (fil-PH) if configured
       if (apiKey && lang === 'tl-PH') {
         try {
           const response = await fetch(`https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`, {
@@ -79,7 +103,7 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english, zhTW, zhCN, exa
         }
       }
 
-      // Try Google Translate TTS API first for better pronunciation
+      // 2. Google Translate TTS (Unofficial API) - Often better pronunciation than native browser
       let googleLang = lang;
       if (lang === 'tl-PH') googleLang = 'tl';
 
@@ -96,7 +120,7 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english, zhTW, zhCN, exa
     } catch (error) {
       console.warn('Google TTS failed, falling back to Web Speech API', error);
       
-      // Fallback to Web Speech API
+      // 3. Web Speech API (Native Browser Support)
       if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(text);
@@ -128,6 +152,7 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english, zhTW, zhCN, exa
       onClick={() => setIsFlipped(!isFlipped)}
     >
       <div className="flashcard-inner">
+        {/* Front of Card (Tagalog) */}
         <div className="flashcard-front">
           <IonButton 
             fill="clear" 
@@ -140,6 +165,8 @@ const Flashcard: React.FC<FlashcardProps> = ({ tagalog, english, zhTW, zhCN, exa
           <h2>{tagalog}</h2>
           <p>{t('flashcard.tapToSeeTranslation')}</p>
         </div>
+
+        {/* Back of Card (Translation) */}
         <div className="flashcard-back">
           <IonButton 
             fill="clear" 

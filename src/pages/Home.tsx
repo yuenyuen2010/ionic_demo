@@ -19,17 +19,32 @@ import { getSRSStats } from '../utils/srs';
 import CommonHeader from '../components/CommonHeader';
 import './Home.css';
 
+/**
+ * Home Page Component
+ * Displays the list of lesson categories and the current status of reviews.
+ * Allows users to search for specific lessons or words.
+ */
 const Home: React.FC = () => {
+  // i18n hook for translation
   const { t } = useTranslation();
+
+  // State for search input text
   const [searchText, setSearchText] = useState('');
+
+  // State for the number of cards due for review
   const [dueCount, setDueCount] = useState(0);
 
-  // Update stats on mount/focus
+  // Effect to load SRS stats when the component mounts
+  // Note: Ideally should useIonViewWillEnter but that requires refactoring to useIonViewWillEnter hook or standard Effect if re-mount happens
   React.useEffect(() => {
     const stats = getSRSStats();
     setDueCount(stats.dueCount);
-  }, []); // Note: Ideally should useIonViewWillEnter but that requires refactoring to useIonViewWillEnter hook or standard Effect if re-mount happens
+  }, []);
 
+  /**
+   * Filters the lessons based on the search text.
+   * Matches against category title or any content (Tagalog/English/Chinese) within the cards.
+   */
   const filteredLessons = lessons.filter(category => {
     if (!searchText) return true;
     
@@ -50,8 +65,11 @@ const Home: React.FC = () => {
 
   return (
     <IonPage>
+      {/* Header Component */}
       <CommonHeader title={t('common.appTitle')} />
+
       <IonContent fullscreen>
+        {/* Collapsible header for iOS style */}
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">{t('common.appTitle')}</IonTitle>
@@ -59,7 +77,7 @@ const Home: React.FC = () => {
         </IonHeader>
         
         <div className="ion-padding-start ion-padding-end ion-padding-top">
-          {/* Review Button */}
+          {/* Review Button - Shows count of cards due for review */}
           <IonButton routerLink="/review" expand="block" color="warning" className="ion-margin-bottom">
             <IonIcon icon={timeOutline} slot="start" />
             {t('home.reviewDue')} ({t('home.dueCount', { count: dueCount })})
@@ -69,6 +87,7 @@ const Home: React.FC = () => {
           <p>{t('home.selectCategory')}</p>
         </div>
 
+        {/* Search Bar for filtering lessons */}
         <IonSearchbar 
           value={searchText} 
           onIonInput={e => setSearchText(e.detail.value!)} 
@@ -76,6 +95,7 @@ const Home: React.FC = () => {
           className="ion-padding-horizontal"
         />
 
+        {/* List of Lesson Categories */}
         <IonList inset={false}>
           {filteredLessons.map((category) => (
             <IonItem 
@@ -91,6 +111,8 @@ const Home: React.FC = () => {
               <IonIcon icon={chevronForwardOutline} slot="end" />
             </IonItem>
           ))}
+
+          {/* No Results Fallback */}
           {filteredLessons.length === 0 && (
             <div className="ion-padding ion-text-center">
               <p>{t('home.noResults')}</p>

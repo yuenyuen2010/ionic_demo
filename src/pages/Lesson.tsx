@@ -16,13 +16,23 @@ import Flashcard from '../components/Flashcard';
 import CommonHeader from '../components/CommonHeader';
 import './Lesson.css';
 
+/**
+ * Lesson Page Component
+ * Displays a sequence of flashcards for a specific category.
+ * Users can navigate through the cards using Next/Previous buttons.
+ */
 const Lesson: React.FC = () => {
   const { t } = useTranslation();
+  // Retrieve the lesson category ID from the URL parameters
   const { id } = useParams<{ id: string }>();
+
+  // Find the category object based on the ID. Memoized to avoid re-searching on every render.
   const category = useMemo(() => lessons.find(l => l.id === id), [id]);
   
+  // State to track the index of the current card being displayed
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // If category is invalid, show an error message
   if (!category) {
     return (
       <IonPage>
@@ -34,18 +44,24 @@ const Lesson: React.FC = () => {
     );
   }
 
+  // Current card data
   const currentCard = category.cards[currentIndex];
+
+  // Navigation state helpers
   const isFirst = currentIndex === 0;
   const isLast = currentIndex === category.cards.length - 1;
 
+  /** Move to the next card */
   const nextCard = () => {
     if (!isLast) setCurrentIndex(currentIndex + 1);
   };
 
+  /** Move to the previous card */
   const prevCard = () => {
     if (!isFirst) setCurrentIndex(currentIndex - 1);
   };
 
+  /** Restart the lesson from the beginning */
   const reset = () => {
     setCurrentIndex(0);
   };
@@ -59,12 +75,14 @@ const Lesson: React.FC = () => {
       />
 
       <IonContent className="ion-padding">
+        {/* Progress Indicator (e.g., 1/10) */}
         <div className="progress-indicator">
           {t('lesson.cardProgress', { current: currentIndex + 1, total: category.cards.length })}
         </div>
 
+        {/* Flashcard Component */}
         <Flashcard 
-          key={currentCard.id} // Key ensures state resets when card changes
+          key={currentCard.id} // Key ensures React remounts the component when card changes (resets flip state)
           tagalog={currentCard.tagalog} 
           english={currentCard.english}
           zhTW={currentCard.zhTW}
@@ -80,6 +98,7 @@ const Lesson: React.FC = () => {
       <IonFooter className="ion-no-border">
         <IonToolbar>
           <div className="navigation-buttons">
+            {/* Previous Button */}
             <IonButton 
               fill="outline" 
               onClick={prevCard} 
@@ -89,6 +108,7 @@ const Lesson: React.FC = () => {
               {t('lesson.prev')}
             </IonButton>
 
+            {/* Next or Restart Button */}
             {isLast ? (
               <IonButton 
                 color="success" 
