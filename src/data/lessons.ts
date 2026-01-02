@@ -1478,5 +1478,312 @@ export const lessons: Category[] = [
         }
       }
     ]
+  },
+  {
+    id: 'transportation',
+    title: 'Transportation (Commuting)',
+    titleKey: 'topics.transportation',
+    cards: [
+      {
+        id: 'trans1',
+        tagalog: 'Bayad po',
+        english: 'Here is my payment',
+        zhTW: '這是車費',
+        zhCN: '这是车费',
+        example: {
+          tagalog: 'Bayad po sa umaga.',
+          english: 'Here is my payment (morning).',
+          zhTW: '這是早上的車費。',
+          zhCN: '这是早上的车费。'
+        }
+      },
+      {
+        id: 'trans2',
+        tagalog: 'Para',
+        english: 'Stop / Pull over',
+        zhTW: '停車',
+        zhCN: '停车',
+        example: {
+          tagalog: 'Para po sa tabi.',
+          english: 'Please stop at the side.',
+          zhTW: '請在路邊停。',
+          zhCN: '请在路边停。'
+        }
+      },
+      {
+        id: 'trans3',
+        tagalog: 'Sa tabi lang',
+        english: 'Just at the side',
+        zhTW: '就在旁邊',
+        zhCN: '就在旁边',
+        example: {
+          tagalog: 'Bababa ako sa tabi lang.',
+          english: 'I will get off just at the side.',
+          zhTW: '我就在旁邊下車。',
+          zhCN: '我就在旁边下车。'
+        }
+      },
+      {
+        id: 'trans4',
+        tagalog: 'Sukli',
+        english: 'Change / Coins back',
+        zhTW: '找零',
+        zhCN: '找零',
+        example: {
+          tagalog: 'Abot po ng sukli.',
+          english: 'Please pass the change.',
+          zhTW: '請遞一下找零。',
+          zhCN: '请递一下找零。'
+        }
+      },
+      {
+        id: 'trans5',
+        tagalog: 'Kaliwa',
+        english: 'Left',
+        zhTW: '左',
+        zhCN: '左',
+        example: {
+          tagalog: 'Kumaliwa ka sa kanto.',
+          english: 'Turn left at the corner.',
+          zhTW: '在路口左轉。',
+          zhCN: '在路口左转。'
+        }
+      },
+      {
+        id: 'trans6',
+        tagalog: 'Kanan',
+        english: 'Right',
+        zhTW: '右',
+        zhCN: '右',
+        example: {
+          tagalog: 'Kumanan ka pagkatapos.',
+          english: 'Turn right afterwards.',
+          zhTW: '然後右轉。',
+          zhCN: '然后右转。'
+        }
+      },
+      {
+        id: 'trans7',
+        tagalog: 'Diretso',
+        english: 'Straight',
+        zhTW: '直走',
+        zhCN: '直走',
+        example: {
+          tagalog: 'Diretso lang ang daan.',
+          english: 'The road is just straight.',
+          zhTW: '這條路是直的。',
+          zhCN: '这条路是直的。'
+        }
+      }
+    ]
+  },
+  {
+    id: 'time-scheduling',
+    title: 'Time & Scheduling',
+    titleKey: 'topics.time-scheduling',
+    cards: [
+      {
+        id: 'time1',
+        tagalog: 'Ngayon',
+        english: 'Now / Today',
+        zhTW: '現在 / 今天',
+        zhCN: '现在 / 今天',
+        example: {
+          tagalog: 'Aalis ako ngayon.',
+          english: 'I am leaving now.',
+          zhTW: '我現在要走了。',
+          zhCN: '我现在要走了。'
+        }
+      },
+      {
+        id: 'time2',
+        tagalog: 'Bukas',
+        english: 'Tomorrow',
+        zhTW: '明天',
+        zhCN: '明天',
+        example: {
+          tagalog: 'Bukas na lang.',
+          english: 'Let\'s just do it tomorrow.',
+          zhTW: '明天再說吧。',
+          zhCN: '明天再说吧。'
+        }
+      },
+      {
+        id: 'time3',
+        tagalog: 'Kahapon',
+        english: 'Yesterday',
+        zhTW: '昨天',
+        zhCN: '昨天',
+        example: {
+          tagalog: 'Dumating siya kahapon.',
+          english: 'He/She arrived yesterday.',
+          zhTW: '他/她昨天到了。',
+          zhCN: '他/她昨天到了。'
+        }
+      },
+      {
+        id: 'time4',
+        tagalog: 'Mamaya',
+        english: 'Later',
+        zhTW: '稍後',
+        zhCN: '稍后',
+        example: {
+          tagalog: 'Mamaya na ako kakain.',
+          english: 'I will eat later.',
+          zhTW: '我晚點再吃。',
+          zhCN: '我晚点再吃。'
+        }
+      },
+      {
+        id: 'time5',
+        tagalog: 'Kanina',
+        english: 'Earlier',
+        zhTW: '剛才',
+        zhCN: '刚才',
+        example: {
+          tagalog: 'Nakita ko siya kanina.',
+          english: 'I saw him/her earlier.',
+          zhTW: '我剛才看到他/她了。',
+          zhCN: '我刚才看到他/她了。'
+        }
+      },
+      {
+        id: 'time6',
+        tagalog: 'Agad',
+        english: 'Immediately',
+        zhTW: '立刻',
+        zhCN: '立刻',
+        example: {
+          tagalog: 'Tumawag ka agad.',
+          english: 'Call immediately.',
+          zhTW: '立刻打電話。',
+          zhCN: '立刻打电话。'
+        }
+      }
+    ]
+  },
+  {
+    id: 'common-adjectives',
+    title: 'Common Adjectives (Opposites)',
+    titleKey: 'topics.common-adjectives',
+    cards: [
+      {
+        id: 'adj1',
+        tagalog: 'Malaki',
+        english: 'Big',
+        zhTW: '大',
+        zhCN: '大',
+        example: {
+          tagalog: 'Malaki ang bahay.',
+          english: 'The house is big.',
+          zhTW: '房子很大。',
+          zhCN: '房子很大。'
+        }
+      },
+      {
+        id: 'adj2',
+        tagalog: 'Maliit',
+        english: 'Small',
+        zhTW: '小',
+        zhCN: '小',
+        example: {
+          tagalog: 'Maliit lang ang aso.',
+          english: 'The dog is small.',
+          zhTW: '那隻狗很小。',
+          zhCN: '那只狗很小。'
+        }
+      },
+      {
+        id: 'adj3',
+        tagalog: 'Mainit',
+        english: 'Hot',
+        zhTW: '熱',
+        zhCN: '热',
+        example: {
+          tagalog: 'Mainit ang kape.',
+          english: 'The coffee is hot.',
+          zhTW: '咖啡很熱。',
+          zhCN: '咖啡很热。'
+        }
+      },
+      {
+        id: 'adj4',
+        tagalog: 'Malamig',
+        english: 'Cold',
+        zhTW: '冷',
+        zhCN: '冷',
+        example: {
+          tagalog: 'Malamig ang panahon.',
+          english: 'The weather is cold.',
+          zhTW: '天氣很冷。',
+          zhCN: '天气很冷。'
+        }
+      },
+      {
+        id: 'adj5',
+        tagalog: 'Mura',
+        english: 'Cheap',
+        zhTW: '便宜',
+        zhCN: '便宜',
+        example: {
+          tagalog: 'Mura ang bilihin dito.',
+          english: 'Goods are cheap here.',
+          zhTW: '這裡的東西很便宜。',
+          zhCN: '这里的东西很便宜。'
+        }
+      },
+      {
+        id: 'adj6',
+        tagalog: 'Mahal',
+        english: 'Expensive',
+        zhTW: '貴',
+        zhCN: '贵',
+        example: {
+          tagalog: 'Mahal ang kotse.',
+          english: 'The car is expensive.',
+          zhTW: '這輛車很貴。',
+          zhCN: '这辆车很贵。'
+        }
+      },
+      {
+        id: 'adj7',
+        tagalog: 'Masarap',
+        english: 'Delicious',
+        zhTW: '好吃',
+        zhCN: '好吃',
+        example: {
+          tagalog: 'Masarap ang luto mo.',
+          english: 'Your cooking is delicious.',
+          zhTW: '你做的菜很好吃。',
+          zhCN: '你做的菜很好吃。'
+        }
+      },
+      {
+        id: 'adj8',
+        tagalog: 'Hindi masarap',
+        english: 'Not delicious',
+        zhTW: '不好吃',
+        zhCN: '不好吃',
+        example: {
+          tagalog: 'Hindi masarap ang ulam.',
+          english: 'The dish is not delicious.',
+          zhTW: '這道菜不好吃。',
+          zhCN: '这道菜不好吃。'
+        }
+      },
+      {
+        id: 'adj9',
+        tagalog: 'Pagod',
+        english: 'Tired',
+        zhTW: '累',
+        zhCN: '累',
+        example: {
+          tagalog: 'Pagod ako galing trabaho.',
+          english: 'I am tired from work.',
+          zhTW: '我下班後很累。',
+          zhCN: '我下班后很累。'
+        }
+      }
+    ]
   }
 ];

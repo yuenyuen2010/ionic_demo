@@ -67,6 +67,9 @@
     "linkers": "連接詞 (連字)",
     "locators": "具體位置標記",
     "numbers-spanish": "數字 (西班牙語)",
-    "social-scripts": "常用社交短語"
+    "social-scripts": "常用社交短語",
+    "transportation": "交通 (通勤)",
+    "time-scheduling": "時間與日程",
+    "common-adjectives": "常見形容詞 (反義詞)"
   }
 }

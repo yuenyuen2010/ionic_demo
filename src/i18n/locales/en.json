@@ -67,6 +67,9 @@
     "linkers": "Linkers (Ligatures)",
     "locators": "Specific Location Markers",
     "numbers-spanish": "Numbers (Spanish)",
-    "social-scripts": "Social Scripts"
+    "social-scripts": "Social Scripts",
+    "transportation": "Transportation (Commuting)",
+    "time-scheduling": "Time & Scheduling",
+    "common-adjectives": "Common Adjectives (Opposites)"
   }
 }
