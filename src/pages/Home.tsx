@@ -22,7 +22,8 @@ import {
   appsOutline,
   createOutline,
   homeOutline,
-  peopleOutline
+  peopleOutline,
+  chatbubblesOutline
 } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
 import { lessons } from '../data/lessons';
@@ -113,7 +114,12 @@ const Home: React.FC = () => {
         {/* Collapsible header for iOS style */}
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">{t('common.appTitle')}</IonTitle>
+            <IonTitle size="large">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <IonIcon icon={chatbubblesOutline} />
+                {t('common.appTitle')}
+              </div>
+            </IonTitle>
           </IonToolbar>
         </IonHeader>
         
