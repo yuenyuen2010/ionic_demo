@@ -14,6 +14,7 @@ import { useTranslation } from 'react-i18next';
 import { lessons } from '../data/lessons';
 import Flashcard from '../components/Flashcard';
 import CommonHeader from '../components/CommonHeader';
+import { getBookmarks } from '../utils/bookmarks';
 import './Lesson.css';
 
 /**
@@ -27,13 +28,43 @@ const Lesson: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
   // Find the category object based on the ID. Memoized to avoid re-searching on every render.
-  const category = useMemo(() => lessons.find(l => l.id === id), [id]);
+  const category = useMemo(() => {
+    if (id === 'bookmarks') {
+      const bookmarkedIds = getBookmarks();
+      const bookmarkedCards = lessons.flatMap(l => l.cards).filter(c => bookmarkedIds.includes(c.id));
+
+      return {
+        id: 'bookmarks',
+        title: 'Bookmarks',
+        titleKey: 'bookmarks.title',
+        group: 'bookmarks',
+        groupKey: 'bookmarks',
+        cards: bookmarkedCards
+      };
+    }
+    return lessons.find(l => l.id === id);
+  }, [id]);
   
   // State to track the index of the current card being displayed
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // If category is invalid, show an error message
-  if (!category) {
+  if (!category || (category.id === 'bookmarks' && category.cards.length === 0)) {
+    if (category?.id === 'bookmarks') {
+      return (
+        <IonPage>
+          <CommonHeader title={t('bookmarks.title')} showBackButton={true} defaultHref="/home" />
+          <IonContent className="ion-padding">
+            <div className="ion-text-center ion-padding">
+              <IonText color="medium">
+                <p>{t('bookmarks.empty')}</p>
+              </IonText>
+              <IonButton routerLink="/home">{t('lesson.goBack')}</IonButton>
+            </div>
+          </IonContent>
+        </IonPage>
+      );
+    }
     return (
       <IonPage>
         <IonContent className="ion-padding">
@@ -83,6 +114,7 @@ const Lesson: React.FC = () => {
         {/* Flashcard Component */}
         <Flashcard 
           key={currentCard.id} // Key ensures React remounts the component when card changes (resets flip state)
+          id={currentCard.id}
           tagalog={currentCard.tagalog} 
           english={currentCard.english}
           zhTW={currentCard.zhTW}

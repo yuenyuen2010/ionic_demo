@@ -25,6 +25,10 @@
       "green": "平靜綠色"
     }
   },
+  "bookmarks": {
+    "title": "已儲存單字",
+    "empty": "暫無儲存的單字。"
+  },
   "lesson": {
     "categoryNotFound": "找不到類別",
     "goBack": "返回",
