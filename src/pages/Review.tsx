@@ -107,6 +107,7 @@ const Review: React.FC = () => {
 
         <Flashcard 
           key={`${currentCard.id}-${cardKey}`} // Unique key ensures fresh component state per card
+          id={currentCard.id}
           tagalog={currentCard.tagalog} 
           english={currentCard.english}
           zhTW={currentCard.zhTW}
