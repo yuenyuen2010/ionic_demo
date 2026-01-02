@@ -10,7 +10,8 @@ import {
   IonLabel, 
   IonIcon,
   IonSearchbar,
-  IonButton
+  IonButton,
+  IonListHeader
 } from '@ionic/react';
 import { bookOutline, chevronForwardOutline, timeOutline } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
@@ -63,6 +64,31 @@ const Home: React.FC = () => {
     );
   });
 
+  // Group lessons by groupKey
+  const groupedLessons = filteredLessons.reduce((acc, category) => {
+    const groupKey = category.groupKey || 'groups.basics';
+    if (!acc[groupKey]) {
+      acc[groupKey] = [];
+    }
+    acc[groupKey].push(category);
+    return acc;
+  }, {} as Record<string, typeof lessons>);
+
+  // Define group order if not searching
+  const groupOrder = ['groups.basics', 'groups.daily_life', 'groups.social', 'groups.grammar'];
+
+  // If searching, just show groups as they appear, or maybe sorted.
+  // Let's stick to the defined order for consistency, appending any others at the end.
+  const sortedGroupKeys = Object.keys(groupedLessons).sort((a, b) => {
+    const indexA = groupOrder.indexOf(a);
+    const indexB = groupOrder.indexOf(b);
+    if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+    if (indexA !== -1) return -1;
+    if (indexB !== -1) return 1;
+    return a.localeCompare(b);
+  });
+
+
   return (
     <IonPage>
       {/* Header Component */}
@@ -97,19 +123,27 @@ const Home: React.FC = () => {
 
         {/* List of Lesson Categories */}
         <IonList inset={false}>
-          {filteredLessons.map((category) => (
-            <IonItem 
-              key={category.id} 
-              routerLink={`/lesson/${category.id}`}
-              detail={false}
-            >
-              <IonIcon icon={bookOutline} slot="start" color="primary" />
-              <IonLabel>
-                <h3>{t(category.titleKey)}</h3>
-                <p>{t('home.cardsCount', { count: category.cards.length })}</p>
-              </IonLabel>
-              <IonIcon icon={chevronForwardOutline} slot="end" />
-            </IonItem>
+          {sortedGroupKeys.map(groupKey => (
+            <React.Fragment key={groupKey}>
+               {/* Only show header if we have more than one group or we want to be explicit */}
+               <IonListHeader>
+                 <IonLabel>{t(groupKey)}</IonLabel>
+               </IonListHeader>
+               {groupedLessons[groupKey].map((category) => (
+                <IonItem
+                  key={category.id}
+                  routerLink={`/lesson/${category.id}`}
+                  detail={false}
+                >
+                  <IonIcon icon={bookOutline} slot="start" color="primary" />
+                  <IonLabel>
+                    <h3>{t(category.titleKey)}</h3>
+                    <p>{t('home.cardsCount', { count: category.cards.length })}</p>
+                  </IonLabel>
+                  <IonIcon icon={chevronForwardOutline} slot="end" />
+                </IonItem>
+              ))}
+            </React.Fragment>
           ))}
 
           {/* No Results Fallback */}

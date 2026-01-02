@@ -92,5 +92,11 @@
     "conflict-reconciliation": "衝突與和解 (The \"Tampo\" Pack)",
     "drinking-celebrations": "飲酒與慶祝 (The \"Tagay\" Pack)",
     "storytelling-connectors": "講故事連接詞 (The \"Kwento\" Pack)"
+  },
+  "groups": {
+    "basics": "基礎",
+    "grammar": "文法",
+    "daily_life": "日常生活",
+    "social": "社交與情感"
   }
 }
