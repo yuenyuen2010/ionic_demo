@@ -11,10 +11,10 @@ jobs:
   auto-merge-jules:
     runs-on: ubuntu-latest
     # Only run this job if the PR author is the Jules bot
-    if: github.actor == 'google-labs-jules'
-    permissions:
-      contents: write
-      pull-requests: write
+    #if: github.actor == 'google-labs-jules'
+    #permissions:
+    #  contents: write
+    #  pull-requests: write
 
     steps:
       - name: Checkout code
