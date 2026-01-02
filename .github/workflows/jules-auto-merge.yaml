@@ -21,16 +21,16 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Approve and Merge PR
-              env:
-                GH_TOKEN: ${{ secrets.PAT_TOKEN }} # Use your PAT (or GITHUB_TOKEN if not triggering deploy)
-              run: |
-                echo "Detected PR from Jules. Initiating auto-merge sequence..."
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }} # Use your PAT (or GITHUB_TOKEN if not triggering deploy)
+        run: |
+          echo "Detected PR from Jules. Initiating auto-merge sequence..."
                 
-                # [FIX] 1. Mark the PR as "Ready for Review" to remove Draft status
-                gh pr ready ${{ github.event.pull_request.number }}
+          # [FIX] 1. Mark the PR as "Ready for Review" to remove Draft status
+          gh pr ready ${{ github.event.pull_request.number }}
                 
-                # 2. Approve the PR
-                gh pr review ${{ github.event.pull_request.number }} --approve --body "Auto-approved by Jules."
+          # 2. Approve the PR
+          gh pr review ${{ github.event.pull_request.number }} --approve --body "Auto-approved by Jules."
                 
-                # 3. Merge the PR
-                gh pr merge ${{ github.event.pull_request.number }} --squash --auto --delete-branch
+          # 3. Merge the PR
+          gh pr merge ${{ github.event.pull_request.number }} --squash --auto --delete-branch
