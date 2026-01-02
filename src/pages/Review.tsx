@@ -6,7 +6,6 @@ import {
   IonToolbar, 
   IonButton, 
   IonIcon,
-  IonText
 } from '@ionic/react';
 import { checkmarkCircleOutline, closeCircleOutline } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
@@ -16,35 +15,60 @@ import { getDueCards, updateCardSRS } from '../utils/srs';
 import { Flashcard as FlashcardType } from '../data/lessons';
 import './Lesson.css'; // Reuse lesson styles
 
+/**
+ * Review Page Component
+ * Implements a Spaced Repetition System (SRS) review session.
+ * Loads cards that are due for review and allows the user to mark them as remembered or forgotten.
+ */
 const Review: React.FC = () => {
   const { t } = useTranslation();
-  const [dueCards, setDueCards] = useState<FlashcardType[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isFinished, setIsFinished] = useState(false);
-  const [cardKey, setCardKey] = useState(0); // Force re-render of Flashcard
 
+  // State for cards pending review
+  const [dueCards, setDueCards] = useState<FlashcardType[]>([]);
+
+  // Current index in the dueCards array
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Flag to indicate if the review session is complete
+  const [isFinished, setIsFinished] = useState(false);
+
+  // Helper state to force re-render of Flashcard component (to reset flip state)
+  const [cardKey, setCardKey] = useState(0);
+
+  // Load cards on component mount
   useEffect(() => {
     loadDueCards();
   }, []);
 
+  /**
+   * Fetches the cards that are due for review from the SRS utility.
+   */
   const loadDueCards = () => {
     const cards = getDueCards();
     // Shuffle cards for better review? Optional.
-    // For now, just load them.
+    // For now, just load them as returned by getDueCards.
     setDueCards(cards);
     setCurrentIndex(0);
     setIsFinished(cards.length === 0);
   };
 
+  /**
+   * Handles the user's response to a card (Correct/Wrong).
+   * Updates the SRS data for the card and moves to the next one.
+   * @param isCorrect - Whether the user remembered the card correctly.
+   */
   const handleResult = (isCorrect: boolean) => {
     if (currentIndex >= dueCards.length) return;
 
     const currentCard = dueCards[currentIndex];
+
+    // Update the SRS status (next due date, interval, etc.)
     updateCardSRS(currentCard.id, isCorrect);
 
+    // Move to next card or finish
     if (currentIndex < dueCards.length - 1) {
       setCurrentIndex(currentIndex + 1);
-      setCardKey(prev => prev + 1); // Reset flip state
+      setCardKey(prev => prev + 1); // Increment key to reset Flashcard flip state
     } else {
       setIsFinished(true);
     }
@@ -52,6 +76,7 @@ const Review: React.FC = () => {
 
   const currentCard = dueCards[currentIndex];
 
+  // Render "All Done" screen if finished or no cards due
   if (isFinished || !currentCard) {
     return (
       <IonPage>
@@ -70,6 +95,7 @@ const Review: React.FC = () => {
     );
   }
 
+  // Render the Flashcard and SRS buttons
   return (
     <IonPage>
       <CommonHeader title={t('review.title')} showBackButton={true} defaultHref="/home" />
@@ -80,7 +106,7 @@ const Review: React.FC = () => {
         </div>
 
         <Flashcard 
-          key={`${currentCard.id}-${cardKey}`}
+          key={`${currentCard.id}-${cardKey}`} // Unique key ensures fresh component state per card
           tagalog={currentCard.tagalog} 
           english={currentCard.english}
           zhTW={currentCard.zhTW}
@@ -96,6 +122,7 @@ const Review: React.FC = () => {
       <IonFooter className="ion-no-border">
         <IonToolbar>
           <div className="navigation-buttons">
+            {/* Wrong Button - resets progress for this card */}
             <IonButton 
               color="danger" 
               onClick={() => handleResult(false)}
@@ -107,6 +134,7 @@ const Review: React.FC = () => {
               <small style={{ fontSize: '0.7em', marginLeft: '5px' }}>(10m)</small>
             </IonButton>
 
+            {/* Correct Button - schedules card for later */}
             <IonButton 
               color="success" 
               onClick={() => handleResult(true)}
