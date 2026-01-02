@@ -2694,5 +2694,437 @@ export const lessons: Category[] = [
         }
       }
     ]
+  },
+  {
+    id: 'making-plans',
+    title: 'Making Plans (The "Tara" Pack)',
+    titleKey: 'topics.making-plans',
+    cards: [
+      {
+        id: 'plan1',
+        tagalog: 'Tara!',
+        english: 'Let\'s go!',
+        zhTW: '走吧！',
+        zhCN: '走吧！',
+        example: {
+          tagalog: 'Tara na sa mall.',
+          english: 'Let\'s go to the mall now.',
+          zhTW: '我們去購物中心吧。',
+          zhCN: '我们去购物中心吧。'
+        }
+      },
+      {
+        id: 'plan2',
+        tagalog: 'Sama ka?',
+        english: 'Are you coming with us?',
+        zhTW: '你要一起來嗎？',
+        zhCN: '你要一起来吗？',
+        example: {
+          tagalog: 'Kakain kami, sama ka?',
+          english: 'We are going to eat, are you coming?',
+          zhTW: '我們要去吃飯，你要一起嗎？',
+          zhCN: '我们要去吃饭，你要一起吗？'
+        }
+      },
+      {
+        id: 'plan3',
+        tagalog: 'Libre kita',
+        english: 'My treat / I\'ll pay for you',
+        zhTW: '我請客',
+        zhCN: '我请客',
+        example: {
+          tagalog: 'Tara, libre kita ng kape.',
+          english: 'Let\'s go, I\'ll treat you to coffee.',
+          zhTW: '走吧，我請你喝咖啡。',
+          zhCN: '走吧，我请你喝咖啡。'
+        }
+      },
+      {
+        id: 'plan4',
+        tagalog: 'KKB (Kanya-Kanyang Bayad)',
+        english: 'Dutch Treat / Split the bill',
+        zhTW: '各付各的',
+        zhCN: '各付各的',
+        example: {
+          tagalog: 'KKB tayo ha?',
+          english: 'We split the bill, okay?',
+          zhTW: '我們各付各的，好嗎？',
+          zhCN: '我们各付各的，好吗？'
+        }
+      },
+      {
+        id: 'plan5',
+        tagalog: 'Anong ganap?',
+        english: 'What\'s the plan? / What\'s happening?',
+        zhTW: '有什麼計畫？ / 發生什麼事？',
+        zhCN: '有什么计划？ / 发生什么事？',
+        example: {
+          tagalog: 'Anong ganap mamaya?',
+          english: 'What\'s the plan later?',
+          zhTW: '待會有什麼計畫？',
+          zhCN: '待会有什么计划？'
+        }
+      }
+    ]
+  },
+  {
+    id: 'compliments-flattery',
+    title: 'Compliments & Flattery',
+    titleKey: 'topics.compliments-flattery',
+    cards: [
+      {
+        id: 'bol1',
+        tagalog: 'Ang ganda mo naman',
+        english: 'You are so beautiful',
+        zhTW: '你真漂亮',
+        zhCN: '你真漂亮',
+        example: {
+          tagalog: 'Ang ganda mo naman ngayon.',
+          english: 'You are so beautiful today.',
+          zhTW: '你今天真漂亮。',
+          zhCN: '你今天真漂亮。'
+        }
+      },
+      {
+        id: 'bol2',
+        tagalog: 'Pogi',
+        english: 'Handsome',
+        zhTW: '帥',
+        zhCN: '帅',
+        example: {
+          tagalog: 'Ang pogi mo talaga.',
+          english: 'You are really handsome.',
+          zhTW: '你真的很帥。',
+          zhCN: '你真的很帅。'
+        }
+      },
+      {
+        id: 'bol3',
+        tagalog: 'Bagay sa iyo',
+        english: 'That suits/fits you well',
+        zhTW: '很適合你',
+        zhCN: '很适合你',
+        example: {
+          tagalog: 'Bagay sa iyo ang damit.',
+          english: 'The dress suits you well.',
+          zhTW: '這件衣服很適合你。',
+          zhCN: '这件衣服很适合你。'
+        }
+      },
+      {
+        id: 'bol4',
+        tagalog: 'Bolero',
+        english: 'Flatterer / Smooth talker',
+        zhTW: '甜言蜜語的人',
+        zhCN: '甜言蜜语的人',
+        example: {
+          tagalog: 'Huwag kang maniwala, bolero yan.',
+          english: 'Don\'t believe him, he\'s a smooth talker.',
+          zhTW: '別相信他，他很會甜言蜜語。',
+          zhCN: '别相信他，他很会甜言蜜语。'
+        }
+      },
+      {
+        id: 'bol5',
+        tagalog: 'Naks!',
+        english: 'Wow! / Impressive!',
+        zhTW: '哇！/ 好厲害！',
+        zhCN: '哇！/ 好厉害！',
+        example: {
+          tagalog: 'Naks! Ang galing mo.',
+          english: 'Wow! You are so good.',
+          zhTW: '哇！你真棒。',
+          zhCN: '哇！你真棒。'
+        }
+      }
+    ]
+  },
+  {
+    id: 'opinions-uncertainty',
+    title: 'Opinions & Uncertainty',
+    titleKey: 'topics.opinions-uncertainty',
+    cards: [
+      {
+        id: 'ewan1',
+        tagalog: 'Sa tingin ko...',
+        english: 'I think... / In my opinion...',
+        zhTW: '我覺得... / 在我看來...',
+        zhCN: '我觉得... / 在我看来...',
+        example: {
+          tagalog: 'Sa tingin ko tama ka.',
+          english: 'I think you are right.',
+          zhTW: '我覺得你是對的。',
+          zhCN: '我觉得你是对的。'
+        }
+      },
+      {
+        id: 'ewan2',
+        tagalog: 'Ewan ko',
+        english: 'I don\'t know',
+        zhTW: '我不知道',
+        zhCN: '我不知道',
+        example: {
+          tagalog: 'Ewan ko kung nasaan siya.',
+          english: 'I don\'t know where he/she is.',
+          zhTW: '我不知道他/她在哪裡。',
+          zhCN: '我不知道他/她在哪裡。'
+        }
+      },
+      {
+        id: 'ewan3',
+        tagalog: 'Bahala na',
+        english: 'Come what may / I\'ll leave it to fate',
+        zhTW: '隨便啦 / 聽天由命',
+        zhCN: '随便啦 / 听天由命',
+        example: {
+          tagalog: 'Bahala na si Batman.',
+          english: 'Leave it to fate (Batman).',
+          zhTW: '交給命運吧（蝙蝠俠）。',
+          zhCN: '交给命运吧（蝙蝠侠）。'
+        }
+      },
+      {
+        id: 'ewan4',
+        tagalog: 'Depende',
+        english: 'It depends',
+        zhTW: '看情況',
+        zhCN: '看情况',
+        example: {
+          tagalog: 'Depende sa panahon.',
+          english: 'It depends on the weather.',
+          zhTW: '看天氣而定。',
+          zhCN: '看天气而定。'
+        }
+      },
+      {
+        id: 'ewan5',
+        tagalog: 'Sigurado ka?',
+        english: 'Are you sure?',
+        zhTW: '你確定嗎？',
+        zhCN: '你确定吗？',
+        example: {
+          tagalog: 'Sigurado ka ba sa sagot mo?',
+          english: 'Are you sure about your answer?',
+          zhTW: '你確定你的答案嗎？',
+          zhCN: '你确定你的答案吗？'
+        }
+      }
+    ]
+  },
+  {
+    id: 'hobbies-interests',
+    title: 'Hobbies & Interests',
+    titleKey: 'topics.hobbies-interests',
+    cards: [
+      {
+        id: 'hob1',
+        tagalog: 'Mahilig ka ba sa...?',
+        english: 'Are you fond of...? / Do you like...?',
+        zhTW: '你喜歡...嗎？',
+        zhCN: '你喜欢...吗？',
+        example: {
+          tagalog: 'Mahilig ka ba sa Karaoke?',
+          english: 'Do you like Karaoke?',
+          zhTW: '你喜歡卡拉OK嗎？',
+          zhCN: '你喜欢卡拉OK吗？'
+        }
+      },
+      {
+        id: 'hob2',
+        tagalog: 'Anong gusto mong gawin?',
+        english: 'What do you want to do?',
+        zhTW: '你想做什麼？',
+        zhCN: '你想做什么？',
+        example: {
+          tagalog: 'Anong gusto mong gawin bukas?',
+          english: 'What do you want to do tomorrow?',
+          zhTW: '你明天想做什麼？',
+          zhCN: '你明天想做什么？'
+        }
+      },
+      {
+        id: 'hob3',
+        tagalog: 'Mag-travel',
+        english: 'To travel',
+        zhTW: '旅行',
+        zhCN: '旅行',
+        example: {
+          tagalog: 'Gusto kong mag-travel sa Palawan.',
+          english: 'I want to travel to Palawan.',
+          zhTW: '我想去巴拉望旅行。',
+          zhCN: '我想去巴拉望旅行。'
+        }
+      },
+      {
+        id: 'hob4',
+        tagalog: 'Manood ng Netflix/Sine',
+        english: 'Watch Netflix/Movies',
+        zhTW: '看 Netflix/電影',
+        zhCN: '看 Netflix/电影',
+        example: {
+          tagalog: 'Manood tayo ng sine.',
+          english: 'Let\'s watch a movie.',
+          zhTW: '我們去看電影吧。',
+          zhCN: '我们去看电影吧。'
+        }
+      },
+      {
+        id: 'hob5',
+        tagalog: 'Kumain',
+        english: 'Eat',
+        zhTW: '吃',
+        zhCN: '吃',
+        example: {
+          tagalog: 'Mahilig akong kumain.',
+          english: 'I love to eat.',
+          zhTW: '我喜歡吃。',
+          zhCN: '我喜欢吃。'
+        }
+      }
+    ]
+  },
+  {
+    id: 'modern-slang',
+    title: 'Modern Slang (The "Street" Pack)',
+    titleKey: 'topics.modern-slang',
+    cards: [
+      {
+        id: 'slang1',
+        tagalog: 'Charot',
+        english: 'Just kidding!',
+        zhTW: '開玩笑的！',
+        zhCN: '开玩笑的！',
+        example: {
+          tagalog: 'Ang ganda ko, charot!',
+          english: 'I\'m beautiful, just kidding!',
+          zhTW: '我真漂亮，開玩笑的！',
+          zhCN: '我真漂亮，开玩笑的！'
+        }
+      },
+      {
+        id: 'slang2',
+        tagalog: 'Chika',
+        english: 'Gossip / Story',
+        zhTW: '八卦 / 故事',
+        zhCN: '八卦 / 故事',
+        example: {
+          tagalog: 'Anong chika ngayon?',
+          english: 'What\'s the latest gossip?',
+          zhTW: '最近有什麼八卦？',
+          zhCN: '最近有什么八卦？'
+        }
+      },
+      {
+        id: 'slang3',
+        tagalog: 'Lodi',
+        english: 'Idol / Someone you admire',
+        zhTW: '偶像',
+        zhCN: '偶像',
+        example: {
+          tagalog: 'Ikaw ang lodi ko.',
+          english: 'You are my idol.',
+          zhTW: '你是我的偶像。',
+          zhCN: '你是我的偶像。'
+        }
+      },
+      {
+        id: 'slang4',
+        tagalog: 'Petmalu',
+        english: 'Amazing / Extreme',
+        zhTW: '厲害 / 猛',
+        zhCN: '厉害 / 猛',
+        example: {
+          tagalog: 'Petmalu ang sayaw mo.',
+          english: 'Your dancing is amazing.',
+          zhTW: '你跳舞很厲害。',
+          zhCN: '你跳舞很厉害。'
+        }
+      },
+      {
+        id: 'slang5',
+        tagalog: 'Bes / Mars / Pards',
+        english: 'Friend / Bestie terms',
+        zhTW: '閨蜜 / 兄弟',
+        zhCN: '闺蜜 / 兄弟',
+        example: {
+          tagalog: 'Kamusta ka na bes?',
+          english: 'How are you bestie?',
+          zhTW: '你好嗎，閨蜜？',
+          zhCN: '你好吗，闺蜜？'
+        }
+      }
+    ]
+  },
+  {
+    id: 'work-school',
+    title: 'Work & School (Introduction Expansion)',
+    titleKey: 'topics.work-school',
+    cards: [
+      {
+        id: 'work1',
+        tagalog: 'Anong trabaho mo?',
+        english: 'What is your job?',
+        zhTW: '你的工作是什麼？',
+        zhCN: '你的工作是什么？',
+        example: {
+          tagalog: 'Anong trabaho mo sa Maynila?',
+          english: 'What is your job in Manila?',
+          zhTW: '你在馬尼拉做什麼工作？',
+          zhCN: '你在马尼拉做什么工作？'
+        }
+      },
+      {
+        id: 'work2',
+        tagalog: 'Estudyante',
+        english: 'Student',
+        zhTW: '學生',
+        zhCN: '学生',
+        example: {
+          tagalog: 'Estudyante pa lang ako.',
+          english: 'I am just a student.',
+          zhTW: '我還只是個學生。',
+          zhCN: '我还只是个学生。'
+        }
+      },
+      {
+        id: 'work3',
+        tagalog: 'Opisina',
+        english: 'Office',
+        zhTW: '辦公室',
+        zhCN: '办公室',
+        example: {
+          tagalog: 'Nasa opisina ako ngayon.',
+          english: 'I am at the office now.',
+          zhTW: '我現在在辦公室。',
+          zhCN: '我现在在办公室。'
+        }
+      },
+      {
+        id: 'work4',
+        tagalog: 'Pagod',
+        english: 'Tired',
+        zhTW: '累',
+        zhCN: '累',
+        example: {
+          tagalog: 'Pagod ako sa work.',
+          english: 'I\'m tired from work.',
+          zhTW: '我工作很累。',
+          zhCN: '我工作很累。'
+        }
+      },
+      {
+        id: 'work5',
+        tagalog: 'Bakasyon',
+        english: 'Vacation',
+        zhTW: '假期 / 度假',
+        zhCN: '假期 / 度假',
+        example: {
+          tagalog: 'Kailangan ko ng bakasyon.',
+          english: 'I need a vacation.',
+          zhTW: '我需要休假。',
+          zhCN: '我需要休假。'
+        }
+      }
+    ]
   }
 ];
