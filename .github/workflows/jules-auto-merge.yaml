@@ -11,29 +11,14 @@ jobs:
   auto-merge-jules:
     runs-on: ubuntu-latest
     # Only run this job if the PR author is the Jules bot
-    if: github.actor == 'google-labs-jules'
-    permissions:
-      contents: write
-      pull-requests: write
+    #if: github.actor == 'google-labs-jules'
+    #permissions:
+    #  contents: write
+    #  pull-requests: write
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Approve and Merge PR
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "Detected PR from Jules. Initiating auto-merge sequence..."
-          
-          # 1. NEW: Mark PR as 'Ready for Review' (removes Draft status)
-          gh pr ready ${{ github.event.pull_request.number }}
-          
-          # 2. Approve the PR
-          gh pr review ${{ github.event.pull_request.number }} --approve --body "Auto-approved by Jules Auto-Merge Workflow."
-          
-          # 3. Merge the PR
-          gh pr merge ${{ github.event.pull_request.number }} --squash --auto --delete-branch        
 
       - name: Approve and Merge PR
         env:
