@@ -181,7 +181,6 @@ const Flashcard: React.FC<FlashcardProps> = ({ id, tagalog, english, zhTW, zhCN,
             fill="clear"
             className="bookmark-btn"
             onClick={handleBookmark}
-            style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 10 }}
           >
             <IonIcon icon={isBookmarkedState ? bookmark : bookmarkOutline} slot="icon-only" color="primary" />
           </IonButton>
@@ -203,7 +202,6 @@ const Flashcard: React.FC<FlashcardProps> = ({ id, tagalog, english, zhTW, zhCN,
             fill="clear"
             className="bookmark-btn"
             onClick={handleBookmark}
-            style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 10 }}
           >
             <IonIcon icon={isBookmarkedState ? bookmark : bookmarkOutline} slot="icon-only" color="light" />
           </IonButton>

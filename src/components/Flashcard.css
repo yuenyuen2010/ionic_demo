@@ -80,10 +80,9 @@
   color: var(--ion-color-primary-contrast);
 }
 
-.audio-btn {
+.audio-btn, .bookmark-btn {
   position: absolute;
   top: 16px;
-  right: 16px;
   z-index: 10;
   --padding-start: 8px;
   --padding-end: 8px;
@@ -91,6 +90,14 @@
   transition: opacity 0.2s;
 }
 
-.audio-btn:hover {
+.bookmark-btn {
+  right: 16px;
+}
+
+.audio-btn {
+  right: 64px;
+}
+
+.audio-btn:hover, .bookmark-btn:hover {
   opacity: 1;
 }
