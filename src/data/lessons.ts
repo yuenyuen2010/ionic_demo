@@ -188,6 +188,71 @@ export const lessons: Category[] = [
           zhCN: '已经是下午五点了。'
         }
       },
+      { 
+        id: 'n6', 
+        tagalog: 'Anim', 
+        english: 'Six', 
+        zhTW: '六', 
+        zhCN: '六',
+        example: {
+          tagalog: 'Anim na buwan na.',
+          english: 'It has been six months.',
+          zhTW: '已經六個月了。',
+          zhCN: '已经六个月了。'
+        }
+      },
+      { 
+        id: 'n7', 
+        tagalog: 'Pito', 
+        english: 'Seven', 
+        zhTW: '七', 
+        zhCN: '七',
+        example: {
+          tagalog: 'Pito ang araw sa isang linggo.',
+          english: 'There are seven days in a week.',
+          zhTW: '一週有七天。',
+          zhCN: '一周有七天。'
+        }
+      },
+      { 
+        id: 'n8', 
+        tagalog: 'Walo', 
+        english: 'Eight', 
+        zhTW: '八', 
+        zhCN: '八',
+        example: {
+          tagalog: 'Walo kaming magkakapatid.',
+          english: 'We are eight siblings.',
+          zhTW: '我們有八個兄弟姊妹。',
+          zhCN: '我们有八个兄弟姐妹。'
+        }
+      },
+      { 
+        id: 'n9', 
+        tagalog: 'Siyam', 
+        english: 'Nine', 
+        zhTW: '九', 
+        zhCN: '九',
+        example: {
+          tagalog: 'Siyam na taong gulang siya.',
+          english: 'He/She is nine years old.',
+          zhTW: '他/她九歲。',
+          zhCN: '他/她九岁。'
+        }
+      },
+      { 
+        id: 'n10', 
+        tagalog: 'Sampu', 
+        english: 'Ten', 
+        zhTW: '十', 
+        zhCN: '十',
+        example: {
+          tagalog: 'Sampu ang daliri ko.',
+          english: 'I have ten fingers.',
+          zhTW: '我有十個手指。',
+          zhCN: '我有十个手指。'
+        }
+      },
     ]
   },
   {
@@ -1135,6 +1200,281 @@ export const lessons: Category[] = [
           english: 'I did not eat (polite).',
           zhTW: '我沒有吃 (禮貌)。',
           zhCN: '我没有吃 (礼貌)。'
+        }
+      }
+    ]
+  },
+  {
+    id: 'linkers',
+    title: 'Linkers (Ligatures)',
+    titleKey: 'topics.linkers',
+    cards: [
+      {
+        id: 'lnk1',
+        tagalog: '-ng',
+        english: 'Linker (after vowel)',
+        zhTW: '連接詞 (母音後)',
+        zhCN: '连接词 (元音后)',
+        example: {
+          tagalog: 'Bagong taon.',
+          english: 'New year.',
+          zhTW: '新年。',
+          zhCN: '新年。'
+        }
+      },
+      {
+        id: 'lnk2',
+        tagalog: '-g',
+        english: 'Linker (after n)',
+        zhTW: '連接詞 (n後)',
+        zhCN: '连接词 (n后)',
+        example: {
+          tagalog: 'Ulang malakas.',
+          english: 'Strong rain.',
+          zhTW: '大雨。',
+          zhCN: '大雨。'
+        }
+      },
+      {
+        id: 'lnk3',
+        tagalog: 'Na',
+        english: 'Linker (after consonant)',
+        zhTW: '連接詞 (子音後)',
+        zhCN: '连接词 (辅音后)',
+        example: {
+          tagalog: 'Masarap na pagkain.',
+          english: 'Delicious food.',
+          zhTW: '好吃的食物。',
+          zhCN: '好吃的食物。'
+        }
+      }
+    ]
+  },
+  {
+    id: 'locators',
+    title: 'Specific Location Markers',
+    titleKey: 'topics.locators',
+    cards: [
+      {
+        id: 'loc1',
+        tagalog: 'Nasa',
+        english: 'Located at/on/in',
+        zhTW: '在',
+        zhCN: '在',
+        example: {
+          tagalog: 'Ang libro ay nasa mesa.',
+          english: 'The book is on the table.',
+          zhTW: '書在桌子上。',
+          zhCN: '书在桌子上。'
+        }
+      },
+      {
+        id: 'loc2',
+        tagalog: 'Nasaan',
+        english: 'Where is (it)?',
+        zhTW: '在哪裡？',
+        zhCN: '在哪里？',
+        example: {
+          tagalog: 'Nasaan ang susi?',
+          english: 'Where is the key?',
+          zhTW: '鑰匙在哪裡？',
+          zhCN: '钥匙在哪里？'
+        }
+      },
+      {
+        id: 'loc3',
+        tagalog: 'Nasa akin',
+        english: 'It is with me',
+        zhTW: '在我這裡',
+        zhCN: '在我这里',
+        example: {
+          tagalog: 'Nasa akin ang pera.',
+          english: 'The money is with me.',
+          zhTW: '錢在我這裡。',
+          zhCN: '钱在我这里。'
+        }
+      },
+      {
+        id: 'loc4',
+        tagalog: 'Nasa labas',
+        english: 'It is outside',
+        zhTW: '在外面',
+        zhCN: '在外面',
+        example: {
+          tagalog: 'Nasa labas si Tatay.',
+          english: 'Father is outside.',
+          zhTW: '爸爸在外面。',
+          zhCN: '爸爸在外面。'
+        }
+      },
+      {
+        id: 'loc5',
+        tagalog: 'Nasa loob',
+        english: 'It is inside',
+        zhTW: '在裡面',
+        zhCN: '在里面',
+        example: {
+          tagalog: 'Nasa loob ng bahay.',
+          english: 'Inside the house.',
+          zhTW: '在房子裡。',
+          zhCN: '在房子里。'
+        }
+      }
+    ]
+  },
+  {
+    id: 'numbers-spanish',
+    title: 'Numbers (Spanish)',
+    titleKey: 'topics.numbers-spanish',
+    cards: [
+      {
+        id: 'ns1',
+        tagalog: 'Uno',
+        english: 'One (Time/Money)',
+        zhTW: '一 (時間/金錢)',
+        zhCN: '一 (时间/金钱)',
+        example: {
+          tagalog: 'Ala-una na.',
+          english: 'It\'s one o\'clock.',
+          zhTW: '一點了。',
+          zhCN: '一点了。'
+        }
+      },
+      {
+        id: 'ns2',
+        tagalog: 'Dos',
+        english: 'Two (Time/Money)',
+        zhTW: '二 (時間/金錢)',
+        zhCN: '二 (时间/金钱)',
+        example: {
+          tagalog: 'Dos pesos lang.',
+          english: 'Only two pesos.',
+          zhTW: '只要兩披索。',
+          zhCN: '只要两披索。'
+        }
+      },
+      {
+        id: 'ns3',
+        tagalog: 'Tres',
+        english: 'Three (Time/Money)',
+        zhTW: '三 (時間/金錢)',
+        zhCN: '三 (时间/金钱)',
+        example: {
+          tagalog: 'Alas-tres ng hapon.',
+          english: 'Three in the afternoon.',
+          zhTW: '下午三點。',
+          zhCN: '下午三点。'
+        }
+      },
+      {
+        id: 'ns4',
+        tagalog: 'Alas-dose',
+        english: 'Twelve o\'clock',
+        zhTW: '十二點',
+        zhCN: '十二点',
+        example: {
+          tagalog: 'Kumain tayo ng alas-dose.',
+          english: 'Let\'s eat at twelve.',
+          zhTW: '我們十二點吃飯吧。',
+          zhCN: '我们十二点吃饭吧。'
+        }
+      },
+      {
+        id: 'ns5',
+        tagalog: 'Bente',
+        english: 'Twenty',
+        zhTW: '二十',
+        zhCN: '二十',
+        example: {
+          tagalog: 'Bente pesos ito.',
+          english: 'This is twenty pesos.',
+          zhTW: '這是二十披索。',
+          zhCN: '这是二十披索。'
+        }
+      },
+      {
+        id: 'ns6',
+        tagalog: 'Singkwenta',
+        english: 'Fifty',
+        zhTW: '五十',
+        zhCN: '五十',
+        example: {
+          tagalog: 'Singkwenta anyos na siya.',
+          english: 'He/She is fifty years old.',
+          zhTW: '他/她已經五十歲了。',
+          zhCN: '他/她已经五十岁了。'
+        }
+      }
+    ]
+  },
+  {
+    id: 'social-scripts',
+    title: 'Social Scripts',
+    titleKey: 'topics.social-scripts',
+    cards: [
+      {
+        id: 'ss1',
+        tagalog: 'Kumusta?',
+        english: 'How are you?',
+        zhTW: '你好嗎？',
+        zhCN: '你好吗？',
+        example: {
+          tagalog: 'Kumusta ka, kaibigan?',
+          english: 'How are you, friend?',
+          zhTW: '你好嗎，朋友？',
+          zhCN: '你好吗，朋友？'
+        }
+      },
+      {
+        id: 'ss2',
+        tagalog: 'Ayos lang',
+        english: 'I\'m okay / It\'s fine',
+        zhTW: '我很好 / 沒事',
+        zhCN: '我很好 / 没事',
+        example: {
+          tagalog: 'Ayos lang ako.',
+          english: 'I\'m okay.',
+          zhTW: '我很好。',
+          zhCN: '我很好。'
+        }
+      },
+      {
+        id: 'ss3',
+        tagalog: 'Ingat',
+        english: 'Take care / Goodbye',
+        zhTW: '保重 / 再見',
+        zhCN: '保重 / 再见',
+        example: {
+          tagalog: 'Ingat ka palagi.',
+          english: 'Take care always.',
+          zhTW: '請保重。',
+          zhCN: '请保重。'
+        }
+      },
+      {
+        id: 'ss4',
+        tagalog: 'Sige',
+        english: 'Okay / Go ahead / Bye',
+        zhTW: '好的 / 繼續 / 再見',
+        zhCN: '好的 / 继续 / 再见',
+        example: {
+          tagalog: 'Sige, aalis na ako.',
+          english: 'Okay, I\'m leaving now.',
+          zhTW: '好的，我要走了。',
+          zhCN: '好的，我要走了。'
+        }
+      },
+      {
+        id: 'ss5',
+        tagalog: 'Pasensya na',
+        english: 'Sorry',
+        zhTW: '抱歉',
+        zhCN: '抱歉',
+        example: {
+          tagalog: 'Pasensya na sa abala.',
+          english: 'Sorry for the disturbance.',
+          zhTW: '抱歉打擾了。',
+          zhCN: '抱歉打扰了。'
         }
       }
     ]

@@ -63,6 +63,10 @@
     "existence-possession": "Existence & Possession",
     "negation": "Negation",
     "enclitic-particles": "Enclitic Particles",
-    "respect-markers": "Respect Markers"
+    "respect-markers": "Respect Markers",
+    "linkers": "Linkers (Ligatures)",
+    "locators": "Specific Location Markers",
+    "numbers-spanish": "Numbers (Spanish)",
+    "social-scripts": "Social Scripts"
   }
 }

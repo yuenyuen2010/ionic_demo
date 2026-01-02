@@ -63,6 +63,10 @@
     "existence-possession": "存在与拥有",
     "negation": "否定",
     "enclitic-particles": "附着助词",
-    "respect-markers": "敬语标记"
+    "respect-markers": "敬语标记",
+    "linkers": "连词 (连字)",
+    "locators": "具体位置标记",
+    "numbers-spanish": "数字 (西班牙语)",
+    "social-scripts": "常用社交短语"
   }
 }
