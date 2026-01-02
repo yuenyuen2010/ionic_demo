@@ -92,5 +92,13 @@
     "conflict-reconciliation": "Conflict & Reconciliation (The \"Tampo\" Pack)",
     "drinking-celebrations": "Drinking & Celebrations (The \"Tagay\" Pack)",
     "storytelling-connectors": "Storytelling Connectors (The \"Kwento\" Pack)"
+  },
+  "groups": {
+    "basics": "Basics",
+    "daily_life": "Daily Life",
+    "social": "Social & People",
+    "conversational": "Conversational",
+    "grammar": "Grammar Essentials",
+    "advanced": "Advanced & Others"
   }
 }

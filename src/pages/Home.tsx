@@ -10,18 +10,19 @@ import {
   IonLabel, 
   IonIcon,
   IonSearchbar,
-  IonButton
+  IonButton,
+  IonListHeader
 } from '@ionic/react';
 import { bookOutline, chevronForwardOutline, timeOutline } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
-import { lessons } from '../data/lessons';
+import { lessons, LessonGroup } from '../data/lessons';
 import { getSRSStats } from '../utils/srs';
 import CommonHeader from '../components/CommonHeader';
 import './Home.css';
 
 /**
  * Home Page Component
- * Displays the list of lesson categories and the current status of reviews.
+ * Displays the list of lesson categories grouped by their type.
  * Allows users to search for specific lessons or words.
  */
 const Home: React.FC = () => {
@@ -35,7 +36,6 @@ const Home: React.FC = () => {
   const [dueCount, setDueCount] = useState(0);
 
   // Effect to load SRS stats when the component mounts
-  // Note: Ideally should useIonViewWillEnter but that requires refactoring to useIonViewWillEnter hook or standard Effect if re-mount happens
   React.useEffect(() => {
     const stats = getSRSStats();
     setDueCount(stats.dueCount);
@@ -43,7 +43,6 @@ const Home: React.FC = () => {
 
   /**
    * Filters the lessons based on the search text.
-   * Matches against category title or any content (Tagalog/English/Chinese) within the cards.
    */
   const filteredLessons = lessons.filter(category => {
     if (!searchText) return true;
@@ -62,6 +61,19 @@ const Home: React.FC = () => {
       (card.zhCN && card.zhCN.includes(searchText))
     );
   });
+
+  // Group lessons by their 'group' property
+  const groupedLessons = filteredLessons.reduce((groups, lesson) => {
+    const group = lesson.group;
+    if (!groups[group]) {
+      groups[group] = [];
+    }
+    groups[group].push(lesson);
+    return groups;
+  }, {} as Record<LessonGroup, typeof lessons>);
+
+  // Define the order of groups for display
+  const groupOrder: LessonGroup[] = ['basics', 'daily_life', 'social', 'conversational', 'grammar', 'advanced'];
 
   return (
     <IonPage>
@@ -95,25 +107,38 @@ const Home: React.FC = () => {
           className="ion-padding-horizontal"
         />
 
-        {/* List of Lesson Categories */}
+        {/* List of Lesson Categories Grouped */}
         <IonList inset={false}>
-          {filteredLessons.map((category) => (
-            <IonItem 
-              key={category.id} 
-              routerLink={`/lesson/${category.id}`}
-              detail={false}
-            >
-              <IonIcon icon={bookOutline} slot="start" color="primary" />
-              <IonLabel>
-                <h3>{t(category.titleKey)}</h3>
-                <p>{t('home.cardsCount', { count: category.cards.length })}</p>
-              </IonLabel>
-              <IonIcon icon={chevronForwardOutline} slot="end" />
-            </IonItem>
-          ))}
+          {filteredLessons.length > 0 ? (
+            groupOrder.map(groupKey => {
+              const groupLessons = groupedLessons[groupKey];
+              if (!groupLessons || groupLessons.length === 0) return null;
 
-          {/* No Results Fallback */}
-          {filteredLessons.length === 0 && (
+              return (
+                <React.Fragment key={groupKey}>
+                  <IonListHeader>
+                    <IonLabel className="ion-text-uppercase font-bold">
+                      {t(`groups.${groupKey}`)}
+                    </IonLabel>
+                  </IonListHeader>
+                  {groupLessons.map((category) => (
+                    <IonItem
+                      key={category.id}
+                      routerLink={`/lesson/${category.id}`}
+                      detail={false}
+                    >
+                      <IonIcon icon={bookOutline} slot="start" color="primary" />
+                      <IonLabel>
+                        <h3>{t(category.titleKey)}</h3>
+                        <p>{t('home.cardsCount', { count: category.cards.length })}</p>
+                      </IonLabel>
+                      <IonIcon icon={chevronForwardOutline} slot="end" />
+                    </IonItem>
+                  ))}
+                </React.Fragment>
+              );
+            })
+          ) : (
             <div className="ion-padding ion-text-center">
               <p>{t('home.noResults')}</p>
             </div>
