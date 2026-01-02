@@ -70,6 +70,11 @@
     "social-scripts": "常用社交短語",
     "transportation": "交通 (通勤)",
     "time-scheduling": "時間與日程",
-    "common-adjectives": "常見形容詞 (反義詞)"
+    "common-adjectives": "常見形容詞 (反義詞)",
+    "money-bargaining": "錢與討價還價",
+    "ordering-dining": "點餐與用餐",
+    "health-emergencies": "健康與急救",
+    "family-social": "家庭與介紹",
+    "housing-utilities": "住房與設施"
   }
 }

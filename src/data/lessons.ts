@@ -1785,5 +1785,443 @@ export const lessons: Category[] = [
         }
       }
     ]
+  },
+  {
+    id: 'money-bargaining',
+    title: 'Money & Bargaining',
+    titleKey: 'topics.money-bargaining',
+    cards: [
+      {
+        id: 'mon1',
+        tagalog: 'Magkano?',
+        english: 'How much?',
+        zhTW: '多少錢？',
+        zhCN: '多少钱？',
+        example: {
+          tagalog: 'Magkano ito?',
+          english: 'How much is this?',
+          zhTW: '這個多少錢？',
+          zhCN: '这个多少钱？'
+        }
+      },
+      {
+        id: 'mon2',
+        tagalog: 'Tawad',
+        english: 'Discount / Haggle',
+        zhTW: '折扣 / 殺價',
+        zhCN: '折扣 / 杀价',
+        example: {
+          tagalog: 'Wala bang tawad?',
+          english: 'No discount?',
+          zhTW: '沒有折扣嗎？',
+          zhCN: '没有折扣吗？'
+        }
+      },
+      {
+        id: 'mon3',
+        tagalog: 'Mahal',
+        english: 'Expensive',
+        zhTW: '貴',
+        zhCN: '贵',
+        example: {
+          tagalog: 'Masyadong mahal.',
+          english: 'Too expensive.',
+          zhTW: '太貴了。',
+          zhCN: '太贵了。'
+        }
+      },
+      {
+        id: 'mon4',
+        tagalog: 'Mura',
+        english: 'Cheap',
+        zhTW: '便宜',
+        zhCN: '便宜',
+        example: {
+          tagalog: 'Doon ay mura.',
+          english: 'It is cheap there.',
+          zhTW: '那裡很便宜。',
+          zhCN: '那里很便宜。'
+        }
+      },
+      {
+        id: 'mon5',
+        tagalog: 'Barya',
+        english: 'Loose change / Coins',
+        zhTW: '零錢',
+        zhCN: '零钱',
+        example: {
+          tagalog: 'Wala akong barya.',
+          english: 'I don\'t have loose change.',
+          zhTW: '我沒有零錢。',
+          zhCN: '我没有零钱。'
+        }
+      },
+      {
+        id: 'mon6',
+        tagalog: 'Cash / G-Cash',
+        english: 'Cash / Digital Wallet',
+        zhTW: '現金 / 電子錢包',
+        zhCN: '现金 / 电子钱包',
+        example: {
+          tagalog: 'Pwede ba ang G-Cash?',
+          english: 'Is G-Cash accepted?',
+          zhTW: '可以用 G-Cash 嗎？',
+          zhCN: '可以用 G-Cash 吗？'
+        }
+      }
+    ]
+  },
+  {
+    id: 'ordering-dining',
+    title: 'Ordering & Dining',
+    titleKey: 'topics.ordering-dining',
+    cards: [
+      {
+        id: 'din1',
+        tagalog: 'Pahingi',
+        english: 'Please give me / Can I have',
+        zhTW: '請給我',
+        zhCN: '请给我',
+        example: {
+          tagalog: 'Pahingi ng tubig.',
+          english: 'Water please.',
+          zhTW: '請給我水。',
+          zhCN: '请给我水。'
+        }
+      },
+      {
+        id: 'din2',
+        tagalog: 'Isa pa',
+        english: 'One more',
+        zhTW: '再來一個',
+        zhCN: '再来一个',
+        example: {
+          tagalog: 'Isa pa pong kanin.',
+          english: 'One more rice please.',
+          zhTW: '請再來一份飯。',
+          zhCN: '请再来一份饭。'
+        }
+      },
+      {
+        id: 'din3',
+        tagalog: 'Busog',
+        english: 'Full',
+        zhTW: '飽',
+        zhCN: '饱',
+        example: {
+          tagalog: 'Busog na ako.',
+          english: 'I am full already.',
+          zhTW: '我已經飽了。',
+          zhCN: '我已经饱了。'
+        }
+      },
+      {
+        id: 'din4',
+        tagalog: 'Gutom',
+        english: 'Hungry',
+        zhTW: '餓',
+        zhCN: '饿',
+        example: {
+          tagalog: 'Gutom na ako.',
+          english: 'I am hungry already.',
+          zhTW: '我已經餓了。',
+          zhCN: '我已经饿了。'
+        }
+      },
+      {
+        id: 'din5',
+        tagalog: 'Bill out',
+        english: 'Can I have the check?',
+        zhTW: '買單',
+        zhCN: '买单',
+        example: {
+          tagalog: 'Bill out na po.',
+          english: 'Check please.',
+          zhTW: '請買單。',
+          zhCN: '请买单。'
+        }
+      },
+      {
+        id: 'din6',
+        tagalog: 'Take out / Dine in',
+        english: 'To go / Eat here',
+        zhTW: '外帶 / 內用',
+        zhCN: '外带 / 内用',
+        example: {
+          tagalog: 'Take out po.',
+          english: 'To go please.',
+          zhTW: '請外帶。',
+          zhCN: '请外带。'
+        }
+      }
+    ]
+  },
+  {
+    id: 'health-emergencies',
+    title: 'Health & Emergencies',
+    titleKey: 'topics.health-emergencies',
+    cards: [
+      {
+        id: 'hlt1',
+        tagalog: 'Tulong',
+        english: 'Help',
+        zhTW: '幫忙 / 救命',
+        zhCN: '帮忙 / 救命',
+        example: {
+          tagalog: 'Tulong! Tulungan mo ako.',
+          english: 'Help! Help me.',
+          zhTW: '救命！幫幫我。',
+          zhCN: '救命！帮帮我。'
+        }
+      },
+      {
+        id: 'hlt2',
+        tagalog: 'Masakit',
+        english: 'Painful',
+        zhTW: '痛',
+        zhCN: '痛',
+        example: {
+          tagalog: 'Masakit ang ulo ko.',
+          english: 'My head hurts.',
+          zhTW: '我頭痛。',
+          zhCN: '我头痛。'
+        }
+      },
+      {
+        id: 'hlt3',
+        tagalog: 'Gamot',
+        english: 'Medicine',
+        zhTW: '藥',
+        zhCN: '药',
+        example: {
+          tagalog: 'Kailangan ko ng gamot.',
+          english: 'I need medicine.',
+          zhTW: '我需要藥。',
+          zhCN: '我需要药。'
+        }
+      },
+      {
+        id: 'hlt4',
+        tagalog: 'Ulo',
+        english: 'Head',
+        zhTW: '頭',
+        zhCN: '头',
+        example: {
+          tagalog: 'Masakit ang ulo.',
+          english: 'Head is painful.',
+          zhTW: '頭痛。',
+          zhCN: '头痛。'
+        }
+      },
+      {
+        id: 'hlt5',
+        tagalog: 'Tiyan',
+        english: 'Stomach',
+        zhTW: '肚子',
+        zhCN: '肚子',
+        example: {
+          tagalog: 'Masakit ang tiyan ko.',
+          english: 'My stomach hurts.',
+          zhTW: '我肚子痛。',
+          zhCN: '我肚子痛。'
+        }
+      },
+      {
+        id: 'hlt6',
+        tagalog: 'Lagnat',
+        english: 'Fever',
+        zhTW: '發燒',
+        zhCN: '发烧',
+        example: {
+          tagalog: 'May lagnat ang bata.',
+          english: 'The child has a fever.',
+          zhTW: '孩子發燒了。',
+          zhCN: '孩子发烧了。'
+        }
+      },
+      {
+        id: 'hlt7',
+        tagalog: 'Ospital',
+        english: 'Hospital',
+        zhTW: '醫院',
+        zhCN: '医院',
+        example: {
+          tagalog: 'Dalhin sa ospital.',
+          english: 'Bring to the hospital.',
+          zhTW: '送到醫院。',
+          zhCN: '送到医院。'
+        }
+      }
+    ]
+  },
+  {
+    id: 'family-social',
+    title: 'Family & Introductions',
+    titleKey: 'topics.family-social',
+    cards: [
+      {
+        id: 'fam1',
+        tagalog: 'Ilang taon ka na?',
+        english: 'How old are you?',
+        zhTW: '你幾歲了？',
+        zhCN: '你几岁了？',
+        example: {
+          tagalog: 'Ilang taon ka na ngayon?',
+          english: 'How old are you now?',
+          zhTW: '你現在幾歲了？',
+          zhCN: '你现在几岁了？'
+        }
+      },
+      {
+        id: 'fam2',
+        tagalog: 'Binata / Dalaga',
+        english: 'Single Man / Single Woman',
+        zhTW: '單身男子 / 單身女子',
+        zhCN: '单身男子 / 单身女子',
+        example: {
+          tagalog: 'Siya ay dalaga pa.',
+          english: 'She is still single.',
+          zhTW: '她還是單身。',
+          zhCN: '她还是单身。'
+        }
+      },
+      {
+        id: 'fam3',
+        tagalog: 'May asawa',
+        english: 'Married / Have a spouse',
+        zhTW: '已婚',
+        zhCN: '已婚',
+        example: {
+          tagalog: 'May asawa na ako.',
+          english: 'I am already married.',
+          zhTW: '我已經結婚了。',
+          zhCN: '我已经结婚了。'
+        }
+      },
+      {
+        id: 'fam4',
+        tagalog: 'Kapatid',
+        english: 'Sibling',
+        zhTW: '兄弟姊妹',
+        zhCN: '兄弟姐妹',
+        example: {
+          tagalog: 'Ilan ang kapatid mo?',
+          english: 'How many siblings do you have?',
+          zhTW: '你有幾個兄弟姊妹？',
+          zhCN: '你有几个兄弟姐妹？'
+        }
+      },
+      {
+        id: 'fam5',
+        tagalog: 'Anak',
+        english: 'Child',
+        zhTW: '孩子',
+        zhCN: '孩子',
+        example: {
+          tagalog: 'Mahal ko ang aking anak.',
+          english: 'I love my child.',
+          zhTW: '我愛我的孩子。',
+          zhCN: '我爱我的孩子。'
+        }
+      },
+      {
+        id: 'fam6',
+        tagalog: 'Taga-saan ka?',
+        english: 'Where are you from?',
+        zhTW: '你是哪裡人？',
+        zhCN: '你是哪里人？',
+        example: {
+          tagalog: 'Taga-saan ka sa Pilipinas?',
+          english: 'Where are you from in the Philippines?',
+          zhTW: '你在菲律賓哪裡？',
+          zhCN: '你在菲律宾哪里？'
+        }
+      }
+    ]
+  },
+  {
+    id: 'housing-utilities',
+    title: 'Housing & Utilities',
+    titleKey: 'topics.housing-utilities',
+    cards: [
+      {
+        id: 'house1',
+        tagalog: 'Sira',
+        english: 'Broken',
+        zhTW: '壞了',
+        zhCN: '坏了',
+        example: {
+          tagalog: 'Sira ang aircon.',
+          english: 'The aircon is broken.',
+          zhTW: '冷氣壞了。',
+          zhCN: '冷气坏了。'
+        }
+      },
+      {
+        id: 'house2',
+        tagalog: 'Bukas',
+        english: 'Open / On',
+        zhTW: '開',
+        zhCN: '开',
+        example: {
+          tagalog: 'Bukas ang ilaw.',
+          english: 'The light is on.',
+          zhTW: '燈開著。',
+          zhCN: '灯开着。'
+        }
+      },
+      {
+        id: 'house3',
+        tagalog: 'Sarado',
+        english: 'Closed / Off',
+        zhTW: '關',
+        zhCN: '关',
+        example: {
+          tagalog: 'Sarado ang pinto.',
+          english: 'The door is closed.',
+          zhTW: '門關著。',
+          zhCN: '门关着。'
+        }
+      },
+      {
+        id: 'house4',
+        tagalog: 'Ilaw',
+        english: 'Light',
+        zhTW: '燈',
+        zhCN: '灯',
+        example: {
+          tagalog: 'Pakibukas ang ilaw.',
+          english: 'Please turn on the light.',
+          zhTW: '請開燈。',
+          zhCN: '请开灯。'
+        }
+      },
+      {
+        id: 'house5',
+        tagalog: 'Tubig',
+        english: 'Water / Tap',
+        zhTW: '水',
+        zhCN: '水',
+        example: {
+          tagalog: 'Walang tubig sa gripo.',
+          english: 'No water from the tap.',
+          zhTW: '水龍頭沒水。',
+          zhCN: '水龙头没水。'
+        }
+      },
+      {
+        id: 'house6',
+        tagalog: 'Kuryente',
+        english: 'Electricity / Power',
+        zhTW: '電',
+        zhCN: '电',
+        example: {
+          tagalog: 'Walang kuryente ngayon.',
+          english: 'No electricity now (Brownout).',
+          zhTW: '現在停電。',
+          zhCN: '现在停电。'
+        }
+      }
+    ]
   }
 ];

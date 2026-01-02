@@ -70,6 +70,11 @@
     "social-scripts": "Social Scripts",
     "transportation": "Transportation (Commuting)",
     "time-scheduling": "Time & Scheduling",
-    "common-adjectives": "Common Adjectives (Opposites)"
+    "common-adjectives": "Common Adjectives (Opposites)",
+    "money-bargaining": "Money & Bargaining",
+    "ordering-dining": "Ordering & Dining",
+    "health-emergencies": "Health & Emergencies",
+    "family-social": "Family & Introductions",
+    "housing-utilities": "Housing & Utilities"
   }
 }
