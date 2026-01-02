@@ -16,6 +16,8 @@ export interface Category {
   id: string;
   title: string;
   titleKey: string;
+  group: string;
+  groupKey: string;
   cards: Flashcard[];
 }
 
@@ -24,6 +26,8 @@ export const lessons: Category[] = [
     id: 'greetings',
     title: 'Greetings',
     titleKey: 'topics.greetings',
+    group: 'basics',
+    groupKey: 'groups.basics',
     cards: [
       { 
         id: '1', 
@@ -122,6 +126,8 @@ export const lessons: Category[] = [
     id: 'numbers',
     title: 'Numbers',
     titleKey: 'topics.numbers',
+    group: 'basics',
+    groupKey: 'groups.basics',
     cards: [
       { 
         id: 'n1', 
@@ -259,6 +265,8 @@ export const lessons: Category[] = [
     id: 'common-phrases',
     title: 'Common Phrases',
     titleKey: 'topics.common-phrases',
+    group: 'basics',
+    groupKey: 'groups.basics',
     cards: [
       { 
         id: 'c1', 
@@ -331,6 +339,8 @@ export const lessons: Category[] = [
     id: 'family',
     title: 'Family',
     titleKey: 'topics.family',
+    group: 'basics',
+    groupKey: 'groups.basics',
     cards: [
       { 
         id: 'f1', 
@@ -403,6 +413,8 @@ export const lessons: Category[] = [
     id: 'colors',
     title: 'Colors',
     titleKey: 'topics.colors',
+    group: 'basics',
+    groupKey: 'groups.basics',
     cards: [
       { 
         id: 'col1', 
@@ -475,6 +487,8 @@ export const lessons: Category[] = [
     id: 'food',
     title: 'Food',
     titleKey: 'topics.food',
+    group: 'daily_life',
+    groupKey: 'groups.daily_life',
     cards: [
       { 
         id: 'fd1', 
@@ -547,6 +561,8 @@ export const lessons: Category[] = [
     id: 'pronouns',
     title: 'Pronouns',
     titleKey: 'topics.pronouns',
+    group: 'grammar',
+    groupKey: 'groups.grammar',
     cards: [
       {
         id: 'pro1',
@@ -658,6 +674,8 @@ export const lessons: Category[] = [
     id: 'pseudo-verbs',
     title: 'Pseudo-Verbs',
     titleKey: 'topics.pseudo-verbs',
+    group: 'grammar',
+    groupKey: 'groups.grammar',
     cards: [
       {
         id: 'pv1',
@@ -717,6 +735,8 @@ export const lessons: Category[] = [
     id: 'question-words',
     title: 'Common Question Words',
     titleKey: 'topics.question-words',
+    group: 'basics',
+    groupKey: 'groups.basics',
     cards: [
       {
         id: 'qw1',
@@ -815,6 +835,8 @@ export const lessons: Category[] = [
     id: 'connectors',
     title: 'Connector Particles',
     titleKey: 'topics.connectors',
+    group: 'grammar',
+    groupKey: 'groups.grammar',
     cards: [
       {
         id: 'con1',
@@ -900,6 +922,8 @@ export const lessons: Category[] = [
     id: 'demonstrative-pronouns',
     title: 'Demonstrative Pronouns',
     titleKey: 'topics.demonstrative-pronouns',
+    group: 'grammar',
+    groupKey: 'groups.grammar',
     cards: [
       {
         id: 'dem1',
@@ -985,6 +1009,8 @@ export const lessons: Category[] = [
     id: 'existence-possession',
     title: 'Existence & Possession',
     titleKey: 'topics.existence-possession',
+    group: 'grammar',
+    groupKey: 'groups.grammar',
     cards: [
       {
         id: 'ep1',
@@ -1044,6 +1070,8 @@ export const lessons: Category[] = [
     id: 'negation',
     title: 'Negation',
     titleKey: 'topics.negation',
+    group: 'grammar',
+    groupKey: 'groups.grammar',
     cards: [
       {
         id: 'neg1',
@@ -1090,6 +1118,8 @@ export const lessons: Category[] = [
     id: 'enclitic-particles',
     title: 'Enclitic Particles',
     titleKey: 'topics.enclitic-particles',
+    group: 'grammar',
+    groupKey: 'groups.grammar',
     cards: [
       {
         id: 'enc1',
@@ -1162,6 +1192,8 @@ export const lessons: Category[] = [
     id: 'respect-markers',
     title: 'Respect Markers',
     titleKey: 'topics.respect-markers',
+    group: 'grammar',
+    groupKey: 'groups.grammar',
     cards: [
       {
         id: 'rm1',
@@ -1208,6 +1240,8 @@ export const lessons: Category[] = [
     id: 'linkers',
     title: 'Linkers (Ligatures)',
     titleKey: 'topics.linkers',
+    group: 'grammar',
+    groupKey: 'groups.grammar',
     cards: [
       {
         id: 'lnk1',
@@ -1254,6 +1288,8 @@ export const lessons: Category[] = [
     id: 'locators',
     title: 'Specific Location Markers',
     titleKey: 'topics.locators',
+    group: 'grammar',
+    groupKey: 'groups.grammar',
     cards: [
       {
         id: 'loc1',
@@ -1326,6 +1362,8 @@ export const lessons: Category[] = [
     id: 'numbers-spanish',
     title: 'Numbers (Spanish)',
     titleKey: 'topics.numbers-spanish',
+    group: 'basics',
+    groupKey: 'groups.basics',
     cards: [
       {
         id: 'ns1',
@@ -1411,6 +1449,8 @@ export const lessons: Category[] = [
     id: 'social-scripts',
     title: 'Social Scripts',
     titleKey: 'topics.social-scripts',
+    group: 'social',
+    groupKey: 'groups.social',
     cards: [
       {
         id: 'ss1',
@@ -1483,6 +1523,8 @@ export const lessons: Category[] = [
     id: 'transportation',
     title: 'Transportation (Commuting)',
     titleKey: 'topics.transportation',
+    group: 'daily_life',
+    groupKey: 'groups.daily_life',
     cards: [
       {
         id: 'trans1',
@@ -1581,6 +1623,8 @@ export const lessons: Category[] = [
     id: 'time-scheduling',
     title: 'Time & Scheduling',
     titleKey: 'topics.time-scheduling',
+    group: 'daily_life',
+    groupKey: 'groups.daily_life',
     cards: [
       {
         id: 'time1',
@@ -1666,6 +1710,8 @@ export const lessons: Category[] = [
     id: 'common-adjectives',
     title: 'Common Adjectives (Opposites)',
     titleKey: 'topics.common-adjectives',
+    group: 'daily_life',
+    groupKey: 'groups.daily_life',
     cards: [
       {
         id: 'adj1',
@@ -1790,6 +1836,8 @@ export const lessons: Category[] = [
     id: 'money-bargaining',
     title: 'Money & Bargaining',
     titleKey: 'topics.money-bargaining',
+    group: 'daily_life',
+    groupKey: 'groups.daily_life',
     cards: [
       {
         id: 'mon1',
@@ -1875,6 +1923,8 @@ export const lessons: Category[] = [
     id: 'ordering-dining',
     title: 'Ordering & Dining',
     titleKey: 'topics.ordering-dining',
+    group: 'daily_life',
+    groupKey: 'groups.daily_life',
     cards: [
       {
         id: 'din1',
@@ -1960,6 +2010,8 @@ export const lessons: Category[] = [
     id: 'health-emergencies',
     title: 'Health & Emergencies',
     titleKey: 'topics.health-emergencies',
+    group: 'daily_life',
+    groupKey: 'groups.daily_life',
     cards: [
       {
         id: 'hlt1',
@@ -2058,6 +2110,8 @@ export const lessons: Category[] = [
     id: 'family-social',
     title: 'Family & Introductions',
     titleKey: 'topics.family-social',
+    group: 'social',
+    groupKey: 'groups.social',
     cards: [
       {
         id: 'fam1',
@@ -2143,6 +2197,8 @@ export const lessons: Category[] = [
     id: 'housing-utilities',
     title: 'Housing & Utilities',
     titleKey: 'topics.housing-utilities',
+    group: 'daily_life',
+    groupKey: 'groups.daily_life',
     cards: [
       {
         id: 'house1',
@@ -2228,6 +2284,8 @@ export const lessons: Category[] = [
     id: 'hygiene-comfort',
     title: 'Hygiene & Comfort',
     titleKey: 'topics.hygiene-comfort',
+    group: 'daily_life',
+    groupKey: 'groups.daily_life',
     cards: [
       {
         id: 'hyg1',
@@ -2313,6 +2371,8 @@ export const lessons: Category[] = [
     id: 'digital-survival',
     title: 'Digital Survival',
     titleKey: 'topics.digital-survival',
+    group: 'daily_life',
+    groupKey: 'groups.daily_life',
     cards: [
       {
         id: 'dig1',
@@ -2385,6 +2445,8 @@ export const lessons: Category[] = [
     id: 'weather',
     title: 'Weather',
     titleKey: 'topics.weather',
+    group: 'daily_life',
+    groupKey: 'groups.daily_life',
     cards: [
       {
         id: 'wth1',
@@ -2457,6 +2519,8 @@ export const lessons: Category[] = [
     id: 'city-navigation',
     title: 'City Navigation',
     titleKey: 'topics.city-navigation',
+    group: 'daily_life',
+    groupKey: 'groups.daily_life',
     cards: [
       {
         id: 'nav1',
@@ -2542,6 +2606,8 @@ export const lessons: Category[] = [
     id: 'emotions-feelings',
     title: 'Emotions & Feelings',
     titleKey: 'topics.emotions-feelings',
+    group: 'social',
+    groupKey: 'groups.social',
     cards: [
       {
         id: 'emo1',
@@ -2627,6 +2693,8 @@ export const lessons: Category[] = [
     id: 'taglish-fillers',
     title: 'Taglish Fillers (Conyo Starter Pack)',
     titleKey: 'topics.taglish-fillers',
+    group: 'social',
+    groupKey: 'groups.social',
     cards: [
       {
         id: 'tag1',
@@ -2699,6 +2767,8 @@ export const lessons: Category[] = [
     id: 'making-plans',
     title: 'Making Plans (The "Tara" Pack)',
     titleKey: 'topics.making-plans',
+    group: 'social',
+    groupKey: 'groups.social',
     cards: [
       {
         id: 'plan1',
@@ -2771,6 +2841,8 @@ export const lessons: Category[] = [
     id: 'compliments-flattery',
     title: 'Compliments & Flattery',
     titleKey: 'topics.compliments-flattery',
+    group: 'social',
+    groupKey: 'groups.social',
     cards: [
       {
         id: 'bol1',
@@ -2843,6 +2915,8 @@ export const lessons: Category[] = [
     id: 'opinions-uncertainty',
     title: 'Opinions & Uncertainty',
     titleKey: 'topics.opinions-uncertainty',
+    group: 'social',
+    groupKey: 'groups.social',
     cards: [
       {
         id: 'ewan1',
@@ -2915,6 +2989,8 @@ export const lessons: Category[] = [
     id: 'hobbies-interests',
     title: 'Hobbies & Interests',
     titleKey: 'topics.hobbies-interests',
+    group: 'social',
+    groupKey: 'groups.social',
     cards: [
       {
         id: 'hob1',
@@ -2987,6 +3063,8 @@ export const lessons: Category[] = [
     id: 'modern-slang',
     title: 'Modern Slang (The "Street" Pack)',
     titleKey: 'topics.modern-slang',
+    group: 'social',
+    groupKey: 'groups.social',
     cards: [
       {
         id: 'slang1',
@@ -3059,6 +3137,8 @@ export const lessons: Category[] = [
     id: 'work-school',
     title: 'Work & School (Introduction Expansion)',
     titleKey: 'topics.work-school',
+    group: 'daily_life',
+    groupKey: 'groups.daily_life',
     cards: [
       {
         id: 'work1',
@@ -3131,6 +3211,8 @@ export const lessons: Category[] = [
     id: 'love-dating',
     title: 'Love & Dating (The "Kilig" Pack)',
     titleKey: 'topics.love-dating',
+    group: 'social',
+    groupKey: 'groups.social',
     cards: [
       {
         id: 'luv1',
@@ -3203,6 +3285,8 @@ export const lessons: Category[] = [
     id: 'conflict-reconciliation',
     title: 'Conflict & Reconciliation (The "Tampo" Pack)',
     titleKey: 'topics.conflict-reconciliation',
+    group: 'social',
+    groupKey: 'groups.social',
     cards: [
       {
         id: 'confl1',
@@ -3275,6 +3359,8 @@ export const lessons: Category[] = [
     id: 'drinking-celebrations',
     title: 'Drinking & Celebrations (The "Tagay" Pack)',
     titleKey: 'topics.drinking-celebrations',
+    group: 'social',
+    groupKey: 'groups.social',
     cards: [
       {
         id: 'drink1',
@@ -3347,6 +3433,8 @@ export const lessons: Category[] = [
     id: 'storytelling-connectors',
     title: 'Storytelling Connectors (The "Kwento" Pack)',
     titleKey: 'topics.storytelling-connectors',
+    group: 'social',
+    groupKey: 'groups.social',
     cards: [
       {
         id: 'story1',
