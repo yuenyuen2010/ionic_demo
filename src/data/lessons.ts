@@ -830,5 +830,313 @@ export const lessons: Category[] = [
         }
       }
     ]
+  },
+  {
+    id: 'demonstrative-pronouns',
+    title: 'Demonstrative Pronouns',
+    titleKey: 'topics.demonstrative-pronouns',
+    cards: [
+      {
+        id: 'dem1',
+        tagalog: 'Ito',
+        english: 'This (near me)',
+        zhTW: '這個 (近)',
+        zhCN: '这个 (近)',
+        example: {
+          tagalog: 'Ito ang bahay ko.',
+          english: 'This is my house.',
+          zhTW: '這是我的房子。',
+          zhCN: '这是我的房子。'
+        }
+      },
+      {
+        id: 'dem2',
+        tagalog: 'Iyan',
+        english: 'That (near you)',
+        zhTW: '那個 (中)',
+        zhCN: '那个 (中)',
+        example: {
+          tagalog: 'Iyan ba ang libro mo?',
+          english: 'Is that your book?',
+          zhTW: '那是你的書嗎？',
+          zhCN: '那是你的书吗？'
+        }
+      },
+      {
+        id: 'dem3',
+        tagalog: 'Iyon',
+        english: 'That (far from both)',
+        zhTW: '那個 (遠)',
+        zhCN: '那个 (远)',
+        example: {
+          tagalog: 'Iyon ang bundok.',
+          english: 'That is the mountain.',
+          zhTW: '那是山。',
+          zhCN: '那是山。'
+        }
+      },
+      {
+        id: 'dem4',
+        tagalog: 'Dito',
+        english: 'Here (near me)',
+        zhTW: '這裡 (近)',
+        zhCN: '这里 (近)',
+        example: {
+          tagalog: 'Dito ako nakatira.',
+          english: 'I live here.',
+          zhTW: '我住在這裡。',
+          zhCN: '我住在这里。'
+        }
+      },
+      {
+        id: 'dem5',
+        tagalog: 'Diyan',
+        english: 'There (near you)',
+        zhTW: '那裡 (中)',
+        zhCN: '那里 (中)',
+        example: {
+          tagalog: 'Ilagay mo diyan.',
+          english: 'Put it there.',
+          zhTW: '把它放在那裡。',
+          zhCN: '把它放在那里。'
+        }
+      },
+      {
+        id: 'dem6',
+        tagalog: 'Doon',
+        english: 'Over there (far from both)',
+        zhTW: '那裡 (遠)',
+        zhCN: '那里 (远)',
+        example: {
+          tagalog: 'Pumunta tayo doon.',
+          english: 'Let\'s go there.',
+          zhTW: '我們去那裡吧。',
+          zhCN: '我们去那里吧。'
+        }
+      }
+    ]
+  },
+  {
+    id: 'existence-possession',
+    title: 'Existence & Possession',
+    titleKey: 'topics.existence-possession',
+    cards: [
+      {
+        id: 'ep1',
+        tagalog: 'May / Meron',
+        english: 'There is / I have',
+        zhTW: '有',
+        zhCN: '有',
+        example: {
+          tagalog: 'May tubig ba?',
+          english: 'Is there water?',
+          zhTW: '有水嗎？',
+          zhCN: '有水吗？'
+        }
+      },
+      {
+        id: 'ep2',
+        tagalog: 'Wala',
+        english: 'None / I don\'t have',
+        zhTW: '沒有',
+        zhCN: '没有',
+        example: {
+          tagalog: 'Walang tubig.',
+          english: 'No water.',
+          zhTW: '沒有水。',
+          zhCN: '没有水。'
+        }
+      },
+      {
+        id: 'ep3',
+        tagalog: 'Meron ako',
+        english: 'I have (it)',
+        zhTW: '我有',
+        zhCN: '我有',
+        example: {
+          tagalog: 'Meron akong pera.',
+          english: 'I have money.',
+          zhTW: '我有錢。',
+          zhCN: '我有钱。'
+        }
+      },
+      {
+        id: 'ep4',
+        tagalog: 'Wala ako',
+        english: 'I don\'t have (it)',
+        zhTW: '我沒有',
+        zhCN: '我没有',
+        example: {
+          tagalog: 'Wala akong oras.',
+          english: 'I don\'t have time.',
+          zhTW: '我沒有時間。',
+          zhCN: '我没有时间。'
+        }
+      }
+    ]
+  },
+  {
+    id: 'negation',
+    title: 'Negation',
+    titleKey: 'topics.negation',
+    cards: [
+      {
+        id: 'neg1',
+        tagalog: 'Hindi',
+        english: 'Not',
+        zhTW: '不 (形容詞/動詞)',
+        zhCN: '不 (形容词/动词)',
+        example: {
+          tagalog: 'Hindi masarap.',
+          english: 'Not delicious.',
+          zhTW: '不好吃。',
+          zhCN: '不好吃。'
+        }
+      },
+      {
+        id: 'neg2',
+        tagalog: 'Wala',
+        english: 'None / Absent',
+        zhTW: '沒有 / 不在',
+        zhCN: '没有 / 不在',
+        example: {
+          tagalog: 'Wala si Mark.',
+          english: 'Mark is not here.',
+          zhTW: '馬克不在這裡。',
+          zhCN: '马克不在这里。'
+        }
+      },
+      {
+        id: 'neg3',
+        tagalog: 'Huwag',
+        english: 'Don\'t',
+        zhTW: '不要 (命令)',
+        zhCN: '不要 (命令)',
+        example: {
+          tagalog: 'Huwag kang maingay.',
+          english: 'Don\'t be noisy.',
+          zhTW: '不要吵。',
+          zhCN: '不要吵。'
+        }
+      }
+    ]
+  },
+  {
+    id: 'enclitic-particles',
+    title: 'Enclitic Particles',
+    titleKey: 'topics.enclitic-particles',
+    cards: [
+      {
+        id: 'enc1',
+        tagalog: 'Na',
+        english: 'Already / Now',
+        zhTW: '已經',
+        zhCN: '已经',
+        example: {
+          tagalog: 'Tapos na.',
+          english: 'Finished already.',
+          zhTW: '已經完成了。',
+          zhCN: '已经完成了。'
+        }
+      },
+      {
+        id: 'enc2',
+        tagalog: 'Pa',
+        english: 'Still / Yet / More',
+        zhTW: '還 / 再',
+        zhCN: '还 / 再',
+        example: {
+          tagalog: 'Isa pa.',
+          english: 'One more.',
+          zhTW: '再來一個。',
+          zhCN: '再来一个。'
+        }
+      },
+      {
+        id: 'enc3',
+        tagalog: 'Lang',
+        english: 'Just / Only',
+        zhTW: '只是 / 只有',
+        zhCN: '只是 / 只有',
+        example: {
+          tagalog: 'Ako lang.',
+          english: 'Just me.',
+          zhTW: '只有我。',
+          zhCN: '只有我。'
+        }
+      },
+      {
+        id: 'enc4',
+        tagalog: 'Din / Rin',
+        english: 'Also / Too',
+        zhTW: '也',
+        zhCN: '也',
+        example: {
+          tagalog: 'Ako rin.',
+          english: 'Me too.',
+          zhTW: '我也是。',
+          zhCN: '我也是。'
+        }
+      },
+      {
+        id: 'enc5',
+        tagalog: 'Naman',
+        english: 'On the other hand / Please',
+        zhTW: '呢 / 請',
+        zhCN: '呢 / 请',
+        example: {
+          tagalog: 'Ikaw naman.',
+          english: 'Your turn / How about you?',
+          zhTW: '換你了 / 你呢？',
+          zhCN: '换你了 / 你呢？'
+        }
+      }
+    ]
+  },
+  {
+    id: 'respect-markers',
+    title: 'Respect Markers',
+    titleKey: 'topics.respect-markers',
+    cards: [
+      {
+        id: 'rm1',
+        tagalog: 'Po',
+        english: 'Sir / Ma\'am (Respect particle)',
+        zhTW: '您 (敬語)',
+        zhCN: '您 (敬语)',
+        example: {
+          tagalog: 'Salamat po.',
+          english: 'Thank you (polite).',
+          zhTW: '謝謝您。',
+          zhCN: '谢谢您。'
+        }
+      },
+      {
+        id: 'rm2',
+        tagalog: 'Opo',
+        english: 'Yes (Respectful)',
+        zhTW: '是 (敬語)',
+        zhCN: '是 (敬语)',
+        example: {
+          tagalog: 'Opo, nanay.',
+          english: 'Yes, mom.',
+          zhTW: '是的，媽媽。',
+          zhCN: '是的，妈妈。'
+        }
+      },
+      {
+        id: 'rm3',
+        tagalog: 'Hindi po',
+        english: 'No (Respectful)',
+        zhTW: '不 (敬語)',
+        zhCN: '不 (敬语)',
+        example: {
+          tagalog: 'Hindi po ako kumain.',
+          english: 'I did not eat (polite).',
+          zhTW: '我沒有吃 (禮貌)。',
+          zhCN: '我没有吃 (礼貌)。'
+        }
+      }
+    ]
   }
 ];

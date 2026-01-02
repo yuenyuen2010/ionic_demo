@@ -58,6 +58,11 @@
     "pronouns": "代詞",
     "pseudo-verbs": "偽動詞",
     "question-words": "常見疑問詞",
-    "connectors": "連接助詞"
+    "connectors": "連接助詞",
+    "demonstrative-pronouns": "指示代詞",
+    "existence-possession": "存在與擁有",
+    "negation": "否定",
+    "enclitic-particles": "附著助詞",
+    "respect-markers": "敬語標記"
   }
 }

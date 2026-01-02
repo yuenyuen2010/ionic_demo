@@ -58,6 +58,11 @@
     "pronouns": "Pronouns",
     "pseudo-verbs": "Pseudo-Verbs",
     "question-words": "Common Question Words",
-    "connectors": "Connector Particles"
+    "connectors": "Connector Particles",
+    "demonstrative-pronouns": "Demonstrative Pronouns",
+    "existence-possession": "Existence & Possession",
+    "negation": "Negation",
+    "enclitic-particles": "Enclitic Particles",
+    "respect-markers": "Respect Markers"
   }
 }
