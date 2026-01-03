@@ -17,12 +17,24 @@ export const TimerProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [seconds, setSeconds] = useState(0);
   const location = useLocation();
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const lastDateRef = useRef<string>(new Date().toDateString());
 
   // Load from local storage on mount
   useEffect(() => {
     const savedSeconds = localStorage.getItem('app-timer-seconds');
-    if (savedSeconds) {
+    const savedDate = localStorage.getItem('app-timer-date');
+    const today = new Date().toDateString();
+
+    // Update ref to today
+    lastDateRef.current = today;
+
+    if (savedDate === today && savedSeconds) {
       setSeconds(parseInt(savedSeconds, 10));
+    } else {
+      // Reset if date is different or no date saved
+      setSeconds(0);
+      localStorage.setItem('app-timer-seconds', '0');
+      localStorage.setItem('app-timer-date', today);
     }
   }, []);
 
@@ -47,6 +59,18 @@ export const TimerProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         if (!intervalRef.current) {
             intervalRef.current = setInterval(() => {
                 setSeconds(prev => {
+                    const currentToday = new Date().toDateString();
+
+                    // Check if day has changed
+                    if (currentToday !== lastDateRef.current) {
+                        lastDateRef.current = currentToday;
+                        localStorage.setItem('app-timer-date', currentToday);
+                        // Reset timer for the new day, start at 1s
+                        const newValue = 1;
+                        localStorage.setItem('app-timer-seconds', newValue.toString());
+                        return newValue;
+                    }
+
                     const newValue = prev + 1;
                     localStorage.setItem('app-timer-seconds', newValue.toString());
                     return newValue;

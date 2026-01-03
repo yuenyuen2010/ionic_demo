@@ -98,6 +98,9 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
               marginRight: '8px',
               border: '1px solid rgba(0,0,0,0.05)'
             }}>
+              <IonText style={{ fontSize: '12px', fontWeight: 500, color: '#64748b', marginRight: '6px' }}>
+                {t('common.todaysLearning')}
+              </IonText>
               <IonIcon icon={timeOutline} style={{ fontSize: '16px', color: '#64748b', marginRight: '4px' }} />
               <IonText style={{ fontSize: '14px', fontWeight: 600, color: '#475569' }}>
                 {formattedTime}
