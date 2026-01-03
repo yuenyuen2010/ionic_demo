@@ -83,21 +83,18 @@ const Flashcard: React.FC<FlashcardProps> = ({ id, tagalog, english, zhTW, zhCN,
     setIsPlaying(true);
 
     try {
-      // Check for Google Cloud API Key in environment variables
-      const apiKey = import.meta.env.VITE_GOOGLE_CLOUD_API_KEY;
-
-      // 1. Google Cloud TTS (High Quality) - Only for Tagalog (fil-PH) if configured
-      if (apiKey && lang === 'tl-PH') {
+      // 1. Google Cloud TTS Serverless API (High Quality) - For Tagalog (fil-PH)
+      if (lang === 'tl-PH') {
         try {
-          const response = await fetch(`https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`, {
+          const response = await fetch('https://tts-server-479744148035.asia-east1.run.app/tts', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-              input: { text },
-              voice: { languageCode: 'fil-PH', name: 'fil-PH-Standard-A' },
-              audioConfig: { audioEncoding: 'MP3' },
+              text,
+              languageCode: 'fil-PH',
+              voiceName: 'fil-PH-Standard-A',
             }),
           });
 
@@ -114,7 +111,7 @@ const Flashcard: React.FC<FlashcardProps> = ({ id, tagalog, english, zhTW, zhCN,
             }
           }
         } catch (e) {
-          console.warn('Google Cloud TTS failed, falling back', e);
+          console.warn('Google Cloud TTS Serverless failed, falling back', e);
         }
       }
 
