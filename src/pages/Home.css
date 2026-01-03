@@ -8,7 +8,7 @@
 
 /* Ambient Header Section */
 .ambient-header {
-  padding: 140px 24px 40px;
+  padding: 110px 24px 40px;
   background: radial-gradient(circle at top right, var(--glow-indigo-soft), transparent 60%),
     radial-gradient(circle at top left, var(--glow-rose-soft), transparent 50%);
   position: relative;
@@ -38,6 +38,12 @@
   flex-direction: column;
   gap: 16px;
   margin-top: -10px;
+}
+
+/* When ambient header is not shown (search or group selected), add top padding */
+.pod-dashboard.no-ambient-header {
+  padding-top: 100px;
+  margin-top: 0;
 }
 
 /* Hero Grid - Horizontal Layout for Feature Pods */
