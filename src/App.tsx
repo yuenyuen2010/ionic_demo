@@ -56,6 +56,7 @@ const App: React.FC = () => {
       <ReloadPrompt />
       {/* @ts-ignore */}
       <IonReactHashRouter>
+        {/* @ts-ignore */}
         <TimerProvider>
           {/* @ts-ignore */}
           <IonRouterOutlet>
