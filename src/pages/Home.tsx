@@ -29,7 +29,8 @@ import {
   informationCircleOutline,
   gameControllerOutline,
   gridOutline,
-  pencilOutline
+  pencilOutline,
+  shuffleOutline
 } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
 import Footer from '../components/Footer';
@@ -203,6 +204,17 @@ const Home: React.FC = () => {
                       <h2 className="pod-value">{t('spell.podSubtitle')}</h2>
                     </div>
                     <IonIcon icon={pencilOutline} style={{ fontSize: '24px', color: 'white' }} />
+                  </div>
+                </div>
+
+                {/* Word Scramble */}
+                <div className="learning-pod pod-scramble" style={{ background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)' }} onClick={() => window.location.hash = '/scramble'}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div>
+                      <div className="pod-label">{t('scramble.podTitle')}</div>
+                      <h2 className="pod-value">{t('scramble.podSubtitle')}</h2>
+                    </div>
+                    <IonIcon icon={shuffleOutline} style={{ fontSize: '24px', color: 'white' }} />
                   </div>
                 </div>
               </div>

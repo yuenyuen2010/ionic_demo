@@ -65,6 +65,17 @@
     "greatSpelling": "Your spelling is improving.",
     "hints": "Hints Used"
   },
+  "scramble": {
+    "title": "Halo-Halo",
+    "podTitle": "Word Scramble",
+    "podSubtitle": "Halo-Halo",
+    "unscramble": "Unscramble the word",
+    "clear": "Clear",
+    "shuffle": "Shuffle",
+    "complete": "Unscrambled!",
+    "greatUnscrambling": "Your pattern recognition is improving.",
+    "correctWas": "Correct answer:"
+  },
   "home": {
     "introToTagalog": "Intro to Tagalog",
     "introSubtitle": "History & Features",

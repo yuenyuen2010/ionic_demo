@@ -9,6 +9,7 @@ import Intro from './pages/Intro';
 import Game from './pages/Game';
 import MemoryMatch from './pages/MemoryMatch';
 import SpellChallenge from './pages/SpellChallenge';
+import WordScramble from './pages/WordScramble';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -89,6 +90,11 @@ const App: React.FC = () => {
           <Route exact path="/spell">
             {/* @ts-ignore */}
             <SpellChallenge />
+          </Route>
+          {/* @ts-ignore */}
+          <Route exact path="/scramble">
+            {/* @ts-ignore */}
+            <WordScramble />
           </Route>
           {/* @ts-ignore */}
           <Route exact path="/">

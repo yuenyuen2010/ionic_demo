@@ -75,6 +75,17 @@
     "greatSpelling": "您的拼字能力正在进步。",
     "hints": "使用提示"
   },
+  "scramble": {
+    "title": "Halo-Halo",
+    "podTitle": "拼字重组",
+    "podSubtitle": "Halo-Halo",
+    "unscramble": "重新排列字母",
+    "clear": "清除",
+    "shuffle": "重新打乱",
+    "complete": "完成重组！",
+    "greatUnscrambling": "您的模式识别能力正在进步。",
+    "correctWas": "正确答案："
+  },
   "lesson": {
     "categoryNotFound": "找不到类别",
     "goBack": "返回",
