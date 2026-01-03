@@ -26,16 +26,16 @@ interface CommonHeaderProps {
 }
 
 const themes = [
-  { id: 'theme-teal', nameKey: 'themes.teal', color: '#0d9488' },
-  { id: 'theme-navy', nameKey: 'themes.navy', color: '#0f2c4c' },
-  { id: 'theme-purple', nameKey: 'themes.purple', color: '#7e22ce' },
-  { id: 'theme-green', nameKey: 'themes.green', color: '#15803d' },
+  { id: 'theme-teal', nameKey: 'home.themes.teal', color: '#0d9488' },
+  { id: 'theme-navy', nameKey: 'home.themes.navy', color: '#0f2c4c' },
+  { id: 'theme-purple', nameKey: 'home.themes.purple', color: '#7e22ce' },
+  { id: 'theme-green', nameKey: 'home.themes.green', color: '#15803d' },
 ];
 
 const languages = [
-  { code: 'en', name: 'English' },
-  { code: 'zh-TW', name: '繁體中文' },
-  { code: 'zh-CN', name: '简体中文' },
+  { code: 'en', name: 'English', shortName: 'EN' },
+  { code: 'zh-TW', name: '繁體中文', shortName: '繁' },
+  { code: 'zh-CN', name: '简体中文', shortName: '簡' },
 ];
 
 const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = false, defaultHref = '/' }) => {
@@ -106,7 +106,7 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
                     padding: '0 14px'
                   }}
                 >
-                  {lang.code.toUpperCase()}
+                  {lang.shortName}
                 </IonButton>
               ))}
             </div>
