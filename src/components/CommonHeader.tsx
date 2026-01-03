@@ -16,8 +16,9 @@ import {
   IonRadio,
   IonText
 } from '@ionic/react';
-import { settingsOutline, chatbubblesOutline } from 'ionicons/icons';
+import { settingsOutline, chatbubblesOutline, timeOutline } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
+import { useTimer } from '../context/TimerContext';
 import './CommonHeader.css';
 
 interface CommonHeaderProps {
@@ -41,6 +42,7 @@ const languages = [
 
 const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = false, defaultHref = '/' }) => {
   const { t, i18n } = useTranslation();
+  const { formattedTime } = useTimer();
   const [showBuildInfo, setShowBuildInfo] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [currentTheme, setCurrentTheme] = useState('theme-teal');
@@ -89,6 +91,20 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
             </div>
           </IonTitle>
           <IonButtons slot="end">
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              background: 'rgba(255,255,255,0.6)',
+              padding: '4px 8px',
+              borderRadius: '12px',
+              marginRight: '8px',
+              border: '1px solid rgba(0,0,0,0.05)'
+            }}>
+              <IonIcon icon={timeOutline} style={{ fontSize: '16px', color: '#64748b', marginRight: '4px' }} />
+              <IonText style={{ fontSize: '14px', fontWeight: 600, color: '#475569' }}>
+                {formattedTime}
+              </IonText>
+            </div>
             <div className="language-switcher-container">
               {languages.map(lang => (
                 <IonButton
