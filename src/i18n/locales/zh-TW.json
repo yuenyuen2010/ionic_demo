@@ -6,7 +6,8 @@
     "buildTime": "建置時間",
     "commitHash": "提交哈希",
     "message": "消息",
-    "backToCategories": "返回類別"
+    "backToCategories": "返回類別",
+    "todaysLearning": "今日學習時間"
   },
   "home": {
     "chooseTopic": "選擇主題",

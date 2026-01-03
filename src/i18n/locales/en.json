@@ -6,7 +6,8 @@
     "buildTime": "Build Time",
     "commitHash": "Commit Hash",
     "message": "Message",
-    "backToCategories": "Back to Categories"
+    "backToCategories": "Back to Categories",
+    "todaysLearning": "Today's Learning Time"
   },
   "intro": {
     "title": "Introduction to Tagalog",

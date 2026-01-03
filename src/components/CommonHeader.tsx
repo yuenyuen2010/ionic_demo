@@ -16,8 +16,10 @@ import {
   IonRadio,
   IonText
 } from '@ionic/react';
-import { settingsOutline, informationCircleOutline, chatbubblesOutline } from 'ionicons/icons';
+import { settingsOutline, chatbubblesOutline, timeOutline } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
+import { useTimer } from '../context/TimerContext';
+import './CommonHeader.css';
 
 interface CommonHeaderProps {
   title: string;
@@ -40,6 +42,7 @@ const languages = [
 
 const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = false, defaultHref = '/' }) => {
   const { t, i18n } = useTranslation();
+  const { formattedTime } = useTimer();
   const [showBuildInfo, setShowBuildInfo] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [currentTheme, setCurrentTheme] = useState('theme-teal');
@@ -64,14 +67,12 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
 
   return (
     <>
-      <IonHeader className="ion-no-border" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000, padding: '20px 24px 8px' }}>
+      <IonHeader className="ion-no-border common-header">
         <IonToolbar style={{
-          '--background': 'rgba(255, 255, 255, 0.85)',
-          '--backdrop-filter': 'blur(20px)',
-          '--border-width': '1px',
-          '--border-color': 'rgba(255, 255, 255, 0.6)',
-          '--border-radius': '20px',
-          '--box-shadow': '0 12px 40px rgba(0,0,0,0.08)',
+          '--background': 'var(--pod-bg)',
+          border: 'var(--pod-border)',
+          borderRadius: 'var(--pod-radius)',
+          boxShadow: 'var(--luminous-shadow)',
           padding: '4px 8px'
         }}>
           {showBackButton && (
@@ -80,7 +81,7 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
             </IonButtons>
           )}
           <IonTitle>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '1.15rem', fontWeight: 800, color: 'var(--ion-text-color)', letterSpacing: '-0.04em' }}>
+            <div className="header-title-container">
               <div style={{ padding: '8px', background: 'var(--glow-indigo)', borderRadius: '10px', display: 'flex', boxShadow: '0 4px 12px var(--glow-indigo-soft)', transform: 'rotate(-3deg)' }}>
                 <IonIcon icon={chatbubblesOutline} style={{ color: 'white', fontSize: '20px' }} />
               </div>
@@ -88,7 +89,24 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
             </div>
           </IonTitle>
           <IonButtons slot="end">
-            <div style={{ display: 'flex', background: 'rgba(0,0,0,0.04)', padding: '4px', borderRadius: '14px', marginRight: '10px' }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              background: 'rgba(255,255,255,0.6)',
+              padding: '4px 8px',
+              borderRadius: '12px',
+              marginRight: '8px',
+              border: '1px solid rgba(0,0,0,0.05)'
+            }}>
+              <IonText style={{ fontSize: '12px', fontWeight: 500, color: '#64748b', marginRight: '6px' }}>
+                {t('common.todaysLearning')}
+              </IonText>
+              <IonIcon icon={timeOutline} style={{ fontSize: '16px', color: '#64748b', marginRight: '4px' }} />
+              <IonText style={{ fontSize: '14px', fontWeight: 600, color: '#475569' }}>
+                {formattedTime}
+              </IonText>
+            </div>
+            <div className="language-switcher-container">
               {languages.map(lang => (
                 <IonButton
                   key={lang.code}
