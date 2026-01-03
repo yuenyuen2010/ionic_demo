@@ -75,6 +75,17 @@ const Flashcard: React.FC<FlashcardProps> = ({ id, tagalog, english, zhTW, zhCN,
    * @param text - The text to speak
    * @param lang - The language code
    */
+  /**
+   * Sanitize text to match audio filename format
+   */
+  const sanitizeFilename = (text: string): string => {
+    return text
+      .toLowerCase()
+      .replace(/[?!.,;:'"()\/\\]/g, '')
+      .replace(/\s+/g, '_')
+      .trim();
+  };
+
   const playAudio = async (event: React.MouseEvent, text: string, lang: string) => {
     // Prevent the card from flipping when clicking the audio button
     event.stopPropagation();
@@ -83,8 +94,28 @@ const Flashcard: React.FC<FlashcardProps> = ({ id, tagalog, english, zhTW, zhCN,
     setIsPlaying(true);
 
     try {
-      // 1. Google Cloud TTS Serverless API (High Quality) - For Tagalog (fil-PH)
+      // 1. Local Audio Files (Offline Support) - For Tagalog
       if (lang === 'tl-PH') {
+        try {
+          const filename = sanitizeFilename(text);
+          const audioPath = `/audio/${filename}.mp3`;
+
+          const audio = new Audio(audioPath);
+
+          await new Promise<void>((resolve, reject) => {
+            audio.onended = () => resolve();
+            audio.onerror = () => reject('Local audio not found');
+            audio.oncanplaythrough = () => {
+              audio.play().catch(reject);
+            };
+            audio.load();
+          });
+          return;
+        } catch (e) {
+          console.warn('Local audio not found, trying online TTS', e);
+        }
+
+        // 2. Fallback: Google Cloud TTS Serverless API
         try {
           const response = await fetch('https://tts-server-479744148035.asia-east1.run.app/tts', {
             method: 'POST',
