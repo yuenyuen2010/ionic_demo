@@ -319,15 +319,28 @@ const Flashcard: React.FC<FlashcardProps> = ({ id, tagalog, english, zhTW, zhCN,
                 <p className="example-tagalog">
                   {example.tagalog}
                 </p>
-                <IonButton
-                  fill="clear"
-                  size="small"
-                  className="example-audio-btn"
-                  onClick={(e) => playAudio(e, example.tagalog, 'tl-PH')}
-                  disabled={isPlaying}
-                >
-                  {isPlaying ? <IonSpinner name="dots" color="medium" /> : <IonIcon icon={volumeHighOutline} color="medium" />}
-                </IonButton>
+                <div className="example-audio-group">
+                  <IonButton
+                    fill="clear"
+                    size="small"
+                    className="example-audio-btn"
+                    onClick={(e) => playAudio(e, example.tagalog, 'tl-PH')}
+                    disabled={isPlaying}
+                    title="Normal speed"
+                  >
+                    {isPlaying ? <IonSpinner name="dots" color="medium" /> : <IonIcon icon={volumeHighOutline} color="medium" />}
+                  </IonButton>
+                  <IonButton
+                    fill="clear"
+                    size="small"
+                    className="example-audio-btn"
+                    onClick={(e) => playSlowAudio(e, example.tagalog)}
+                    disabled={isPlaying}
+                    title="Slow speed"
+                  >
+                    <IonIcon icon={volumeLowOutline} color="medium" />
+                  </IonButton>
+                </div>
               </div>
               <p className="example-translation">
                 {translation.example}
