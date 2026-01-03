@@ -40,55 +40,56 @@ export const TimerProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   useEffect(() => {
     const shouldCount = () => {
-        const path = location.pathname;
-        // Count on lessons, games, review
-        // Routes: /lesson/:id, /game, /memory, /spell, /review
-        // Ignore: /home, /intro
+      const path = location.pathname;
+      // Count on lessons, games, review
+      // Routes: /lesson/:id, /game, /memory, /spell, /scramble, /review
+      // Ignore: /home, /intro
 
-        if (path.startsWith('/lesson') ||
-            path === '/game' ||
-            path === '/memory' ||
-            path === '/spell' ||
-            path === '/review') {
-            return true;
-        }
-        return false;
+      if (path.startsWith('/lesson') ||
+        path === '/game' ||
+        path === '/memory' ||
+        path === '/spell' ||
+        path === '/scramble' ||
+        path === '/review') {
+        return true;
+      }
+      return false;
     };
 
     if (shouldCount()) {
-        if (!intervalRef.current) {
-            intervalRef.current = setInterval(() => {
-                setSeconds(prev => {
-                    const currentToday = new Date().toDateString();
+      if (!intervalRef.current) {
+        intervalRef.current = setInterval(() => {
+          setSeconds(prev => {
+            const currentToday = new Date().toDateString();
 
-                    // Check if day has changed
-                    if (currentToday !== lastDateRef.current) {
-                        lastDateRef.current = currentToday;
-                        localStorage.setItem('app-timer-date', currentToday);
-                        // Reset timer for the new day, start at 1s
-                        const newValue = 1;
-                        localStorage.setItem('app-timer-seconds', newValue.toString());
-                        return newValue;
-                    }
+            // Check if day has changed
+            if (currentToday !== lastDateRef.current) {
+              lastDateRef.current = currentToday;
+              localStorage.setItem('app-timer-date', currentToday);
+              // Reset timer for the new day, start at 1s
+              const newValue = 1;
+              localStorage.setItem('app-timer-seconds', newValue.toString());
+              return newValue;
+            }
 
-                    const newValue = prev + 1;
-                    localStorage.setItem('app-timer-seconds', newValue.toString());
-                    return newValue;
-                });
-            }, 1000);
-        }
+            const newValue = prev + 1;
+            localStorage.setItem('app-timer-seconds', newValue.toString());
+            return newValue;
+          });
+        }, 1000);
+      }
     } else {
-        if (intervalRef.current) {
-            clearInterval(intervalRef.current);
-            intervalRef.current = null;
-        }
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
     }
 
     return () => {
-        if (intervalRef.current) {
-            clearInterval(intervalRef.current);
-            intervalRef.current = null;
-        }
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
     };
   }, [location.pathname]);
 

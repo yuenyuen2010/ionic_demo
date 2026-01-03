@@ -1,0 +1,219 @@
+2️⃣ Prerequisites (one-time)
+Install tools
+
+Node.js 18+
+
+Docker
+
+Google Cloud CLI
+
+https://cloud.google.com/sdk/docs/install
+
+
+After install:
+
+gcloud init
+
+
+✔ Login
+✔ Choose your project
+
+
+3️⃣ Enable required Google Cloud services
+
+Run once:
+
+gcloud services enable \
+  texttospeech.googleapis.com \
+  run.googleapis.com \
+  artifactregistry.googleapis.com
+
+4️⃣ Create the server (Node.js)
+4.1 Create project folder
+mkdir gcloud-tts-server
+cd gcloud-tts-server
+npm init -y
+
+
+Install dependencies:
+
+npm install express cors @google-cloud/text-to-speech
+
+
+4.2 index.js (THE CORE LOGIC)
+
+import express from "express";
+import cors from "cors";
+import textToSpeech from "@google-cloud/text-to-speech";
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+const client = new textToSpeech.TextToSpeechClient();
+
+app.post("/tts", async (req, res) => {
+  try {
+    const { text, languageCode = "fil-PH", voiceName } = req.body;
+
+    const request = {
+      input: { text },
+      voice: {
+        languageCode,
+        name: voiceName || "fil-PH-Standard-A",
+      },
+      audioConfig: {
+        audioEncoding: "MP3",
+      },
+    };
+
+    const [response] = await client.synthesizeSpeech(request);
+
+    res.json({
+      audioContent: response.audioContent.toString("base64"),
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "TTS failed" });
+  }
+});
+
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`TTS server running on port ${PORT}`);
+});
+
+
+
+4.3 package.json update
+
+{
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
+
+
+5️⃣ Dockerize it (required for Cloud Run)
+
+Dockerfile
+
+FROM node:18-slim
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm install --omit=dev
+
+COPY . .
+
+CMD ["npm", "start"]
+
+
+7️⃣ Deploy to Cloud Run 🚀
+
+gcloud run deploy tts-server \
+  --source . \
+  --region asia-east1 \
+  --allow-unauthenticated
+
+
+After deployment, you’ll get:
+
+https://tts-server-xxxxx.run.app
+
+🎉 Your serverless API is live.
+
+
+=========
+
+Test the API
+
+🧪 1️⃣ Sample tts-test.html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Google Cloud TTS Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+    }
+    textarea {
+      width: 100%;
+      height: 120px;
+    }
+    button {
+      margin-top: 12px;
+      padding: 10px 16px;
+      font-size: 16px;
+    }
+    .status {
+      margin-top: 10px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Google Cloud Text-to-Speech Test</h2>
+
+  <textarea id="text">
+Kumusta! Ito ay isang pagsubok ng Google Text to Speech.
+  </textarea>
+
+  <br />
+
+  <button onclick="speak()">Speak</button>
+
+  <div class="status" id="status"></div>
+
+  <script>
+    async function speak() {
+      const status = document.getElementById("status");
+      status.textContent = "Requesting audio...";
+
+      try {
+        const response = await fetch(
+          "YOUR_CLOUD_RUN_URL/tts",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              text: document.getElementById("text").value,
+              languageCode: "fil-PH",
+              voiceName: "fil-PH-Standard-A"
+            })
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("HTTP " + response.status);
+        }
+
+        const data = await response.json();
+
+        const audio = new Audio(
+          "data:audio/mp3;base64," + data.audioContent
+        );
+
+        await audio.play();
+        status.textContent = "Playing audio 🎧";
+      } catch (err) {
+        console.error(err);
+        status.textContent = "Error: " + err.message;
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
+
