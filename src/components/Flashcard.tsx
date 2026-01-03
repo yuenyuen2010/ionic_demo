@@ -239,9 +239,20 @@ const Flashcard: React.FC<FlashcardProps> = ({ id, tagalog, english, zhTW, zhCN,
 
           {example && (
             <div className="example-sentence">
-              <p className="example-tagalog">
-                {example.tagalog}
-              </p>
+              <div className="example-tagalog-row">
+                <p className="example-tagalog">
+                  {example.tagalog}
+                </p>
+                <IonButton
+                  fill="clear"
+                  size="small"
+                  className="example-audio-btn"
+                  onClick={(e) => playAudio(e, example.tagalog, 'tl-PH')}
+                  disabled={isPlaying}
+                >
+                  {isPlaying ? <IonSpinner name="dots" color="medium" /> : <IonIcon icon={volumeHighOutline} color="medium" />}
+                </IonButton>
+              </div>
               <p className="example-translation">
                 {translation.example}
               </p>

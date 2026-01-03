@@ -110,12 +110,27 @@
   width: 100%;
 }
 
+.example-tagalog-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
 .example-tagalog {
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--ion-text-color);
   margin-bottom: 4px;
   display: block;
+  flex: 1;
+}
+
+.example-audio-btn {
+  --padding-start: 8px;
+  --padding-end: 8px;
+  min-height: 32px;
+  margin: 0;
 }
 
 .example-translation {
