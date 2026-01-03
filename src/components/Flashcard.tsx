@@ -98,7 +98,9 @@ const Flashcard: React.FC<FlashcardProps> = ({ id, tagalog, english, zhTW, zhCN,
       if (lang === 'tl-PH') {
         try {
           const filename = sanitizeFilename(text);
-          const audioPath = `/audio/${filename}.mp3`;
+          // Use BASE_URL for correct path in production (e.g., /ionic_demo/)
+          const basePath = import.meta.env.BASE_URL || '/';
+          const audioPath = `${basePath}audio/${filename}.mp3`;
 
           const audio = new Audio(audioPath);
 
