@@ -8,7 +8,7 @@
 
 /* Ambient Header Section */
 .ambient-header {
-  padding: 120px 24px 40px;
+  padding: 140px 24px 40px;
   background: radial-gradient(circle at top right, var(--glow-indigo-soft), transparent 60%),
     radial-gradient(circle at top left, var(--glow-rose-soft), transparent 50%);
   position: relative;
