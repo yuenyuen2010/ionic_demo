@@ -64,7 +64,7 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
 
   return (
     <>
-      <IonHeader className="ion-no-border" style={{ padding: '20px 24px 8px' }}>
+      <IonHeader className="ion-no-border" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000, padding: '20px 24px 8px' }}>
         <IonToolbar style={{
           '--background': 'rgba(255, 255, 255, 0.85)',
           '--backdrop-filter': 'blur(20px)',

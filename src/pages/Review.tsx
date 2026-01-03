@@ -95,7 +95,7 @@ const Review: React.FC = () => {
       <IonPage>
         <CommonHeader title={t('review.title')} showBackButton={true} defaultHref="/home" />
         <IonContent className="ion-padding" style={{ '--background': 'radial-gradient(circle at top, var(--glow-indigo-soft), transparent 80%)' }}>
-          <div className="celebration-container fade-in-up" style={{ maxWidth: '440px', margin: '80px auto' }}>
+          <div className="celebration-container fade-in-up" style={{ maxWidth: '440px', margin: '120px auto' }}>
             <div style={{ background: 'rgba(255,255,255,0.8)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.4)', borderRadius: '32px', padding: '48px 32px', textAlign: 'center', boxShadow: '0 40px 100px -20px rgba(0,0,0,0.1)' }}>
               <div style={{ width: '80px', height: '80px', background: 'var(--glow-indigo)', borderRadius: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px', boxShadow: '0 0 30px var(--glow-indigo-soft)', transform: 'rotate(-5deg)' }}>
                 <IonIcon icon={checkmarkCircleOutline} style={{ fontSize: '44px', color: 'white' }} />
