@@ -55,6 +55,60 @@
   font-size: 1.4rem;
 }
 
+/* Primary Grid - Review, Bookmarks, Intro (3 columns) */
+.primary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.primary-grid .learning-pod {
+  padding: 18px;
+}
+
+.primary-grid .pod-value {
+  font-size: 1.2rem;
+}
+
+/* Category Section */
+.category-section {
+  margin-top: 8px;
+}
+
+.category-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 12px 4px;
+}
+
+/* Games Grid - 3 columns for games */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.games-grid .learning-pod {
+  padding: 18px;
+}
+
+.games-grid .pod-value {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 700px) {
+  .primary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 600px) {
   .hero-grid {
     grid-template-columns: 1fr;

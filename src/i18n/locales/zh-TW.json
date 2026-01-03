@@ -10,6 +10,7 @@
   },
   "home": {
     "chooseTopic": "選擇主題",
+    "gamesCategory": "遊戲",
     "selectCategory": "選擇一個類別開始學習。",
     "searchPlaceholder": "搜尋主題或單字...",
     "noResults": "未找到相匹配的主題。",
@@ -60,6 +61,19 @@
     "pairs": "配對",
     "complete": "拼圖完成！",
     "greatMemory": "您的記憶力正在變得更敏銳。"
+  },
+  "spell": {
+    "title": "拼字挑戰",
+    "podTitle": "拼字遊戲",
+    "podSubtitle": "Baybay 挑戰",
+    "typeTagalog": "輸入他加祿語單字",
+    "placeholder": "在此輸入...",
+    "hint": "提示",
+    "hintLabel": "提示：",
+    "submit": "檢查",
+    "complete": "拼字完成！",
+    "greatSpelling": "您的拼字能力正在進步。",
+    "hints": "使用提示"
   },
   "lesson": {
     "categoryNotFound": "找不到類別",

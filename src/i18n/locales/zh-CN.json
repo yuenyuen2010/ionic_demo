@@ -10,6 +10,7 @@
   },
   "home": {
     "chooseTopic": "选择主题",
+    "gamesCategory": "游戏",
     "selectCategory": "选择一个类别开始学习。",
     "searchPlaceholder": "搜索主题或单词...",
     "noResults": "未找到相匹配的主题。",
@@ -60,6 +61,19 @@
     "pairs": "配对",
     "complete": "拼图完成！",
     "greatMemory": "您的记忆力正在变得更敏锐。"
+  },
+  "spell": {
+    "title": "拼字挑战",
+    "podTitle": "拼字游戏",
+    "podSubtitle": "Baybay 挑战",
+    "typeTagalog": "输入他加禄语单词",
+    "placeholder": "在此输入...",
+    "hint": "提示",
+    "hintLabel": "提示：",
+    "submit": "检查",
+    "complete": "拼字完成！",
+    "greatSpelling": "您的拼字能力正在进步。",
+    "hints": "使用提示"
   },
   "lesson": {
     "categoryNotFound": "找不到类别",

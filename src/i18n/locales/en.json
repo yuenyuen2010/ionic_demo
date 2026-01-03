@@ -52,9 +52,23 @@
     "complete": "Puzzle Solved!",
     "greatMemory": "Your memory is getting sharper."
   },
+  "spell": {
+    "title": "Baybay Challenge",
+    "podTitle": "Spelling Game",
+    "podSubtitle": "Baybay Challenge",
+    "typeTagalog": "Type the Tagalog word",
+    "placeholder": "Type here...",
+    "hint": "Hint",
+    "hintLabel": "Hint:",
+    "submit": "Check",
+    "complete": "Spelling Complete!",
+    "greatSpelling": "Your spelling is improving.",
+    "hints": "Hints Used"
+  },
   "home": {
     "introToTagalog": "Intro to Tagalog",
     "introSubtitle": "History & Features",
+    "gamesCategory": "Games",
     "chooseTopic": "Choose a Topic",
     "selectCategory": "Select a category to start learning.",
     "searchPlaceholder": "Search topics or words...",
