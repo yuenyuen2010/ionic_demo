@@ -9,6 +9,7 @@ import Intro from './pages/Intro';
 import Game from './pages/Game';
 import MemoryMatch from './pages/MemoryMatch';
 import SpellChallenge from './pages/SpellChallenge';
+import ReloadPrompt from './components/ReloadPrompt';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -51,6 +52,7 @@ const App: React.FC = () => {
 
   return (
     <IonApp>
+      <ReloadPrompt />
       {/* @ts-ignore */}
       <IonReactHashRouter>
         {/* @ts-ignore */}
