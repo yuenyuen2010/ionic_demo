@@ -143,52 +143,50 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
         isOpen={showSettings}
         onDidDismiss={() => setShowSettings(false)}
         className="settings-modal"
-        initialBreakpoint={0.75}
-        breakpoints={[0, 0.5, 0.75, 1]}
+        initialBreakpoint={0.85}
+        breakpoints={[0, 0.5, 0.85, 1]}
       >
-        <IonHeader>
-          <IonToolbar>
-            <IonTitle>{t('home.settings')}</IonTitle>
-            <IonButtons slot="end">
-              <IonButton onClick={() => setShowSettings(false)}>{t('common.close')}</IonButton>
-            </IonButtons>
-          </IonToolbar>
-        </IonHeader>
-        <IonContent className="ion-padding">
-          <IonListHeader>
-            <IonLabel>{t('home.languageSelection')}</IonLabel>
-          </IonListHeader>
-          <IonRadioGroup value={i18n.language} onIonChange={e => handleLanguageChange(e.detail.value)}>
-            {languages.map(lang => (
-              <IonItem key={lang.code}>
-                <IonLabel>{lang.name}</IonLabel>
-                <IonRadio slot="end" value={lang.code} />
-              </IonItem>
-            ))}
-          </IonRadioGroup>
+        <div className="modal-content">
+          <div className="modal-header">
+            <h2 className="modal-title">{t('home.settings')}</h2>
+            <IonButton fill="clear" onClick={() => setShowSettings(false)} className="modal-close-btn">
+              {t('common.close')}
+            </IonButton>
+          </div>
 
-          <IonListHeader>
-            <IonLabel>{t('home.themeSelection')}</IonLabel>
-          </IonListHeader>
-          <IonRadioGroup value={currentTheme} onIonChange={e => handleThemeChange(e.detail.value)}>
-            {themes.map(theme => (
-              <IonItem key={theme.id}>
-                <div
-                  slot="start"
-                  style={{
-                    width: '24px',
-                    height: '24px',
-                    borderRadius: '50%',
-                    backgroundColor: theme.color,
-                    marginRight: '12px'
-                  }}
-                />
-                <IonLabel>{t(theme.nameKey)}</IonLabel>
-                <IonRadio slot="end" value={theme.id} />
-              </IonItem>
-            ))}
-          </IonRadioGroup>
-        </IonContent>
+          <div className="modal-body">
+            <div className="settings-section">
+              <h3 className="section-title">{t('home.languageSelection')}</h3>
+              <div className="settings-card">
+                <IonRadioGroup value={i18n.language} onIonChange={e => handleLanguageChange(e.detail.value)}>
+                  {languages.map((lang, idx) => (
+                    <div key={lang.code} className={`settings-item ${idx !== languages.length - 1 ? 'bordered' : ''}`}>
+                      <span className="item-label">{lang.name}</span>
+                      <IonRadio value={lang.code} />
+                    </div>
+                  ))}
+                </IonRadioGroup>
+              </div>
+            </div>
+
+            <div className="settings-section">
+              <h3 className="section-title">{t('home.themeSelection')}</h3>
+              <div className="settings-card">
+                <IonRadioGroup value={currentTheme} onIonChange={e => handleThemeChange(e.detail.value)}>
+                  {themes.map((theme, idx) => (
+                    <div key={theme.id} className={`settings-item ${idx !== themes.length - 1 ? 'bordered' : ''}`}>
+                      <div className="theme-item">
+                        <div className="theme-swatch" style={{ backgroundColor: theme.color }} />
+                        <span className="item-label">{t(theme.nameKey)}</span>
+                      </div>
+                      <IonRadio value={theme.id} />
+                    </div>
+                  ))}
+                </IonRadioGroup>
+              </div>
+            </div>
+          </div>
+        </div>
       </IonModal>
 
       {/* Build Info Modal */}
@@ -196,22 +194,38 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
         isOpen={showBuildInfo}
         onDidDismiss={() => setShowBuildInfo(false)}
         className="build-info-modal"
+        initialBreakpoint={0.5}
+        breakpoints={[0, 0.5, 0.75]}
       >
-        <IonHeader>
-          <IonToolbar>
-            <IonTitle>{t('common.buildInfo')}</IonTitle>
-            <IonButtons slot="end">
-              <IonButton onClick={() => setShowBuildInfo(false)}>{t('common.close')}</IonButton>
-            </IonButtons>
-          </IonToolbar>
-        </IonHeader>
-        <div className="ion-padding">
-          <IonText>
-            <p><strong>{t('common.version')}:</strong> {__BUILD_INFO__.version}</p>
-            <p><strong>{t('common.buildTime')}:</strong> {buildDate}</p>
-            <p><strong>{t('common.commitHash')}:</strong> {__BUILD_INFO__.hash}</p>
-            <p><strong>{t('common.message')}:</strong><br />{__BUILD_INFO__.message}</p>
-          </IonText>
+        <div className="modal-content">
+          <div className="modal-header">
+            <h2 className="modal-title">{t('common.buildInfo')}</h2>
+            <IonButton fill="clear" onClick={() => setShowBuildInfo(false)} className="modal-close-btn">
+              {t('common.close')}
+            </IonButton>
+          </div>
+
+          <div className="modal-body">
+            <div className="info-card">
+              <div className="info-row">
+                <span className="info-label">{t('common.version')}</span>
+                <span className="info-value version-badge">{__BUILD_INFO__.version}</span>
+              </div>
+              <div className="info-row">
+                <span className="info-label">{t('common.buildTime')}</span>
+                <span className="info-value">{buildDate}</span>
+              </div>
+              <div className="info-row">
+                <span className="info-label">{t('common.commitHash')}</span>
+                <span className="info-value mono">{__BUILD_INFO__.hash}</span>
+              </div>
+            </div>
+
+            <div className="commit-message">
+              <span className="info-label">{t('common.message')}</span>
+              <p className="message-text">{__BUILD_INFO__.message}</p>
+            </div>
+          </div>
         </div>
       </IonModal>
     </>

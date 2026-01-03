@@ -30,15 +30,199 @@
 
 @media (max-width: 576px) {
   .common-header {
-    padding: 12px 16px 8px !important; /* Reduce padding on mobile */
+    padding: 12px 16px 8px !important;
+    /* Reduce padding on mobile */
   }
 
   .language-switcher-container {
-    display: none !important; /* Hide quick language switcher on mobile */
+    display: none !important;
+    /* Hide quick language switcher on mobile */
   }
 
   .header-title-container {
-    font-size: 1rem; /* Slightly smaller font on mobile */
+    font-size: 1rem;
+    /* Slightly smaller font on mobile */
     gap: 8px;
+  }
+}
+
+/* ============================================
+   Modal Styling - Premium Glassmorphism Design
+   ============================================ */
+
+.settings-modal,
+.build-info-modal {
+  --border-radius: 28px 28px 0 0;
+}
+
+.modal-content {
+  padding: 24px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ion-text-color);
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+.modal-close-btn {
+  --color: var(--glow-indigo);
+  font-weight: 600;
+}
+
+.modal-body {
+  padding-bottom: 40px;
+}
+
+/* Settings Section Styling */
+.settings-section {
+  margin-bottom: 28px;
+}
+
+.section-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #94a3b8;
+  margin: 0 0 12px 4px;
+}
+
+.settings-card {
+  background: #f8fafc;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.settings-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+}
+
+.settings-item.bordered {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.item-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ion-text-color);
+}
+
+.theme-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.theme-swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Build Info Card Styling */
+.info-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 16px;
+  padding: 4px 0;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  margin-bottom: 20px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.info-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ion-text-color);
+}
+
+.info-value.version-badge {
+  background: var(--glow-indigo);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.info-value.mono {
+  font-family: 'SF Mono', 'Menlo', 'Monaco', monospace;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.commit-message {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 16px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.commit-message .info-label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.message-text {
+  font-size: 0.9rem;
+  color: var(--ion-text-color);
+  line-height: 1.6;
+  margin: 0;
+  word-break: break-word;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+
+  .settings-card,
+  .info-card,
+  .commit-message {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .settings-item.bordered,
+  .info-row {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .info-value.mono {
+    background: rgba(255, 255, 255, 0.08);
   }
 }
