@@ -36,8 +36,29 @@
   padding: 0 24px 40px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
   margin-top: -10px;
+}
+
+/* Hero Grid - Horizontal Layout for Feature Pods */
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.hero-grid .learning-pod {
+  padding: 20px;
+}
+
+.hero-grid .pod-value {
+  font-size: 1.4rem;
+}
+
+@media (max-width: 600px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* The Luminous Pod */

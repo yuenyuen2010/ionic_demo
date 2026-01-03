@@ -159,47 +159,40 @@ const Home: React.FC = () => {
             </div>
           )}
 
-          {/* Intro Pod - New Section */}
+          {/* Feature Pods Grid - Horizontal Layout */}
           {!selectedGroup && !searchText && (
-            <div className="learning-pod pod-intro fade-in-up" style={{ animationDelay: '0.12s', background: 'linear-gradient(135deg, #845ec2 0%, #d65db1 100%)' }} onClick={() => window.location.hash = '/intro'}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div>
-                  <div className="pod-label">{t('home.introToTagalog')}</div>
-                  <h2 className="pod-value">{t('home.introSubtitle')}</h2>
+            <div className="hero-grid fade-in-up" style={{ animationDelay: '0.12s' }}>
+              {/* Intro Pod */}
+              <div className="learning-pod pod-intro" style={{ background: 'linear-gradient(135deg, #845ec2 0%, #d65db1 100%)' }} onClick={() => window.location.hash = '/intro'}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div>
+                    <div className="pod-label">{t('home.introToTagalog')}</div>
+                    <h2 className="pod-value">{t('home.introSubtitle')}</h2>
+                  </div>
+                  <IonIcon icon={informationCircleOutline} style={{ fontSize: '24px', color: 'white' }} />
                 </div>
-                <IonButton fill="clear" style={{ '--color': 'white' }}>
-                  <IonIcon icon={informationCircleOutline} style={{ fontSize: '24px' }} />
-                </IonButton>
               </div>
-            </div>
-          )}
 
-          {/* Game Pod - Salita Challenge */}
-          {!selectedGroup && !searchText && (
-            <div className="learning-pod pod-game fade-in-up" style={{ animationDelay: '0.14s', background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)' }} onClick={() => window.location.hash = '/game'}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div>
-                  <div className="pod-label">{t('game.podTitle')}</div>
-                  <h2 className="pod-value">{t('game.podSubtitle')}</h2>
+              {/* Game Pod - Salita Challenge */}
+              <div className="learning-pod pod-game" style={{ background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)' }} onClick={() => window.location.hash = '/game'}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div>
+                    <div className="pod-label">{t('game.podTitle')}</div>
+                    <h2 className="pod-value">{t('game.podSubtitle')}</h2>
+                  </div>
+                  <IonIcon icon={gameControllerOutline} style={{ fontSize: '24px', color: 'white' }} />
                 </div>
-                <IonButton fill="clear" style={{ '--color': 'white' }}>
-                  <IonIcon icon={gameControllerOutline} style={{ fontSize: '24px' }} />
-                </IonButton>
               </div>
-            </div>
-          )}
 
-          {/* Memory Match Pod */}
-          {!selectedGroup && !searchText && (
-            <div className="learning-pod pod-memory fade-in-up" style={{ animationDelay: '0.145s', background: 'linear-gradient(135deg, #f43f5e 0%, #ec4899 100%)' }} onClick={() => window.location.hash = '/memory'}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div>
-                  <div className="pod-label">{t('memory.podTitle')}</div>
-                  <h2 className="pod-value">{t('memory.podSubtitle')}</h2>
+              {/* Memory Match Pod */}
+              <div className="learning-pod pod-memory" style={{ background: 'linear-gradient(135deg, #f43f5e 0%, #ec4899 100%)' }} onClick={() => window.location.hash = '/memory'}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div>
+                    <div className="pod-label">{t('memory.podTitle')}</div>
+                    <h2 className="pod-value">{t('memory.podSubtitle')}</h2>
+                  </div>
+                  <IonIcon icon={gridOutline} style={{ fontSize: '24px', color: 'white' }} />
                 </div>
-                <IonButton fill="clear" style={{ '--color': 'white' }}>
-                  <IonIcon icon={gridOutline} style={{ fontSize: '24px' }} />
-                </IonButton>
               </div>
             </div>
           )}
