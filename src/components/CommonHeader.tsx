@@ -16,8 +16,9 @@ import {
   IonRadio,
   IonText
 } from '@ionic/react';
-import { settingsOutline, informationCircleOutline, chatbubblesOutline } from 'ionicons/icons';
+import { settingsOutline, chatbubblesOutline } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
+import './CommonHeader.css';
 
 interface CommonHeaderProps {
   title: string;
@@ -64,7 +65,7 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
 
   return (
     <>
-      <IonHeader className="ion-no-border" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000, padding: '20px 24px 8px' }}>
+      <IonHeader className="ion-no-border common-header">
         <IonToolbar style={{
           '--background': 'rgba(255, 255, 255, 0.85)',
           '--backdrop-filter': 'blur(20px)',
@@ -80,7 +81,7 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
             </IonButtons>
           )}
           <IonTitle>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '1.15rem', fontWeight: 800, color: 'var(--ion-text-color)', letterSpacing: '-0.04em' }}>
+            <div className="header-title-container">
               <div style={{ padding: '8px', background: 'var(--glow-indigo)', borderRadius: '10px', display: 'flex', boxShadow: '0 4px 12px var(--glow-indigo-soft)', transform: 'rotate(-3deg)' }}>
                 <IonIcon icon={chatbubblesOutline} style={{ color: 'white', fontSize: '20px' }} />
               </div>
@@ -88,7 +89,7 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
             </div>
           </IonTitle>
           <IonButtons slot="end">
-            <div style={{ display: 'flex', background: 'rgba(0,0,0,0.04)', padding: '4px', borderRadius: '14px', marginRight: '10px' }}>
+            <div className="language-switcher-container">
               {languages.map(lang => (
                 <IonButton
                   key={lang.code}
