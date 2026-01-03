@@ -8,7 +8,7 @@ interface TimerContextType {
 
 const TimerContext = createContext<TimerContextType>({
   seconds: 0,
-  formattedTime: '0m',
+  formattedTime: '0m 00s',
 });
 
 export const useTimer = () => useContext(TimerContext);
@@ -68,7 +68,9 @@ export const TimerProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     };
   }, [location.pathname]);
 
-  const formattedTime = `${Math.floor(seconds / 60)}m`;
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+  const formattedTime = `${minutes}m ${remainingSeconds.toString().padStart(2, '0')}s`;
 
   return (
     <TimerContext.Provider value={{ seconds, formattedTime }}>
