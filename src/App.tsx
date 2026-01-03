@@ -57,49 +57,56 @@ const App: React.FC = () => {
       <ReloadPrompt />
       {/* @ts-ignore */}
       <IonReactHashRouter>
-        {/* @ts-ignore */}
         <TimerProvider>
           {/* @ts-ignore */}
-          <Route exact path="/home">
+          <IonRouterOutlet>
             {/* @ts-ignore */}
-            <Home />
-          </Route>
-          {/* @ts-ignore */}
-          <Route exact path="/lesson/:id">
+            <Route exact path="/home">
+              {/* @ts-ignore */}
+              <Home />
+            </Route>
             {/* @ts-ignore */}
-            <Lesson />
-          </Route>
-          {/* @ts-ignore */}
-          <Route exact path="/review">
+            <Route exact path="/lesson/:id">
+              {/* @ts-ignore */}
+              <Lesson />
+            </Route>
             {/* @ts-ignore */}
-            <Review />
-          </Route>
-          {/* @ts-ignore */}
-          <Route exact path="/intro">
+            <Route exact path="/review">
+              {/* @ts-ignore */}
+              <Review />
+            </Route>
             {/* @ts-ignore */}
-            <Intro />
-          </Route>
-          {/* @ts-ignore */}
-          <Route exact path="/game">
+            <Route exact path="/intro">
+              {/* @ts-ignore */}
+              <Intro />
+            </Route>
             {/* @ts-ignore */}
-            <Game />
-          </Route>
-          {/* @ts-ignore */}
-          <Route exact path="/memory">
+            <Route exact path="/game">
+              {/* @ts-ignore */}
+              <Game />
+            </Route>
             {/* @ts-ignore */}
-            <MemoryMatch />
-          </Route>
-          {/* @ts-ignore */}
-          <Route exact path="/spell">
+            <Route exact path="/memory">
+              {/* @ts-ignore */}
+              <MemoryMatch />
+            </Route>
             {/* @ts-ignore */}
-            <SpellChallenge />
-          </Route>
-          {/* @ts-ignore */}
-          <Route exact path="/">
+            <Route exact path="/spell">
+              {/* @ts-ignore */}
+              <SpellChallenge />
+            </Route>
             {/* @ts-ignore */}
-            <Redirect to="/home" />
-          </Route>
-        </IonRouterOutlet>
+            <Route exact path="/scramble">
+              {/* @ts-ignore */}
+              <WordScramble />
+            </Route>
+            {/* @ts-ignore */}
+            <Route exact path="/">
+              {/* @ts-ignore */}
+              <Redirect to="/home" />
+            </Route>
+          </IonRouterOutlet>
+        </TimerProvider>
       </IonReactHashRouter>
     </IonApp>
   );
