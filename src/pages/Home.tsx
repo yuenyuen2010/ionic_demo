@@ -26,7 +26,8 @@ import {
   peopleOutline,
   chatbubblesOutline,
   bookmarkOutline,
-  informationCircleOutline
+  informationCircleOutline,
+  gameControllerOutline
 } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
 import Footer from '../components/Footer';
@@ -167,6 +168,21 @@ const Home: React.FC = () => {
                 </div>
                 <IonButton fill="clear" style={{ '--color': 'white' }}>
                   <IonIcon icon={informationCircleOutline} style={{ fontSize: '24px' }} />
+                </IonButton>
+              </div>
+            </div>
+          )}
+
+          {/* Game Pod - Salita Challenge */}
+          {!selectedGroup && !searchText && (
+            <div className="learning-pod pod-game fade-in-up" style={{ animationDelay: '0.14s', background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)' }} onClick={() => window.location.hash = '/game'}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                  <div className="pod-label">{t('game.podTitle')}</div>
+                  <h2 className="pod-value">{t('game.podSubtitle')}</h2>
+                </div>
+                <IonButton fill="clear" style={{ '--color': 'white' }}>
+                  <IonIcon icon={gameControllerOutline} style={{ fontSize: '24px' }} />
                 </IonButton>
               </div>
             </div>

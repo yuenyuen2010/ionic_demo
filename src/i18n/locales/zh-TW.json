@@ -34,7 +34,21 @@
   "bookmarks": {
     "title": "已儲存單字",
     "empty": "暫無儲存的單字。",
-    "pinnedSubtitle": "固定词汇"
+    "pinnedSubtitle": "固定詞彙"
+  },
+  "game": {
+    "title": "單字挑戰",
+    "podTitle": "單字遊戲",
+    "podSubtitle": "Salita 挑戰",
+    "whatDoesThisMean": "這個字是什麼意思？",
+    "score": "得分",
+    "roundComplete": "本回合完成！",
+    "greatJob": "您的詞彙量正在快速增長。",
+    "finalScore": "得分",
+    "accuracy": "準確率",
+    "bestStreak": "最佳連續",
+    "playAgain": "再玩一次",
+    "loading": "載入中..."
   },
   "lesson": {
     "categoryNotFound": "找不到類別",

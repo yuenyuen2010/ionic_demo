@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Lesson from './pages/Lesson';
 import Review from './pages/Review';
 import Intro from './pages/Intro';
+import Game from './pages/Game';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -71,6 +72,11 @@ const App: React.FC = () => {
           <Route exact path="/intro">
             {/* @ts-ignore */}
             <Intro />
+          </Route>
+          {/* @ts-ignore */}
+          <Route exact path="/game">
+            {/* @ts-ignore */}
+            <Game />
           </Route>
           {/* @ts-ignore */}
           <Route exact path="/">

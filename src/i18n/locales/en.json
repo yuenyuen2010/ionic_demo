@@ -27,6 +27,20 @@
     "fact2": "'Mahal' means both 'love' and 'expensive'.",
     "fact3": "Repeating a word often diminishes its meaning or makes it 'pseudo'. E.g., 'bahay' (house) -> 'bahay-bahayan' (play house)."
   },
+  "game": {
+    "title": "Salita Challenge",
+    "podTitle": "Word Game",
+    "podSubtitle": "Salita Challenge",
+    "whatDoesThisMean": "What does this mean?",
+    "score": "Score",
+    "roundComplete": "Round Complete!",
+    "greatJob": "You're building vocabulary fast.",
+    "finalScore": "Score",
+    "accuracy": "Accuracy",
+    "bestStreak": "Best Streak",
+    "playAgain": "Play Again",
+    "loading": "Loading..."
+  },
   "home": {
     "introToTagalog": "Intro to Tagalog",
     "introSubtitle": "History & Features",

@@ -36,6 +36,20 @@
     "empty": "暂无保存的单词。",
     "pinnedSubtitle": "固定词汇"
   },
+  "game": {
+    "title": "单词挑战",
+    "podTitle": "单词游戏",
+    "podSubtitle": "Salita 挑战",
+    "whatDoesThisMean": "这个字是什么意思？",
+    "score": "得分",
+    "roundComplete": "本回合完成！",
+    "greatJob": "您的词汇量正在快速增长。",
+    "finalScore": "得分",
+    "accuracy": "准确率",
+    "bestStreak": "最佳连续",
+    "playAgain": "再玩一次",
+    "loading": "加载中..."
+  },
   "lesson": {
     "categoryNotFound": "找不到类别",
     "goBack": "返回",
