@@ -140,8 +140,21 @@
 }
 
 .memory-card.matched .card-inner {
-    opacity: 0.7;
-    transform: rotateY(180deg) scale(0.95);
+    transform: rotateY(180deg);
+}
+
+.memory-card.matched .card-back {
+    background: linear-gradient(135deg, #8b5cf6, #a855f7) !important;
+    border-color: #7c3aed !important;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+}
+
+.memory-card.matched .card-back .card-text {
+    color: white;
+}
+
+.memory-card.matched .card-back .card-type-label {
+    filter: brightness(0) invert(1);
 }
 
 /* Game Over */
