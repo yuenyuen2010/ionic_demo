@@ -3,6 +3,7 @@
     "appTitle": "Tagalog Anywhere",
     "close": "Close",
     "buildInfo": "Build Info",
+    "version": "Version",
     "buildTime": "Build Time",
     "commitHash": "Commit Hash",
     "message": "Message",
