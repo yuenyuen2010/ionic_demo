@@ -27,7 +27,8 @@ import {
   chatbubblesOutline,
   bookmarkOutline,
   informationCircleOutline,
-  gameControllerOutline
+  gameControllerOutline,
+  gridOutline
 } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
 import Footer from '../components/Footer';
@@ -183,6 +184,21 @@ const Home: React.FC = () => {
                 </div>
                 <IonButton fill="clear" style={{ '--color': 'white' }}>
                   <IonIcon icon={gameControllerOutline} style={{ fontSize: '24px' }} />
+                </IonButton>
+              </div>
+            </div>
+          )}
+
+          {/* Memory Match Pod */}
+          {!selectedGroup && !searchText && (
+            <div className="learning-pod pod-memory fade-in-up" style={{ animationDelay: '0.145s', background: 'linear-gradient(135deg, #f43f5e 0%, #ec4899 100%)' }} onClick={() => window.location.hash = '/memory'}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                  <div className="pod-label">{t('memory.podTitle')}</div>
+                  <h2 className="pod-value">{t('memory.podSubtitle')}</h2>
+                </div>
+                <IonButton fill="clear" style={{ '--color': 'white' }}>
+                  <IonIcon icon={gridOutline} style={{ fontSize: '24px' }} />
                 </IonButton>
               </div>
             </div>

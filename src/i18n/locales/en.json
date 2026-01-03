@@ -41,6 +41,17 @@
     "playAgain": "Play Again",
     "loading": "Loading..."
   },
+  "memory": {
+    "title": "Alala Match",
+    "podTitle": "Memory Game",
+    "podSubtitle": "Alala Match",
+    "moves": "Moves",
+    "time": "Time",
+    "matched": "Pairs",
+    "pairs": "Pairs",
+    "complete": "Puzzle Solved!",
+    "greatMemory": "Your memory is getting sharper."
+  },
   "home": {
     "introToTagalog": "Intro to Tagalog",
     "introSubtitle": "History & Features",

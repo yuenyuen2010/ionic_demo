@@ -50,6 +50,17 @@
     "playAgain": "再玩一次",
     "loading": "加载中..."
   },
+  "memory": {
+    "title": "记忆配对",
+    "podTitle": "记忆游戏",
+    "podSubtitle": "Alala 配对",
+    "moves": "步数",
+    "time": "时间",
+    "matched": "配对",
+    "pairs": "配对",
+    "complete": "拼图完成！",
+    "greatMemory": "您的记忆力正在变得更敏锐。"
+  },
   "lesson": {
     "categoryNotFound": "找不到类别",
     "goBack": "返回",

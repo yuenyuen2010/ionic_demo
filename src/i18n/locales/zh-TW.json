@@ -50,6 +50,17 @@
     "playAgain": "再玩一次",
     "loading": "載入中..."
   },
+  "memory": {
+    "title": "記憶配對",
+    "podTitle": "記憶遊戲",
+    "podSubtitle": "Alala 配對",
+    "moves": "步數",
+    "time": "時間",
+    "matched": "配對",
+    "pairs": "配對",
+    "complete": "拼圖完成！",
+    "greatMemory": "您的記憶力正在變得更敏銳。"
+  },
   "lesson": {
     "categoryNotFound": "找不到類別",
     "goBack": "返回",
