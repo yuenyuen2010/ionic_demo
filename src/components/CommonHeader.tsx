@@ -16,7 +16,7 @@ import {
   IonRadio,
   IonText
 } from '@ionic/react';
-import { settingsOutline, chatbubblesOutline, timeOutline } from 'ionicons/icons';
+import { settingsOutline, chatbubblesOutline, timeOutline, informationCircleOutline } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
 import { useTimer } from '../context/TimerContext';
 import './CommonHeader.css';
@@ -128,6 +128,9 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
                 </IonButton>
               ))}
             </div>
+            <IonButton onClick={() => setShowBuildInfo(true)} style={{ '--color': '#94a3b8' }}>
+              <IonIcon slot="icon-only" icon={informationCircleOutline} style={{ fontSize: '22px' }} />
+            </IonButton>
             <IonButton onClick={() => setShowSettings(true)} style={{ '--color': '#94a3b8' }}>
               <IonIcon slot="icon-only" icon={settingsOutline} style={{ fontSize: '22px' }} />
             </IonButton>
@@ -204,6 +207,7 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
         </IonHeader>
         <div className="ion-padding">
           <IonText>
+            <p><strong>{t('common.version')}:</strong> {__BUILD_INFO__.version}</p>
             <p><strong>{t('common.buildTime')}:</strong> {buildDate}</p>
             <p><strong>{t('common.commitHash')}:</strong> {__BUILD_INFO__.hash}</p>
             <p><strong>{t('common.message')}:</strong><br />{__BUILD_INFO__.message}</p>

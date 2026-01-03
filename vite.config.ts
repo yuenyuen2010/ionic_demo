@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { execSync } from 'child_process'
+import { readFileSync } from 'fs'
 
 const getGitInfo = () => {
   try {
@@ -16,8 +17,18 @@ const getGitInfo = () => {
   }
 }
 
+const getPackageVersion = () => {
+  try {
+    const packageJson = JSON.parse(readFileSync('./package.json', 'utf-8'))
+    return packageJson.version
+  } catch (e) {
+    return 'unknown'
+  }
+}
+
 const buildInfo = {
   time: new Date().toISOString(),
+  version: getPackageVersion(),
   ...getGitInfo()
 }
 
