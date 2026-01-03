@@ -62,6 +62,13 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
     localStorage.setItem('i18nextLng', langCode);
   };
 
+  const changeFontSize = (delta: number) => {
+    const current = parseInt(localStorage.getItem('app-font-size') || '100', 10);
+    const newSize = Math.min(Math.max(current + delta, 70), 130);
+    localStorage.setItem('app-font-size', newSize.toString());
+    document.documentElement.style.fontSize = `${newSize}%`;
+  };
+
   return (
     <>
       <IonHeader className="ion-no-border" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000, padding: '20px 24px 8px' }}>
@@ -88,6 +95,40 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
             </div>
           </IonTitle>
           <IonButtons slot="end">
+            <div style={{ display: 'flex', background: 'rgba(0,0,0,0.04)', padding: '4px', borderRadius: '14px', marginRight: '10px' }}>
+              <IonButton
+                onClick={() => changeFontSize(-10)}
+                size="small"
+                style={{
+                  '--background': 'transparent',
+                  '--color': '#94a3b8',
+                  margin: 0,
+                  height: '32px',
+                  fontSize: '0.85rem',
+                  fontWeight: 800,
+                  padding: '0 8px',
+                  minWidth: '36px'
+                }}
+              >
+                A-
+              </IonButton>
+              <IonButton
+                onClick={() => changeFontSize(10)}
+                size="small"
+                style={{
+                  '--background': 'transparent',
+                  '--color': '#94a3b8',
+                  margin: 0,
+                  height: '32px',
+                  fontSize: '0.85rem',
+                  fontWeight: 800,
+                  padding: '0 8px',
+                  minWidth: '36px'
+                }}
+              >
+                A+
+              </IonButton>
+            </div>
             <div style={{ display: 'flex', background: 'rgba(0,0,0,0.04)', padding: '4px', borderRadius: '14px', marginRight: '10px' }}>
               {languages.map(lang => (
                 <IonButton

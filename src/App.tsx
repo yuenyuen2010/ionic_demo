@@ -47,6 +47,10 @@ const App: React.FC = () => {
     // Initialize theme from local storage
     const savedTheme = localStorage.getItem('app-theme') || 'theme-teal';
     document.body.className = savedTheme;
+
+    // Initialize font size
+    const savedFontSize = localStorage.getItem('app-font-size') || '100';
+    document.documentElement.style.fontSize = `${savedFontSize}%`;
   }, []);
 
   return (
