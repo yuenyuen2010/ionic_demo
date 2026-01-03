@@ -130,7 +130,7 @@ const Home: React.FC = () => {
           </div>
         )}
 
-        <div className="pod-dashboard">
+        <div className={`pod-dashboard ${(selectedGroup || searchText) ? 'no-ambient-header' : ''}`}>
           {/* Primary Actions Grid - Review, Bookmarks, Intro */}
           {!selectedGroup && !searchText && (
             <div className="primary-grid fade-in-up">
