@@ -1,53 +1,198 @@
-ion-modal.build-info-modal {
-  --height: auto;
-  --width: 90%;
-  --max-width: 500px;
-  --border-radius: 16px;
+.ion-page {
+  --ion-background-color: var(--ion-background-color);
+}
+
+.home-container {
+  --background: var(--ion-background-color);
+}
+
+/* Ambient Header Section */
+.ambient-header {
+  padding: 60px 24px 40px;
+  background: radial-gradient(circle at top right, var(--glow-indigo-soft), transparent 60%),
+    radial-gradient(circle at top left, var(--glow-rose-soft), transparent 50%);
+  position: relative;
+  overflow: hidden;
+}
+
+.ambient-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--ion-text-color);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.ambient-header p {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+/* Pod Dashboard Layout */
+.pod-dashboard {
+  padding: 0 24px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: -10px;
+}
+
+/* The Luminous Pod */
+.learning-pod {
+  background: var(--pod-bg);
+  border: var(--pod-border);
+  border-radius: var(--pod-radius);
+  box-shadow: var(--luminous-shadow);
+  padding: 24px;
+  transition: var(--transition-haptic);
+  position: relative;
+  cursor: pointer;
+}
+
+.learning-pod:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(99, 102, 241, 0.2);
+  box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.08);
+}
+
+.pod-hero {
+  background: linear-gradient(135deg, #6366f1, #818cf8);
+  color: white;
+  border: none;
+}
+
+.pod-hero:hover {
+  box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.3);
+}
+
+.pod-bookmarks {
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  color: white;
+  border: none;
+}
+
+.pod-bookmarks:hover {
+  box-shadow: 0 20px 40px -10px rgba(245, 158, 11, 0.3);
+}
+
+.pod-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
+.pod-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* Search Pod */
+.search-pod {
+  padding: 0;
+  background: #f8fafc;
+  border: none;
+  overflow: hidden;
+}
+
+ion-searchbar.luminous-search {
+  --background: transparent;
+  --box-shadow: none;
+  --placeholder-color: #94a3b8;
+  --icon-color: #6366f1;
+  padding: 0 8px;
+  height: 56px;
+}
+
+/* Pod Content Rows */
+.pod-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.item-pod {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: #ffffff;
+  border: var(--pod-border);
+  border-radius: 12px;
+  transition: var(--transition-haptic);
+}
+
+.item-pod:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+}
+
+.pod-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 20px;
+  background: #f1f5f9;
+  color: #6366f1;
+  transition: var(--transition-fast);
 }
 
-ion-modal.build-info-modal::part(content) {
-  position: relative;
-  display: block;
-  contain: content;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+.item-pod:hover .pod-icon-box {
+  background: var(--glow-indigo);
+  color: white;
+  transform: rotate(-5deg);
 }
 
-/* Enterprise List Styling */
-ion-list {
-  background: transparent !important;
-  padding-top: 10px;
-}
-
-ion-item {
-  --background: #ffffff;
-  --border-radius: 8px;
-  margin-bottom: 12px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --border-width: 0;
-  --inner-padding-end: 16px;
-}
-
-ion-item h3 {
-  font-weight: 600;
-  color: var(--ion-color-dark);
-  font-size: 1.1rem;
-}
-
-ion-item p {
-  color: var(--ion-color-medium);
-}
-
-/* Scoped generic headers to not break other components */
-.ion-page h2 {
+.item-pod h3 {
+  font-size: 1rem;
   font-weight: 700;
-  color: var(--ion-color-dark);
-  letter-spacing: -0.025em;
-  margin-bottom: 0.5rem;
+  color: var(--ion-text-color);
+  margin: 0;
 }
 
-.ion-page p {
-  color: var(--ion-color-medium);
-  line-height: 1.5;
+.item-pod span {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Animations */
+.fade-in-up {
+  animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark Mode Overrides */
+@media (prefers-color-scheme: dark) {
+  .item-pod {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .pod-icon-box {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .search-pod {
+    background: #111827;
+  }
 }

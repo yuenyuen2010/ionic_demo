@@ -4,16 +4,22 @@
     "close": "關閉",
     "buildInfo": "版本資訊",
     "buildTime": "建置時間",
-    "commitHash": "提交雜湊",
-    "message": "訊息"
+    "commitHash": "提交哈希",
+    "message": "消息",
+    "backToCategories": "返回類別"
   },
   "home": {
     "chooseTopic": "選擇主題",
     "selectCategory": "選擇一個類別開始學習。",
     "searchPlaceholder": "搜尋主題或單字...",
-    "noResults": "找不到符合的主題。",
+    "noResults": "未找到相匹配的主題。",
     "cardsCount": "{{count}} 張卡片",
-    "settings": "設定",
+    "lessonsCount": "{{count}} 門課程",
+    "selectLesson": "選擇一門課程開始學習。",
+    "welcome": "Mabuhay.",
+    "subtitle": "您的他加祿語大師之路從這裡開始。",
+    "searchFindings": "搜尋結果",
+    "settings": "設置",
     "themeSelection": "主題選擇",
     "languageSelection": "語言選擇",
     "reviewDue": "複習到期卡片",
@@ -27,7 +33,8 @@
   },
   "bookmarks": {
     "title": "已儲存單字",
-    "empty": "暫無儲存的單字。"
+    "empty": "暫無儲存的單字。",
+    "pinnedSubtitle": "固定词汇"
   },
   "lesson": {
     "categoryNotFound": "找不到類別",
@@ -46,7 +53,11 @@
     "progress": "正在複習第 {{current}} 張，共 {{total}} 張",
     "instruction": "你記得這個嗎？",
     "wrong": "忘記了",
-    "correct": "記得"
+    "correct": "記得",
+    "impactReport": "知識已儲存。",
+    "impactSubtitle": "您的學習進度正在穩步提升。",
+    "accuracy": "準確度",
+    "streak": "連續學習"
   },
   "flashcard": {
     "tapToSeeTranslation": "點擊查看翻譯",

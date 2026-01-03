@@ -78,14 +78,14 @@ const Flashcard: React.FC<FlashcardProps> = ({ id, tagalog, english, zhTW, zhCN,
   const playAudio = async (event: React.MouseEvent, text: string, lang: string) => {
     // Prevent the card from flipping when clicking the audio button
     event.stopPropagation();
-    
+
     if (isPlaying) return;
     setIsPlaying(true);
 
     try {
       // Check for Google Cloud API Key in environment variables
       const apiKey = import.meta.env.VITE_GOOGLE_CLOUD_API_KEY;
-      
+
       // 1. Google Cloud TTS (High Quality) - Only for Tagalog (fil-PH) if configured
       if (apiKey && lang === 'tl-PH') {
         try {
@@ -123,9 +123,9 @@ const Flashcard: React.FC<FlashcardProps> = ({ id, tagalog, english, zhTW, zhCN,
       if (lang === 'tl-PH') googleLang = 'tl';
 
       const audioUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=gtx&tl=${googleLang}&q=${encodeURIComponent(text)}`;
-      
+
       const audio = new Audio(audioUrl);
-      
+
       await new Promise<void>((resolve, reject) => {
         audio.onended = () => resolve();
         audio.onerror = () => reject('Audio playback failed');
@@ -134,25 +134,25 @@ const Flashcard: React.FC<FlashcardProps> = ({ id, tagalog, english, zhTW, zhCN,
 
     } catch (error) {
       console.warn('Google TTS failed, falling back to Web Speech API', error);
-      
+
       // 3. Web Speech API (Native Browser Support)
       if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(text);
-        
+
         // Try to find a specific native voice for fallback
         if (lang === 'tl-PH') {
-           const voices = window.speechSynthesis.getVoices();
-           const nativeVoice = voices.find(v => v.lang === 'tl-PH' || v.lang === 'fil-PH' || v.name.includes('Tagalog') || v.name.includes('Filipino'));
-           if (nativeVoice) utterance.voice = nativeVoice;
+          const voices = window.speechSynthesis.getVoices();
+          const nativeVoice = voices.find(v => v.lang === 'tl-PH' || v.lang === 'fil-PH' || v.name.includes('Tagalog') || v.name.includes('Filipino'));
+          if (nativeVoice) utterance.voice = nativeVoice;
         }
 
         utterance.lang = lang;
         utterance.rate = 0.9;
-        
+
         await new Promise<void>((resolve) => {
           utterance.onend = () => resolve();
-          utterance.onerror = () => resolve(); 
+          utterance.onerror = () => resolve();
           window.speechSynthesis.speak(utterance);
         });
       }
@@ -162,20 +162,20 @@ const Flashcard: React.FC<FlashcardProps> = ({ id, tagalog, english, zhTW, zhCN,
   };
 
   return (
-    <div 
-      className={`flashcard-container ${isFlipped ? 'flipped' : ''}`} 
+    <div
+      className={`flashcard-container ${isFlipped ? 'flipped' : ''}`}
       onClick={() => setIsFlipped(!isFlipped)}
     >
       <div className="flashcard-inner">
         {/* Front of Card (Tagalog) */}
         <div className="flashcard-front">
-          <IonButton 
-            fill="clear" 
-            className="audio-btn" 
+          <IonButton
+            fill="clear"
+            className="audio-btn"
             onClick={(e) => playAudio(e, tagalog, 'tl-PH')}
             disabled={isPlaying}
           >
-             {isPlaying ? <IonSpinner name="dots" color="primary" /> : <IonIcon icon={volumeHighOutline} slot="icon-only" color="primary" />}
+            {isPlaying ? <IonSpinner name="dots" color="primary" /> : <IonIcon icon={volumeHighOutline} slot="icon-only" color="primary" />}
           </IonButton>
           <IonButton
             fill="clear"
@@ -185,18 +185,18 @@ const Flashcard: React.FC<FlashcardProps> = ({ id, tagalog, english, zhTW, zhCN,
             <IonIcon icon={isBookmarkedState ? bookmark : bookmarkOutline} slot="icon-only" color="primary" />
           </IonButton>
           <h2>{tagalog}</h2>
-          <p>{t('flashcard.tapToSeeTranslation')}</p>
+          <p className="flip-hint">{t('flashcard.tapToSeeTranslation')}</p>
         </div>
 
         {/* Back of Card (Translation) */}
         <div className="flashcard-back">
-          <IonButton 
-            fill="clear" 
-            className="audio-btn" 
+          <IonButton
+            fill="clear"
+            className="audio-btn"
             onClick={(e) => playAudio(e, translation.text, translation.lang)}
             disabled={isPlaying}
           >
-             {isPlaying ? <IonSpinner name="dots" color="light" /> : <IonIcon icon={volumeHighOutline} slot="icon-only" color="light" />}
+            {isPlaying ? <IonSpinner name="dots" color="light" /> : <IonIcon icon={volumeHighOutline} slot="icon-only" color="light" />}
           </IonButton>
           <IonButton
             fill="clear"
@@ -206,19 +206,19 @@ const Flashcard: React.FC<FlashcardProps> = ({ id, tagalog, english, zhTW, zhCN,
             <IonIcon icon={isBookmarkedState ? bookmark : bookmarkOutline} slot="icon-only" color="light" />
           </IonButton>
           <h2>{translation.text}</h2>
-          
+
           {example && (
-            <div className="example-sentence" style={{ marginTop: '20px', borderTop: '1px solid rgba(255,255,255,0.3)', paddingTop: '10px' }}>
-              <p style={{ fontSize: '0.9rem', marginBottom: '4px', fontStyle: 'italic', opacity: 0.9 }}>
+            <div className="example-sentence">
+              <p className="example-tagalog">
                 {example.tagalog}
               </p>
-              <p style={{ fontSize: '0.85rem', opacity: 0.8 }}>
+              <p className="example-translation">
                 {translation.example}
               </p>
             </div>
           )}
-          
-          {!example && <p>{t('flashcard.tapToSeeTagalog')}</p>}
+
+          {!example && <p className="flip-hint">{t('flashcard.tapToSeeTagalog')}</p>}
         </div>
       </div>
     </div>

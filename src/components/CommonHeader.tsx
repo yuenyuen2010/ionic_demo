@@ -64,46 +64,54 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
 
   return (
     <>
-      <IonHeader>
-        <IonToolbar color="primary">
+      <IonHeader className="ion-no-border" style={{ padding: '20px 24px 8px' }}>
+        <IonToolbar style={{
+          '--background': 'rgba(255, 255, 255, 0.85)',
+          '--backdrop-filter': 'blur(20px)',
+          '--border-width': '1px',
+          '--border-color': 'rgba(255, 255, 255, 0.6)',
+          '--border-radius': '20px',
+          '--box-shadow': '0 12px 40px rgba(0,0,0,0.08)',
+          padding: '4px 8px'
+        }}>
           {showBackButton && (
             <IonButtons slot="start">
-              <IonBackButton defaultHref={defaultHref} />
+              <IonBackButton defaultHref={defaultHref} text="" style={{ '--color': '#64748b' }} />
             </IonButtons>
           )}
           <IonTitle>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <IonIcon icon={chatbubblesOutline} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '1.15rem', fontWeight: 800, color: 'var(--ion-text-color)', letterSpacing: '-0.04em' }}>
+              <div style={{ padding: '8px', background: 'var(--glow-indigo)', borderRadius: '10px', display: 'flex', boxShadow: '0 4px 12px var(--glow-indigo-soft)', transform: 'rotate(-3deg)' }}>
+                <IonIcon icon={chatbubblesOutline} style={{ color: 'white', fontSize: '20px' }} />
+              </div>
               {title}
             </div>
           </IonTitle>
           <IonButtons slot="end">
-            <IonButton 
-              onClick={() => handleLanguageChange('en')} 
-              fill={i18n.language === 'en' ? 'solid' : 'clear'}
-              color="light"
-            >
-              Eng
-            </IonButton>
-            <IonButton 
-              onClick={() => handleLanguageChange('zh-TW')} 
-              fill={i18n.language === 'zh-TW' ? 'solid' : 'clear'}
-              color="light"
-            >
-              繁
-            </IonButton>
-            <IonButton 
-              onClick={() => handleLanguageChange('zh-CN')} 
-              fill={i18n.language === 'zh-CN' ? 'solid' : 'clear'}
-              color="light"
-            >
-              簡
-            </IonButton>
-            <IonButton onClick={() => setShowSettings(true)}>
-              <IonIcon slot="icon-only" icon={settingsOutline} />
-            </IonButton>
-            <IonButton onClick={() => setShowBuildInfo(true)}>
-              <IonIcon slot="icon-only" icon={informationCircleOutline} />
+            <div style={{ display: 'flex', background: 'rgba(0,0,0,0.04)', padding: '4px', borderRadius: '14px', marginRight: '10px' }}>
+              {languages.map(lang => (
+                <IonButton
+                  key={lang.code}
+                  onClick={() => handleLanguageChange(lang.code)}
+                  size="small"
+                  style={{
+                    '--background': i18n.language === lang.code ? 'white' : 'transparent',
+                    '--color': i18n.language === lang.code ? 'var(--glow-indigo)' : '#94a3b8',
+                    '--box-shadow': i18n.language === lang.code ? '0 4px 12px rgba(0,0,0,0.05)' : 'none',
+                    '--border-radius': '10px',
+                    margin: 0,
+                    height: '32px',
+                    fontSize: '0.75rem',
+                    fontWeight: 800,
+                    padding: '0 14px'
+                  }}
+                >
+                  {lang.code.toUpperCase()}
+                </IonButton>
+              ))}
+            </div>
+            <IonButton onClick={() => setShowSettings(true)} style={{ '--color': '#94a3b8' }}>
+              <IonIcon slot="icon-only" icon={settingsOutline} style={{ fontSize: '22px' }} />
             </IonButton>
           </IonButtons>
         </IonToolbar>
@@ -144,12 +152,12 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
           <IonRadioGroup value={currentTheme} onIonChange={e => handleThemeChange(e.detail.value)}>
             {themes.map(theme => (
               <IonItem key={theme.id}>
-                <div 
-                  slot="start" 
-                  style={{ 
-                    width: '24px', 
-                    height: '24px', 
-                    borderRadius: '50%', 
+                <div
+                  slot="start"
+                  style={{
+                    width: '24px',
+                    height: '24px',
+                    borderRadius: '50%',
                     backgroundColor: theme.color,
                     marginRight: '12px'
                   }}
@@ -180,7 +188,7 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
           <IonText>
             <p><strong>{t('common.buildTime')}:</strong> {buildDate}</p>
             <p><strong>{t('common.commitHash')}:</strong> {__BUILD_INFO__.hash}</p>
-            <p><strong>{t('common.message')}:</strong><br/>{__BUILD_INFO__.message}</p>
+            <p><strong>{t('common.message')}:</strong><br />{__BUILD_INFO__.message}</p>
           </IonText>
         </div>
       </IonModal>

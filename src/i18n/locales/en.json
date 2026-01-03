@@ -5,7 +5,8 @@
     "buildInfo": "Build Info",
     "buildTime": "Build Time",
     "commitHash": "Commit Hash",
-    "message": "Message"
+    "message": "Message",
+    "backToCategories": "Back to Categories"
   },
   "home": {
     "chooseTopic": "Choose a Topic",
@@ -13,6 +14,11 @@
     "searchPlaceholder": "Search topics or words...",
     "noResults": "No matching topics found.",
     "cardsCount": "{{count}} cards",
+    "lessonsCount": "{{count}} lessons",
+    "selectLesson": "Select a lesson to start learning.",
+    "welcome": "Mabuhay.",
+    "subtitle": "Your path to Tagalog mastery begins here.",
+    "searchFindings": "Search Findings",
     "settings": "Settings",
     "themeSelection": "Theme Selection",
     "languageSelection": "Language Selection",
@@ -27,7 +33,8 @@
   },
   "bookmarks": {
     "title": "Saved Words",
-    "empty": "No saved words yet."
+    "empty": "No saved words yet.",
+    "pinnedSubtitle": "Pinned Vocabulary"
   },
   "lesson": {
     "categoryNotFound": "Category not found",
@@ -46,7 +53,11 @@
     "progress": "Reviewing {{current}} of {{total}}",
     "instruction": "Did you know this?",
     "wrong": "Wrong",
-    "correct": "Correct"
+    "correct": "Correct",
+    "impactReport": "Knowledge Indexed.",
+    "impactSubtitle": "Your mastery is expanding beautifully.",
+    "accuracy": "Accuracy",
+    "streak": "Streak"
   },
   "flashcard": {
     "tapToSeeTranslation": "Tap to see translation",

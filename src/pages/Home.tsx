@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { 
-  IonContent, 
-  IonHeader, 
-  IonPage, 
-  IonTitle, 
-  IonToolbar, 
-  IonList, 
-  IonItem, 
-  IonLabel, 
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonList,
+  IonItem,
+  IonLabel,
   IonIcon,
   IonSearchbar,
   IonButton,
@@ -18,6 +18,7 @@ import {
 import {
   bookOutline,
   chevronForwardOutline,
+  arrowBackOutline,
   timeOutline,
   appsOutline,
   createOutline,
@@ -27,6 +28,7 @@ import {
   bookmarkOutline
 } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
+import Footer from '../components/Footer';
 import { lessons } from '../data/lessons';
 import { getSRSStats } from '../utils/srs';
 import CommonHeader from '../components/CommonHeader';
@@ -47,6 +49,9 @@ const Home: React.FC = () => {
   // State for the number of cards due for review
   const [dueCount, setDueCount] = useState(0);
 
+  // State for the currently selected group (for drill-down)
+  const [selectedGroup, setSelectedGroup] = useState<string | null>(null);
+
   // Effect to load SRS stats when the component mounts
   // Note: Ideally should useIonViewWillEnter but that requires refactoring to useIonViewWillEnter hook or standard Effect if re-mount happens
   React.useEffect(() => {
@@ -60,16 +65,16 @@ const Home: React.FC = () => {
    */
   const filteredLessons = lessons.filter(category => {
     if (!searchText) return true;
-    
+
     const searchLower = searchText.toLowerCase();
     const title = t(category.titleKey).toLowerCase();
-    
+
     // Check if title matches
     if (title.includes(searchLower)) return true;
-    
+
     // Check if any card content matches
-    return category.cards.some(card => 
-      card.tagalog.toLowerCase().includes(searchLower) || 
+    return category.cards.some(card =>
+      card.tagalog.toLowerCase().includes(searchLower) ||
       card.english.toLowerCase().includes(searchLower) ||
       (card.zhTW && card.zhTW.includes(searchText)) ||
       (card.zhCN && card.zhCN.includes(searchText))
@@ -111,106 +116,129 @@ const Home: React.FC = () => {
       {/* Header Component */}
       <CommonHeader title={t('common.appTitle')} />
 
-      <IonContent fullscreen>
-        {/* Collapsible header for iOS style */}
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <IonIcon icon={chatbubblesOutline} />
-                {t('common.appTitle')}
-              </div>
-            </IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        
-        <div className="ion-padding-start ion-padding-end ion-padding-top">
-          {/* Review Button - Shows count of cards due for review */}
-          <IonButton routerLink="/review" expand="block" color="warning" className="ion-margin-bottom">
-            <IonIcon icon={timeOutline} slot="start" />
-            {t('home.reviewDue')} ({t('home.dueCount', { count: dueCount })})
-          </IonButton>
-
-          {/* Bookmarks Button */}
-          <IonButton routerLink="/lesson/bookmarks" expand="block" color="tertiary" className="ion-margin-bottom">
-            <IonIcon icon={bookmarkOutline} slot="start" />
-            {t('bookmarks.title')}
-          </IonButton>
-
-          <h2>{t('home.chooseTopic')}</h2>
-          <p>{t('home.selectCategory')}</p>
-        </div>
-
-        {/* Search Bar for filtering lessons */}
-        <IonSearchbar 
-          value={searchText} 
-          onIonInput={e => setSearchText(e.detail.value!)} 
-          placeholder={t('home.searchPlaceholder')}
-          className="ion-padding-horizontal"
-        />
-
-        {/* If searching, show expanded list for better visibility of results.
-            If not searching, show accordions to keep the list compact. */}
-        {searchText ? (
-          <IonList inset={false}>
-            {sortedGroupKeys.map(groupKey => (
-              <React.Fragment key={groupKey}>
-                 <IonListHeader>
-                   <IonLabel>{t(groupKey)}</IonLabel>
-                 </IonListHeader>
-                 {groupedLessons[groupKey].map((category) => (
-                  <IonItem
-                    key={category.id}
-                    routerLink={`/lesson/${category.id}`}
-                    detail={false}
-                  >
-                    <IonIcon icon={bookOutline} slot="start" color="primary" />
-                    <IonLabel>
-                      <h3>{t(category.titleKey)}</h3>
-                      <p>{t('home.cardsCount', { count: category.cards.length })}</p>
-                    </IonLabel>
-                    <IonIcon icon={chevronForwardOutline} slot="end" />
-                  </IonItem>
-                ))}
-              </React.Fragment>
-            ))}
-            {filteredLessons.length === 0 && (
-              <div className="ion-padding ion-text-center">
-                <p>{t('home.noResults')}</p>
-              </div>
-            )}
-          </IonList>
-        ) : (
-          /* Accordion View for Compact Browsing */
-          <IonAccordionGroup expand="inset" className="ion-margin-top">
-            {sortedGroupKeys.map(groupKey => (
-              <IonAccordion key={groupKey} value={groupKey}>
-                <IonItem slot="header" color="light">
-                  <IonIcon icon={groupIcons[groupKey] || bookOutline} slot="start" color="secondary" />
-                  <IonLabel>{t(groupKey)}</IonLabel>
-                </IonItem>
-                <div slot="content">
-                  <IonList lines="full">
-                     {groupedLessons[groupKey].map((category) => (
-                      <IonItem
-                        key={category.id}
-                        routerLink={`/lesson/${category.id}`}
-                        detail={false}
-                      >
-                        <IonIcon icon={bookOutline} slot="start" color="primary" className="ion-padding-start" />
-                        <IonLabel>
-                          <h3>{t(category.titleKey)}</h3>
-                          <p>{t('home.cardsCount', { count: category.cards.length })}</p>
-                        </IonLabel>
-                        <IonIcon icon={chevronForwardOutline} slot="end" />
-                      </IonItem>
-                    ))}
-                  </IonList>
-                </div>
-              </IonAccordion>
-            ))}
-          </IonAccordionGroup>
+      <IonContent fullscreen className="home-container">
+        {/* Ambient Immersive Header */}
+        {!selectedGroup && !searchText && (
+          <div className="ambient-header fade-in-up">
+            <h1>{t('home.welcome')}</h1>
+            <p>{t('home.subtitle')}</p>
+          </div>
         )}
+
+        <div className="pod-dashboard">
+          {/* Hero Pod - Review Progress */}
+          {!selectedGroup && !searchText && (
+            <div className="learning-pod pod-hero fade-in-up" onClick={() => window.location.hash = '/review'}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                  <div className="pod-label">{t('home.reviewDue')}</div>
+                  <h2 className="pod-value">{t('home.dueCount', { count: dueCount })}</h2>
+                </div>
+                <IonButton fill="clear" style={{ '--color': 'white' }}>
+                  <IonIcon icon={chevronForwardOutline} style={{ fontSize: '24px' }} />
+                </IonButton>
+              </div>
+            </div>
+          )}
+
+          {/* Bookmarks Pod - Hero Style */}
+          {!selectedGroup && !searchText && (
+            <div className="learning-pod pod-bookmarks fade-in-up" style={{ animationDelay: '0.1s' }} onClick={() => window.location.hash = '/lesson/bookmarks'}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                  <div className="pod-label">{t('bookmarks.title')}</div>
+                  <h2 className="pod-value">{t('bookmarks.pinnedSubtitle')}</h2>
+                </div>
+                <IonButton fill="clear" style={{ '--color': 'white' }}>
+                  <IonIcon icon={bookmarkOutline} style={{ fontSize: '24px' }} />
+                </IonButton>
+              </div>
+            </div>
+          )}
+
+          {/* Search Pod - Luminous Interaction */}
+          <div className="learning-pod search-pod fade-in-up" style={{ animationDelay: '0.15s' }}>
+            <IonSearchbar
+              value={searchText}
+              onIonInput={e => setSearchText(e.detail.value!)}
+              placeholder={t('home.searchPlaceholder')}
+              className="luminous-search"
+              onIonClear={() => setSearchText('')}
+            />
+          </div>
+
+          {/* Drill-down / Breadcrumb Navigation */}
+          {(selectedGroup || searchText) && (
+            <div className="fade-in-up" style={{ padding: '0 4px', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+              {selectedGroup && !searchText && (
+                <IonButton
+                  fill="clear"
+                  onClick={() => setSelectedGroup(null)}
+                  style={{ '--color': '#64748b', fontSize: '0.85rem', fontWeight: 700, margin: 0 }}
+                >
+                  <IonIcon icon={arrowBackOutline} slot="start" />
+                  {t('common.backToCategories')}
+                </IonButton>
+              )}
+              <span style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--ion-text-color)', letterSpacing: '-0.02em' }}>
+                {searchText ? t('home.searchFindings') : t(selectedGroup!)}
+              </span>
+            </div>
+          )}
+
+          {/* Dynamic Content Pod Grid */}
+          <div className="pod-grid">
+            {searchText ? (
+              /* Search Results */
+              filteredLessons.map((category, idx) => (
+                <div key={category.id} className="item-pod fade-in-up" style={{ animationDelay: `${idx * 0.05}s` }} onClick={() => window.location.hash = `/lesson/${category.id}`}>
+                  <div className="pod-icon-box"><IonIcon icon={bookOutline} /></div>
+                  <div style={{ flex: 1 }}>
+                    <h3>{t(category.titleKey)}</h3>
+                    <span>{t('home.cardsCount', { count: category.cards.length })}</span>
+                  </div>
+                  <IonIcon icon={chevronForwardOutline} style={{ color: '#cbd5e1' }} />
+                </div>
+              ))
+            ) : selectedGroup ? (
+              /* Lessons in Selected Category */
+              groupedLessons[selectedGroup]?.map((category, idx) => (
+                <div key={category.id} className="item-pod fade-in-up" style={{ animationDelay: `${idx * 0.05}s` }} onClick={() => window.location.hash = `/lesson/${category.id}`}>
+                  <div className="pod-icon-box"><IonIcon icon={bookOutline} /></div>
+                  <div style={{ flex: 1 }}>
+                    <h3>{t(category.titleKey)}</h3>
+                    <span>{t('home.cardsCount', { count: category.cards.length })}</span>
+                  </div>
+                  <IonIcon icon={chevronForwardOutline} style={{ color: '#cbd5e1' }} />
+                </div>
+              ))
+            ) : (
+              /* Root Categories View */
+              sortedGroupKeys.map((groupKey, idx) => (
+                <div key={groupKey} className="item-pod fade-in-up" style={{ animationDelay: `${idx * 0.05 + 0.2}s` }} onClick={() => setSelectedGroup(groupKey)}>
+                  <div className="pod-icon-box" style={{ background: 'var(--glow-indigo-soft)', color: 'var(--glow-indigo)' }}>
+                    <IonIcon icon={groupIcons[groupKey] || appsOutline} />
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <h3>{t(groupKey)}</h3>
+                    <span>{t('home.lessonsCount', { count: groupedLessons[groupKey].length })}</span>
+                  </div>
+                  <IonIcon icon={chevronForwardOutline} style={{ color: '#cbd5e1' }} />
+                </div>
+              ))
+            )}
+          </div>
+
+          {/* Empty Discovery State */}
+          {searchText && filteredLessons.length === 0 && (
+            <div className="fade-in-up" style={{ textAlign: 'center', padding: '60px 0', opacity: 0.6 }}>
+              <IonIcon icon={bookOutline} style={{ fontSize: '48px', marginBottom: '16px' }} />
+              <p style={{ fontWeight: 600 }}>{t('home.noResults')}</p>
+            </div>
+          )}
+
+          <Footer />
+        </div>
       </IonContent>
     </IonPage>
   );

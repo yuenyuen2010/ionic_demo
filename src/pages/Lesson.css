@@ -1,42 +1,126 @@
 .progress-indicator {
   text-align: center;
-  margin-bottom: 24px;
-  font-weight: 600;
-  color: var(--ion-color-medium);
-  letter-spacing: 0.05em;
+  margin: 40px 0 20px;
+  font-weight: 800;
+  color: #64748b;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  font-size: 0.875rem;
+  font-size: 0.65rem;
+  display: block;
 }
 
 .instruction {
   text-align: center;
-  color: var(--ion-color-medium);
-  font-style: italic;
-  margin-top: 32px;
-  opacity: 0.8;
+  color: var(--glow-indigo);
+  font-weight: 700;
+  margin-top: 20px;
   font-size: 0.9rem;
+  letter-spacing: -0.01em;
+  display: block;
+  opacity: 0.9;
 }
 
 .navigation-buttons {
   display: flex;
-  justify-content: space-between;
-  padding: 16px 24px;
+  justify-content: center;
+  padding: 32px 32px 48px;
   gap: 16px;
-  background: #ffffff;
-  border-top: 1px solid rgba(0,0,0,0.05);
+  background: transparent;
+  position: relative;
 }
 
+/* Haptic Action Buttons */
 .navigation-buttons ion-button {
-  flex: 1;
   margin: 0;
-  --border-radius: 8px;
-  font-weight: 600;
-  --box-shadow: none;
-  height: 44px;
+  --border-radius: 14px;
+  font-weight: 700;
+  height: 52px;
+  text-transform: none;
+  font-size: 1rem;
+  --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  --color: #1e293b;
+  --background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  transition: var(--transition-haptic);
+}
+
+.navigation-buttons ion-button:hover {
+  transform: translateY(-2px);
+  --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.navigation-buttons ion-button[color="success"] {
+  --background: var(--glow-indigo);
+  --color: white;
+  border: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .navigation-buttons ion-button {
+    --background: #111827;
+    --color: white;
+  }
 }
 
 /* Ensure footer blends seamlessly */
 ion-footer ion-toolbar {
-  --background: #ffffff;
+  --background: transparent;
   --border-width: 0;
+}
+
+/* Feedback Animations */
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-8px);
+  }
+
+  75% {
+    transform: translateX(8px);
+  }
+}
+
+.shake {
+  animation: shake 0.4s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+@keyframes success-pop {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.success-pop {
+  animation: success-pop 0.4s ease-out;
+}
+
+/* Celebratory Screen */
+.celebration-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.celebration-icon {
+  font-size: 80px;
+  margin-bottom: 24px;
+  color: var(--ion-color-success);
+  filter: drop-shadow(0 0 12px rgba(var(--ion-color-success-rgb), 0.3));
 }

@@ -1,103 +1,175 @@
 .flashcard-container {
   background-color: transparent;
   width: 100%;
-  height: 300px;
-  perspective: 1000px;
+  height: 480px;
+  perspective: 2500px;
   cursor: pointer;
   margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Ambient Focus Room Glow */
+.flashcard-container::before {
+  content: '';
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle at center, var(--glow-indigo-soft), transparent 60%);
+  z-index: -1;
+  filter: blur(40px);
+  animation: ambientPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes ambientPulse {
+  from {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
 }
 
 .flashcard-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 520px;
+  transition: transform var(--transition-haptic);
   transform-style: preserve-3d;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  border-radius: 12px;
 }
 
 .flashcard-container.flipped .flashcard-inner {
   transform: rotateY(180deg);
 }
 
-.flashcard-front, .flashcard-back {
+.flashcard-front,
+.flashcard-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05), inset 0 0 20px rgba(99, 102, 241, 0.02);
+  border-radius: 24px;
+  padding: 60px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 12px;
-  padding: 32px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.flashcard-front {
-  background-color: #ffffff;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: var(--transition-haptic);
 }
 
 .flashcard-back {
-  background-color: var(--ion-color-primary);
   transform: rotateY(180deg);
 }
 
+/* Hero Typography */
 .flashcard-front h2 {
-  color: var(--ion-color-primary);
-  font-size: 2.25rem;
-  font-weight: 700;
-  margin-bottom: 16px;
-  letter-spacing: -0.025em;
+  font-size: 3.8rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--ion-text-color);
+  margin: 0;
+  text-align: center;
 }
 
 .flashcard-back h2 {
-  color: var(--ion-color-primary-contrast);
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 16px;
-  letter-spacing: -0.025em;
+  color: var(--glow-indigo);
+  margin: 0;
+  text-align: center;
 }
 
-.flashcard-front p {
-  font-size: 1rem;
-  opacity: 0.9;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--ion-color-medium);
-}
-
-.flashcard-back p {
-  font-size: 1rem;
-  opacity: 0.9;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--ion-color-primary-contrast);
-}
-
-.audio-btn, .bookmark-btn {
+.flip-hint {
   position: absolute;
-  top: 16px;
-  z-index: 10;
-  --padding-start: 8px;
-  --padding-end: 8px;
-  opacity: 0.8;
-  transition: opacity 0.2s;
+  bottom: 40px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* Immersive Details */
+.example-sentence {
+  margin-top: 48px;
+  padding: 24px;
+  background: rgba(99, 102, 241, 0.03);
+  border-radius: 16px;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  width: 100%;
+}
+
+.example-tagalog {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ion-text-color);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.example-translation {
+  font-size: 0.95rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Control Glass Islands */
+.audio-btn,
+.bookmark-btn {
+  position: absolute;
+  top: 32px;
+  --background: rgba(248, 250, 252, 0.8);
+  --color: #64748b;
+  --border-radius: 12px;
+  height: 44px;
+  width: 44px;
+  --padding-start: 0;
+  --padding-end: 0;
+  margin: 0;
+  transition: var(--transition-haptic);
+}
+
+.audio-btn:hover,
+.bookmark-btn:hover {
+  --background: var(--glow-indigo);
+  --color: white;
+  transform: scale(1.1);
 }
 
 .bookmark-btn {
-  right: 16px;
+  right: 32px;
 }
 
 .audio-btn {
-  right: 64px;
+  left: 32px;
 }
 
-.audio-btn:hover, .bookmark-btn:hover {
-  opacity: 1;
+.playing-icon {
+  color: white;
+}
+
+/* Dark Mode Nebula */
+@media (prefers-color-scheme: dark) {
+
+  .flashcard-front,
+  .flashcard-back {
+    background: rgba(17, 24, 39, 0.8);
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .example-sentence {
+    background: rgba(255, 255, 255, 0.02);
+  }
 }

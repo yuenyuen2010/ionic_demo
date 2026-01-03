@@ -1,10 +1,10 @@
 import React, { useState, useMemo } from 'react';
-import { 
-  IonContent, 
-  IonPage, 
-  IonFooter, 
-  IonToolbar, 
-  IonButton, 
+import {
+  IonContent,
+  IonPage,
+  IonFooter,
+  IonToolbar,
+  IonButton,
   IonIcon,
   IonText
 } from '@ionic/react';
@@ -44,7 +44,7 @@ const Lesson: React.FC = () => {
     }
     return lessons.find(l => l.id === id);
   }, [id]);
-  
+
   // State to track the index of the current card being displayed
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -99,10 +99,10 @@ const Lesson: React.FC = () => {
 
   return (
     <IonPage>
-      <CommonHeader 
-        title={t(category.titleKey)} 
-        showBackButton={true} 
-        defaultHref="/home" 
+      <CommonHeader
+        title={t(category.titleKey)}
+        showBackButton={true}
+        defaultHref="/home"
       />
 
       <IonContent className="ion-padding">
@@ -112,10 +112,10 @@ const Lesson: React.FC = () => {
         </div>
 
         {/* Flashcard Component */}
-        <Flashcard 
+        <Flashcard
           key={currentCard.id} // Key ensures React remounts the component when card changes (resets flip state)
           id={currentCard.id}
-          tagalog={currentCard.tagalog} 
+          tagalog={currentCard.tagalog}
           english={currentCard.english}
           zhTW={currentCard.zhTW}
           zhCN={currentCard.zhCN}
@@ -131,10 +131,11 @@ const Lesson: React.FC = () => {
         <IonToolbar>
           <div className="navigation-buttons">
             {/* Previous Button */}
-            <IonButton 
-              fill="outline" 
-              onClick={prevCard} 
+            <IonButton
+              fill="outline"
+              onClick={prevCard}
               disabled={isFirst}
+              shape="round"
             >
               <IonIcon icon={arrowBackOutline} slot="start" />
               {t('lesson.prev')}
@@ -142,17 +143,19 @@ const Lesson: React.FC = () => {
 
             {/* Next or Restart Button */}
             {isLast ? (
-              <IonButton 
-                color="success" 
+              <IonButton
+                color="success"
                 onClick={reset}
+                shape="round"
               >
                 <IonIcon icon={refreshOutline} slot="start" />
                 {t('lesson.restart')}
               </IonButton>
             ) : (
-              <IonButton 
-                color="primary" 
+              <IonButton
+                color="primary"
                 onClick={nextCard}
+                shape="round"
               >
                 {t('lesson.next')}
                 <IonIcon icon={arrowForwardOutline} slot="end" />

@@ -5,14 +5,20 @@
     "buildInfo": "版本信息",
     "buildTime": "构建时间",
     "commitHash": "提交哈希",
-    "message": "消息"
+    "message": "消息",
+    "backToCategories": "返回类别"
   },
   "home": {
     "chooseTopic": "选择主题",
     "selectCategory": "选择一个类别开始学习。",
     "searchPlaceholder": "搜索主题或单词...",
-    "noResults": "找不到符合的主题。",
+    "noResults": "未找到相匹配的主题。",
     "cardsCount": "{{count}} 张卡片",
+    "lessonsCount": "{{count}} 门课程",
+    "selectLesson": "选择一门课程开始学习。",
+    "welcome": "Mabuhay.",
+    "subtitle": "您的他加禄语大师之路从这里开始。",
+    "searchFindings": "搜索结果",
     "settings": "设置",
     "themeSelection": "主题选择",
     "languageSelection": "语言选择",
@@ -27,7 +33,8 @@
   },
   "bookmarks": {
     "title": "已保存单词",
-    "empty": "暂无保存的单词。"
+    "empty": "暂无保存的单词。",
+    "pinnedSubtitle": "固定词汇"
   },
   "lesson": {
     "categoryNotFound": "找不到类别",
@@ -46,7 +53,11 @@
     "progress": "正在复习第 {{current}} 张，共 {{total}} 张",
     "instruction": "你记得这个吗？",
     "wrong": "忘记了",
-    "correct": "记得"
+    "correct": "记得",
+    "impactReport": "知识已保存。",
+    "impactSubtitle": "您的学习进度正在稳步提升。",
+    "accuracy": "准确度",
+    "streak": "连续学习"
   },
   "flashcard": {
     "tapToSeeTranslation": "点击查看翻译",
