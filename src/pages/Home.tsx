@@ -25,7 +25,8 @@ import {
   homeOutline,
   peopleOutline,
   chatbubblesOutline,
-  bookmarkOutline
+  bookmarkOutline,
+  informationCircleOutline
 } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
 import Footer from '../components/Footer';
@@ -151,6 +152,21 @@ const Home: React.FC = () => {
                 </div>
                 <IonButton fill="clear" style={{ '--color': 'white' }}>
                   <IonIcon icon={bookmarkOutline} style={{ fontSize: '24px' }} />
+                </IonButton>
+              </div>
+            </div>
+          )}
+
+          {/* Intro Pod - New Section */}
+          {!selectedGroup && !searchText && (
+            <div className="learning-pod pod-intro fade-in-up" style={{ animationDelay: '0.12s', background: 'linear-gradient(135deg, #845ec2 0%, #d65db1 100%)' }} onClick={() => window.location.hash = '/intro'}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                  <div className="pod-label">{t('home.introToTagalog')}</div>
+                  <h2 className="pod-value">{t('home.introSubtitle')}</h2>
+                </div>
+                <IonButton fill="clear" style={{ '--color': 'white' }}>
+                  <IonIcon icon={informationCircleOutline} style={{ fontSize: '24px' }} />
                 </IonButton>
               </div>
             </div>

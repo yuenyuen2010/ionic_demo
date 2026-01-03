@@ -8,7 +8,28 @@
     "message": "Message",
     "backToCategories": "Back to Categories"
   },
+  "intro": {
+    "title": "Introduction to Tagalog",
+    "subtitle": "History, Features, and Fun Facts",
+    "whatIsTitle": "What is Tagalog?",
+    "whatIsContent": "Tagalog is an Austronesian language spoken as a first language by the ethnic Tagalog people, who make up a quarter of the population of the Philippines. It is the basis for Filipino, the national language.",
+    "historyTitle": "A Brief History",
+    "historyContent": "The name Tagalog comes from 'tagá-ilog', meaning 'river dweller'. Before the Spanish arrival in the 16th century, Tagalog was written in a script called Baybayin. Over 333 years of Spanish rule introduced thousands of loanwords (like 'lamesa' from 'la mesa', 'silya' from 'silla').",
+    "featuresTitle": "Special Features",
+    "feature1Title": "Focus System",
+    "feature1Content": "Unlike English, Tagalog verbs change their form to indicate which part of the sentence is the focus (the actor, the object, the location, etc.). This is often marked by 'ang'.",
+    "feature2Title": "Politeness (Po & Opo)",
+    "feature2Content": "Respect is built into the grammar. Using 'po' and 'opo' is essential when speaking to elders or people in authority.",
+    "feature3Title": "Inclusive vs Exclusive 'We'",
+    "feature3Content": "Tagalog has two words for 'we': 'Tayo' (includes the listener) and 'Kami' (excludes the listener).",
+    "funFactsTitle": "Fun Facts",
+    "fact1": "The English word 'boondocks' comes from the Tagalog word 'bundok' (mountain).",
+    "fact2": "'Mahal' means both 'love' and 'expensive'.",
+    "fact3": "Repeating a word often diminishes its meaning or makes it 'pseudo'. E.g., 'bahay' (house) -> 'bahay-bahayan' (play house)."
+  },
   "home": {
+    "introToTagalog": "Intro to Tagalog",
+    "introSubtitle": "History & Features",
     "chooseTopic": "Choose a Topic",
     "selectCategory": "Select a category to start learning.",
     "searchPlaceholder": "Search topics or words...",
