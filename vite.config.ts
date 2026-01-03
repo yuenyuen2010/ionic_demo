@@ -30,8 +30,12 @@ export default defineConfig({
     react(),
     legacy(),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt',
       includeAssets: ['favicon.png', 'robots.txt', 'apple-touch-icon.png'],
+      workbox: {
+        cleanupOutdatedCaches: true,
+        clientsClaim: true,
+      },
       manifest: {
         name: 'Tagalog Anywhere',
         short_name: 'TagalogApp',
