@@ -33,9 +33,9 @@ const themes = [
 ];
 
 const languages = [
-  { code: 'en', name: 'English' },
-  { code: 'zh-TW', name: '繁體中文' },
-  { code: 'zh-CN', name: '简体中文' },
+  { code: 'en', name: 'English', shortName: 'EN' },
+  { code: 'zh-TW', name: '繁體中文', shortName: '繁' },
+  { code: 'zh-CN', name: '简体中文', shortName: '簡' },
 ];
 
 const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = false, defaultHref = '/' }) => {
@@ -106,7 +106,7 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
                     padding: '0 14px'
                   }}
                 >
-                  {lang.code.toUpperCase()}
+                  {lang.shortName}
                 </IonButton>
               ))}
             </div>
