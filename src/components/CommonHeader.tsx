@@ -26,10 +26,10 @@ interface CommonHeaderProps {
 }
 
 const themes = [
-  { id: 'theme-teal', nameKey: 'themes.teal', color: '#0d9488' },
-  { id: 'theme-navy', nameKey: 'themes.navy', color: '#0f2c4c' },
-  { id: 'theme-purple', nameKey: 'themes.purple', color: '#7e22ce' },
-  { id: 'theme-green', nameKey: 'themes.green', color: '#15803d' },
+  { id: 'theme-teal', nameKey: 'home.themes.teal', color: '#0d9488' },
+  { id: 'theme-navy', nameKey: 'home.themes.navy', color: '#0f2c4c' },
+  { id: 'theme-purple', nameKey: 'home.themes.purple', color: '#7e22ce' },
+  { id: 'theme-green', nameKey: 'home.themes.green', color: '#15803d' },
 ];
 
 const languages = [
