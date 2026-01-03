@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { IonIcon, IonButton, IonSpinner } from '@ionic/react';
-import { volumeHighOutline, bookmarkOutline, bookmark } from 'ionicons/icons';
+import { volumeHighOutline, volumeLowOutline, bookmarkOutline, bookmark } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
 import { isBookmarked, toggleBookmark } from '../utils/bookmarks';
 import './Flashcard.css';
@@ -191,6 +191,70 @@ const Flashcard: React.FC<FlashcardProps> = ({ id, tagalog, english, zhTW, zhCN,
     }
   };
 
+  /**
+   * Play audio at slow speed (0.6x) for language learners - Tagalog only
+   * First tries local slow audio files, falls back to online TTS API
+   */
+  const playSlowAudio = async (event: React.MouseEvent, text: string) => {
+    event.stopPropagation();
+
+    if (isPlaying) return;
+    setIsPlaying(true);
+
+    try {
+      // 1. Try local slow audio file first
+      try {
+        const filename = sanitizeFilename(text);
+        const basePath = import.meta.env.BASE_URL || '/';
+        const audioPath = `${basePath}audio/${filename}_slow.mp3`;
+
+        const audio = new Audio(audioPath);
+
+        await new Promise<void>((resolve, reject) => {
+          audio.onended = () => resolve();
+          audio.onerror = () => reject('Local slow audio not found');
+          audio.oncanplaythrough = () => {
+            audio.play().catch(reject);
+          };
+          audio.load();
+        });
+        return;
+      } catch (e) {
+        console.warn('Local slow audio not found, trying online TTS', e);
+      }
+
+      // 2. Fallback: Online TTS API with speakingRate 0.6
+      const response = await fetch('https://tts-server-479744148035.asia-east1.run.app/tts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          text,
+          languageCode: 'fil-PH',
+          voiceName: 'fil-PH-Standard-A',
+          speakingRate: 0.6,
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data.audioContent) {
+          const audio = new Audio(`data:audio/mp3;base64,${data.audioContent}`);
+          await new Promise<void>((resolve, reject) => {
+            audio.onended = () => resolve();
+            audio.onerror = () => reject('Audio playback failed');
+            audio.play().catch(reject);
+          });
+        }
+      }
+    } catch (error) {
+      console.error('Slow TTS failed:', error);
+    } finally {
+      setIsPlaying(false);
+    }
+  };
+
   return (
     <div
       className={`flashcard-container ${isFlipped ? 'flipped' : ''}`}
@@ -199,14 +263,26 @@ const Flashcard: React.FC<FlashcardProps> = ({ id, tagalog, english, zhTW, zhCN,
       <div className="flashcard-inner">
         {/* Front of Card (Tagalog) */}
         <div className="flashcard-front">
-          <IonButton
-            fill="clear"
-            className="audio-btn"
-            onClick={(e) => playAudio(e, tagalog, 'tl-PH')}
-            disabled={isPlaying}
-          >
-            {isPlaying ? <IonSpinner name="dots" color="primary" /> : <IonIcon icon={volumeHighOutline} slot="icon-only" color="primary" />}
-          </IonButton>
+          <div className="audio-btn-group">
+            <IonButton
+              fill="clear"
+              className="audio-btn"
+              onClick={(e) => playAudio(e, tagalog, 'tl-PH')}
+              disabled={isPlaying}
+              title="Normal speed"
+            >
+              {isPlaying ? <IonSpinner name="dots" color="primary" /> : <IonIcon icon={volumeHighOutline} slot="icon-only" color="primary" />}
+            </IonButton>
+            <IonButton
+              fill="clear"
+              className="slow-audio-btn"
+              onClick={(e) => playSlowAudio(e, tagalog)}
+              disabled={isPlaying}
+              title="Slow speed (learner mode)"
+            >
+              <IonIcon icon={volumeLowOutline} slot="icon-only" color="primary" />
+            </IonButton>
+          </div>
           <IonButton
             fill="clear"
             className="bookmark-btn"

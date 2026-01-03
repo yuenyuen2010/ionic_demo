@@ -140,7 +140,37 @@
 }
 
 /* Control Glass Islands */
+.audio-btn-group {
+  position: absolute;
+  top: 32px;
+  left: 24px;
+  display: flex;
+  gap: 4px;
+  background: rgba(248, 250, 252, 0.9);
+  border-radius: 14px;
+  padding: 4px;
+}
+
 .audio-btn,
+.slow-audio-btn {
+  --background: transparent;
+  --color: #64748b;
+  --border-radius: 10px;
+  height: 36px;
+  width: 36px;
+  --padding-start: 0;
+  --padding-end: 0;
+  margin: 0;
+  transition: var(--transition-haptic);
+}
+
+.audio-btn:hover,
+.slow-audio-btn:hover {
+  --background: var(--glow-indigo);
+  --color: white;
+  transform: scale(1.1);
+}
+
 .bookmark-btn {
   position: absolute;
   top: 32px;
@@ -155,7 +185,6 @@
   transition: var(--transition-haptic);
 }
 
-.audio-btn:hover,
 .bookmark-btn:hover {
   --background: var(--glow-indigo);
   --color: white;
@@ -164,10 +193,6 @@
 
 .bookmark-btn {
   right: 32px;
-}
-
-.audio-btn {
-  left: 32px;
 }
 
 .playing-icon {
