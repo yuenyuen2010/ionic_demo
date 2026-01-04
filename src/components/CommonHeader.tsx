@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import {
   IonHeader,
   IonToolbar,
-  IonTitle,
   IonButtons,
   IonButton,
   IonIcon,
@@ -75,19 +74,17 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
           boxShadow: 'var(--luminous-shadow)',
           padding: '4px 8px'
         }}>
-          {showBackButton && (
-            <IonButtons slot="start">
-              <IonBackButton defaultHref={defaultHref} text="" style={{ '--color': '#64748b' }} />
-            </IonButtons>
-          )}
-          <IonTitle>
-            <div className="header-title-container">
+          <IonButtons slot="start" style={{ alignItems: 'center' }}>
+            {showBackButton && (
+              <IonBackButton defaultHref={defaultHref} text="" style={{ '--color': '#64748b', marginRight: '8px' }} />
+            )}
+            <div className="header-title-container" style={{ marginLeft: showBackButton ? '0px' : '4px' }}>
               <div style={{ padding: '8px', background: 'var(--glow-indigo)', borderRadius: '10px', display: 'flex', boxShadow: '0 4px 12px var(--glow-indigo-soft)', transform: 'rotate(-3deg)' }}>
                 <IonIcon icon={chatbubblesOutline} style={{ color: 'white', fontSize: '20px' }} />
               </div>
               {title}
             </div>
-          </IonTitle>
+          </IonButtons>
           <IonButtons slot="end">
             <div style={{
               display: 'flex',
