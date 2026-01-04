@@ -106,25 +106,31 @@
 }
 
 @media (max-width: 700px) {
+  /* Reduce dashboard padding to give more width to the grid */
+  .pod-dashboard {
+    padding: 0 12px 40px;
+  }
+
   /* Keep primary-grid as 3 columns but adjust spacing for mobile */
   .primary-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    gap: 6px;
   }
 
   .primary-grid .learning-pod {
-    padding: 12px 8px;
+    padding: 8px 4px;
+    min-width: 0; /* Prevent overflow */
   }
 
   .primary-grid .pod-label {
-    font-size: 0.65rem;
+    font-size: 0.55rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   .primary-grid .pod-value {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
   }
 
   /* Hide icon on mobile to save space in the 3-column layout */
