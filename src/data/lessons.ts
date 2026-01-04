@@ -407,6 +407,97 @@ export const lessons: Category[] = [
           zhCN: '我的姐姐很善良。'
         }
       },
+      {
+        id: 'f6',
+        tagalog: 'Lolo',
+        english: 'Grandfather',
+        zhTW: '祖父 / 外祖父',
+        zhCN: '祖父 / 外祖父',
+        example: {
+          tagalog: 'Mahal ko ang aking lolo.',
+          english: 'I love my grandfather.',
+          zhTW: '我愛我的祖父。',
+          zhCN: '我爱我的祖父。'
+        }
+      },
+      {
+        id: 'f7',
+        tagalog: 'Lola',
+        english: 'Grandmother',
+        zhTW: '祖母 / 外祖母',
+        zhCN: '祖母 / 外祖母',
+        example: {
+          tagalog: 'Nagluluto si Lola ng masarap na pagkain.',
+          english: 'Grandma is cooking delicious food.',
+          zhTW: '奶奶正在做美味的食物。',
+          zhCN: '奶奶正在做美味的食物。'
+        }
+      },
+      {
+        id: 'f8',
+        tagalog: 'Tito',
+        english: 'Uncle',
+        zhTW: '叔叔 / 伯伯 / 舅舅',
+        zhCN: '叔叔 / 伯伯 / 舅舅',
+        example: {
+          tagalog: 'Nasa abroad ang tito ko.',
+          english: 'My uncle is abroad.',
+          zhTW: '我的叔叔在國外。',
+          zhCN: '我的叔叔在国外。'
+        }
+      },
+      {
+        id: 'f9',
+        tagalog: 'Tita',
+        english: 'Aunt',
+        zhTW: '阿姨 / 姑姑 / 嬸嬸',
+        zhCN: '阿姨 / 姑姑 / 婶婶',
+        example: {
+          tagalog: 'Binigyan ako ng regalo ni Tita.',
+          english: 'Auntie gave me a gift.',
+          zhTW: '阿姨給了我一份禮物。',
+          zhCN: '阿姨给了我一份礼物。'
+        }
+      },
+      {
+        id: 'f10',
+        tagalog: 'Pinsan',
+        english: 'Cousin',
+        zhTW: '堂表兄弟姊妹',
+        zhCN: '堂表兄弟姐妹',
+        example: {
+          tagalog: 'Kalaro ko ang aking pinsan.',
+          english: 'I am playing with my cousin.',
+          zhTW: '我正在和我的堂表兄弟姊妹玩。',
+          zhCN: '我正在和我的堂表兄弟姐妹玩。'
+        }
+      },
+      {
+        id: 'f11',
+        tagalog: 'Anak',
+        english: 'Child / Son / Daughter',
+        zhTW: '孩子 / 兒子 / 女兒',
+        zhCN: '孩子 / 儿子 / 女儿',
+        example: {
+          tagalog: 'Mabait ang anak nila.',
+          english: 'Their child is kind.',
+          zhTW: '他們的孩子很乖。',
+          zhCN: '他们的孩子很乖。'
+        }
+      },
+      {
+        id: 'f12',
+        tagalog: 'Asawa',
+        english: 'Spouse (Husband/Wife)',
+        zhTW: '配偶 (丈夫/妻子)',
+        zhCN: '配偶 (丈夫/妻子)',
+        example: {
+          tagalog: 'Mahal niya ang kanyang asawa.',
+          english: 'He/She loves his/her spouse.',
+          zhTW: '他/她愛他/她的配偶。',
+          zhCN: '他/她爱他/她的配偶。'
+        }
+      },
     ]
   },
   {
