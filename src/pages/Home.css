@@ -106,8 +106,30 @@
 }
 
 @media (max-width: 700px) {
+  /* Keep primary-grid as 3 columns but adjust spacing for mobile */
   .primary-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .primary-grid .learning-pod {
+    padding: 12px 8px;
+  }
+
+  .primary-grid .pod-label {
+    font-size: 0.65rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .primary-grid .pod-value {
+    font-size: 1.1rem;
+  }
+
+  /* Hide icon on mobile to save space in the 3-column layout */
+  .primary-grid ion-icon {
+    display: none;
   }
 
   .games-grid {
