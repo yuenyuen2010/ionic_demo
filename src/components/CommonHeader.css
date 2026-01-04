@@ -44,6 +44,10 @@
     /* Slightly smaller font on mobile */
     gap: 8px;
   }
+
+  .todays-learning-text {
+    display: none;
+  }
 }
 
 /* ============================================
