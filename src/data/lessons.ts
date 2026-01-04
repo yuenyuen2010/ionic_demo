@@ -120,6 +120,71 @@ export const lessons: Category[] = [
           zhCN: '晚安，奶奶。'
         }
       },
+      {
+        id: '8',
+        tagalog: 'Magandang tanghali',
+        english: 'Good noon',
+        zhTW: '午安 (中午)',
+        zhCN: '午安 (中午)',
+        example: {
+          tagalog: 'Magandang tanghali sa inyo.',
+          english: 'Good noon to you.',
+          zhTW: '祝你們中午愉快。',
+          zhCN: '祝你们中午愉快。'
+        }
+      },
+      {
+        id: '9',
+        tagalog: 'Magandang araw',
+        english: 'Good day',
+        zhTW: '美好的一天',
+        zhCN: '美好的一天',
+        example: {
+          tagalog: 'Magandang araw po.',
+          english: 'Good day (polite).',
+          zhTW: '祝您有美好的一天。',
+          zhCN: '祝您有美好的一天。'
+        }
+      },
+      {
+        id: '10',
+        tagalog: 'Paalam',
+        english: 'Goodbye',
+        zhTW: '再見',
+        zhCN: '再见',
+        example: {
+          tagalog: 'Paalam, hanggang sa muli.',
+          english: 'Goodbye, until next time.',
+          zhTW: '再見，下次見。',
+          zhCN: '再见，下次见。'
+        }
+      },
+      {
+        id: '11',
+        tagalog: 'Tao po',
+        english: 'Is anybody home? / Knock knock',
+        zhTW: '有人在嗎？',
+        zhCN: '有人在吗？',
+        example: {
+          tagalog: 'Tao po! May tao ba dyan?',
+          english: 'Hello! Is anybody there?',
+          zhTW: '有人在嗎？那裡有人嗎？',
+          zhCN: '有人在吗？那里有人吗？'
+        }
+      },
+      {
+        id: '12',
+        tagalog: 'Tuloy po kayo',
+        english: 'Please come in',
+        zhTW: '請進',
+        zhCN: '请进',
+        example: {
+          tagalog: 'Tuloy po kayo sa aming bahay.',
+          english: 'Please come in to our house.',
+          zhTW: '請進來我們家。',
+          zhCN: '请进来我们家。'
+        }
+      },
     ]
   },
   {
