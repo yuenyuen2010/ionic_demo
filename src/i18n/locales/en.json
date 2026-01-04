@@ -78,6 +78,23 @@
     "greatUnscrambling": "Your pattern recognition is improving.",
     "correctWas": "Correct answer:"
   },
+  "emoji": {
+    "title": "Emoji Hulaan",
+    "podTitle": "Emoji Quiz",
+    "podSubtitle": "Emoji Hulaan",
+    "whatWord": "What Tagalog word do these emojis represent?",
+    "question": "Question",
+    "score": "Score",
+    "correct": "Correct!",
+    "wrong": "Wrong! It was:",
+    "perfect": "Perfect Score!",
+    "excellent": "Excellent!",
+    "good": "Good Job!",
+    "keepLearning": "Keep Learning!",
+    "tryAgain": "Try Again!",
+    "bestStreak": "Best Streak",
+    "playAgain": "Play Again"
+  },
   "home": {
     "introToTagalog": "Intro to Tagalog",
     "introSubtitle": "History & Features",

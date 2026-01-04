@@ -10,6 +10,7 @@ import Game from './pages/Game';
 import MemoryMatch from './pages/MemoryMatch';
 import SpellChallenge from './pages/SpellChallenge';
 import WordScramble from './pages/WordScramble';
+import EmojiGuess from './pages/EmojiGuess';
 import ReloadPrompt from './components/ReloadPrompt';
 import { TimerProvider } from './context/TimerContext';
 
@@ -100,6 +101,11 @@ const App: React.FC = () => {
             <Route exact path="/scramble">
               {/* @ts-ignore */}
               <WordScramble />
+            </Route>
+            {/* @ts-ignore */}
+            <Route exact path="/emoji">
+              {/* @ts-ignore */}
+              <EmojiGuess />
             </Route>
             {/* @ts-ignore */}
             <Route exact path="/">

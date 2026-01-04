@@ -87,6 +87,23 @@
     "greatUnscrambling": "您的模式识别能力正在进步。",
     "correctWas": "正确答案："
   },
+  "emoji": {
+    "title": "Emoji 猜猜看",
+    "podTitle": "表情猜单词",
+    "podSubtitle": "Emoji Hulaan",
+    "whatWord": "这些表情符号代表什么他加禄语单词？",
+    "question": "题目",
+    "score": "分数",
+    "correct": "正确！",
+    "wrong": "错了！答案是：",
+    "perfect": "满分！",
+    "excellent": "太棒了！",
+    "good": "做得好！",
+    "keepLearning": "继续加油！",
+    "tryAgain": "再试一次！",
+    "bestStreak": "最佳连击",
+    "playAgain": "再玩一次"
+  },
   "lesson": {
     "categoryNotFound": "找不到类别",
     "goBack": "返回",

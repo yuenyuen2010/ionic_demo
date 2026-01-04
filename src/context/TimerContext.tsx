@@ -50,6 +50,7 @@ export const TimerProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         path === '/memory' ||
         path === '/spell' ||
         path === '/scramble' ||
+        path === '/emoji' ||
         path === '/review') {
         return true;
       }
