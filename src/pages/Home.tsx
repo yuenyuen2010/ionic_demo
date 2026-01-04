@@ -169,57 +169,6 @@ const Home: React.FC = () => {
             </div>
           )}
 
-          {/* Games Category Section */}
-          {!selectedGroup && !searchText && (
-            <div className="category-section fade-in-up" style={{ animationDelay: '0.1s' }}>
-              <h3 className="category-title">{t('home.gamesCategory')}</h3>
-              <div className="games-grid">
-                {/* Salita Challenge */}
-                <div className="learning-pod pod-game" style={{ background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)' }} onClick={() => window.location.hash = '/game'}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <div>
-                      <div className="pod-label">{t('game.podTitle')}</div>
-                      <h2 className="pod-value">{t('game.podSubtitle')}</h2>
-                    </div>
-                    <IonIcon icon={gameControllerOutline} style={{ fontSize: '24px', color: 'white' }} />
-                  </div>
-                </div>
-
-                {/* Memory Match */}
-                <div className="learning-pod pod-memory" style={{ background: 'linear-gradient(135deg, #f43f5e 0%, #ec4899 100%)' }} onClick={() => window.location.hash = '/memory'}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <div>
-                      <div className="pod-label">{t('memory.podTitle')}</div>
-                      <h2 className="pod-value">{t('memory.podSubtitle')}</h2>
-                    </div>
-                    <IonIcon icon={gridOutline} style={{ fontSize: '24px', color: 'white' }} />
-                  </div>
-                </div>
-
-                {/* Spell Challenge */}
-                <div className="learning-pod pod-spell" style={{ background: 'linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%)' }} onClick={() => window.location.hash = '/spell'}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <div>
-                      <div className="pod-label">{t('spell.podTitle')}</div>
-                      <h2 className="pod-value">{t('spell.podSubtitle')}</h2>
-                    </div>
-                    <IonIcon icon={pencilOutline} style={{ fontSize: '24px', color: 'white' }} />
-                  </div>
-                </div>
-
-                {/* Word Scramble */}
-                <div className="learning-pod pod-scramble" style={{ background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)' }} onClick={() => window.location.hash = '/scramble'}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <div>
-                      <div className="pod-label">{t('scramble.podTitle')}</div>
-                      <h2 className="pod-value">{t('scramble.podSubtitle')}</h2>
-                    </div>
-                    <IonIcon icon={shuffleOutline} style={{ fontSize: '24px', color: 'white' }} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
 
           {/* Search Pod - Luminous Interaction */}
           <div className="learning-pod search-pod fade-in-up" style={{ animationDelay: '0.15s' }}>
@@ -299,6 +248,58 @@ const Home: React.FC = () => {
             <div className="fade-in-up" style={{ textAlign: 'center', padding: '60px 0', opacity: 0.6 }}>
               <IonIcon icon={bookOutline} style={{ fontSize: '48px', marginBottom: '16px' }} />
               <p style={{ fontWeight: 600 }}>{t('home.noResults')}</p>
+            </div>
+          )}
+
+          {/* Games Category Section - Moved to bottom */}
+          {!selectedGroup && !searchText && (
+            <div className="category-section fade-in-up" style={{ animationDelay: '0.3s' }}>
+              <h3 className="category-title">{t('home.gamesCategory')}</h3>
+              <div className="games-grid">
+                {/* Salita Challenge */}
+                <div className="learning-pod pod-game" style={{ background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)' }} onClick={() => window.location.hash = '/game'}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div>
+                      <div className="pod-label">{t('game.podTitle')}</div>
+                      <h2 className="pod-value">{t('game.podSubtitle')}</h2>
+                    </div>
+                    <IonIcon icon={gameControllerOutline} style={{ fontSize: '24px', color: 'white' }} />
+                  </div>
+                </div>
+
+                {/* Memory Match */}
+                <div className="learning-pod pod-memory" style={{ background: 'linear-gradient(135deg, #f43f5e 0%, #ec4899 100%)' }} onClick={() => window.location.hash = '/memory'}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div>
+                      <div className="pod-label">{t('memory.podTitle')}</div>
+                      <h2 className="pod-value">{t('memory.podSubtitle')}</h2>
+                    </div>
+                    <IonIcon icon={gridOutline} style={{ fontSize: '24px', color: 'white' }} />
+                  </div>
+                </div>
+
+                {/* Spell Challenge */}
+                <div className="learning-pod pod-spell" style={{ background: 'linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%)' }} onClick={() => window.location.hash = '/spell'}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div>
+                      <div className="pod-label">{t('spell.podTitle')}</div>
+                      <h2 className="pod-value">{t('spell.podSubtitle')}</h2>
+                    </div>
+                    <IonIcon icon={pencilOutline} style={{ fontSize: '24px', color: 'white' }} />
+                  </div>
+                </div>
+
+                {/* Word Scramble */}
+                <div className="learning-pod pod-scramble" style={{ background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)' }} onClick={() => window.location.hash = '/scramble'}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div>
+                      <div className="pod-label">{t('scramble.podTitle')}</div>
+                      <h2 className="pod-value">{t('scramble.podSubtitle')}</h2>
+                    </div>
+                    <IonIcon icon={shuffleOutline} style={{ fontSize: '24px', color: 'white' }} />
+                  </div>
+                </div>
+              </div>
             </div>
           )}
 
