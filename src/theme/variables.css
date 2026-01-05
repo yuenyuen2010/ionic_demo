@@ -33,7 +33,7 @@
   --glass-border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-/* THEME: LUMINOUS INDIGO */
+/* THEME: LUMINOUS INDIGO (Default) */
 :root,
 body.theme-teal {
   --ion-color-primary: #6366f1;
@@ -80,17 +80,21 @@ body.theme-navy {
   --ion-color-tertiary-contrast-rgb: 255, 255, 255;
   --ion-color-tertiary-shade: #3472d9;
   --ion-color-tertiary-tint: #4f8ef7;
+
+  /* Override Glow Tokens */
+  --glow-indigo: #1e293b;
+  --glow-indigo-soft: rgba(30, 41, 59, 0.15);
 }
 
-/* 3. MODERN EMERALD */
+/* 3. MODERN EMERALD (Purple Theme) */
 body.theme-purple {
-  --ion-color-primary: #059669;
-  /* Emerald 600 */
-  --ion-color-primary-rgb: 5, 150, 105;
+  --ion-color-primary: #7e22ce;
+  /* Purple 700 */
+  --ion-color-primary-rgb: 126, 34, 206;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #047857;
-  --ion-color-primary-tint: #10b981;
+  --ion-color-primary-shade: #6b21a8;
+  --ion-color-primary-tint: #9333ea;
 
   --ion-color-secondary: #db2777;
   --ion-color-secondary-rgb: 219, 39, 119;
@@ -105,17 +109,21 @@ body.theme-purple {
   --ion-color-tertiary-contrast-rgb: 255, 255, 255;
   --ion-color-tertiary-shade: #3b31b2;
   --ion-color-tertiary-tint: #564cd0;
+
+  /* Override Glow Tokens */
+  --glow-indigo: #7e22ce;
+  --glow-indigo-soft: rgba(126, 34, 206, 0.15);
 }
 
-/* 4. SOPHISTICATED SLATE */
+/* 4. SOPHISTICATED SLATE (Green Theme) */
 body.theme-green {
-  --ion-color-primary: #64748b;
-  /* Slate 500 */
-  --ion-color-primary-rgb: 100, 116, 139;
+  --ion-color-primary: #15803d;
+  /* Green 700 */
+  --ion-color-primary-rgb: 21, 128, 61;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #475569;
-  --ion-color-primary-tint: #94a3b8;
+  --ion-color-primary-shade: #166534;
+  --ion-color-primary-tint: #16a34a;
 
   --ion-color-secondary: #854d0e;
   --ion-color-secondary-rgb: 133, 77, 14;
@@ -130,6 +138,10 @@ body.theme-green {
   --ion-color-tertiary-contrast-rgb: 255, 255, 255;
   --ion-color-tertiary-shade: #12a292;
   --ion-color-tertiary-tint: #2bbfaf;
+
+  /* Override Glow Tokens */
+  --glow-indigo: #15803d;
+  --glow-indigo-soft: rgba(21, 128, 61, 0.15);
 }
 
 /* Common Success/Warning/Danger/Medium/Light/Dark */
@@ -207,6 +219,10 @@ body.theme-green {
     --ion-color-secondary-contrast-rgb: 0, 0, 0;
     --ion-color-secondary-shade: #828fa2;
     --ion-color-secondary-tint: #9facbf;
+
+    /* Override Glow Tokens (Teal in Dark Mode is actually #2dd4bf) */
+    --glow-indigo: #2dd4bf;
+    --glow-indigo-soft: rgba(45, 212, 191, 0.15);
   }
 
   /* Navy Dark */
@@ -224,6 +240,10 @@ body.theme-green {
     --ion-color-secondary-contrast-rgb: 0, 0, 0;
     --ion-color-secondary-shade: #828fa2;
     --ion-color-secondary-tint: #9facbf;
+
+    /* Override Glow Tokens */
+    --glow-indigo: #60a5fa;
+    --glow-indigo-soft: rgba(96, 165, 250, 0.15);
   }
 
   /* Purple Dark */
@@ -241,6 +261,10 @@ body.theme-green {
     --ion-color-secondary-contrast-rgb: 0, 0, 0;
     --ion-color-secondary-shade: #d764a0;
     --ion-color-secondary-tint: #f580bd;
+
+    /* Override Glow Tokens */
+    --glow-indigo: #c084fc;
+    --glow-indigo-soft: rgba(192, 132, 252, 0.15);
   }
 
   /* Green Dark */
@@ -258,6 +282,10 @@ body.theme-green {
     --ion-color-secondary-contrast-rgb: 0, 0, 0;
     --ion-color-secondary-shade: #dda820;
     --ion-color-secondary-tint: #fcc53a;
+
+    /* Override Glow Tokens */
+    --glow-indigo: #4ade80;
+    --glow-indigo-soft: rgba(74, 222, 128, 0.15);
   }
 
   /* Common Dark Vars */
