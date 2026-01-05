@@ -15,6 +15,7 @@ const MemoryMatch = lazy(() => import('./pages/MemoryMatch'));
 const SpellChallenge = lazy(() => import('./pages/SpellChallenge'));
 const WordScramble = lazy(() => import('./pages/WordScramble'));
 const EmojiGuess = lazy(() => import('./pages/EmojiGuess'));
+const FallingWords = lazy(() => import('./pages/FallingWords'));
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -83,52 +84,46 @@ const App: React.FC = () => {
             <IonRouterOutlet>
               {/* @ts-ignore */}
               <Route exact path="/home">
-                {/* @ts-ignore */}
                 <Home />
               </Route>
               {/* @ts-ignore */}
               <Route exact path="/lesson/:id">
-                {/* @ts-ignore */}
                 <Lesson />
               </Route>
               {/* @ts-ignore */}
               <Route exact path="/review">
-                {/* @ts-ignore */}
                 <Review />
               </Route>
               {/* @ts-ignore */}
               <Route exact path="/intro">
-                {/* @ts-ignore */}
                 <Intro />
               </Route>
               {/* @ts-ignore */}
               <Route exact path="/game">
-                {/* @ts-ignore */}
                 <Game />
               </Route>
               {/* @ts-ignore */}
               <Route exact path="/memory">
-                {/* @ts-ignore */}
                 <MemoryMatch />
               </Route>
               {/* @ts-ignore */}
               <Route exact path="/spell">
-                {/* @ts-ignore */}
                 <SpellChallenge />
               </Route>
               {/* @ts-ignore */}
               <Route exact path="/scramble">
-                {/* @ts-ignore */}
                 <WordScramble />
               </Route>
               {/* @ts-ignore */}
               <Route exact path="/emoji">
-                {/* @ts-ignore */}
                 <EmojiGuess />
               </Route>
               {/* @ts-ignore */}
+              <Route exact path="/falling">
+                <FallingWords />
+              </Route>
+              {/* @ts-ignore */}
               <Route exact path="/">
-                {/* @ts-ignore */}
                 <Redirect to="/home" />
               </Route>
             </IonRouterOutlet>
