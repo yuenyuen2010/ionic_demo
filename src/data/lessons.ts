@@ -832,6 +832,84 @@ export const lessons: Category[] = [
           zhCN: '那只猫是黑色的。'
         }
       },
+      {
+        id: 'col6',
+        tagalog: 'Luntian / Berde',
+        english: 'Green',
+        zhTW: '綠色',
+        zhCN: '绿色',
+        example: {
+          tagalog: 'Luntian ang mga dahon.',
+          english: 'The leaves are green.',
+          zhTW: '葉子是綠色的。',
+          zhCN: '叶子是绿色的。'
+        }
+      },
+      {
+        id: 'col7',
+        tagalog: 'Kahel',
+        english: 'Orange',
+        zhTW: '橘色',
+        zhCN: '橘色',
+        example: {
+          tagalog: 'Masarap ang prutas na kahel.',
+          english: 'The orange fruit is delicious.',
+          zhTW: '橘子很好吃。',
+          zhCN: '橘子很好吃。'
+        }
+      },
+      {
+        id: 'col8',
+        tagalog: 'Lila',
+        english: 'Purple',
+        zhTW: '紫色',
+        zhCN: '紫色',
+        example: {
+          tagalog: 'Lila ang bulaklak na ito.',
+          english: 'This flower is purple.',
+          zhTW: '這朵花是紫色的。',
+          zhCN: '这朵花是紫色的。'
+        }
+      },
+      {
+        id: 'col9',
+        tagalog: 'Kayumanggi',
+        english: 'Brown',
+        zhTW: '棕色',
+        zhCN: '棕色',
+        example: {
+          tagalog: 'Kayumanggi ang balat ng Pilipino.',
+          english: 'Filipinos have brown skin.',
+          zhTW: '菲律賓人的皮膚是棕色的。',
+          zhCN: '菲律宾人的皮肤是棕色的。'
+        }
+      },
+      {
+        id: 'col10',
+        tagalog: 'Rosas',
+        english: 'Pink',
+        zhTW: '粉紅色',
+        zhCN: '粉红色',
+        example: {
+          tagalog: 'Gusto niya ng kulay rosas.',
+          english: 'She likes the color pink.',
+          zhTW: '她喜歡粉紅色。',
+          zhCN: '她喜欢粉红色。'
+        }
+      },
+      {
+        id: 'col11',
+        tagalog: 'Abo / Kulay-abo',
+        english: 'Gray',
+        zhTW: '灰色',
+        zhCN: '灰色',
+        example: {
+          tagalog: 'Kulay-abo ang ulap.',
+          english: 'The clouds are gray.',
+          zhTW: '雲是灰色的。',
+          zhCN: '云是灰色的。'
+        }
+      },
     ]
   },
   {
