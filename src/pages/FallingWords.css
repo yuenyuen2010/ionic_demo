@@ -1,0 +1,214 @@
+.falling-content {
+    --background: #f8fafc;
+}
+
+.game-area {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #eef2ff 0%, #ffffff 100%);
+}
+
+/* Stats Bar */
+.game-stats-bar {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10;
+}
+
+.stat-box {
+    background: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    color: var(--glow-indigo);
+}
+
+.stat-box.lives {
+    gap: 4px;
+}
+
+.life-active {
+    color: #ef4444;
+}
+
+.life-lost {
+    color: #e2e8f0;
+}
+
+/* Falling Animation */
+.falling-word-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -60px; /* Start above screen */
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    z-index: 5;
+    pointer-events: none; /* Let clicks pass through if needed, though we click options */
+}
+
+.falling-word-bubble {
+    background: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.2);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1e293b;
+    border: 2px solid var(--glow-indigo);
+    white-space: nowrap;
+}
+
+@keyframes fall {
+    from {
+        top: -60px;
+    }
+    to {
+        top: calc(100% - 240px); /* Stop before hitting options dock roughly */
+        opacity: 0; /* Fade out at bottom to signify loss */
+        transform: translateX(-50%) scale(0.8);
+    }
+}
+
+/* Options Dock */
+.options-dock {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: white;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    z-index: 20;
+    height: 220px; /* Fixed height for consistency */
+}
+
+.option-tile {
+    background: #f1f5f9;
+    border: none;
+    border-radius: 16px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #475569;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 2px 0 #cbd5e1;
+}
+
+.option-tile:active {
+    transform: translateY(2px);
+    box-shadow: none;
+    background: #e2e8f0;
+}
+
+/* Splash Screen */
+.splash-screen, .game-over-screen {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.splash-content {
+    max-width: 400px;
+    width: 100%;
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    color: white;
+    font-size: 32px;
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+}
+
+.splash-content h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.splash-content p {
+    color: #64748b;
+    margin-bottom: 32px;
+}
+
+.start-btn {
+    --background: var(--glow-indigo);
+    --box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+    font-weight: 700;
+}
+
+/* Game Over */
+.game-over-content {
+    background: white;
+    padding: 32px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 340px;
+}
+
+.result-trophy {
+    font-size: 64px;
+    color: #fbbf24;
+    margin-bottom: 16px;
+}
+
+.final-score-display {
+    background: #f8fafc;
+    padding: 16px;
+    border-radius: 16px;
+    margin: 24px 0;
+    border: 1px solid #e2e8f0;
+}
+
+.final-score-display span {
+    display: block;
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 4px;
+}
+
+.final-score-display strong {
+    font-size: 2.5rem;
+    color: #1e293b;
+    font-weight: 800;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}

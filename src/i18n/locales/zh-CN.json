@@ -125,6 +125,13 @@
     "bestStreak": "最佳连击",
     "playAgain": "再玩一次"
   },
+  "falling": {
+    "title": "他加禄雨",
+    "podTitle": "单词雨",
+    "podSubtitle": "接住单词",
+    "description": "在他加禄语单词掉落前接住它们！测试您的速度和词汇量。",
+    "playAgain": "再玩一次"
+  },
   "lesson": {
     "categoryNotFound": "找不到类别",
     "goBack": "返回",
