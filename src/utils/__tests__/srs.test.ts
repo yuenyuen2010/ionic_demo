@@ -42,10 +42,13 @@ describe('SRS Utility Functions', () => {
         });
 
         it('should return empty object on parse error', () => {
+            const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
             localStorageMock.getItem.mockReturnValueOnce('invalid json{');
 
             const result = loadSRS();
             expect(result).toEqual({});
+            expect(consoleSpy).toHaveBeenCalled();
+            consoleSpy.mockRestore();
         });
     });
 
