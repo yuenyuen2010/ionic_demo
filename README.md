@@ -72,25 +72,54 @@ To preview the production build locally:
 npm run preview
 ```
 
-## Testing
+## Available Scripts
 
-### Unit Tests
-Run unit tests using Vitest:
-```bash
-npm run test.unit
-```
-
-### End-to-End Tests
-Run E2E tests using Cypress:
-```bash
-npm run test.e2e
-```
+| Script | Description |
+|---|---|
+| `npm run dev` | Starts the development server using Vite. |
+| `npm run build` | Builds the app for production. Includes TypeScript validation (`tsc`). |
+| `npm run preview` | Previews the production build locally. |
+| `npm run test.unit` | Runs unit tests using Vitest. |
+| `npm run test.e2e` | Runs end-to-end tests using Cypress. |
+| `npm run lint` | Runs ESLint to check for code quality issues. |
 
 ## Project Structure
 
-- `src/components`: Reusable UI components (Flashcards, Headers, etc.)
-- `src/data`: Static data for lessons and vocabulary.
-- `src/pages`: Application pages (Home, Lesson, Review, Games, Intro).
-- `src/utils`: Utility functions (SRS logic, Bookmarks management, etc.).
-- `src/theme`: Global styles and theming variables.
-- `src/i18n`: Internationalization configuration.
+```
+src/
+├── components/      # Reusable UI components
+│   ├── CommonHeader.tsx  # App header with settings
+│   ├── Flashcard.tsx     # Card component for learning
+│   └── ...
+├── context/         # React Contexts
+│   └── TimerContext.tsx  # Global study timer state
+├── data/            # Static data
+│   └── lessons.ts        # Vocabulary and lesson definitions
+├── pages/           # Application pages
+│   ├── Home.tsx          # Main dashboard
+│   ├── Lesson.tsx        # Lesson view
+│   ├── Review.tsx        # SRS review session
+│   ├── Game.tsx          # Games hub
+│   └── ...
+├── utils/           # Utility functions
+│   ├── srs.ts            # Spaced Repetition System logic
+│   ├── bookmarks.ts      # Bookmark management
+│   └── ...
+├── theme/           # Global styles
+│   └── variables.css     # CSS variables (colors, fonts)
+└── i18n/            # Internationalization setup
+```
+
+## Key Concepts
+
+### Spaced Repetition System (SRS)
+The app uses a simplified SRS algorithm to help users retain vocabulary efficiently:
+- **Correct Answer**: The card's level increases, and the review interval grows (Level * 3 days).
+- **Incorrect Answer**: The card's level resets to 0, and it will appear again for review in 10 minutes.
+
+### Data Management
+- **Lessons**: All vocabulary data is stored statically in `src/data/lessons.ts`. This allows the app to work offline without a backend database.
+- **Persistence**: User progress (SRS state, bookmarks, settings, timer) is stored in the browser's `localStorage`.
+
+### Offline Support (PWA)
+The app is configured as a PWA. Once loaded, it caches assets and data, allowing it to function completely offline. Updates are handled via a prompt that appears when a new version is available.

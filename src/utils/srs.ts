@@ -1,14 +1,26 @@
 import { lessons, Flashcard } from '../data/lessons';
 
+/**
+ * Interface representing the state of a single card in the SRS system.
+ */
 export interface SRSState {
-  nextReview: number; // timestamp
+  /** Timestamp (in milliseconds) when the card is next due for review. */
+  nextReview: number;
+  /** The current proficiency level of the card. Higher means known better. */
   level: number;
 }
 
+/**
+ * Dictionary mapping card IDs to their SRS state.
+ */
 export type SRSData = Record<string, SRSState>;
 
 const STORAGE_KEY = 'srs-data';
 
+/**
+ * Loads the SRS data from local storage.
+ * @returns {SRSData} The loaded SRS data or an empty object if not found or error.
+ */
 export const loadSRS = (): SRSData => {
   try {
     const data = localStorage.getItem(STORAGE_KEY);
@@ -19,6 +31,10 @@ export const loadSRS = (): SRSData => {
   }
 };
 
+/**
+ * Saves the SRS data to local storage.
+ * @param {SRSData} data - The SRS data to save.
+ */
 export const saveSRS = (data: SRSData) => {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
@@ -27,9 +43,21 @@ export const saveSRS = (data: SRSData) => {
   }
 };
 
-// Simple SRS Algorithm based on user request:
-// Right -> 3 days (growing?)
-// Wrong -> 10 mins
+/**
+ * Updates the SRS state for a specific card based on the user's result.
+ *
+ * Algorithm:
+ * - If Correct:
+ *   - Level increases by 1.
+ *   - Next review is scheduled for (3 * Level) days from now.
+ * - If Incorrect:
+ *   - Level resets to 0.
+ *   - Next review is scheduled for 10 minutes from now.
+ *
+ * @param {string} cardId - The unique identifier of the flashcard.
+ * @param {boolean} isCorrect - Whether the user answered correctly.
+ * @returns {SRSState} The updated state of the card.
+ */
 export const updateCardSRS = (cardId: string, isCorrect: boolean): SRSState => {
   const data = loadSRS();
   const current = data[cardId] || { nextReview: 0, level: 0 };
@@ -38,24 +66,18 @@ export const updateCardSRS = (cardId: string, isCorrect: boolean): SRSState => {
   let level: number;
 
   if (isCorrect) {
-    // Correct
+    // Increment level
     level = current.level + 1;
-    // Interval grows: 3 days, then maybe more? 
-    // Prompt said: "If you get it right, show it again in 3 days."
-    // Let's implement a simple multiplier: 3 * level days
-    // Level 1: 3 days
-    // Level 2: 6 days
-    // Level 3: 9 days...
-    // Or strictly 3 days as requested? 
-    // "If right, show again in 3 days." -> simpler is better for now.
-    // But standard SRS usually exponentially increases. Let's do 3 * 2^(level-1) days?
-    // Let's stick to the prompt's implied simple rule but make it useful: 3 days * level.
+
+    // Calculate review interval: 3 days * level
+    // Example: Level 1 = 3 days, Level 2 = 6 days, etc.
     const daysToAdd = 3 * level;
     nextReview = Date.now() + daysToAdd * 24 * 60 * 60 * 1000;
   } else {
-    // Wrong
-    level = 0; // Reset
-    // 10 minutes
+    // Reset level on failure
+    level = 0;
+
+    // Show again shortly (10 minutes)
     nextReview = Date.now() + 10 * 60 * 1000;
   }
 
@@ -65,6 +87,15 @@ export const updateCardSRS = (cardId: string, isCorrect: boolean): SRSState => {
   return newState;
 };
 
+/**
+ * Retrieves all flashcards that are currently due for review or are new.
+ *
+ * A card is considered due if:
+ * 1. It has no SRS state (New card).
+ * 2. Its `nextReview` timestamp is in the past.
+ *
+ * @returns {Flashcard[]} An array of flashcards due for review.
+ */
 export const getDueCards = (): Flashcard[] => {
   const srsData = loadSRS();
   const now = Date.now();
@@ -83,6 +114,14 @@ export const getDueCards = (): Flashcard[] => {
   return dueCards;
 };
 
+/**
+ * Calculates statistics for the SRS system.
+ *
+ * @returns {Object} An object containing:
+ * - `totalCards`: Total number of cards in the system.
+ * - `reviewedCount`: Number of cards that have been reviewed at least once.
+ * - `dueCount`: Number of cards currently due for review.
+ */
 export const getSRSStats = () => {
   const srsData = loadSRS();
   const totalCards = lessons.reduce((acc, cat) => acc + cat.cards.length, 0);

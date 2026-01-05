@@ -7,11 +7,7 @@ import {
   IonIcon,
   IonBackButton,
   IonModal,
-  IonContent,
-  IonListHeader,
-  IonLabel,
   IonRadioGroup,
-  IonItem,
   IonRadio,
   IonText
 } from '@ionic/react';
@@ -21,11 +17,15 @@ import { useTimer } from '../context/TimerContext';
 import './CommonHeader.css';
 
 interface CommonHeaderProps {
+  /** Title to display in the header. */
   title: string;
+  /** Whether to show the back button. Defaults to false. */
   showBackButton?: boolean;
+  /** The route to navigate to when back button is clicked. Defaults to '/'. */
   defaultHref?: string;
 }
 
+// Available color themes for the application
 const themes = [
   { id: 'theme-teal', nameKey: 'home.themes.teal', color: '#0d9488' },
   { id: 'theme-navy', nameKey: 'home.themes.navy', color: '#0f2c4c' },
@@ -33,32 +33,56 @@ const themes = [
   { id: 'theme-green', nameKey: 'home.themes.green', color: '#15803d' },
 ];
 
+// Available languages
 const languages = [
   { code: 'en', name: 'English', shortName: 'EN' },
   { code: 'zh-TW', name: '繁體中文', shortName: '繁' },
   { code: 'zh-CN', name: '简体中文', shortName: '簡' },
 ];
 
+/**
+ * CommonHeader Component.
+ *
+ * Displays the application header with:
+ * - Title and Logo
+ * - Study Timer
+ * - Language Switcher
+ * - Settings and Build Info Buttons
+ *
+ * Handles theme switching and language changing via modals.
+ */
 const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = false, defaultHref = '/' }) => {
   const { t, i18n } = useTranslation();
   const { formattedTime } = useTimer();
+
+  // State for controlling modals
   const [showBuildInfo, setShowBuildInfo] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [currentTheme, setCurrentTheme] = useState('theme-teal');
 
+  // Format build date from global define
   const buildDate = new Date(__BUILD_INFO__.time).toLocaleString();
 
+  // Load saved theme on mount
   useEffect(() => {
     const savedTheme = localStorage.getItem('app-theme') || 'theme-teal';
     setCurrentTheme(savedTheme);
   }, []);
 
+  /**
+   * Updates the application theme.
+   * Applies class to body and saves to localStorage.
+   */
   const handleThemeChange = (themeId: string) => {
     setCurrentTheme(themeId);
     localStorage.setItem('app-theme', themeId);
     document.body.className = themeId;
   };
 
+  /**
+   * Updates the application language.
+   * Changes i18next language and saves preference.
+   */
   const handleLanguageChange = (langCode: string) => {
     i18n.changeLanguage(langCode);
     localStorage.setItem('i18nextLng', langCode);
@@ -74,6 +98,7 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
           boxShadow: 'var(--luminous-shadow)',
           padding: '4px 8px'
         }}>
+          {/* Left Side: Back Button & Title */}
           <IonButtons slot="start" style={{ alignItems: 'center' }}>
             {showBackButton && (
               <IonBackButton defaultHref={defaultHref} text="" style={{ '--color': '#64748b', marginRight: '8px' }} />
@@ -85,7 +110,10 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
               {title}
             </div>
           </IonButtons>
+
+          {/* Right Side: Timer, Language, Settings */}
           <IonButtons slot="end">
+            {/* Study Timer Display */}
             <div style={{
               display: 'flex',
               alignItems: 'center',
@@ -103,6 +131,8 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
                 {formattedTime}
               </IonText>
             </div>
+
+            {/* Language Switcher Buttons */}
             <div className="language-switcher-container">
               {languages.map(lang => (
                 <IonButton
@@ -125,6 +155,8 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
                 </IonButton>
               ))}
             </div>
+
+            {/* Info & Settings Icons */}
             <IonButton onClick={() => setShowBuildInfo(true)} style={{ '--color': '#94a3b8' }}>
               <IonIcon slot="icon-only" icon={informationCircleOutline} style={{ fontSize: '22px' }} />
             </IonButton>
@@ -135,7 +167,7 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
         </IonToolbar>
       </IonHeader>
 
-      {/* Settings Modal */}
+      {/* Settings Modal: Language & Theme Selection */}
       <IonModal
         isOpen={showSettings}
         onDidDismiss={() => setShowSettings(false)}
@@ -152,6 +184,7 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
           </div>
 
           <div className="modal-body">
+            {/* Language Section */}
             <div className="settings-section">
               <h3 className="section-title">{t('home.languageSelection')}</h3>
               <div className="settings-card">
@@ -166,6 +199,7 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
               </div>
             </div>
 
+            {/* Theme Section */}
             <div className="settings-section">
               <h3 className="section-title">{t('home.themeSelection')}</h3>
               <div className="settings-card">
@@ -186,7 +220,7 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
         </div>
       </IonModal>
 
-      {/* Build Info Modal */}
+      {/* Build Info Modal: Version & Commit Details */}
       <IonModal
         isOpen={showBuildInfo}
         onDidDismiss={() => setShowBuildInfo(false)}
