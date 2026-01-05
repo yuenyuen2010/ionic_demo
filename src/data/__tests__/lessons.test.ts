@@ -3,7 +3,7 @@
  * Validates the integrity and format of lesson data
  */
 import { describe, it, expect } from 'vitest';
-import { lessons, Lesson, Flashcard } from '../../data/lessons';
+import { lessons, Category, Flashcard } from '../../data/lessons';
 
 describe('Lessons Data Structure', () => {
     describe('lessons array', () => {
@@ -13,7 +13,7 @@ describe('Lessons Data Structure', () => {
         });
 
         it('should have all required lesson properties', () => {
-            lessons.forEach((lesson: Lesson) => {
+            lessons.forEach((lesson: Category) => {
                 expect(lesson).toHaveProperty('id');
                 expect(lesson).toHaveProperty('titleKey');
                 expect(lesson).toHaveProperty('cards');
