@@ -1,18 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+import { IonApp, IonRouterOutlet, IonSpinner, setupIonicReact } from '@ionic/react';
 import { IonReactHashRouter } from '@ionic/react-router';
-import Home from './pages/Home';
-import Lesson from './pages/Lesson';
-import Review from './pages/Review';
-import Intro from './pages/Intro';
-import Game from './pages/Game';
-import MemoryMatch from './pages/MemoryMatch';
-import SpellChallenge from './pages/SpellChallenge';
-import WordScramble from './pages/WordScramble';
-import EmojiGuess from './pages/EmojiGuess';
 import ReloadPrompt from './components/ReloadPrompt';
 import { TimerProvider } from './context/TimerContext';
+
+/* Lazy-loaded page components for code splitting */
+const Home = lazy(() => import('./pages/Home'));
+const Lesson = lazy(() => import('./pages/Lesson'));
+const Review = lazy(() => import('./pages/Review'));
+const Intro = lazy(() => import('./pages/Intro'));
+const Game = lazy(() => import('./pages/Game'));
+const MemoryMatch = lazy(() => import('./pages/MemoryMatch'));
+const SpellChallenge = lazy(() => import('./pages/SpellChallenge'));
+const WordScramble = lazy(() => import('./pages/WordScramble'));
+const EmojiGuess = lazy(() => import('./pages/EmojiGuess'));
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -46,6 +48,22 @@ import './theme/variables.css';
 
 setupIonicReact();
 
+/**
+ * Loading Component for Suspense fallback
+ * Shows a centered spinner while lazy components are loading
+ */
+const PageLoader: React.FC = () => (
+  <div style={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+    background: 'var(--ion-background-color)'
+  }}>
+    <IonSpinner name="crescent" color="primary" style={{ width: '48px', height: '48px' }} />
+  </div>
+);
+
 const App: React.FC = () => {
   useEffect(() => {
     // Initialize theme from local storage
@@ -60,59 +78,61 @@ const App: React.FC = () => {
       <IonReactHashRouter>
         {/* @ts-ignore */}
         <TimerProvider>
-          {/* @ts-ignore */}
-          <IonRouterOutlet>
+          <Suspense fallback={<PageLoader />}>
             {/* @ts-ignore */}
-            <Route exact path="/home">
+            <IonRouterOutlet>
               {/* @ts-ignore */}
-              <Home />
-            </Route>
-            {/* @ts-ignore */}
-            <Route exact path="/lesson/:id">
+              <Route exact path="/home">
+                {/* @ts-ignore */}
+                <Home />
+              </Route>
               {/* @ts-ignore */}
-              <Lesson />
-            </Route>
-            {/* @ts-ignore */}
-            <Route exact path="/review">
+              <Route exact path="/lesson/:id">
+                {/* @ts-ignore */}
+                <Lesson />
+              </Route>
               {/* @ts-ignore */}
-              <Review />
-            </Route>
-            {/* @ts-ignore */}
-            <Route exact path="/intro">
+              <Route exact path="/review">
+                {/* @ts-ignore */}
+                <Review />
+              </Route>
               {/* @ts-ignore */}
-              <Intro />
-            </Route>
-            {/* @ts-ignore */}
-            <Route exact path="/game">
+              <Route exact path="/intro">
+                {/* @ts-ignore */}
+                <Intro />
+              </Route>
               {/* @ts-ignore */}
-              <Game />
-            </Route>
-            {/* @ts-ignore */}
-            <Route exact path="/memory">
+              <Route exact path="/game">
+                {/* @ts-ignore */}
+                <Game />
+              </Route>
               {/* @ts-ignore */}
-              <MemoryMatch />
-            </Route>
-            {/* @ts-ignore */}
-            <Route exact path="/spell">
+              <Route exact path="/memory">
+                {/* @ts-ignore */}
+                <MemoryMatch />
+              </Route>
               {/* @ts-ignore */}
-              <SpellChallenge />
-            </Route>
-            {/* @ts-ignore */}
-            <Route exact path="/scramble">
+              <Route exact path="/spell">
+                {/* @ts-ignore */}
+                <SpellChallenge />
+              </Route>
               {/* @ts-ignore */}
-              <WordScramble />
-            </Route>
-            {/* @ts-ignore */}
-            <Route exact path="/emoji">
+              <Route exact path="/scramble">
+                {/* @ts-ignore */}
+                <WordScramble />
+              </Route>
               {/* @ts-ignore */}
-              <EmojiGuess />
-            </Route>
-            {/* @ts-ignore */}
-            <Route exact path="/">
+              <Route exact path="/emoji">
+                {/* @ts-ignore */}
+                <EmojiGuess />
+              </Route>
               {/* @ts-ignore */}
-              <Redirect to="/home" />
-            </Route>
-          </IonRouterOutlet>
+              <Route exact path="/">
+                {/* @ts-ignore */}
+                <Redirect to="/home" />
+              </Route>
+            </IonRouterOutlet>
+          </Suspense>
         </TimerProvider>
       </IonReactHashRouter>
     </IonApp>
