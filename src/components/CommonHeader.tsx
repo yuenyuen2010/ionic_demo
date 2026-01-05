@@ -33,6 +33,12 @@ const themes = [
   { id: 'theme-green', nameKey: 'home.themes.green', color: '#15803d' },
 ];
 
+const fontSizes = [
+  { value: '85%', labelKey: 'home.fontSizes.small' },
+  { value: '100%', labelKey: 'home.fontSizes.normal' },
+  { value: '115%', labelKey: 'home.fontSizes.large' },
+];
+
 const languages = [
   { code: 'en', name: 'English', shortName: 'EN' },
   { code: 'zh-TW', name: '繁體中文', shortName: '繁' },
@@ -45,18 +51,28 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
   const [showBuildInfo, setShowBuildInfo] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [currentTheme, setCurrentTheme] = useState('theme-teal');
+  const [currentFontSize, setCurrentFontSize] = useState('100%');
 
   const buildDate = new Date(__BUILD_INFO__.time).toLocaleString();
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('app-theme') || 'theme-teal';
     setCurrentTheme(savedTheme);
+
+    const savedFontSize = localStorage.getItem('app-font-size') || '100%';
+    setCurrentFontSize(savedFontSize);
   }, []);
 
   const handleThemeChange = (themeId: string) => {
     setCurrentTheme(themeId);
     localStorage.setItem('app-theme', themeId);
     document.body.className = themeId;
+  };
+
+  const handleFontSizeChange = (size: string) => {
+    setCurrentFontSize(size);
+    localStorage.setItem('app-font-size', size);
+    document.documentElement.style.fontSize = size;
   };
 
   const handleLanguageChange = (langCode: string) => {
@@ -160,6 +176,20 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
                     <div key={lang.code} className={`settings-item ${idx !== languages.length - 1 ? 'bordered' : ''}`}>
                       <span className="item-label">{lang.name}</span>
                       <IonRadio value={lang.code} />
+                    </div>
+                  ))}
+                </IonRadioGroup>
+              </div>
+            </div>
+
+            <div className="settings-section">
+              <h3 className="section-title">{t('home.fontSizeSelection')}</h3>
+              <div className="settings-card">
+                <IonRadioGroup value={currentFontSize} onIonChange={e => handleFontSizeChange(e.detail.value)}>
+                  {fontSizes.map((size, idx) => (
+                    <div key={size.value} className={`settings-item ${idx !== fontSizes.length - 1 ? 'bordered' : ''}`}>
+                      <span className="item-label">{t(size.labelKey)}</span>
+                      <IonRadio value={size.value} />
                     </div>
                   ))}
                 </IonRadioGroup>

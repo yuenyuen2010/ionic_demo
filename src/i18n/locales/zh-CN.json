@@ -23,6 +23,12 @@
     "searchFindings": "搜索结果",
     "settings": "设置",
     "themeSelection": "主题选择",
+    "fontSizeSelection": "字体大小",
+    "fontSizes": {
+      "small": "小",
+      "normal": "正常",
+      "large": "大"
+    },
     "languageSelection": "语言选择",
     "reviewDue": "复习到期卡片",
     "dueCount": "{{count}} 张卡片待复习",

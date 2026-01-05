@@ -111,6 +111,12 @@
     "searchFindings": "Search Findings",
     "settings": "Settings",
     "themeSelection": "Theme Selection",
+    "fontSizeSelection": "Font Size",
+    "fontSizes": {
+      "small": "Small",
+      "normal": "Normal",
+      "large": "Large"
+    },
     "languageSelection": "Language Selection",
     "reviewDue": "Review Due Cards",
     "dueCount": "{{count}} cards due",

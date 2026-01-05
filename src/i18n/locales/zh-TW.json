@@ -23,6 +23,12 @@
     "searchFindings": "搜尋結果",
     "settings": "設置",
     "themeSelection": "主題選擇",
+    "fontSizeSelection": "字體大小",
+    "fontSizes": {
+      "small": "小",
+      "normal": "正常",
+      "large": "大"
+    },
     "languageSelection": "語言選擇",
     "reviewDue": "複習到期卡片",
     "dueCount": "{{count}} 張卡片待複習",
