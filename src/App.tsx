@@ -5,7 +5,9 @@ import { IonReactHashRouter } from '@ionic/react-router';
 import ReloadPrompt from './components/ReloadPrompt';
 import { TimerProvider } from './context/TimerContext';
 
-/* Lazy-loaded page components for code splitting */
+/* Lazy-loaded page components for code splitting optimization.
+ * This ensures that the initial bundle size is smaller and pages are loaded only when needed.
+ */
 const Home = lazy(() => import('./pages/Home'));
 const Lesson = lazy(() => import('./pages/Lesson'));
 const Review = lazy(() => import('./pages/Review'));
@@ -64,48 +66,75 @@ const PageLoader: React.FC = () => (
   </div>
 );
 
+/**
+ * Main Application Component.
+ *
+ * Sets up:
+ * - Routing (HashRouter)
+ * - Global Providers (TimerProvider)
+ * - Theme Initialization
+ * - PWA Reload Prompt
+ * - Suspense for lazy loading
+ */
 const App: React.FC = () => {
+
+  // Initialize theme from local storage on app start
   useEffect(() => {
-    // Initialize theme from local storage
     const savedTheme = localStorage.getItem('app-theme') || 'theme-teal';
     document.body.className = savedTheme;
   }, []);
 
   return (
     <IonApp>
+      {/* PWA Update Prompt */}
       <ReloadPrompt />
-      {/* @ts-ignore */}
+
+      {/* @ts-ignore: TS mismatch with ReactPortal type in IonReactHashRouter */}
       <IonReactHashRouter>
-        {/* @ts-ignore */}
+        {/* Timer Provider tracks study time across routes */}
+        {/* @ts-ignore: TS mismatch with children prop */}
         <TimerProvider>
           <Suspense fallback={<PageLoader />}>
-            {/* @ts-ignore */}
+            {/* Router Outlet for handling navigation */}
+            {/* @ts-ignore: TS mismatch with ReactPortal type */}
             <IonRouterOutlet>
+
+              {/* Home Page */}
               {/* @ts-ignore */}
               <Route exact path="/home">
                 {/* @ts-ignore */}
                 <Home />
               </Route>
+
+              {/* Lesson Page (Dynamic ID) */}
               {/* @ts-ignore */}
               <Route exact path="/lesson/:id">
                 {/* @ts-ignore */}
                 <Lesson />
               </Route>
+
+              {/* Review Page (SRS) */}
               {/* @ts-ignore */}
               <Route exact path="/review">
                 {/* @ts-ignore */}
                 <Review />
               </Route>
+
+              {/* Introduction Page */}
               {/* @ts-ignore */}
               <Route exact path="/intro">
                 {/* @ts-ignore */}
                 <Intro />
               </Route>
+
+              {/* Game Hub */}
               {/* @ts-ignore */}
               <Route exact path="/game">
                 {/* @ts-ignore */}
                 <Game />
               </Route>
+
+              {/* Individual Games */}
               {/* @ts-ignore */}
               <Route exact path="/memory">
                 {/* @ts-ignore */}
@@ -126,11 +155,14 @@ const App: React.FC = () => {
                 {/* @ts-ignore */}
                 <EmojiGuess />
               </Route>
+
+              {/* Default Route Redirect */}
               {/* @ts-ignore */}
               <Route exact path="/">
                 {/* @ts-ignore */}
                 <Redirect to="/home" />
               </Route>
+
             </IonRouterOutlet>
           </Suspense>
         </TimerProvider>
