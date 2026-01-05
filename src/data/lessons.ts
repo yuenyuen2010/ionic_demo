@@ -324,6 +324,201 @@ export const lessons: Category[] = [
           zhCN: '我有十个手指。'
         }
       },
+      {
+        id: 'n11',
+        tagalog: 'Labing-isa',
+        english: 'Eleven',
+        zhTW: '十一',
+        zhCN: '十一',
+        example: {
+          tagalog: 'Labing-isa ang manlalaro.',
+          english: 'There are eleven players.',
+          zhTW: '有十一名球員。',
+          zhCN: '有十一名球员。'
+        }
+      },
+      {
+        id: 'n12',
+        tagalog: 'Labindalawa',
+        english: 'Twelve',
+        zhTW: '十二',
+        zhCN: '十二',
+        example: {
+          tagalog: 'Labindalawa ang itlog sa tray.',
+          english: 'There are twelve eggs in the tray.',
+          zhTW: '托盤裡有十二個雞蛋。',
+          zhCN: '托盘里有十二个鸡蛋。'
+        }
+      },
+      {
+        id: 'n13',
+        tagalog: 'Labintatlo',
+        english: 'Thirteen',
+        zhTW: '十三',
+        zhCN: '十三',
+        example: {
+          tagalog: 'Labintatlo ang paborito niyang numero.',
+          english: 'Thirteen is his/her favorite number.',
+          zhTW: '十三是他/她最喜歡的數字。',
+          zhCN: '十三是他/她最喜欢的数字。'
+        }
+      },
+      {
+        id: 'n14',
+        tagalog: 'Labing-apat',
+        english: 'Fourteen',
+        zhTW: '十四',
+        zhCN: '十四',
+        example: {
+          tagalog: 'Labing-apat na araw na ang nakalipas.',
+          english: 'Fourteen days have passed.',
+          zhTW: '已經過去十四天了。',
+          zhCN: '已经过去十四天了。'
+        }
+      },
+      {
+        id: 'n15',
+        tagalog: 'Labinlima',
+        english: 'Fifteen',
+        zhTW: '十五',
+        zhCN: '十五',
+        example: {
+          tagalog: 'Labinlima kami sa klase.',
+          english: 'We are fifteen in the class.',
+          zhTW: '我們班有十五個人。',
+          zhCN: '我们班有十五个人。'
+        }
+      },
+      {
+        id: 'n16',
+        tagalog: 'Labing-anim',
+        english: 'Sixteen',
+        zhTW: '十六',
+        zhCN: '十六',
+        example: {
+          tagalog: 'Labing-anim na taong gulang na siya.',
+          english: 'He/She is sixteen years old.',
+          zhTW: '他/她十六歲了。',
+          zhCN: '他/她十六岁了。'
+        }
+      },
+      {
+        id: 'n17',
+        tagalog: 'Labimpito',
+        english: 'Seventeen',
+        zhTW: '十七',
+        zhCN: '十七',
+        example: {
+          tagalog: 'Labimpito ang bilang ng mga ibon.',
+          english: 'The number of birds is seventeen.',
+          zhTW: '鳥的數量是十七隻。',
+          zhCN: '鸟的数量是十七只。'
+        }
+      },
+      {
+        id: 'n18',
+        tagalog: 'Labingwalo',
+        english: 'Eighteen',
+        zhTW: '十八',
+        zhCN: '十八',
+        example: {
+          tagalog: 'Labingwalo ang bisita.',
+          english: 'There are eighteen guests.',
+          zhTW: '有十八位客人。',
+          zhCN: '有十八位客人。'
+        }
+      },
+      {
+        id: 'n19',
+        tagalog: 'Labinsiyam',
+        english: 'Nineteen',
+        zhTW: '十九',
+        zhCN: '十九',
+        example: {
+          tagalog: 'Labinsiyam na piso lang.',
+          english: 'Only nineteen pesos.',
+          zhTW: '只要十九披索。',
+          zhCN: '只要十九披索。'
+        }
+      },
+      {
+        id: 'n20',
+        tagalog: 'Dalawampu',
+        english: 'Twenty',
+        zhTW: '二十',
+        zhCN: '二十',
+        example: {
+          tagalog: 'Dalawampu ang estudyante.',
+          english: 'There are twenty students.',
+          zhTW: '有二十名學生。',
+          zhCN: '有二十名学生。'
+        }
+      },
+      {
+        id: 'n30',
+        tagalog: 'Tatlumpu',
+        english: 'Thirty',
+        zhTW: '三十',
+        zhCN: '三十',
+        example: {
+          tagalog: 'Tatlumpu ang araw sa Setyembre.',
+          english: 'There are thirty days in September.',
+          zhTW: '九月有三十天。',
+          zhCN: '九月有三十天。'
+        }
+      },
+      {
+        id: 'n40',
+        tagalog: 'Apatnapu',
+        english: 'Forty',
+        zhTW: '四十',
+        zhCN: '四十',
+        example: {
+          tagalog: 'Apatnapu na siya.',
+          english: 'He/She is forty already.',
+          zhTW: '他/她已經四十歲了。',
+          zhCN: '他/她已经四十岁了。'
+        }
+      },
+      {
+        id: 'n50',
+        tagalog: 'Limampu',
+        english: 'Fifty',
+        zhTW: '五十',
+        zhCN: '五十',
+        example: {
+          tagalog: 'Limampu ang kalahati ng sandaan.',
+          english: 'Fifty is half of one hundred.',
+          zhTW: '五十是一百的一半。',
+          zhCN: '五十是一百的一半。'
+        }
+      },
+      {
+        id: 'n100',
+        tagalog: 'Sandaan',
+        english: 'One Hundred',
+        zhTW: '一百',
+        zhCN: '一百',
+        example: {
+          tagalog: 'Sandaang porsyento.',
+          english: 'One hundred percent.',
+          zhTW: '百分之百。',
+          zhCN: '百分之百。'
+        }
+      },
+      {
+        id: 'n1000',
+        tagalog: 'Isang Libo',
+        english: 'One Thousand',
+        zhTW: '一千',
+        zhCN: '一千',
+        example: {
+          tagalog: 'Isang libo ang bayad.',
+          english: 'The payment is one thousand.',
+          zhTW: '費用是一千。',
+          zhCN: '费用是一千。'
+        }
+      },
     ]
   },
   {
