@@ -3931,5 +3931,170 @@ export const lessons: Category[] = [
         }
       }
     ]
+  },
+  {
+    id: 'animals',
+    title: 'Animals',
+    titleKey: 'topics.animals',
+    group: 'daily_life',
+    groupKey: 'groups.daily_life',
+    cards: [
+      {
+        id: 'ani1',
+        tagalog: 'Aso',
+        english: 'Dog',
+        zhTW: '狗',
+        zhCN: '狗',
+        example: {
+          tagalog: 'Mabait ang aso.',
+          english: 'The dog is kind.',
+          zhTW: '狗狗很乖。',
+          zhCN: '狗狗很乖。'
+        }
+      },
+      {
+        id: 'ani2',
+        tagalog: 'Pusa',
+        english: 'Cat',
+        zhTW: '貓',
+        zhCN: '猫',
+        example: {
+          tagalog: 'Natutulog ang pusa.',
+          english: 'The cat is sleeping.',
+          zhTW: '貓在睡覺。',
+          zhCN: '猫在睡觉。'
+        }
+      },
+      {
+        id: 'ani3',
+        tagalog: 'Ibon',
+        english: 'Bird',
+        zhTW: '鳥',
+        zhCN: '鸟',
+        example: {
+          tagalog: 'Lumilipad ang ibon.',
+          english: 'The bird is flying.',
+          zhTW: '鳥在飛。',
+          zhCN: '鸟在飞。'
+        }
+      },
+      {
+        id: 'ani4',
+        tagalog: 'Baboy',
+        english: 'Pig',
+        zhTW: '豬',
+        zhCN: '猪',
+        example: {
+          tagalog: 'Mataba ang baboy.',
+          english: 'The pig is fat.',
+          zhTW: '豬很胖。',
+          zhCN: '猪很胖。'
+        }
+      },
+      {
+        id: 'ani5',
+        tagalog: 'Baka',
+        english: 'Cow',
+        zhTW: '牛',
+        zhCN: '牛',
+        example: {
+          tagalog: 'Kumakain ng damo ang baka.',
+          english: 'The cow is eating grass.',
+          zhTW: '牛在吃草。',
+          zhCN: '牛在吃草。'
+        }
+      },
+      {
+        id: 'ani6',
+        tagalog: 'Kalabaw',
+        english: 'Carabao / Water Buffalo',
+        zhTW: '水牛',
+        zhCN: '水牛',
+        example: {
+          tagalog: 'Ang kalabaw ay masipag.',
+          english: 'The carabao is hardworking.',
+          zhTW: '水牛很勤勞。',
+          zhCN: '水牛很勤劳。'
+        }
+      },
+      {
+        id: 'ani7',
+        tagalog: 'Ahas',
+        english: 'Snake',
+        zhTW: '蛇',
+        zhCN: '蛇',
+        example: {
+          tagalog: 'Nakakatakot ang ahas.',
+          english: 'The snake is scary.',
+          zhTW: '蛇很可怕。',
+          zhCN: '蛇很可怕。'
+        }
+      },
+      {
+        id: 'ani8',
+        tagalog: 'Daga',
+        english: 'Mouse / Rat',
+        zhTW: '老鼠',
+        zhCN: '老鼠',
+        example: {
+          tagalog: 'Mabilis tumakbo ang daga.',
+          english: 'The mouse runs fast.',
+          zhTW: '老鼠跑得很快。',
+          zhCN: '老鼠跑得很快。'
+        }
+      },
+      {
+        id: 'ani9',
+        tagalog: 'Lamok',
+        english: 'Mosquito',
+        zhTW: '蚊子',
+        zhCN: '蚊子',
+        example: {
+          tagalog: 'Maraming lamok kagabi.',
+          english: 'There were many mosquitoes last night.',
+          zhTW: '昨晚有很多蚊子。',
+          zhCN: '昨晚有很多蚊子。'
+        }
+      },
+      {
+        id: 'ani10',
+        tagalog: 'Ipis',
+        english: 'Cockroach',
+        zhTW: '蟑螂',
+        zhCN: '蟑螂',
+        example: {
+          tagalog: 'Patayin mo ang ipis.',
+          english: 'Kill the cockroach.',
+          zhTW: '把蟑螂打死。',
+          zhCN: '把蟑螂打死。'
+        }
+      },
+      {
+        id: 'ani11',
+        tagalog: 'Unggoy',
+        english: 'Monkey',
+        zhTW: '猴子',
+        zhCN: '猴子',
+        example: {
+          tagalog: 'Makulit ang unggoy.',
+          english: 'The monkey is naughty.',
+          zhTW: '猴子很調皮。',
+          zhCN: '猴子很调皮。'
+        }
+      },
+      {
+        id: 'ani12',
+        tagalog: 'Kambing',
+        english: 'Goat',
+        zhTW: '山羊',
+        zhCN: '山羊',
+        example: {
+          tagalog: 'May kambing sa bukid.',
+          english: 'There is a goat in the farm.',
+          zhTW: '田裡有山羊。',
+          zhCN: '田里有山羊。'
+        }
+      }
+    ]
   }
 ];
