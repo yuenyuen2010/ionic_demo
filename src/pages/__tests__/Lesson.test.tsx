@@ -22,7 +22,7 @@ vi.mock('react-i18next', () => ({
 
 // Mock Ionic components
 vi.mock('@ionic/react', async () => {
-    const actual = await vi.importActual('@ionic/react');
+    const actual = await vi.importActual<any>('@ionic/react');
     return {
         ...actual,
         IonPage: ({ children }: { children: React.ReactNode }) => <div data-testid="ion-page">{children}</div>,
