@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import { recordActivity } from '../utils/streak';
 
 /**
  * Interface defining the shape of the TimerContext.
@@ -81,6 +82,9 @@ export const TimerProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     };
 
     if (shouldCount()) {
+      // Record activity for daily streak
+      recordActivity();
+
       // Start the timer if not already running
       if (!intervalRef.current) {
         intervalRef.current = setInterval(() => {

@@ -126,7 +126,10 @@
       "navy": "Professional Navy",
       "purple": "Energetic Purple",
       "green": "Calm Green"
-    }
+    },
+    "dailyStreak": "Daily Streak",
+    "day": "day",
+    "days": "days"
   },
   "bookmarks": {
     "title": "Saved Words",

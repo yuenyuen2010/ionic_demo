@@ -32,13 +32,15 @@ import {
   pencilOutline,
   shuffleOutline,
   happyOutline,
-  cloudDownloadOutline
+  cloudDownloadOutline,
+  flameOutline
 } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import Footer from '../components/Footer';
 import { lessons } from '../data/lessons';
 import { getSRSStats } from '../utils/srs';
+import { getStreakInfo } from '../utils/streak';
 import CommonHeader from '../components/CommonHeader';
 import './Home.css';
 
@@ -58,14 +60,17 @@ const Home: React.FC = () => {
   // State for the number of cards due for review
   const [dueCount, setDueCount] = useState(0);
 
+  // State for daily streak
+  const [streakInfo, setStreakInfo] = useState({ streak: 0, isActiveToday: false, longestStreak: 0, totalDays: 0 });
+
   // State for the currently selected group (for drill-down)
   const [selectedGroup, setSelectedGroup] = useState<string | null>(null);
 
-  // Effect to load SRS stats when the component mounts
-  // Note: Ideally should useIonViewWillEnter but that requires refactoring to useIonViewWillEnter hook or standard Effect if re-mount happens
+  // Effect to load SRS stats and streak when the component mounts
   React.useEffect(() => {
     const stats = getSRSStats();
     setDueCount(stats.dueCount);
+    setStreakInfo(getStreakInfo());
   }, []);
 
   /**
@@ -168,6 +173,19 @@ const Home: React.FC = () => {
                     <h2 className="pod-value">{t('home.introSubtitle')}</h2>
                   </div>
                   <IonIcon icon={informationCircleOutline} style={{ fontSize: '24px', color: 'white' }} />
+                </div>
+              </div>
+
+              {/* Daily Streak Pod */}
+              <div className="learning-pod pod-streak" style={{ background: streakInfo.streak > 0 ? 'linear-gradient(135deg, #f97316 0%, #ef4444 100%)' : 'linear-gradient(135deg, #94a3b8 0%, #64748b 100%)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div>
+                    <div className="pod-label">{t('home.dailyStreak')}</div>
+                    <h2 className="pod-value">
+                      {streakInfo.streak} {streakInfo.streak === 1 ? t('home.day') : t('home.days')} {streakInfo.isActiveToday && '✓'}
+                    </h2>
+                  </div>
+                  <IonIcon icon={flameOutline} style={{ fontSize: '24px', color: 'white' }} />
                 </div>
               </div>
             </div>
