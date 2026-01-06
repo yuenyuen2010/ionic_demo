@@ -29,11 +29,11 @@ export const lessons: Category[] = [
     group: 'basics',
     groupKey: 'groups.basics',
     cards: [
-      { 
-        id: '1', 
-        tagalog: 'Kumusta?', 
-        english: 'How are you?', 
-        zhTW: '你好嗎？', 
+      {
+        id: '1',
+        tagalog: 'Kumusta?',
+        english: 'How are you?',
+        zhTW: '你好嗎？',
         zhCN: '你好吗？',
         example: {
           tagalog: 'Kumusta ka na?',
@@ -42,11 +42,11 @@ export const lessons: Category[] = [
           zhCN: '你现在好吗？'
         }
       },
-      { 
-        id: '2', 
-        tagalog: 'Mabuti', 
-        english: 'Fine / Good', 
-        zhTW: '很好', 
+      {
+        id: '2',
+        tagalog: 'Mabuti',
+        english: 'Fine / Good',
+        zhTW: '很好',
         zhCN: '很好',
         example: {
           tagalog: 'Mabuti naman ako.',
@@ -55,11 +55,11 @@ export const lessons: Category[] = [
           zhCN: '我很好。'
         }
       },
-      { 
-        id: '3', 
-        tagalog: 'Salamat', 
-        english: 'Thank you', 
-        zhTW: '謝謝', 
+      {
+        id: '3',
+        tagalog: 'Salamat',
+        english: 'Thank you',
+        zhTW: '謝謝',
         zhCN: '谢谢',
         example: {
           tagalog: 'Maraming salamat sa tulong.',
@@ -68,11 +68,11 @@ export const lessons: Category[] = [
           zhCN: '非常感谢你的帮忙。'
         }
       },
-      { 
-        id: '4', 
-        tagalog: 'Walang anuman', 
-        english: 'You\'re welcome', 
-        zhTW: '不客氣', 
+      {
+        id: '4',
+        tagalog: 'Walang anuman',
+        english: 'You\'re welcome',
+        zhTW: '不客氣',
         zhCN: '不客气',
         example: {
           tagalog: 'Walang anuman, kaibigan.',
@@ -81,11 +81,11 @@ export const lessons: Category[] = [
           zhCN: '不客气，朋友。'
         }
       },
-      { 
-        id: '5', 
-        tagalog: 'Magandang umaga', 
-        english: 'Good morning', 
-        zhTW: '早安', 
+      {
+        id: '5',
+        tagalog: 'Magandang umaga',
+        english: 'Good morning',
+        zhTW: '早安',
         zhCN: '早安',
         example: {
           tagalog: 'Magandang umaga sa inyong lahat.',
@@ -94,11 +94,11 @@ export const lessons: Category[] = [
           zhCN: '大家早安。'
         }
       },
-      { 
-        id: '6', 
-        tagalog: 'Magandang hapon', 
-        english: 'Good afternoon', 
-        zhTW: '午安', 
+      {
+        id: '6',
+        tagalog: 'Magandang hapon',
+        english: 'Good afternoon',
+        zhTW: '午安',
         zhCN: '午安',
         example: {
           tagalog: 'Magandang hapon po.',
@@ -107,11 +107,11 @@ export const lessons: Category[] = [
           zhCN: '午安（礼貌）。'
         }
       },
-      { 
-        id: '7', 
-        tagalog: 'Magandang gabi', 
-        english: 'Good evening', 
-        zhTW: '晚安', 
+      {
+        id: '7',
+        tagalog: 'Magandang gabi',
+        english: 'Good evening',
+        zhTW: '晚安',
         zhCN: '晚安',
         example: {
           tagalog: 'Magandang gabi, lola.',
@@ -185,6 +185,110 @@ export const lessons: Category[] = [
           zhCN: '请进来我们家。'
         }
       },
+      {
+        id: 'g13',
+        tagalog: 'Ingat',
+        english: 'Take care',
+        zhTW: '小心 / 保重',
+        zhCN: '小心 / 保重',
+        example: {
+          tagalog: 'Ingat ka sa paglalakbay.',
+          english: 'Take care on your journey.',
+          zhTW: '旅途小心。',
+          zhCN: '旅途小心。'
+        }
+      },
+      {
+        id: 'g14',
+        tagalog: 'Mabuhay',
+        english: 'Long live / Welcome',
+        zhTW: '萬歲 / 歡迎',
+        zhCN: '万岁 / 欢迎',
+        example: {
+          tagalog: 'Mabuhay ang Pilipinas!',
+          english: 'Long live the Philippines!',
+          zhTW: '菲律賓萬歲！',
+          zhCN: '菲律宾万岁！'
+        }
+      },
+      {
+        id: 'g15',
+        tagalog: 'Pasensya na',
+        english: 'Sorry / Excuse me',
+        zhTW: '對不起 / 抱歉',
+        zhCN: '对不起 / 抱歉',
+        example: {
+          tagalog: 'Pasensya na po, late ako.',
+          english: 'Sorry, I am late.',
+          zhTW: '對不起，我遲到了。',
+          zhCN: '对不起，我迟到了。'
+        }
+      },
+      {
+        id: 'g16',
+        tagalog: 'Oo / Hindi',
+        english: 'Yes / No',
+        zhTW: '是 / 不是',
+        zhCN: '是 / 不是',
+        example: {
+          tagalog: 'Oo, pupunta ako. Hindi siya kasama.',
+          english: 'Yes, I will go. He/she is not coming.',
+          zhTW: '是的，我會去。他/她不來。',
+          zhCN: '是的，我会去。他/她不来。'
+        }
+      },
+      {
+        id: 'g17',
+        tagalog: 'Sige',
+        english: 'Okay / Alright / Go ahead',
+        zhTW: '好的 / 可以',
+        zhCN: '好的 / 可以',
+        example: {
+          tagalog: 'Sige, kita tayo mamaya.',
+          english: 'Alright, see you later.',
+          zhTW: '好的，待會見。',
+          zhCN: '好的，待会见。'
+        }
+      },
+      {
+        id: 'g18',
+        tagalog: 'Sandali lang',
+        english: 'Just a moment',
+        zhTW: '稍等一下',
+        zhCN: '稍等一下',
+        example: {
+          tagalog: 'Sandali lang po, tatawag ako.',
+          english: 'Just a moment, I will call.',
+          zhTW: '請稍等，我打個電話。',
+          zhCN: '请稍等，我打个电话。'
+        }
+      },
+      {
+        id: 'g19',
+        tagalog: 'Maligayang bati',
+        english: 'Congratulations / Happy greetings',
+        zhTW: '恭喜 / 祝賀',
+        zhCN: '恭喜 / 祝贺',
+        example: {
+          tagalog: 'Maligayang bati sa iyong kaarawan!',
+          english: 'Happy birthday to you!',
+          zhTW: '祝你生日快樂！',
+          zhCN: '祝你生日快乐！'
+        }
+      },
+      {
+        id: 'g20',
+        tagalog: 'Hanggang sa muli',
+        english: 'Until we meet again',
+        zhTW: '後會有期',
+        zhCN: '后会有期',
+        example: {
+          tagalog: 'Paalam na, hanggang sa muli.',
+          english: 'Goodbye, until we meet again.',
+          zhTW: '再見，後會有期。',
+          zhCN: '再见，后会有期。'
+        }
+      },
     ]
   },
   {
@@ -194,11 +298,11 @@ export const lessons: Category[] = [
     group: 'basics',
     groupKey: 'groups.basics',
     cards: [
-      { 
-        id: 'n1', 
-        tagalog: 'Isa', 
-        english: 'One', 
-        zhTW: '一', 
+      {
+        id: 'n1',
+        tagalog: 'Isa',
+        english: 'One',
+        zhTW: '一',
         zhCN: '一',
         example: {
           tagalog: 'Isa lang ang kailangan ko.',
@@ -207,11 +311,11 @@ export const lessons: Category[] = [
           zhCN: '我只需要一个。'
         }
       },
-      { 
-        id: 'n2', 
-        tagalog: 'Dalawa', 
-        english: 'Two', 
-        zhTW: '二', 
+      {
+        id: 'n2',
+        tagalog: 'Dalawa',
+        english: 'Two',
+        zhTW: '二',
         zhCN: '二',
         example: {
           tagalog: 'Dalawa ang anak nila.',
@@ -220,11 +324,11 @@ export const lessons: Category[] = [
           zhCN: '他们有两个孩子。'
         }
       },
-      { 
-        id: 'n3', 
-        tagalog: 'Tatlo', 
-        english: 'Three', 
-        zhTW: '三', 
+      {
+        id: 'n3',
+        tagalog: 'Tatlo',
+        english: 'Three',
+        zhTW: '三',
         zhCN: '三',
         example: {
           tagalog: 'Tatlo kami sa grupo.',
@@ -233,11 +337,11 @@ export const lessons: Category[] = [
           zhCN: '我们组里有三个人。'
         }
       },
-      { 
-        id: 'n4', 
-        tagalog: 'Apat', 
-        english: 'Four', 
-        zhTW: '四', 
+      {
+        id: 'n4',
+        tagalog: 'Apat',
+        english: 'Four',
+        zhTW: '四',
         zhCN: '四',
         example: {
           tagalog: 'May apat na gulong ang kotse.',
@@ -246,11 +350,11 @@ export const lessons: Category[] = [
           zhCN: '汽车有四个轮子。'
         }
       },
-      { 
-        id: 'n5', 
-        tagalog: 'Lima', 
-        english: 'Five', 
-        zhTW: '五', 
+      {
+        id: 'n5',
+        tagalog: 'Lima',
+        english: 'Five',
+        zhTW: '五',
         zhCN: '五',
         example: {
           tagalog: 'Alas-singko na ng hapon.',
@@ -259,11 +363,11 @@ export const lessons: Category[] = [
           zhCN: '已经是下午五点了。'
         }
       },
-      { 
-        id: 'n6', 
-        tagalog: 'Anim', 
-        english: 'Six', 
-        zhTW: '六', 
+      {
+        id: 'n6',
+        tagalog: 'Anim',
+        english: 'Six',
+        zhTW: '六',
         zhCN: '六',
         example: {
           tagalog: 'Anim na buwan na.',
@@ -272,11 +376,11 @@ export const lessons: Category[] = [
           zhCN: '已经六个月了。'
         }
       },
-      { 
-        id: 'n7', 
-        tagalog: 'Pito', 
-        english: 'Seven', 
-        zhTW: '七', 
+      {
+        id: 'n7',
+        tagalog: 'Pito',
+        english: 'Seven',
+        zhTW: '七',
         zhCN: '七',
         example: {
           tagalog: 'Pito ang araw sa isang linggo.',
@@ -285,11 +389,11 @@ export const lessons: Category[] = [
           zhCN: '一周有七天。'
         }
       },
-      { 
-        id: 'n8', 
-        tagalog: 'Walo', 
-        english: 'Eight', 
-        zhTW: '八', 
+      {
+        id: 'n8',
+        tagalog: 'Walo',
+        english: 'Eight',
+        zhTW: '八',
         zhCN: '八',
         example: {
           tagalog: 'Walo kaming magkakapatid.',
@@ -298,11 +402,11 @@ export const lessons: Category[] = [
           zhCN: '我们有八个兄弟姐妹。'
         }
       },
-      { 
-        id: 'n9', 
-        tagalog: 'Siyam', 
-        english: 'Nine', 
-        zhTW: '九', 
+      {
+        id: 'n9',
+        tagalog: 'Siyam',
+        english: 'Nine',
+        zhTW: '九',
         zhCN: '九',
         example: {
           tagalog: 'Siyam na taong gulang siya.',
@@ -311,11 +415,11 @@ export const lessons: Category[] = [
           zhCN: '他/她九岁。'
         }
       },
-      { 
-        id: 'n10', 
-        tagalog: 'Sampu', 
-        english: 'Ten', 
-        zhTW: '十', 
+      {
+        id: 'n10',
+        tagalog: 'Sampu',
+        english: 'Ten',
+        zhTW: '十',
         zhCN: '十',
         example: {
           tagalog: 'Sampu ang daliri ko.',
@@ -333,11 +437,11 @@ export const lessons: Category[] = [
     group: 'basics',
     groupKey: 'groups.basics',
     cards: [
-      { 
-        id: 'c1', 
-        tagalog: 'Opo / Oo', 
-        english: 'Yes', 
-        zhTW: '是', 
+      {
+        id: 'c1',
+        tagalog: 'Opo / Oo',
+        english: 'Yes',
+        zhTW: '是',
         zhCN: '是',
         example: {
           tagalog: 'Opo, naiintindihan ko.',
@@ -346,11 +450,11 @@ export const lessons: Category[] = [
           zhCN: '是的，我明白了（礼貌）。'
         }
       },
-      { 
-        id: 'c2', 
-        tagalog: 'Hindi', 
-        english: 'No', 
-        zhTW: '不', 
+      {
+        id: 'c2',
+        tagalog: 'Hindi',
+        english: 'No',
+        zhTW: '不',
         zhCN: '不',
         example: {
           tagalog: 'Hindi ko alam.',
@@ -359,11 +463,11 @@ export const lessons: Category[] = [
           zhCN: '我不知道。'
         }
       },
-      { 
-        id: 'c3', 
-        tagalog: 'Ano ito?', 
-        english: 'What is this?', 
-        zhTW: '這是什麼？', 
+      {
+        id: 'c3',
+        tagalog: 'Ano ito?',
+        english: 'What is this?',
+        zhTW: '這是什麼？',
         zhCN: '这是什么？',
         example: {
           tagalog: 'Ano ito? Masarap ba?',
@@ -372,11 +476,11 @@ export const lessons: Category[] = [
           zhCN: '这是什么？好吃吗？'
         }
       },
-      { 
-        id: 'c4', 
-        tagalog: 'Magkano ito?', 
-        english: 'How much is this?', 
-        zhTW: '這個多少錢？', 
+      {
+        id: 'c4',
+        tagalog: 'Magkano ito?',
+        english: 'How much is this?',
+        zhTW: '這個多少錢？',
         zhCN: '这个多少钱？',
         example: {
           tagalog: 'Magkano ito? Mura lang ba?',
@@ -385,11 +489,11 @@ export const lessons: Category[] = [
           zhCN: '这个多少钱？便宜吗？'
         }
       },
-      { 
-        id: 'c5', 
-        tagalog: 'Masarap', 
-        english: 'Delicious', 
-        zhTW: '好吃', 
+      {
+        id: 'c5',
+        tagalog: 'Masarap',
+        english: 'Delicious',
+        zhTW: '好吃',
         zhCN: '好吃',
         example: {
           tagalog: 'Masarap ang luto ni Nanay.',
@@ -407,11 +511,11 @@ export const lessons: Category[] = [
     group: 'basics',
     groupKey: 'groups.basics',
     cards: [
-      { 
-        id: 'f1', 
-        tagalog: 'Tatay', 
-        english: 'Father', 
-        zhTW: '父親', 
+      {
+        id: 'f1',
+        tagalog: 'Tatay',
+        english: 'Father',
+        zhTW: '父親',
         zhCN: '父亲',
         example: {
           tagalog: 'Nasa trabaho ang tatay.',
@@ -420,11 +524,11 @@ export const lessons: Category[] = [
           zhCN: '父亲在工作。'
         }
       },
-      { 
-        id: 'f2', 
-        tagalog: 'Nanay', 
-        english: 'Mother', 
-        zhTW: '母親', 
+      {
+        id: 'f2',
+        tagalog: 'Nanay',
+        english: 'Mother',
+        zhTW: '母親',
         zhCN: '母亲',
         example: {
           tagalog: 'Nagluluto si Nanay.',
@@ -433,11 +537,11 @@ export const lessons: Category[] = [
           zhCN: '母亲正在做饭。'
         }
       },
-      { 
-        id: 'f3', 
-        tagalog: 'Kapatid', 
-        english: 'Sibling', 
-        zhTW: '兄弟姊妹', 
+      {
+        id: 'f3',
+        tagalog: 'Kapatid',
+        english: 'Sibling',
+        zhTW: '兄弟姊妹',
         zhCN: '兄弟姐妹',
         example: {
           tagalog: 'Ilan ang kapatid mo?',
@@ -446,11 +550,11 @@ export const lessons: Category[] = [
           zhCN: '你有几个兄弟姐妹？'
         }
       },
-      { 
-        id: 'f4', 
-        tagalog: 'Kuya', 
-        english: 'Older Brother', 
-        zhTW: '哥哥', 
+      {
+        id: 'f4',
+        tagalog: 'Kuya',
+        english: 'Older Brother',
+        zhTW: '哥哥',
         zhCN: '哥哥',
         example: {
           tagalog: 'Si Kuya ang nag-aalaga sa akin.',
@@ -459,11 +563,11 @@ export const lessons: Category[] = [
           zhCN: '哥哥照顾我。'
         }
       },
-      { 
-        id: 'f5', 
-        tagalog: 'Ate', 
-        english: 'Older Sister', 
-        zhTW: '姊姊', 
+      {
+        id: 'f5',
+        tagalog: 'Ate',
+        english: 'Older Sister',
+        zhTW: '姊姊',
         zhCN: '姐姐',
         example: {
           tagalog: 'Mabait ang ate ko.',
@@ -572,11 +676,11 @@ export const lessons: Category[] = [
     group: 'basics',
     groupKey: 'groups.basics',
     cards: [
-      { 
-        id: 'col1', 
-        tagalog: 'Pula', 
-        english: 'Red', 
-        zhTW: '紅色', 
+      {
+        id: 'col1',
+        tagalog: 'Pula',
+        english: 'Red',
+        zhTW: '紅色',
         zhCN: '红色',
         example: {
           tagalog: 'Pula ang paborito kong kulay.',
@@ -585,11 +689,11 @@ export const lessons: Category[] = [
           zhCN: '红色是我最喜欢的颜色。'
         }
       },
-      { 
-        id: 'col2', 
-        tagalog: 'Asul', 
-        english: 'Blue', 
-        zhTW: '藍色', 
+      {
+        id: 'col2',
+        tagalog: 'Asul',
+        english: 'Blue',
+        zhTW: '藍色',
         zhCN: '蓝色',
         example: {
           tagalog: 'Ang langit ay asul.',
@@ -598,11 +702,11 @@ export const lessons: Category[] = [
           zhCN: '天空是蓝色的。'
         }
       },
-      { 
-        id: 'col3', 
-        tagalog: 'Dilaw', 
-        english: 'Yellow', 
-        zhTW: '黃色', 
+      {
+        id: 'col3',
+        tagalog: 'Dilaw',
+        english: 'Yellow',
+        zhTW: '黃色',
         zhCN: '黄色',
         example: {
           tagalog: 'Dilaw ang araw.',
@@ -611,11 +715,11 @@ export const lessons: Category[] = [
           zhCN: '太阳是黄色的。'
         }
       },
-      { 
-        id: 'col4', 
-        tagalog: 'Puti', 
-        english: 'White', 
-        zhTW: '白色', 
+      {
+        id: 'col4',
+        tagalog: 'Puti',
+        english: 'White',
+        zhTW: '白色',
         zhCN: '白色',
         example: {
           tagalog: 'Puti ang damit niya.',
@@ -624,11 +728,11 @@ export const lessons: Category[] = [
           zhCN: '他/她的衣服是白色的。'
         }
       },
-      { 
-        id: 'col5', 
-        tagalog: 'Itim', 
-        english: 'Black', 
-        zhTW: '黑色', 
+      {
+        id: 'col5',
+        tagalog: 'Itim',
+        english: 'Black',
+        zhTW: '黑色',
         zhCN: '黑色',
         example: {
           tagalog: 'Itim ang pusa.',
@@ -646,11 +750,11 @@ export const lessons: Category[] = [
     group: 'daily_life',
     groupKey: 'groups.daily_life',
     cards: [
-      { 
-        id: 'fd1', 
-        tagalog: 'Kanin', 
-        english: 'Rice', 
-        zhTW: '米飯', 
+      {
+        id: 'fd1',
+        tagalog: 'Kanin',
+        english: 'Rice',
+        zhTW: '米飯',
         zhCN: '米饭',
         example: {
           tagalog: 'Gusto ko ng kanin.',
@@ -659,11 +763,11 @@ export const lessons: Category[] = [
           zhCN: '我想要米饭。'
         }
       },
-      { 
-        id: 'fd2', 
-        tagalog: 'Tubig', 
-        english: 'Water', 
-        zhTW: '水', 
+      {
+        id: 'fd2',
+        tagalog: 'Tubig',
+        english: 'Water',
+        zhTW: '水',
         zhCN: '水',
         example: {
           tagalog: 'Uminom ka ng tubig.',
@@ -672,11 +776,11 @@ export const lessons: Category[] = [
           zhCN: '喝水。'
         }
       },
-      { 
-        id: 'fd3', 
-        tagalog: 'Tinapay', 
-        english: 'Bread', 
-        zhTW: '麵包', 
+      {
+        id: 'fd3',
+        tagalog: 'Tinapay',
+        english: 'Bread',
+        zhTW: '麵包',
         zhCN: '面包',
         example: {
           tagalog: 'Bumili ako ng tinapay.',
@@ -685,11 +789,11 @@ export const lessons: Category[] = [
           zhCN: '我买了面包。'
         }
       },
-      { 
-        id: 'fd4', 
-        tagalog: 'Manok', 
-        english: 'Chicken', 
-        zhTW: '雞肉', 
+      {
+        id: 'fd4',
+        tagalog: 'Manok',
+        english: 'Chicken',
+        zhTW: '雞肉',
         zhCN: '鸡肉',
         example: {
           tagalog: 'Pritong manok ang ulam.',
@@ -698,11 +802,11 @@ export const lessons: Category[] = [
           zhCN: '菜肴是炸鸡。'
         }
       },
-      { 
-        id: 'fd5', 
-        tagalog: 'Isda', 
-        english: 'Fish', 
-        zhTW: '魚', 
+      {
+        id: 'fd5',
+        tagalog: 'Isda',
+        english: 'Fish',
+        zhTW: '魚',
         zhCN: '鱼',
         example: {
           tagalog: 'Sariwa ang isda.',
