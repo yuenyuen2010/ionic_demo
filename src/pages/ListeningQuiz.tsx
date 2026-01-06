@@ -103,7 +103,6 @@ const ListeningQuiz: React.FC = () => {
         setHasPlayed(true);
 
         const text = currentQuestion.word.tagalog;
-        console.log('Playing audio for:', text);
 
         // Try local audio first
         try {
@@ -111,46 +110,57 @@ const ListeningQuiz: React.FC = () => {
             const audioMap = await response.json();
             const audioPath = audioMap[text]?.normal;
 
-            console.log('Audio path found:', audioPath);
-
             if (audioPath) {
                 const fullPath = `${import.meta.env.BASE_URL}${audioPath}`;
-                console.log('Loading audio from:', fullPath);
 
                 if (audioRef.current) {
                     audioRef.current.src = fullPath;
                     audioRef.current.onended = () => setIsPlaying(false);
                     audioRef.current.onerror = () => {
-                        console.log('Local audio failed, trying Web Speech');
-                        playWebSpeech(text);
+                        console.log('Local audio failed, trying Cloud TTS');
+                        playCloudTTS(text);
                     };
                     await audioRef.current.play();
                     return;
                 }
             } else {
-                console.log('No local audio found, trying Web Speech');
+                console.log('No local audio found, trying Cloud TTS');
             }
         } catch (e) {
             console.log('Audio map fetch failed:', e);
         }
 
-        // Fallback to Web Speech API (works offline)
-        playWebSpeech(text);
+        // Fallback to Google Cloud TTS
+        playCloudTTS(text);
     };
 
-    // Web Speech API fallback (works offline, no network needed)
-    const playWebSpeech = (text: string) => {
-        if ('speechSynthesis' in window) {
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'fil-PH';
-            utterance.rate = 0.9;
-            utterance.onend = () => setIsPlaying(false);
-            utterance.onerror = () => setIsPlaying(false);
-            window.speechSynthesis.speak(utterance);
-        } else {
-            console.log('Web Speech not supported');
-            setIsPlaying(false);
+    // Google Cloud TTS API fallback
+    const playCloudTTS = async (text: string) => {
+        try {
+            const response = await fetch('https://tts-server-479744148035.asia-east1.run.app/tts', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    text,
+                    languageCode: 'fil-PH',
+                    voiceName: 'fil-PH-Standard-A',
+                }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                if (data.audioContent) {
+                    const audio = new Audio(`data:audio/mp3;base64,${data.audioContent}`);
+                    audio.onended = () => setIsPlaying(false);
+                    audio.onerror = () => setIsPlaying(false);
+                    audio.play();
+                    return;
+                }
+            }
+        } catch (error) {
+            console.error('Cloud TTS failed:', error);
         }
+        setIsPlaying(false);
     };
 
     // Auto-play on question change
