@@ -9,7 +9,28 @@
     "backToCategories": "返回类别",
     "todaysLearning": "今日学习时间"
   },
+  "intro": {
+    "title": "塔加洛语简介",
+    "subtitle": "历史、特点和趣闻",
+    "whatIsTitle": "什么是塔加洛语？",
+    "whatIsContent": "塔加洛语（Tagalog）是一种南岛语系的语言，是菲律宾四分之一人口（塔加洛人）的母语。它是菲律宾国语“菲律宾语”的基础。",
+    "historyTitle": "简史",
+    "historyContent": "塔加洛语（Tagalog）的名字来源于“tagá-ilog”，意为“河流居民”。在16世纪西班牙人到来之前，塔加洛语使用一种称为贝贝因（Baybayin）的文字书写。333多年的西班牙统治引入了成千上万的外来词（如“lamesa”来自“la mesa”，“silya”来自“silla”）。",
+    "featuresTitle": "特色功能",
+    "feature1Title": "焦点系统",
+    "feature1Content": "与英语不同，塔加洛语动词会改变形式以表明句子的焦点（施动者、对象、位置等）。这通常用“ang”标记。",
+    "feature2Title": "礼貌用语 (Po & Opo)",
+    "feature2Content": "尊重的表达融入了语法中。在这个语言里，对长辈或权威人士说话时，使用“po”和“opo”是必不可少的。",
+    "feature3Title": "包含式与排除式“我们”",
+    "feature3Content": "塔加洛语有两个词表示“我们”：“Tayo”（包括听者）和“Kami”（不包括听者）。",
+    "funFactsTitle": "趣闻",
+    "fact1": "英语单词“boondocks”来自塔加洛语单词“bundok”（山）。",
+    "fact2": "“Mahal”既意味着“爱”，也意味着“昂贵”。",
+    "fact3": "重复一个词通常会减弱其含义或使其变成“伪”含义。例如，“bahay”（房子）->“bahay-bahayan”（过家家/玩房子）。"
+  },
   "home": {
+    "introToTagalog": "塔加洛语简介",
+    "introSubtitle": "历史与特色",
     "chooseTopic": "选择主题",
     "gamesCategory": "游戏",
     "selectCategory": "选择一个类别开始学习。",
@@ -104,6 +125,13 @@
     "bestStreak": "最佳连击",
     "playAgain": "再玩一次"
   },
+  "falling": {
+    "title": "他加禄雨",
+    "podTitle": "单词雨",
+    "podSubtitle": "接住单词",
+    "description": "在他加禄语单词掉落前接住它们！测试您的速度和词汇量。",
+    "playAgain": "再玩一次"
+  },
   "lesson": {
     "categoryNotFound": "找不到类别",
     "goBack": "返回",
@@ -174,7 +202,8 @@
     "love-dating": "恋爱与约会 (The \"Kilig\" Pack)",
     "conflict-reconciliation": "冲突与和解 (The \"Tampo\" Pack)",
     "drinking-celebrations": "饮酒与庆祝 (The \"Tagay\" Pack)",
-    "storytelling-connectors": "讲故事连接词 (The \"Kwento\" Pack)"
+    "storytelling-connectors": "讲故事连接词 (The \"Kwento\" Pack)",
+    "animals": "动物"
   },
   "groups": {
     "basics": "基础",

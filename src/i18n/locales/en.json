@@ -95,6 +95,13 @@
     "bestStreak": "Best Streak",
     "playAgain": "Play Again"
   },
+  "falling": {
+    "title": "Tagalog Rain",
+    "podTitle": "Word Rain",
+    "podSubtitle": "Catch the Words",
+    "description": "Catch the Tagalog words before they fall! Test your speed and vocabulary.",
+    "playAgain": "Play Again"
+  },
   "home": {
     "introToTagalog": "Intro to Tagalog",
     "introSubtitle": "History & Features",
@@ -196,7 +203,8 @@
     "love-dating": "Love & Dating (The \"Kilig\" Pack)",
     "conflict-reconciliation": "Conflict & Reconciliation (The \"Tampo\" Pack)",
     "drinking-celebrations": "Drinking & Celebrations (The \"Tagay\" Pack)",
-    "storytelling-connectors": "Storytelling Connectors (The \"Kwento\" Pack)"
+    "storytelling-connectors": "Storytelling Connectors (The \"Kwento\" Pack)",
+    "animals": "Animals"
   },
   "groups": {
     "basics": "Basics",

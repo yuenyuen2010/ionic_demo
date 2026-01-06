@@ -19,14 +19,18 @@ import { render } from '@testing-library/react';
 import App from './App';
 
 describe('App Component', () => {
-  it('should render without crashing', () => {
-    const { baseElement } = render(<App />);
+  it('should render without crashing', async () => {
+    const { baseElement, findByText } = render(<App />);
     expect(baseElement).toBeDefined();
+    // Wait for the lazy loaded component to appear to resolve Suspense
+    await findByText('Home');
   });
 
-  it('should have IonApp container', () => {
-    const { container } = render(<App />);
+  it('should have IonApp container', async () => {
+    const { container, findByText } = render(<App />);
     const ionApp = container.querySelector('ion-app');
     expect(ionApp).toBeDefined();
+    // Wait for stability
+    await findByText('Home');
   });
 });

@@ -46,10 +46,13 @@ describe('Bookmark Utility Functions', () => {
         });
 
         it('should return empty array on parse error', () => {
+            const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
             localStorageMock.getItem.mockReturnValueOnce('not valid json');
 
             const result = getBookmarks();
             expect(result).toEqual([]);
+            expect(consoleSpy).toHaveBeenCalled();
+            consoleSpy.mockRestore();
         });
     });
 
