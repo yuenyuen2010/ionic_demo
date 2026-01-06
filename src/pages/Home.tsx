@@ -33,7 +33,8 @@ import {
   shuffleOutline,
   happyOutline,
   cloudDownloadOutline,
-  flameOutline
+  flameOutline,
+  earOutline
 } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
@@ -341,6 +342,17 @@ const Home: React.FC = () => {
                       <h2 className="pod-value">{t('falling.podSubtitle')}</h2>
                     </div>
                     <IonIcon icon={cloudDownloadOutline} style={{ fontSize: '24px', color: 'white' }} />
+                  </div>
+                </div>
+
+                {/* Listening Quiz */}
+                <div className="learning-pod pod-listening" style={{ background: 'linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)' }} onClick={() => history.push('/listening')}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div>
+                      <div className="pod-label">{t('listening.podTitle')}</div>
+                      <h2 className="pod-value">{t('listening.podSubtitle')}</h2>
+                    </div>
+                    <IonIcon icon={earOutline} style={{ fontSize: '24px', color: 'white' }} />
                   </div>
                 </div>
               </div>

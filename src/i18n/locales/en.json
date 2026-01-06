@@ -102,6 +102,23 @@
     "description": "Catch the Tagalog words before they fall! Test your speed and vocabulary.",
     "playAgain": "Play Again"
   },
+  "listening": {
+    "title": "Listening Quiz",
+    "podTitle": "Listening Quiz",
+    "podSubtitle": "Pakinggan",
+    "question": "Question",
+    "score": "Score",
+    "tapToListen": "Tap to listen",
+    "tapAgain": "Tap to hear again",
+    "correct": "Correct!",
+    "wrong": "Wrong! It was:",
+    "perfect": "Perfect Listening!",
+    "excellent": "Excellent!",
+    "good": "Good Job!",
+    "keepLearning": "Keep Practicing!",
+    "tryAgain": "Try Again!",
+    "playAgain": "Play Again"
+  },
   "home": {
     "introToTagalog": "Intro to Tagalog",
     "introSubtitle": "History & Features",

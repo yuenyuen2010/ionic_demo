@@ -18,6 +18,7 @@ const SpellChallenge = lazy(() => import('./pages/SpellChallenge'));
 const WordScramble = lazy(() => import('./pages/WordScramble'));
 const EmojiGuess = lazy(() => import('./pages/EmojiGuess'));
 const FallingWords = lazy(() => import('./pages/FallingWords'));
+const ListeningQuiz = lazy(() => import('./pages/ListeningQuiz'));
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -117,6 +118,8 @@ const App: React.FC = () => {
               <Route exact path="/emoji" render={() => <EmojiGuess />} />
               {/* @ts-expect-error: Lazy component type mismatch */}
               <Route exact path="/falling" render={() => <FallingWords />} />
+              {/* @ts-expect-error: Lazy component type mismatch */}
+              <Route exact path="/listening" render={() => <ListeningQuiz />} />
               {/* @ts-expect-error: Redirect type mismatch */}
               <Route exact path="/" render={() => <Redirect to="/home" />} />
             </IonRouterOutlet>
