@@ -157,10 +157,10 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title, showBackButton = fal
             </div>
 
             {/* Info & Settings Icons */}
-            <IonButton onClick={() => setShowBuildInfo(true)} style={{ '--color': '#94a3b8' }}>
+            <IonButton onClick={() => setShowBuildInfo(true)} style={{ '--color': '#94a3b8' }} data-testid="build-info-btn">
               <IonIcon slot="icon-only" icon={informationCircleOutline} style={{ fontSize: '22px' }} />
             </IonButton>
-            <IonButton onClick={() => setShowSettings(true)} style={{ '--color': '#94a3b8' }}>
+            <IonButton onClick={() => setShowSettings(true)} style={{ '--color': '#94a3b8' }} data-testid="settings-btn">
               <IonIcon slot="icon-only" icon={settingsOutline} style={{ fontSize: '22px' }} />
             </IonButton>
           </IonButtons>
