@@ -90,14 +90,12 @@ const App: React.FC = () => {
       {/* PWA Update Prompt */}
       <ReloadPrompt />
 
-      {/* @ts-expect-error: TS mismatch with ReactPortal type in IonReactHashRouter */}
       <IonReactHashRouter>
         {/* Timer Provider tracks study time across routes */}
         {/* @ts-expect-error: TS mismatch with children prop */}
         <TimerProvider>
           <Suspense fallback={<PageLoader />}>
             {/* Router Outlet for handling navigation */}
-            {/* @ts-expect-error: TS mismatch with ReactPortal type */}
             <IonRouterOutlet>
               {/* @ts-expect-error: Lazy component type mismatch */}
               <Route exact path="/home" render={() => <Home />} />
