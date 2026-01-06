@@ -90,74 +90,37 @@ const App: React.FC = () => {
       {/* PWA Update Prompt */}
       <ReloadPrompt />
 
-      {/* @ts-ignore: TS mismatch with ReactPortal type in IonReactHashRouter */}
+      {/* @ts-expect-error: TS mismatch with ReactPortal type in IonReactHashRouter */}
       <IonReactHashRouter>
         {/* Timer Provider tracks study time across routes */}
-        {/* @ts-ignore: TS mismatch with children prop */}
+        {/* @ts-expect-error: TS mismatch with children prop */}
         <TimerProvider>
           <Suspense fallback={<PageLoader />}>
             {/* Router Outlet for handling navigation */}
-            {/* @ts-ignore: TS mismatch with ReactPortal type */}
+            {/* @ts-expect-error: TS mismatch with ReactPortal type */}
             <IonRouterOutlet>
-
-              {/* Home Page */}
-              {/* @ts-ignore */}
-              <Route exact path="/home">
-                <Home />
-              </Route>
-
-              {/* Lesson Page (Dynamic ID) */}
-              {/* @ts-ignore */}
-              <Route exact path="/lesson/:id">
-                <Lesson />
-              </Route>
-
-              {/* Review Page (SRS) */}
-              {/* @ts-ignore */}
-              <Route exact path="/review">
-                <Review />
-              </Route>
-
-              {/* Introduction Page */}
-              {/* @ts-ignore */}
-              <Route exact path="/intro">
-                <Intro />
-              </Route>
-
-              {/* Game Hub */}
-              {/* @ts-ignore */}
-              <Route exact path="/game">
-                <Game />
-              </Route>
-
-              {/* Individual Games */}
-              {/* @ts-ignore */}
-              <Route exact path="/memory">
-                <MemoryMatch />
-              </Route>
-              {/* @ts-ignore */}
-              <Route exact path="/spell">
-                <SpellChallenge />
-              </Route>
-              {/* @ts-ignore */}
-              <Route exact path="/scramble">
-                <WordScramble />
-              </Route>
-              {/* @ts-ignore */}
-              <Route exact path="/emoji">
-                <EmojiGuess />
-              </Route>
-
-              {/* Default Route Redirect */}
-              {/* @ts-ignore */}
-              <Route exact path="/falling">
-                <FallingWords />
-              </Route>
-              {/* @ts-ignore */}
-              <Route exact path="/">
-                <Redirect to="/home" />
-              </Route>
-
+              {/* @ts-expect-error: Lazy component type mismatch */}
+              <Route exact path="/home" render={() => <Home />} />
+              {/* @ts-expect-error: Lazy component type mismatch */}
+              <Route exact path="/lesson/:id" render={() => <Lesson />} />
+              {/* @ts-expect-error: Lazy component type mismatch */}
+              <Route exact path="/review" render={() => <Review />} />
+              {/* @ts-expect-error: Lazy component type mismatch */}
+              <Route exact path="/intro" render={() => <Intro />} />
+              {/* @ts-expect-error: Lazy component type mismatch */}
+              <Route exact path="/game" render={() => <Game />} />
+              {/* @ts-expect-error: Lazy component type mismatch */}
+              <Route exact path="/memory" render={() => <MemoryMatch />} />
+              {/* @ts-expect-error: Lazy component type mismatch */}
+              <Route exact path="/spell" render={() => <SpellChallenge />} />
+              {/* @ts-expect-error: Lazy component type mismatch */}
+              <Route exact path="/scramble" render={() => <WordScramble />} />
+              {/* @ts-expect-error: Lazy component type mismatch */}
+              <Route exact path="/emoji" render={() => <EmojiGuess />} />
+              {/* @ts-expect-error: Lazy component type mismatch */}
+              <Route exact path="/falling" render={() => <FallingWords />} />
+              {/* @ts-expect-error: Redirect type mismatch */}
+              <Route exact path="/" render={() => <Redirect to="/home" />} />
             </IonRouterOutlet>
           </Suspense>
         </TimerProvider>
